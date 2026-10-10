@@ -290,7 +290,19 @@
     "2023"
    ],
    "verdict": "avoid",
-   "why": "Engine recalls for piston rings that can scuff the cylinders, leading to oil burning, knocking or seizure (25V099000; 21V259000 on 2021). Consumer Reports rates 2021 less reliable, and some 2021–22 cars lack an immobilizer."
+   "why": "Engine recalls for piston rings that can scuff the cylinders, leading to oil burning, knocking or seizure (25V099000; 21V259000 on 2021). Consumer Reports rates 2021 less reliable, and some 2021–22 cars lack an immobilizer.",
+   "match": {
+    "makes": [
+     "Kia"
+    ],
+    "models": [
+     "Seltos"
+    ],
+    "years": [
+     2021,
+     2023
+    ]
+   }
   },
   {
    "make": "Hyundai",
@@ -300,7 +312,19 @@
     "2024"
    ],
    "verdict": "avoid",
-   "why": "First year of a redesign, and Consumer Reports rates it less reliable. NHTSA 4 stars despite a strong IIHS score. Let someone else find the bugs."
+   "why": "First year of a redesign, and Consumer Reports rates it less reliable. NHTSA 4 stars despite a strong IIHS score. Let someone else find the bugs.",
+   "match": {
+    "makes": [
+     "Hyundai"
+    ],
+    "models": [
+     "Kona"
+    ],
+    "years": [
+     2024,
+     2024
+    ]
+   }
   },
   {
    "make": "Hyundai/Kia",
@@ -309,7 +333,14 @@
    "verdict": "avoid",
    "nometrics": true,
    "metrics_note": "Applies to Elantra N Line, Kona 1.6T (through 2023), Forte GT and Seltos 1.6T.",
-   "why": "The 7-speed dual-clutch has needed service campaigns for shift shock and a snap-ring fix (Hyundai T7E) and shift-logic updates (Kia SA454). The 2.0 with the IVT is the simpler, safer choice for a new driver."
+   "why": "The 7-speed dual-clutch has needed service campaigns for shift shock and a snap-ring fix (Hyundai T7E) and shift-logic updates (Kia SA454). The 2.0 with the IVT is the simpler, safer choice for a new driver.",
+   "match": {
+    "makes": [
+     "Hyundai",
+     "Kia"
+    ],
+    "trim": "\\bN[ -]?Line\\b|\\bGT\\b(?!-)|1\\.6\\s?T|\\bTurbo\\b"
+   }
   },
   {
    "make": "Hyundai/Kia",
@@ -318,7 +349,18 @@
    "verdict": "avoid",
    "nometrics": true,
    "metrics_note": "Roughly 8.3 million 2011–2022 key-start Hyundai/Kia cars were affected (AP).",
-   "why": "Thieves can start them with a USB cable, and some insurers limited new policies on these cars in 2023. Skip any key-start Hyundai/Kia unless a dealer record shows the anti-theft software is done; push-button start is not affected."
+   "why": "Thieves can start them with a USB cable, and some insurers limited new policies on these cars in 2023. Skip any key-start Hyundai/Kia unless a dealer record shows the anti-theft software is done; push-button start is not affected.",
+   "match": {
+    "makes": [
+     "Hyundai",
+     "Kia"
+    ],
+    "years": [
+     2016,
+     2021
+    ],
+    "notes": "\\b(?:no|lacks?|without)(?: an)? immobilizer\\b|\\bkey[- ]start\\b"
+   }
   },
   {
    "make": "Honda",
@@ -329,7 +371,19 @@
     "2022"
    ],
    "verdict": "avoid",
-   "why": "Very reliable and cheap to insure, but it scored Poor in IIHS's updated side test, and the 2022 also scored Poor in the updated front test and lost its award. For a new driver, crash protection comes first."
+   "why": "Very reliable and cheap to insure, but it scored Poor in IIHS's updated side test, and the 2022 also scored Poor in the updated front test and lost its award. For a new driver, crash protection comes first.",
+   "match": {
+    "makes": [
+     "Honda"
+    ],
+    "models": [
+     "HR-V"
+    ],
+    "years": [
+     2016,
+     2022
+    ]
+   }
   },
   {
    "make": "Honda",
@@ -338,7 +392,19 @@
    "verdict": "avoid",
    "limited": true,
    "nometrics": true,
-   "why": "Max ruled it out, and it's a small car for highway trips between Tulsa and Fayetteville. We didn't research it further."
+   "why": "Max ruled it out, and it's a small car for highway trips between Tulsa and Fayetteville. We didn't research it further.",
+   "match": {
+    "makes": [
+     "Honda"
+    ],
+    "models": [
+     "Fit"
+    ],
+    "years": [
+     2016,
+     2020
+    ]
+   }
   },
   {
    "make": "Nissan",
@@ -347,7 +413,22 @@
    "verdict": "avoid",
    "limited": true,
    "nometrics": true,
-   "why": "These years use Nissan's CVT automatic, which has a weak reliability record. We have no detailed data on them; plenty of Toyota, Honda and Mazda cars cost the same."
+   "why": "These years use Nissan's CVT automatic, which has a weak reliability record. We have no detailed data on them; plenty of Toyota, Honda and Mazda cars cost the same.",
+   "match": {
+    "makes": [
+     "Nissan"
+    ],
+    "models": [
+     "Sentra",
+     "Versa",
+     "Versa Note",
+     "Altima"
+    ],
+    "years": [
+     2016,
+     2020
+    ]
+   }
   },
   {
    "make": "Ford",
@@ -357,7 +438,20 @@
    "limited": true,
    "nometrics": true,
    "metrics_note": "Automatics are the dual-clutch PowerShift (DPS6): 2016–2018 Focus, 2016–2019 Fiesta.",
-   "why": "The PowerShift automatic can shudder, slip or lurch. A class-action settlement covered 2012–16 Focus and 2011–16 Fiesta, and a later suit covers 2017–18 Focus and 2017–19 Fiesta. Not worth the risk."
+   "why": "The PowerShift automatic can shudder, slip or lurch. A class-action settlement covered 2012–16 Focus and 2011–16 Fiesta, and a later suit covers 2017–18 Focus and 2017–19 Fiesta. Not worth the risk.",
+   "match": {
+    "makes": [
+     "Ford"
+    ],
+    "models": [
+     "Focus",
+     "Fiesta"
+    ],
+    "years": [
+     2016,
+     2019
+    ]
+   }
   }
  ]
 }

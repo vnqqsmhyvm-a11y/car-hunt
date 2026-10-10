@@ -106,6 +106,29 @@ def read_cars(xlsx, sheet="Cars"):
     return cars
 
 
+def avoid_rules():
+    data = json.loads((ROOT / "guide" / "models.json").read_text(encoding="utf-8"))
+    return [(e, e["match"]) for e in data["entries"] if e["verdict"] == "avoid" and e.get("match")]
+
+
+def avoid_match(c, rules):
+    """The Model Guide Avoid entry this car falls under (make/model/year, plus trim or notes patterns), or None."""
+    norm = lambda x: re.sub(r"[^a-z0-9]", "", str(x or "").lower())
+    for e, m in rules:
+        if norm(c["make"]) not in {norm(x) for x in m.get("makes", [])}:
+            continue
+        if m.get("models") and norm(c["model"]) not in {norm(x) for x in m["models"]}:
+            continue
+        if m.get("years") and not (c["year"] and m["years"][0] <= c["year"] <= m["years"][1]):
+            continue
+        if m.get("trim") and not re.search(m["trim"], str(c["trim"] or ""), re.I):
+            continue
+        if m.get("notes") and not re.search(m["notes"], str(c["notes"] or ""), re.I):
+            continue
+        return e
+    return None
+
+
 def read_all(xlsx):
     """Cars from every list sheet, with slugs unique across sheets."""
     out, seen = {}, set()
@@ -835,6 +858,12 @@ def main():
         sys.exit("usage: build.py <xlsx>")
     xlsx = sys.argv[1]
     lists = read_all(xlsx)
+    rules = avoid_rules()
+    hidden = [(sh, c, avoid_match(c, rules)) for sh, cs in lists.items() for c in cs]
+    hidden = [(sh, c, e) for sh, c, e in hidden if e]
+    lists = {sh: [c for c in cs if not avoid_match(c, rules)] for sh, cs in lists.items()}
+    for sh, c, e in hidden:
+        print(f"hidden (Model Guide avoid: {e['make']} {e['model']} {e['years']}): {sh} {c['year']} {c['make']} {c['model']} {c['trim']} ${c['price']}")
     allcars = [c for cs in lists.values() for c in cs]
     new_keys = stamp_first_seen(allcars)
     mpath = ROOT / "photos" / "manifest.json"
