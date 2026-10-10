@@ -1,0 +1,4 @@
+data/
+*.xlsx
+shot-*.png
+__pycache__/
