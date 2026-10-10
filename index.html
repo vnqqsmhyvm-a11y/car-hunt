@@ -93,6 +93,27 @@ footer.bottom p{margin:.4rem 0}
 .box{background:var(--card);border-radius:var(--radius);padding:1rem 1.1rem;box-shadow:0 1px 2px rgba(60,40,10,.06),0 6px 18px rgba(60,40,10,.06);margin:1rem 0}
 .box.verdict{border-left:5px solid var(--accent)}
 .small{font-size:.85rem;color:var(--soft)}
+.intro{color:var(--soft);margin:1rem 0 .2rem;max-width:44rem}
+.chips+.chips{margin-top:.45rem}
+.chip.sm{font-size:.85rem;padding:.5rem .75rem}
+.vgroup h2{font:700 1.45rem/1.2 var(--display);margin:1.8rem 0 .2rem;display:flex;align-items:center;gap:.55rem}
+.vgroup h2 .dot{width:.75rem;height:.75rem;border-radius:50%;flex:0 0 auto}
+.vgroup .lede{margin:0 0 .3rem;color:var(--soft);font-size:.92rem}
+.mlist{display:grid;grid-template-columns:1fr;gap:.8rem;list-style:none;padding:0;margin:.7rem 0 0}
+@media (min-width:760px){.mlist{grid-template-columns:1fr 1fr}}
+@media (min-width:1150px){.mlist{grid-template-columns:1fr 1fr 1fr}}
+.m{background:var(--card);border-radius:14px;padding:.85rem .95rem .9rem;box-shadow:0 1px 2px rgba(60,40,10,.06),0 4px 12px rgba(60,40,10,.05);border-left:5px solid var(--line)}
+.m[hidden],.vgroup[hidden]{display:none}
+.m.rec{border-left-color:var(--good)}.m.ok{border-left-color:#e0a100}.m.avoid{border-left-color:var(--bad)}
+.m h3{margin:0;font-size:1.08rem;line-height:1.25}
+.m .yrs{display:block;color:var(--soft);font-weight:600;font-size:.92rem;margin-top:.1rem}
+.m .tags{display:flex;flex-wrap:wrap;gap:.3rem;margin:.45rem 0 .1rem}
+.m p.why{margin:.45rem 0 .55rem;font-size:.95rem;line-height:1.45}
+.m dl.k{padding:0;margin:0;display:grid;grid-template-columns:auto 1fr;gap:0 .7rem;font-size:.86rem}
+.m dl.k dt,.m dl.k dd{border-top:1px solid var(--line);padding:.32rem 0;margin:0}
+.m dl.k dt{font-size:.72rem;padding-top:.42rem;white-space:nowrap}
+.m .note{font-size:.86rem;color:var(--soft);border-top:1px solid var(--line);padding-top:.4rem;margin:0}
+.dot.rec{background:var(--good)}.dot.ok{background:#e0a100}.dot.avoid{background:var(--bad)}
 </style>
 </head>
 <body>
@@ -100,8 +121,8 @@ footer.bottom p{margin:.4rem 0}
 <header class="top">
 <h1><a href="">Car Hunt</a></h1>
 <p class="sub">A reliable first car for college · Tulsa area</p>
-<p class="meta">Updated Sat, Oct 10, 2026, 8:56 AM CT · 54 cars</p>
-<nav class="tabs" aria-label="Pages"><a href="" aria-current=page>Cars</a><a href="tips/" >Buying tips</a></nav>
+<p class="meta">Updated Fri, Oct 9, 2026, 5:37 PM CT · 45 cars</p>
+<nav class="tabs" aria-label="Pages"><a href="" aria-current=page>Cars</a><a href="tips/" >Buying tips</a><a href="models/" >Model guide</a></nav>
 </header>
 <div class="controls" data-js hidden>
 <div class="chips" role="group" aria-label="Filter cars"><button class="chip" type="button" data-f="all" aria-pressed="true">All</button><button class="chip" type="button" data-f="toyota" aria-pressed="false">Toyota</button><button class="chip" type="button" data-f="honda" aria-pressed="false">Honda</button><button class="chip" type="button" data-f="mazda" aria-pressed="false">Mazda</button><button class="chip" type="button" data-f="subaru" aria-pressed="false">Subaru</button><button class="chip" type="button" data-f="hyundai-kia" aria-pressed="false">Hyundai/Kia</button><button class="chip" type="button" data-f="under15" aria-pressed="false">Under $15k</button></div>
@@ -278,20 +299,6 @@ footer.bottom p{margin:.4rem 0}
 </div>
 </div>
 </li>
-<li class="card" id="2022-hyundai-venue-15995" data-group="hyundai-kia" data-price="15995" data-miles="70105" data-year="2022" data-removed="0">
-<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="photos/2022-hyundai-venue-15995-1.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2022 Hyundai Venue, photo 1 of 3"></div><div class="slide"><img class="fg" src="photos/2022-hyundai-venue-15995-2.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2022 Hyundai Venue, photo 2 of 3"></div><div class="slide"><img class="fg" src="photos/2022-hyundai-venue-15995-3.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2022 Hyundai Venue, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
-
-<div class="body">
-<h2>2022 Hyundai Venue SEL</h2>
-<div class="price">$15,995</div>
-<p class="facts"><span>70,105 miles</span><span>Tulsa, OK</span><span>Marc Miller Buick GMC (Dealer)</span></p>
-<ul class="badges"><li class="b good">Clean title</li><li class="b bad">Accident reported</li><li class="b info">Reliability: more reliable</li><li class="b muted">Insurance n/a</li><li class="b muted">31 MPG</li><li class="b muted">NHTSA 4★</li><li class="b good">IIHS Top Safety Pick</li></ul>
-<div class="actions">
-<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>SEL</dd></div><div><dt>Body style</dt><dd>SUV</dd></div><div><dt>Miles</dt><dd>70,105</dd></div><div><dt>Asking price</dt><dd>$15,995</dd></div><div><dt>Location</dt><dd>Tulsa, OK</dd></div><div><dt>Seller</dt><dd>Marc Miller Buick GMC (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>Multiple</dd></div><div><dt>Accidents</dt><dd>Reported</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recall 22V458000 front seat belts (2020-22). Not in Hyundai theft campaign (2020-21 Venue only). Powertrain: 1.6L Smartstream MPI + IVT, timing chain. Only 121 hp. J.D. Power 2026 VDS: tied 3rd small SUV (2023 MY).</dd></div><div><dt>Notes</dt><dd>Accident reported - get Carfax/inspection; Run VIN for open recalls; Insurance n/a: no MoneyGeek figure for this model</dd></div><div><dt>Est. insurance</dt><dd>n/a</dd></div><div><dt>Est. repair cost</dt><dd>n/a</dd></div><div><dt>Reliability</dt><dd>n/a RepairPal; Consumer Reports more reliable</dd></div><div><dt>Gas mileage (MPG)</dt><dd>31 (1.6 IVT)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK. Crash tests G (original); headlights A/M; std prevention Superior</dd></div><div><dt>NHTSA overall</dt><dd>4 stars</dd></div></dl></details>
-<a class="btn" href="https://www.cars.com/vehicledetail/095828af-a693-48df-97e0-58fa81ce0602/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
-</div>
-</div>
-</li>
 <li class="card" id="2019-subaru-crosstrek-16008" data-group="subaru" data-price="16008" data-miles="99139" data-year="2019" data-removed="0">
 <div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="photos/2019-subaru-crosstrek-16008-1.jpg" width="800" height="600" loading="lazy" decoding="async" alt="2019 Subaru Crosstrek, photo 1 of 1"></div></div></div>
 
@@ -371,27 +378,13 @@ footer.bottom p{margin:.4rem 0}
 <p class="facts"><span>74,245 miles</span><span>Sapulpa, OK</span><span>Bishop&#x27;s Corner (Dealer)</span></p>
 <ul class="badges"><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 4.5/5</li><li class="b info">Insurance ~$237/mo</li><li class="b muted">30 MPG</li><li class="b muted">NHTSA 4★</li></ul>
 <div class="actions">
-<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>LX</dd></div><div><dt>Body style</dt><dd>Wagon</dd></div><div><dt>Miles</dt><dd>74,245</dd></div><div><dt>Asking price</dt><dd>$16,988</dd></div><div><dt>Location</dt><dd>Sapulpa, OK</dd></div><div><dt>Seller</dt><dd>Bishop&#x27;s Corner (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (per listing)</dd></div><div><dt>Owners</dt><dd>Not stated</dd></div><div><dt>Accidents</dt><dd>None stated</dd></div><div><dt>Known issues &amp; recalls</dt><dd>ENGINE: recall 25V099000 piston oil rings (built to 4/19/2022) - inspect/replace engine + PNSS. Recalls 23V531000 ISG oil-pump controller; 23V298000 cluster; 23V830000 airbags. Immobilizer: 2020-22 Soul key-start built to 12/11/2021 lacked one; 2023 should have it - verify. Powertrain: 2.0L Nu MPI + IVT, timing chain.</dd></div><div><dt>Notes</dt><dd>Confirm engine recall 25V099000 completed (piston rings); Run VIN for open recalls; 10/10/26: same car also on Cars.com at $14,988 (1 owner, 0 accidents, clean title per AutoCheck): https://www.cars.com/vehicledetail/87533598-979d-411f-8f1f-105672dc36c7/</dd></div><div><dt>Est. insurance</dt><dd>About $237/month (about $2,844/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$437/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 RepairPal (3rd of 7 subcompact SUV); Consumer Reports more reliable</dd></div><div><dt>Gas mileage (MPG)</dt><dd>30 (2.0 IVT); 31 Eco</dd></div><div><dt>IIHS crash tests</dt><dd>No award. Only small overlap G and moderate overlap G rated</dd></div><div><dt>NHTSA overall</dt><dd>4 stars</dd></div></dl></details>
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>LX</dd></div><div><dt>Body style</dt><dd>Wagon</dd></div><div><dt>Miles</dt><dd>74,245</dd></div><div><dt>Asking price</dt><dd>$16,988</dd></div><div><dt>Location</dt><dd>Sapulpa, OK</dd></div><div><dt>Seller</dt><dd>Bishop&#x27;s Corner (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (per listing)</dd></div><div><dt>Owners</dt><dd>Not stated</dd></div><div><dt>Accidents</dt><dd>None stated</dd></div><div><dt>Known issues &amp; recalls</dt><dd>ENGINE: recall 25V099000 piston oil rings (built to 4/19/2022) - inspect/replace engine + PNSS. Recalls 23V531000 ISG oil-pump controller; 23V298000 cluster; 23V830000 airbags. Immobilizer: 2020-22 Soul key-start built to 12/11/2021 lacked one; 2023 should have it - verify. Powertrain: 2.0L Nu MPI + IVT, timing chain.</dd></div><div><dt>Notes</dt><dd>Confirm engine recall 25V099000 completed (piston rings); Run VIN for open recalls</dd></div><div><dt>Est. insurance</dt><dd>About $237/month (about $2,844/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$437/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 RepairPal (3rd of 7 subcompact SUV); Consumer Reports more reliable</dd></div><div><dt>Gas mileage (MPG)</dt><dd>30 (2.0 IVT); 31 Eco</dd></div><div><dt>IIHS crash tests</dt><dd>No award. Only small overlap G and moderate overlap G rated</dd></div><div><dt>NHTSA overall</dt><dd>4 stars</dd></div></dl></details>
 <a class="btn" href="https://www.facebook.com/marketplace/item/1557957162383559/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
 </div>
 </div>
 </li>
-<li class="card" id="2020-mazda-cx-3-17162" data-group="mazda" data-price="17162" data-miles="71685" data-year="2020" data-removed="0">
-<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="photos/2020-mazda-cx-3-17162-1.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2020 Mazda CX-3, photo 1 of 3"></div><div class="slide"><img class="fg" src="photos/2020-mazda-cx-3-17162-2.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2020 Mazda CX-3, photo 2 of 3"></div><div class="slide"><img class="fg" src="photos/2020-mazda-cx-3-17162-3.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2020 Mazda CX-3, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
-
-<div class="body">
-<h2>2020 Mazda CX-3 Sport</h2>
-<div class="price">$17,162</div>
-<p class="facts"><span>71,685 miles</span><span>Tulsa, OK</span><span>Nelson Mazda Tulsa (Dealer)</span></p>
-<ul class="badges"><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 4.5/5</li><li class="b muted">Insurance n/a</li><li class="b muted">31 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick+</li></ul>
-<div class="actions">
-<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>Sport</dd></div><div><dt>Body style</dt><dd>SUV</dd></div><div><dt>Miles</dt><dd>71,685</dd></div><div><dt>Asking price</dt><dd>$17,162</dd></div><div><dt>Location</dt><dd>Tulsa, OK</dd></div><div><dt>Seller</dt><dd>Nelson Mazda Tulsa (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>1</dd></div><div><dt>Accidents</dt><dd>0</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recall 23V487000 rear camera. Powertrain: 2.0L, 6-speed automatic, timing chain. Small back seat/cargo.</dd></div><div><dt>Notes</dt><dd>1 owner; price incl. $699 doc fee; price raised then cut (listed 10/5 at $16,849); 6-speed automatic; Insurance n/a: no MoneyGeek figure for this model</dd></div><div><dt>Est. insurance</dt><dd>n/a</dd></div><div><dt>Est. repair cost</dt><dd>$345/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 RepairPal (2nd of 7 subcompact SUV); Consumer Reports about average</dd></div><div><dt>Gas mileage (MPG)</dt><dd>31 FWD; 29 AWD</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK+. All crash tests G; headlights A; std prevention Superior</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
-<a class="btn" href="https://www.cars.com/vehicledetail/50fe836a-19eb-40dc-aa8e-136aa0e30194/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
-</div>
-</div>
-</li>
 <li class="card" id="2022-toyota-corolla-17277" data-group="toyota" data-price="17277" data-miles="95552" data-year="2022" data-removed="0">
-<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="photos/2022-toyota-corolla-17277-4.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2022 Toyota Corolla, photo 1 of 3"></div><div class="slide"><img class="fg" src="photos/2022-toyota-corolla-17277-5.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2022 Toyota Corolla, photo 2 of 3"></div><div class="slide"><img class="fg" src="photos/2022-toyota-corolla-17277-6.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2022 Toyota Corolla, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
+<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="photos/2022-toyota-corolla-17277-1.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2022 Toyota Corolla, photo 1 of 3"></div><div class="slide"><img class="fg" src="photos/2022-toyota-corolla-17277-2.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2022 Toyota Corolla, photo 2 of 3"></div><div class="slide"><img class="fg" src="photos/2022-toyota-corolla-17277-3.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2022 Toyota Corolla, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
 
 <div class="body">
 <h2>2022 Toyota Corolla LE</h2>
@@ -399,8 +392,8 @@ footer.bottom p{margin:.4rem 0}
 <p class="facts"><span>95,552 miles</span><span>Tulsa, OK</span><span>Quality Value Auto Sales (Dealer)</span></p>
 <ul class="badges"><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 4.5/5</li><li class="b info">Insurance ~$258/mo</li><li class="b muted">33 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick+</li></ul>
 <div class="actions">
-<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>LE</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>95,552</dd></div><div><dt>Asking price</dt><dd>$17,277</dd></div><div><dt>Location</dt><dd>Tulsa, OK</dd></div><div><dt>Seller</dt><dd>Quality Value Auto Sales (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>1</dd></div><div><dt>Accidents</dt><dd>0</dd></div><div><dt>Known issues &amp; recalls</dt><dd>n/a - NHTSA recall API returned no data/errors; check nhtsa.gov/recalls by VIN.</dd></div><div><dt>Notes</dt><dd>Cars.com Great Deal; base price $16878 plus doc fee; same car also on FB Broken Arrow; 10/10/26: original Cars.com listing (bfed2304...) says no longer available - same car (same miles, price, dealer; VIN 5YFEPMAE2NP362301) relisted 10/10, link updated</dd></div><div><dt>Est. insurance</dt><dd>About $258/month (about $3,096/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$362/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 (RepairPal; 1st of 36 compact; rating covers 2010-19 MYs)</dd></div><div><dt>Gas mileage (MPG)</dt><dd>33 (1.8L CVT; 34 2.0L SE/XSE)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK+. Updated side A; headlights A/M by trim; night pedestrian prevention Advanced; seat belt reminders M</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
-<a class="btn" href="https://www.cars.com/vehicledetail/40be45ba-75c2-4e6b-b089-01b2f62880e1/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>LE</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>95,552</dd></div><div><dt>Asking price</dt><dd>$17,277</dd></div><div><dt>Location</dt><dd>Tulsa, OK</dd></div><div><dt>Seller</dt><dd>Quality Value Auto Sales (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>1</dd></div><div><dt>Accidents</dt><dd>0</dd></div><div><dt>Known issues &amp; recalls</dt><dd>n/a - NHTSA recall API returned no data/errors; check nhtsa.gov/recalls by VIN.</dd></div><div><dt>Notes</dt><dd>Cars.com Great Deal; base price $16878 plus doc fee; same car also on FB Broken Arrow</dd></div><div><dt>Est. insurance</dt><dd>About $258/month (about $3,096/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$362/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 (RepairPal; 1st of 36 compact; rating covers 2010-19 MYs)</dd></div><div><dt>Gas mileage (MPG)</dt><dd>33 (1.8L CVT; 34 2.0L SE/XSE)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK+. Updated side A; headlights A/M by trim; night pedestrian prevention Advanced; seat belt reminders M</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
+<a class="btn" href="https://www.cars.com/vehicledetail/bfed2304-9543-4e80-9c98-772eef3a1dad/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
 </div>
 </div>
 </li>
@@ -429,20 +422,6 @@ footer.bottom p{margin:.4rem 0}
 <div class="actions">
 <details><summary>Details</summary><dl><div><dt>Trim</dt><dd>LE</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>89,839</dd></div><div><dt>Asking price</dt><dd>$17,346</dd></div><div><dt>Location</dt><dd>Broken Arrow, OK</dd></div><div><dt>Seller</dt><dd>Quality Value Auto Sales (Dealer)</dd></div><div><dt>Title</dt><dd>Not shown</dd></div><div><dt>Owners</dt><dd>Not shown</dd></div><div><dt>Accidents</dt><dd>Not shown</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recall 23V865000 occupant classification sensor. Coolant valve warranty program 24TE04 (2020-21).</dd></div><div><dt>Notes</dt><dd>Fees not disclosed; no history summary - pull Carfax</dd></div><div><dt>Est. insurance</dt><dd>About $258/month (about $3,096/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$362/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 (RepairPal; 1st of 36 compact; rating covers 2010-19 MYs)</dd></div><div><dt>Gas mileage (MPG)</dt><dd>33 (1.8L CVT; 34 2.0L SE/XSE)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK. Same results as 2020: updated side A; headlights A/M by trim; prevention Superior</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
 <a class="btn" href="https://www.cars.com/vehicledetail/18e33636-616c-4d86-89b3-db0b31cc47b4/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
-</div>
-</div>
-</li>
-<li class="card" id="2023-hyundai-elantra-17349" data-group="hyundai-kia" data-price="17349" data-miles="97686" data-year="2023" data-removed="0">
-<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="photos/2023-hyundai-elantra-17349-1.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2023 Hyundai Elantra, photo 1 of 1"></div></div></div>
-
-<div class="body">
-<h2>2023 Hyundai Elantra SEL</h2>
-<div class="price">$17,349</div>
-<p class="facts"><span>97,686 miles</span><span>Tulsa, OK</span><span>Jim Glover Chevrolet (Dealer)</span></p>
-<ul class="badges"><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 4.5/5</li><li class="b info">Insurance ~$270/mo</li><li class="b muted">34 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick</li></ul>
-<div class="actions">
-<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>SEL</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>97,686</dd></div><div><dt>Asking price</dt><dd>$17,349</dd></div><div><dt>Location</dt><dd>Tulsa, OK</dd></div><div><dt>Seller</dt><dd>Jim Glover Chevrolet (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>1</dd></div><div><dt>Accidents</dt><dd>0</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 22V632000 airbag emblem; 23V526000 Idle Stop&amp;Go oil-pump controller can overheat. Immobilizer standard (built after Nov 2021). Powertrain: 2.0L Smartstream MPI + IVT (CVT-type) on SE/SEL; 1.6T + 7-speed DCT on N Line. Timing chain, no scheduled replacement. Not in the Nu MPI piston-ring recall (21V301000 covers 2019-20 Elantra only).</dd></div><div><dt>Notes</dt><dd>Miles near the 100k cap; 2nd owner loses 10yr/100k powertrain warranty (5yr/60k basic gone); price incl. $599 doc fee; Run VIN for open recalls</dd></div><div><dt>Est. insurance</dt><dd>About $270/month (about $3,240/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$452/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 RepairPal (8th of 36 compact); Consumer Reports about average</dd></div><div><dt>Gas mileage (MPG)</dt><dd>34 (2.0 IVT); 37 SE w/ stop-start; 31 (1.6T DCT)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK. Small overlap G both sides; original tests G; headlights G/P; std prevention Superior</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
-<a class="btn" href="https://www.cars.com/vehicledetail/fcaa521c-bda1-43ba-866f-f36579eab712/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
 </div>
 </div>
 </li>
@@ -488,20 +467,6 @@ footer.bottom p{margin:.4rem 0}
 </div>
 </div>
 </li>
-<li class="card" id="2021-subaru-impreza-17579" data-group="subaru" data-price="17579" data-miles="61762" data-year="2021" data-removed="0">
-<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="photos/2021-subaru-impreza-17579-1.jpg" width="640" height="427" loading="lazy" decoding="async" alt="2021 Subaru Impreza, photo 1 of 1"></div></div></div>
-
-<div class="body">
-<h2>2021 Subaru Impreza Base</h2>
-<div class="price">$17,579</div>
-<p class="facts"><span>61,762 miles</span><span>Broken Arrow, OK</span><span>Ferguson Superstore (Dealer)</span></p>
-<ul class="badges"><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 3.5/5</li><li class="b info">Insurance ~$236/mo</li><li class="b muted">32 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick</li></ul>
-<div class="actions">
-<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>Base</dd></div><div><dt>Body style</dt><dd>Hatchback</dd></div><div><dt>Miles</dt><dd>61,762</dd></div><div><dt>Asking price</dt><dd>$17,579</dd></div><div><dt>Location</dt><dd>Broken Arrow, OK</dd></div><div><dt>Seller</dt><dd>Ferguson Superstore (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>1</dd></div><div><dt>Accidents</dt><dd>0</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 21V024000 CVT select-lever cable nut; 21V675000 front lower control arm. Powertrain: FB20 2.0L boxer, TR580 CVT, timing chain; AWD standard.</dd></div><div><dt>Notes</dt><dd>1 owner; hatchback (31 mpg); price incl. $579 doc fee; different car from the 2021 Impreza sedan at the same dealer</dd></div><div><dt>Est. insurance</dt><dd>About $236/month (about $2,832/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$653/year</dd></div><div><dt>Reliability</dt><dd>3.5/5 RepairPal (33rd of 36 compact); Consumer Reports about average</dd></div><div><dt>Gas mileage (MPG)</dt><dd>32 (CVT sedan); 31 hatch; 30 Sport</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK. Original tests G; updated side P; headlights G/M</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
-<a class="btn" href="https://www.cars.com/vehicledetail/73d7fec3-6d56-456f-9ce4-1b942adb31a4/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
-</div>
-</div>
-</li>
 <li class="card" id="2020-toyota-corolla-hatchback-17599" data-group="toyota" data-price="17599" data-miles="64112" data-year="2020" data-removed="0">
 <div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="photos/2020-toyota-corolla-hatchback-17599-1.jpg" width="799" height="600" loading="lazy" decoding="async" alt="2020 Toyota Corolla Hatchback, photo 1 of 1"></div></div></div>
 
@@ -527,20 +492,6 @@ footer.bottom p{margin:.4rem 0}
 <div class="actions">
 <details><summary>Details</summary><dl><div><dt>Trim</dt><dd>SEL</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>80,373</dd></div><div><dt>Asking price</dt><dd>$17,609</dd></div><div><dt>Location</dt><dd>Bartlesville, OK</dd></div><div><dt>Seller</dt><dd>Bartlesville CDJR (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>Multiple</dd></div><div><dt>Accidents</dt><dd>0</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 22V632000 airbag emblem; 23V526000 Idle Stop&amp;Go oil-pump controller can overheat. Immobilizer standard (built after Nov 2021). Powertrain: 2.0L Smartstream MPI + IVT (CVT-type) on SE/SEL; 1.6T + 7-speed DCT on N Line. Timing chain, no scheduled replacement. Not in the Nu MPI piston-ring recall (21V301000 covers 2019-20 Elantra only).</dd></div><div><dt>Notes</dt><dd>Good Deal; $1.4k price drop; Run VIN for open recalls; avoid 1.6T/DCT trims</dd></div><div><dt>Est. insurance</dt><dd>About $270/month (about $3,240/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$452/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 RepairPal (8th of 36 compact); Consumer Reports about average</dd></div><div><dt>Gas mileage (MPG)</dt><dd>34 (2.0 IVT); 37 SE w/ stop-start; 31 (1.6T DCT)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK. Small overlap G both sides; original tests G; headlights G/P; std prevention Superior</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
 <a class="btn" href="https://www.cars.com/vehicledetail/4c13bbae-95d4-4111-86b7-6c037c0838c7/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
-</div>
-</div>
-</li>
-<li class="card" id="2023-subaru-impreza-17693" data-group="subaru" data-price="17693" data-miles="71109" data-year="2023" data-removed="0">
-<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="photos/2023-subaru-impreza-17693-1.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2023 Subaru Impreza, photo 1 of 3"></div><div class="slide"><img class="fg" src="photos/2023-subaru-impreza-17693-2.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2023 Subaru Impreza, photo 2 of 3"></div><div class="slide"><img class="fg" src="photos/2023-subaru-impreza-17693-3.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2023 Subaru Impreza, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
-
-<div class="body">
-<h2>2023 Subaru Impreza Base</h2>
-<div class="price">$17,693</div>
-<p class="facts"><span>71,109 miles</span><span>Tulsa, OK</span><span>Nelson Mazda Tulsa (Dealer)</span></p>
-<ul class="badges"><li class="b warn">Verify title</li><li class="b muted">Accidents not stated</li><li class="b info">Reliability 3.5/5</li><li class="b info">Insurance ~$236/mo</li><li class="b muted">31 MPG</li><li class="b info">NHTSA 5★</li></ul>
-<div class="actions">
-<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>Base</dd></div><div><dt>Body style</dt><dd>Hatchback</dd></div><div><dt>Miles</dt><dd>71,109</dd></div><div><dt>Asking price</dt><dd>$17,693</dd></div><div><dt>Location</dt><dd>Tulsa, OK</dd></div><div><dt>Seller</dt><dd>Nelson Mazda Tulsa (Dealer)</dd></div><div><dt>Title</dt><dd>Not shown</dd></div><div><dt>Owners</dt><dd>Not shown</dd></div><div><dt>Accidents</dt><dd>Not shown</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 23V292000 brake light switch; 23V647000 driveshaft. Powertrain: FB20 2.0L boxer, CVT, timing chain; AWD standard. Last year of this generation.</dd></div><div><dt>Notes</dt><dd>No AutoCheck summary on listing - pull Carfax; listed 10/8; price incl. $699 doc fee</dd></div><div><dt>Est. insurance</dt><dd>About $236/month (about $2,832/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$653/year</dd></div><div><dt>Reliability</dt><dd>3.5/5 RepairPal (33rd of 36 compact); Consumer Reports about average</dd></div><div><dt>Gas mileage (MPG)</dt><dd>31 (CVT hatch); 32 sedan</dd></div><div><dt>IIHS crash tests</dt><dd>No award (2023 sedan ratings; hatch shares structure). Original tests G; updated side P; headlights M</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
-<a class="btn" href="https://www.cars.com/vehicledetail/b5aa3a75-6186-452f-845d-a6ad388dbd8f/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
 </div>
 </div>
 </li>
@@ -611,20 +562,6 @@ footer.bottom p{margin:.4rem 0}
 <div class="actions">
 <details><summary>Details</summary><dl><div><dt>Trim</dt><dd>EX</dd></div><div><dt>Body style</dt><dd>SUV</dd></div><div><dt>Miles</dt><dd>93,756</dd></div><div><dt>Asking price</dt><dd>$17,947</dd></div><div><dt>Location</dt><dd>Tulsa, OK</dd></div><div><dt>Seller</dt><dd>Midtown Kia (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>1</dd></div><div><dt>Accidents</dt><dd>0</dd></div><div><dt>Known issues &amp; recalls</dt><dd>ENGINE: recall 25V099000 piston oil rings (built to 7/1/2022). Recall 23V531000 Idle Stop&amp;Go oil-pump controller. Powertrain: 2.0L Nu MPI + IVT; 1.6T + 7-speed DCT (AWD). Timing chain.</dd></div><div><dt>Notes</dt><dd>AVOID per Hyundai-Kia verdict: piston-ring engine recall 25V099000; NHTSA 4 stars; Good Deal; miles near cap; Run VIN for open recalls; avoid 1.6T/DCT trims; Insurance n/a: no MoneyGeek figure for this model</dd></div><div><dt>Est. insurance</dt><dd>n/a</dd></div><div><dt>Est. repair cost</dt><dd>n/a</dd></div><div><dt>Reliability</dt><dd>n/a RepairPal; Consumer Reports about average</dd></div><div><dt>Gas mileage (MPG)</dt><dd>31 FWD (2.0 IVT); 29 AWD; 27 (1.6T DCT)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK. Original tests G; headlights G/P; prevention Superior</dd></div><div><dt>NHTSA overall</dt><dd>4 stars</dd></div></dl></details>
 <a class="btn" href="https://www.cars.com/vehicledetail/fc40d908-8b69-4147-9239-cf7e1504f0c5/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
-</div>
-</div>
-</li>
-<li class="card" id="2020-honda-accord-17994" data-group="honda" data-price="17994" data-miles="59538" data-year="2020" data-removed="0">
-<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="photos/2020-honda-accord-17994-1.jpg" width="800" height="600" loading="lazy" decoding="async" alt="2020 Honda Accord, photo 1 of 3"></div><div class="slide"><img class="fg" src="photos/2020-honda-accord-17994-2.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2020 Honda Accord, photo 2 of 3"></div><div class="slide"><img class="fg" src="photos/2020-honda-accord-17994-3.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2020 Honda Accord, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
-
-<div class="body">
-<h2>2020 Honda Accord EX-L 1.5T</h2>
-<div class="price">$17,994</div>
-<p class="facts"><span>59,538 miles</span><span>Tulsa, OK</span><span>Invision Auto Group (Dealer)</span></p>
-<ul class="badges"><li class="b good">Clean title</li><li class="b bad">Accident reported</li><li class="b info">Reliability 4.5/5</li><li class="b info">Insurance ~$244/mo</li><li class="b muted">33 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick</li></ul>
-<div class="actions">
-<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>EX-L 1.5T</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>59,538</dd></div><div><dt>Asking price</dt><dd>$17,994</dd></div><div><dt>Location</dt><dd>Tulsa, OK</dd></div><div><dt>Seller</dt><dd>Invision Auto Group (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>Multiple</dd></div><div><dt>Accidents</dt><dd>Reported</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 21V215000, 23V858000 fuel pump; 20V771000 body control module software; 24V064000 &amp; 26V332000 occupant classification sensor. Powertrain: 1.5L turbo + CVT (LX/EX/EX-L), timing chain.</dd></div><div><dt>Notes</dt><dd>Accident reported - get Carfax/inspection; low miles; dealer has no reviews</dd></div><div><dt>Est. insurance</dt><dd>About $244/month (about $2,928/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$400/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 RepairPal (1st of 24 midsize cars; rating covers 2010-19 MYs)</dd></div><div><dt>Gas mileage (MPG)</dt><dd>33 (1.5T CVT); 27 (2.0T 10AT)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK. Small overlap G both sides; original side G; updated side M; headlights A/M by trim; std prevention Superior</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
-<a class="btn" href="https://www.cars.com/vehicledetail/10c4756f-d6ff-40f5-bed2-00beee13e0ac/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
 </div>
 </div>
 </li>
@@ -726,20 +663,6 @@ footer.bottom p{margin:.4rem 0}
 </div>
 </div>
 </li>
-<li class="card" id="2019-honda-accord-18496" data-group="honda" data-price="18496" data-miles="90002" data-year="2019" data-removed="0">
-<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="photos/2019-honda-accord-18496-1.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2019 Honda Accord, photo 1 of 3"></div><div class="slide"><img class="fg" src="photos/2019-honda-accord-18496-2.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2019 Honda Accord, photo 2 of 3"></div><div class="slide"><img class="fg" src="photos/2019-honda-accord-18496-3.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2019 Honda Accord, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
-
-<div class="body">
-<h2>2019 Honda Accord LX</h2>
-<div class="price">$18,496</div>
-<p class="facts"><span>90,002 miles</span><span>Broken Arrow, OK</span><span>Purdy Hyundai (Dealer)</span></p>
-<ul class="badges"><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 4.5/5</li><li class="b info">Insurance ~$244/mo</li><li class="b muted">33 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick</li></ul>
-<div class="actions">
-<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>LX</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>90,002</dd></div><div><dt>Asking price</dt><dd>$18,496</dd></div><div><dt>Location</dt><dd>Broken Arrow, OK</dd></div><div><dt>Seller</dt><dd>Purdy Hyundai (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>Multiple</dd></div><div><dt>Accidents</dt><dd>0</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 20V314000, 21V215000, 23V858000 fuel pump; 20V771000 body control module software; 23V158000 front seat belt buckle; 26V332000 occupant classification sensor. Powertrain: 1.5L turbo + CVT (LX/EX/EX-L), timing chain.</dd></div><div><dt>Notes</dt><dd>Good Deal; listed 10/8; price incl. $498 doc fee; 1.5T CVT; Run VIN for open recalls</dd></div><div><dt>Est. insurance</dt><dd>About $244/month (about $2,928/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$400/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 RepairPal (1st of 24 midsize cars; rating covers 2010-19 MYs)</dd></div><div><dt>Gas mileage (MPG)</dt><dd>33 (1.5T CVT); 27 (2.0T 10AT)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK. Small overlap G both sides; original side G; updated side M; headlights A/M by trim; std prevention Superior</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
-<a class="btn" href="https://www.cars.com/vehicledetail/acb08fed-e4f1-40a0-a515-94fd29e4360a/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
-</div>
-</div>
-</li>
 <li class="card" id="2024-kia-forte-18587" data-group="hyundai-kia" data-price="18587" data-miles="45771" data-year="2024" data-removed="0">
 <div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="photos/2024-kia-forte-18587-1.jpg" width="945" height="600" loading="lazy" decoding="async" alt="2024 Kia Forte, photo 1 of 1"></div></div></div>
 
@@ -782,20 +705,6 @@ footer.bottom p{margin:.4rem 0}
 </div>
 </div>
 </li>
-<li class="card" id="2020-toyota-corolla-18819" data-group="toyota" data-price="18819" data-miles="88921" data-year="2020" data-removed="0">
-<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="photos/2020-toyota-corolla-18819-1.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2020 Toyota Corolla, photo 1 of 3"></div><div class="slide"><img class="fg" src="photos/2020-toyota-corolla-18819-2.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2020 Toyota Corolla, photo 2 of 3"></div><div class="slide"><img class="fg" src="photos/2020-toyota-corolla-18819-3.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2020 Toyota Corolla, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
-
-<div class="body">
-<h2>2020 Toyota Corolla XSE</h2>
-<div class="price">$18,819</div>
-<p class="facts"><span>88,921 miles</span><span>Bartlesville, OK</span><span>Patriot Hyundai of Bartlesville (Dealer)</span></p>
-<ul class="badges"><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 4.5/5</li><li class="b info">Insurance ~$258/mo</li><li class="b muted">33 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick</li></ul>
-<div class="actions">
-<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>XSE</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>88,921</dd></div><div><dt>Asking price</dt><dd>$18,819</dd></div><div><dt>Location</dt><dd>Bartlesville, OK</dd></div><div><dt>Seller</dt><dd>Patriot Hyundai of Bartlesville (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>Multiple</dd></div><div><dt>Accidents</dt><dd>0</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 20V682000 fuel pump; 19V877000 rear seat belt buckle; 23V865000 occupant classification sensor. Coolant valve warranty program 24TE04 (2020-21).</dd></div><div><dt>Notes</dt><dd>About 45 mi from Tulsa; 2.0L XSE (34 mpg); price incl. $619 doc/lien fee; confirm coolant-valve program done</dd></div><div><dt>Est. insurance</dt><dd>About $258/month (about $3,096/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$362/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 (RepairPal; 1st of 36 compact; rating covers 2010-19 MYs)</dd></div><div><dt>Gas mileage (MPG)</dt><dd>33 (1.8L CVT; 34 2.0L SE/XSE)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK. Small overlap G both sides; updated side A; headlights A/M by trim; std vehicle + pedestrian prevention Superior</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
-<a class="btn" href="https://www.cars.com/vehicledetail/2d4216ea-4364-45fb-b0d7-bce5696d1959/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
-</div>
-</div>
-</li>
 <li class="card" id="2025-hyundai-venue-18887" data-group="hyundai-kia" data-price="18887" data-miles="41625" data-year="2025" data-removed="0">
 <div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="photos/2025-hyundai-venue-18887-1.jpg" width="900" height="600" loading="lazy" decoding="async" alt="2025 Hyundai Venue, photo 1 of 1"></div></div></div>
 
@@ -807,20 +716,6 @@ footer.bottom p{margin:.4rem 0}
 <div class="actions">
 <details><summary>Details</summary><dl><div><dt>Trim</dt><dd>SEL</dd></div><div><dt>Body style</dt><dd>SUV</dd></div><div><dt>Miles</dt><dd>41,625</dd></div><div><dt>Asking price</dt><dd>$18,887</dd></div><div><dt>Location</dt><dd>Broken Arrow, OK</dd></div><div><dt>Seller</dt><dd>Chris Nikel (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (per listing)</dd></div><div><dt>Owners</dt><dd>Not stated</dd></div><div><dt>Accidents</dt><dd>None stated</dd></div><div><dt>Known issues &amp; recalls</dt><dd>n/a recall lookup (API errored) - check by VIN. Still under original 5yr/60k basic warranty. Powertrain: 1.6L Smartstream MPI + IVT, timing chain. Only 121 hp. J.D. Power 2026 VDS: tied 3rd small SUV (2023 MY).</dd></div><div><dt>Notes</dt><dd>Run VIN for open recalls; Insurance n/a: no MoneyGeek figure for this model</dd></div><div><dt>Est. insurance</dt><dd>n/a</dd></div><div><dt>Est. repair cost</dt><dd>n/a</dd></div><div><dt>Reliability</dt><dd>n/a RepairPal; Consumer Reports more reliable</dd></div><div><dt>Gas mileage (MPG)</dt><dd>31 (1.6 IVT)</dd></div><div><dt>IIHS crash tests</dt><dd>No award. Small overlap G; headlights A/M</dd></div><div><dt>NHTSA overall</dt><dd>4 stars</dd></div></dl></details>
 <a class="btn" href="https://www.facebook.com/marketplace/item/1154097177154421/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
-</div>
-</div>
-</li>
-<li class="card" id="2023-hyundai-elantra-18934" data-group="hyundai-kia" data-price="18934" data-miles="60724" data-year="2023" data-removed="0">
-<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="photos/2023-hyundai-elantra-18934-1.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2023 Hyundai Elantra, photo 1 of 1"></div></div></div>
-
-<div class="body">
-<h2>2023 Hyundai Elantra SEL</h2>
-<div class="price">$18,934</div>
-<p class="facts"><span>60,724 miles</span><span>Tulsa, OK</span><span>Jim Glover Chevrolet (Dealer)</span></p>
-<ul class="badges"><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 4.5/5</li><li class="b info">Insurance ~$270/mo</li><li class="b muted">34 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick</li></ul>
-<div class="actions">
-<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>SEL</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>60,724</dd></div><div><dt>Asking price</dt><dd>$18,934</dd></div><div><dt>Location</dt><dd>Tulsa, OK</dd></div><div><dt>Seller</dt><dd>Jim Glover Chevrolet (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>1</dd></div><div><dt>Accidents</dt><dd>0</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 22V632000 airbag emblem; 23V526000 Idle Stop&amp;Go oil-pump controller can overheat. Immobilizer standard (built after Nov 2021). Powertrain: 2.0L Smartstream MPI + IVT (CVT-type) on SE/SEL; 1.6T + 7-speed DCT on N Line. Timing chain, no scheduled replacement. Not in the Nu MPI piston-ring recall (21V301000 covers 2019-20 Elantra only).</dd></div><div><dt>Notes</dt><dd>1 owner; price incl. $599 doc fee; Run VIN for open recalls; avoid 1.6T/DCT trims</dd></div><div><dt>Est. insurance</dt><dd>About $270/month (about $3,240/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$452/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 RepairPal (8th of 36 compact); Consumer Reports about average</dd></div><div><dt>Gas mileage (MPG)</dt><dd>34 (2.0 IVT); 37 SE w/ stop-start; 31 (1.6T DCT)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK. Small overlap G both sides; original tests G; headlights G/P; std prevention Superior</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
-<a class="btn" href="https://www.cars.com/vehicledetail/067e8b09-0cb3-421b-a537-c67faa9610ce/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
 </div>
 </div>
 </li>

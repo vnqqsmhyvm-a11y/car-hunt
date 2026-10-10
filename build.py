@@ -4,7 +4,7 @@
 Usage: python3 build.py <path/to/tulsa-used-cars.xlsx>
 
 Reads the 'Cars', 'Sources' and 'Hyundai-Kia Notes' sheets and photos/manifest.json
-(written by fetch_photos.py) and writes index.html, tips/index.html, robots.txt, .nojekyll.
+(written by fetch_photos.py) and writes index.html, tips/index.html, models/index.html (from guide/), robots.txt, .nojekyll.
 """
 import datetime as dt
 import html
@@ -296,6 +296,27 @@ footer.bottom p{margin:.4rem 0}
 .box{background:var(--card);border-radius:var(--radius);padding:1rem 1.1rem;box-shadow:0 1px 2px rgba(60,40,10,.06),0 6px 18px rgba(60,40,10,.06);margin:1rem 0}
 .box.verdict{border-left:5px solid var(--accent)}
 .small{font-size:.85rem;color:var(--soft)}
+.intro{color:var(--soft);margin:1rem 0 .2rem;max-width:44rem}
+.chips+.chips{margin-top:.45rem}
+.chip.sm{font-size:.85rem;padding:.5rem .75rem}
+.vgroup h2{font:700 1.45rem/1.2 var(--display);margin:1.8rem 0 .2rem;display:flex;align-items:center;gap:.55rem}
+.vgroup h2 .dot{width:.75rem;height:.75rem;border-radius:50%%;flex:0 0 auto}
+.vgroup .lede{margin:0 0 .3rem;color:var(--soft);font-size:.92rem}
+.mlist{display:grid;grid-template-columns:1fr;gap:.8rem;list-style:none;padding:0;margin:.7rem 0 0}
+@media (min-width:760px){.mlist{grid-template-columns:1fr 1fr}}
+@media (min-width:1150px){.mlist{grid-template-columns:1fr 1fr 1fr}}
+.m{background:var(--card);border-radius:14px;padding:.85rem .95rem .9rem;box-shadow:0 1px 2px rgba(60,40,10,.06),0 4px 12px rgba(60,40,10,.05);border-left:5px solid var(--line)}
+.m[hidden],.vgroup[hidden]{display:none}
+.m.rec{border-left-color:var(--good)}.m.ok{border-left-color:#e0a100}.m.avoid{border-left-color:var(--bad)}
+.m h3{margin:0;font-size:1.08rem;line-height:1.25}
+.m .yrs{display:block;color:var(--soft);font-weight:600;font-size:.92rem;margin-top:.1rem}
+.m .tags{display:flex;flex-wrap:wrap;gap:.3rem;margin:.45rem 0 .1rem}
+.m p.why{margin:.45rem 0 .55rem;font-size:.95rem;line-height:1.45}
+.m dl.k{padding:0;margin:0;display:grid;grid-template-columns:auto 1fr;gap:0 .7rem;font-size:.86rem}
+.m dl.k dt,.m dl.k dd{border-top:1px solid var(--line);padding:.32rem 0;margin:0}
+.m dl.k dt{font-size:.72rem;padding-top:.42rem;white-space:nowrap}
+.m .note{font-size:.86rem;color:var(--soft);border-top:1px solid var(--line);padding-top:.4rem;margin:0}
+.dot.rec{background:var(--good)}.dot.ok{background:#e0a100}.dot.avoid{background:var(--bad)}
 """
 
 ICON_CAR = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">'
@@ -303,9 +324,15 @@ ICON_CAR = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-w
             '<path d="M3 13h18"/></svg>')
 
 
-def shell(title, base, current, updated, count, main, js=""):
+DEFAULT_SOURCES = ("<p>Sources: listings from Cars.com, Facebook Marketplace and dealer websites. Reliability and repair costs from RepairPal, "
+                   "Consumer Reports and J.D. Power. Crash ratings from IIHS and NHTSA; recalls from NHTSA. MPG from fueleconomy.gov. "
+                   "Insurance estimates from CarInsurance.com, Insure.com and MoneyGeek.</p>")
+
+
+def shell(title, base, current, updated, count, main, js="", sources=DEFAULT_SOURCES):
     tabs = (f'<a href="{base}" {"aria-current=page" if current == "cars" else ""}>Cars</a>'
-            f'<a href="{base}tips/" {"aria-current=page" if current == "tips" else ""}>Buying tips</a>')
+            f'<a href="{base}tips/" {"aria-current=page" if current == "tips" else ""}>Buying tips</a>'
+            f'<a href="{base}models/" {"aria-current=page" if current == "models" else ""}>Model guide</a>')
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -328,7 +355,7 @@ def shell(title, base, current, updated, count, main, js=""):
 {main}
 <footer class="bottom">
 <p><strong>Insurance figures are estimates, not quotes.</strong> They're built from published averages for an 18-year-old added to a parent's full-coverage policy. Get a real quote on the exact VIN before buying, and tell the insurer the car will be kept in Fayetteville.</p>
-<p>Sources: listings from Cars.com, Facebook Marketplace and dealer websites. Reliability and repair costs from RepairPal, Consumer Reports and J.D. Power. Crash ratings from IIHS and NHTSA; recalls from NHTSA. MPG from fueleconomy.gov. Insurance estimates from CarInsurance.com, Insure.com and MoneyGeek.</p>
+{sources}
 </footer>
 </div>
 {js}
@@ -556,6 +583,171 @@ def build_tips(xlsx, updated, count):
     return shell("Buying tips · Car Hunt", "../", "tips", updated, count, "\n".join(out))
 
 
+# ---------------- model guide ----------------
+
+BASE_74114 = 3419       # Sources sheet: CarInsurance.com OK add-teen cost x Insure.com 74114 factor
+MONEYGEEK_AVG = 5654    # Sources sheet: average of MoneyGeek's 96-model 18-yo full-coverage table
+VERDICTS = [("rec", "Recommended", "good", "Strong picks. Still check the specific car."),
+            ("ok", "OK with conditions", "warn", "Fine if the condition in the note is met."),
+            ("avoid", "Avoid", "bad", "Skip these, even when the price looks good.")]
+MAKE_GROUPS = [("toyota", "Toyota"), ("honda", "Honda"), ("mazda", "Mazda"), ("subaru", "Subaru"),
+               ("hyundai-kia", "Hyundai/Kia"), ("nissan", "Nissan"), ("ford", "Ford")]
+
+
+def yr_ranges(pairs):
+    """[(year, value)] -> 'value (2016–18), value2 (2019)' grouping consecutive years with the same value."""
+    out, cur = [], None
+    for y, v in sorted(pairs):
+        if cur and cur[2] == v and y == cur[1] + 1:
+            cur[1] = y
+        else:
+            cur = [y, y, v]
+            out.append(cur)
+    return out
+
+
+def span(a, b):
+    return str(a) if a == b else f"{a}–{str(b)[2:]}"
+
+
+def ins_estimate(rows):
+    """Annual 74114 estimate using the Sources-sheet method; None when we have no MoneyGeek figure."""
+    t = next((r["insurance_teen_est"] for r in rows if "/yr" in r["insurance_teen_est"]), rows[0]["insurance_teen_est"])
+    m = re.search(r"\$([\d,]+)/yr", t)
+    if m:
+        yr = int(m.group(1).replace(",", ""))
+    else:
+        m = re.search(r"\$([\d,]+) full", t)
+        if not m:
+            return None, ""
+        yr = round(BASE_74114 * int(m.group(1).replace(",", "")) / MONEYGEEK_AVG)
+    return yr, (" (Corolla figure)" if "proxy" in t else "")
+
+
+def guide_metrics(rows):
+    years = [int(r["year"]) for r in rows]
+    single = len(set(years)) == 1
+    def by_year(vals):
+        groups = yr_ranges([(y, v) for y, v in vals if v])
+        if len({g[2] for g in groups}) == 1 and len({y for y, v in vals if v}) == len(set(years)):
+            return groups[0][2] if groups else ""
+        return "; ".join(f"{g[2]} ({span(g[0], g[1])})" for g in groups)
+    # reliability
+    rel = []
+    rp = {re.search(r"(\d\.\d)/5", r["reliability_rating"]).group(1) for r in rows if re.search(r"(\d\.\d)/5", r["reliability_rating"])}
+    if rp:
+        rank = re.search(r"(\d+(?:st|nd|rd|th) of \d+ [a-zA-Z ]+?)(?:[;)]|$)", rows[0]["reliability_rating"])
+        rel.append(f"RepairPal {'/'.join(sorted(rp))}/5" + (f" ({rank.group(1).strip()})" if rank else ""))
+    else:
+        rel.append("RepairPal: no rating")
+    cr = [(int(r["year"]), m.group(1).strip()) for r in rows
+          if (m := re.search(r"Consumer Reports ([a-z ]+?)\s*(?:[;(]|$)", r["reliability_rating"])) and m.group(1).strip() != "n/a"]
+    if cr:
+        rel.append("Consumer Reports " + by_year(cr))
+    jd = next((m.group(1) for r in rows if (m := re.search(r"J\.D\. Power 2026 VDS: ([^.]+)", r["known_issues"]))), None)
+    if jd:
+        rel.append(f"J.D. Power: {jd}")
+    # safety
+    def award(t):
+        a = t.split(".")[0].strip()
+        return {"TOP SAFETY PICK+": "Top Safety Pick+", "TOP SAFETY PICK": "Top Safety Pick"}.get(a, a.split("(")[0].strip())
+    iihs = "IIHS " + by_year([(int(r["year"]), award(r["iihs"])) for r in rows])
+    poor = [int(r["year"]) for r in rows if re.search(r"updated (moderate overlap|side) P\b", r["iihs"])]
+    if poor:
+        iihs += f"; Poor in an updated test ({', '.join(span(g[0], g[1]) for g in yr_ranges([(y, 1) for y in poor]))})"
+    nh = by_year([(int(r["year"]), (r["nhtsa_overall"] + "★") if r["nhtsa_overall"].isdigit() else "not rated") for r in rows])
+    safety = f"{iihs}. NHTSA {nh}."
+    # repairs
+    costs = [int(m.group(1)) for r in rows if (m := re.match(r"\$(\d+)", r["repair_cost_annual"]))]
+    repair = (f"${min(costs)}–${max(costs)}/yr" if min(costs) != max(costs) else f"${costs[0]}/yr") if costs else "No RepairPal figure"
+    # insurance
+    yr, note = ins_estimate(rows)
+    ins = f"${round(yr / 12)}/mo · ${yr:,}/yr{note}" if yr else "No estimate"
+    # mpg
+    mp = [int(m.group(1)) for r in rows if (m := re.match(r"(\d+)", r["mpg_combined"]))]
+    mpg = (f"{min(mp)}–{max(mp)}" if min(mp) != max(mp) else str(mp[0])) + " combined" if mp else "n/a"
+    return [("Reliability", "; ".join(rel)), ("Safety", safety), ("Repairs", repair),
+            ("Insurance", ins), ("MPG", mpg)]
+
+
+def guide_card(e, ref):
+    v = {k: (label, cls) for k, label, cls, _ in VERDICTS}[e["verdict"]]
+    mk = e["make"]
+    grp = "hyundai-kia" if ("Hyundai" in mk or "Kia" in mk) else slugify(mk)
+    tags = [f'<span class="b {v[1]}">{v[0]}</span>']
+    if e.get("limited"):
+        tags.append('<span class="b muted">Limited data</span>')
+    rows = []
+    if e.get("ref"):
+        rows = [r for r in ref.get(f'{mk} {e["model"]}', []) if r["year"] in e["ref"]]
+        if not rows:
+            raise SystemExit(f"model guide: no reference rows for {mk} {e['model']} {e['ref']}")
+    if rows:
+        body = '<dl class="k">' + "".join(f"<dt>{esc(k)}</dt><dd>{esc(val)}</dd>" for k, val in guide_metrics(rows)) + "</dl>"
+    else:
+        body = ""
+    note = e.get("metrics_note", "")
+    if e.get("nometrics"):
+        note = (note + " " if note else "") + ("Not in our research files, so no ratings, repair or insurance figures are shown."
+                                               if e.get("limited") else "Ratings vary by model; see the matching entries above.")
+    if note:
+        body += f'<p class="note">{esc(note)}</p>'
+    return (f'<li class="m {e["verdict"]}" data-v="{e["verdict"]}" data-g="{grp}">'
+            f'<h3>{esc(mk)} {esc(e["model"])}<span class="yrs">{esc(e["years"])}</span></h3>'
+            f'<div class="tags">{"".join(tags)}</div><p class="why">{esc(e["why"])}</p>{body}</li>')
+
+
+GUIDE_JS = r"""<script>
+(function(){
+document.querySelectorAll('[data-js]').forEach(function(e){e.hidden=false});
+var st={v:'all',g:'all'},items=[].slice.call(document.querySelectorAll('.m')),shown=document.getElementById('shown');
+function apply(){var n=0;items.forEach(function(m){var ok=(st.v==='all'||m.dataset.v===st.v)&&(st.g==='all'||m.dataset.g===st.g);m.hidden=!ok;if(ok)n++;});
+ document.querySelectorAll('.vgroup').forEach(function(s){s.hidden=!s.querySelector('.m:not([hidden])')});
+ shown.textContent=n===items.length?('Showing all '+n+' entries'):('Showing '+n+' of '+items.length+' entries');
+ document.getElementById('empty').hidden=n>0;}
+document.querySelectorAll('.chip').forEach(function(ch){ch.addEventListener('click',function(){var k=ch.dataset.k;st[k]=ch.dataset.f;
+ document.querySelectorAll('.chip[data-k="'+k+'"]').forEach(function(x){x.setAttribute('aria-pressed',x===ch?'true':'false')});apply();});});
+apply();
+})();
+</script>"""
+
+
+def build_models(updated, count):
+    import csv
+    data = json.loads((ROOT / "guide" / "models.json").read_text(encoding="utf-8"))
+    ref = {}
+    with open(ROOT / "guide" / "model_reference.csv", newline="", encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            ref.setdefault(r["model_key"], []).append(r)
+    entries = data["entries"]
+    vchips = [("all", "All verdicts")] + [(k, label) for k, label, _, _ in VERDICTS]
+    gchips = [("all", "All makes")] + MAKE_GROUPS
+    chip = lambda k, f, label: (f'<button class="chip sm" type="button" data-k="{k}" data-f="{f}" '
+                                f'aria-pressed="{"true" if f == "all" else "false"}">{esc(label)}</button>')
+    out = [f'<p class="intro">{esc(data["intro"])}</p>',
+           '<div class="controls" data-js hidden>',
+           '<div class="chips" role="group" aria-label="Filter by verdict">' + "".join(chip("v", f, l) for f, l in vchips) + "</div>",
+           '<div class="chips" role="group" aria-label="Filter by make">' + "".join(chip("g", f, l) for f, l in gchips) + "</div>",
+           '<div class="row2"><span id="shown" aria-live="polite"></span></div></div>', "<main>"]
+    for k, label, cls, lede in VERDICTS:
+        group = [e for e in entries if e["verdict"] == k]
+        out.append(f'<section class="vgroup" id="{k}"><h2><span class="dot {k}"></span>{esc(label)} '
+                   f'<span class="small">({len(group)})</span></h2><p class="lede">{esc(lede)}</p><ul class="mlist">')
+        out += [guide_card(e, ref) for e in group]
+        out.append("</ul></section>")
+    out.append('<p class="empty" id="empty" hidden>Nothing matches this filter.</p></main>')
+    sources = ("<p>How to read it: year ranges are model years. Reliability, safety, repair and MPG figures cover the years listed. Where we checked only "
+               "one year of a design, the note says which. Insurance is one model-level estimate; older cars usually cost a little less.</p>"
+               "<p>Sources: reliability from RepairPal (model-level; its ratings cover 2010–2019 model years), Consumer Reports model-year verdicts and the "
+               "J.D. Power 2026 Vehicle Dependability Study. Repair costs from RepairPal. Crash ratings from IIHS (G = Good, A = Acceptable, "
+               "M = Marginal, P = Poor) and NHTSA 5-Star ratings; recalls from NHTSA and manufacturer notices. MPG is EPA combined, from fueleconomy.gov. "
+               "Insurance estimates: CarInsurance.com’s Oklahoma cost of adding an 18-year-old to a parent’s full-coverage policy, adjusted to Tulsa "
+               "with Insure.com and to each model with MoneyGeek’s 18-year-old rates. Models MoneyGeek doesn’t list show “No estimate”. "
+               "Hyundai/Kia theft, engine and transmission notes come from Hyundai, Kia, NHTSA, IIHS/HLDI and AP reporting. Ford PowerShift years come from "
+               "the Vargas v. Ford settlement and the later Barnes v. Ford suit.</p>")
+    return shell("Model guide · Car Hunt", "../", "models", updated, count, "\n".join(out), GUIDE_JS, sources)
+
+
 def main():
     if len(sys.argv) != 2:
         sys.exit("usage: build.py <xlsx>")
@@ -567,6 +759,8 @@ def main():
     (ROOT / "index.html").write_text(build_index(cars, manifest, updated), encoding="utf-8")
     (ROOT / "tips").mkdir(exist_ok=True)
     (ROOT / "tips" / "index.html").write_text(build_tips(xlsx, updated, len(cars)), encoding="utf-8")
+    (ROOT / "models").mkdir(exist_ok=True)
+    (ROOT / "models" / "index.html").write_text(build_models(updated, len(cars)), encoding="utf-8")
     (ROOT / "robots.txt").write_text("User-agent: *\nDisallow: /\n")
     (ROOT / ".nojekyll").write_text("")
     with_photos = sum(1 for c in cars if manifest.get(c["key"], {}).get("photos"))

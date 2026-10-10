@@ -93,6 +93,27 @@ footer.bottom p{margin:.4rem 0}
 .box{background:var(--card);border-radius:var(--radius);padding:1rem 1.1rem;box-shadow:0 1px 2px rgba(60,40,10,.06),0 6px 18px rgba(60,40,10,.06);margin:1rem 0}
 .box.verdict{border-left:5px solid var(--accent)}
 .small{font-size:.85rem;color:var(--soft)}
+.intro{color:var(--soft);margin:1rem 0 .2rem;max-width:44rem}
+.chips+.chips{margin-top:.45rem}
+.chip.sm{font-size:.85rem;padding:.5rem .75rem}
+.vgroup h2{font:700 1.45rem/1.2 var(--display);margin:1.8rem 0 .2rem;display:flex;align-items:center;gap:.55rem}
+.vgroup h2 .dot{width:.75rem;height:.75rem;border-radius:50%;flex:0 0 auto}
+.vgroup .lede{margin:0 0 .3rem;color:var(--soft);font-size:.92rem}
+.mlist{display:grid;grid-template-columns:1fr;gap:.8rem;list-style:none;padding:0;margin:.7rem 0 0}
+@media (min-width:760px){.mlist{grid-template-columns:1fr 1fr}}
+@media (min-width:1150px){.mlist{grid-template-columns:1fr 1fr 1fr}}
+.m{background:var(--card);border-radius:14px;padding:.85rem .95rem .9rem;box-shadow:0 1px 2px rgba(60,40,10,.06),0 4px 12px rgba(60,40,10,.05);border-left:5px solid var(--line)}
+.m[hidden],.vgroup[hidden]{display:none}
+.m.rec{border-left-color:var(--good)}.m.ok{border-left-color:#e0a100}.m.avoid{border-left-color:var(--bad)}
+.m h3{margin:0;font-size:1.08rem;line-height:1.25}
+.m .yrs{display:block;color:var(--soft);font-weight:600;font-size:.92rem;margin-top:.1rem}
+.m .tags{display:flex;flex-wrap:wrap;gap:.3rem;margin:.45rem 0 .1rem}
+.m p.why{margin:.45rem 0 .55rem;font-size:.95rem;line-height:1.45}
+.m dl.k{padding:0;margin:0;display:grid;grid-template-columns:auto 1fr;gap:0 .7rem;font-size:.86rem}
+.m dl.k dt,.m dl.k dd{border-top:1px solid var(--line);padding:.32rem 0;margin:0}
+.m dl.k dt{font-size:.72rem;padding-top:.42rem;white-space:nowrap}
+.m .note{font-size:.86rem;color:var(--soft);border-top:1px solid var(--line);padding-top:.4rem;margin:0}
+.dot.rec{background:var(--good)}.dot.ok{background:#e0a100}.dot.avoid{background:var(--bad)}
 </style>
 </head>
 <body>
@@ -100,8 +121,8 @@ footer.bottom p{margin:.4rem 0}
 <header class="top">
 <h1><a href="../">Car Hunt</a></h1>
 <p class="sub">A reliable first car for college · Tulsa area</p>
-<p class="meta">Updated Sat, Oct 10, 2026, 8:56 AM CT · 54 cars</p>
-<nav class="tabs" aria-label="Pages"><a href="../" >Cars</a><a href="../tips/" aria-current=page>Buying tips</a></nav>
+<p class="meta">Updated Fri, Oct 9, 2026, 5:37 PM CT · 45 cars</p>
+<nav class="tabs" aria-label="Pages"><a href="../" >Cars</a><a href="../tips/" aria-current=page>Buying tips</a><a href="../models/" >Model guide</a></nav>
 </header>
 <main class="tips">
 <h2>Before you buy any car</h2>

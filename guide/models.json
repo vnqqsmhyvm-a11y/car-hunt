@@ -1,0 +1,363 @@
+{
+ "intro": "Every model and year range that fits the search: 2016 or newer, automatic, about $10k–$19k used, under 100k miles. Ranges are split where the verdict changes, and the figures cover the years shown.",
+ "entries": [
+  {
+   "make": "Toyota",
+   "model": "Corolla",
+   "years": "2017–2019",
+   "ref": [
+    "2017"
+   ],
+   "verdict": "rec",
+   "why": "The benchmark for a first car: top reliability, cheap repairs and a Top Safety Pick+ with automatic emergency braking standard from 2017. Figures are from the 2017 model; 2018–19 are the same design."
+  },
+  {
+   "make": "Toyota",
+   "model": "Corolla",
+   "years": "2020–2023",
+   "ref": [
+    "2020",
+    "2021",
+    "2022",
+    "2023"
+   ],
+   "verdict": "rec",
+   "why": "Newer design, still class-leading reliability and 5-star NHTSA. On 2020–21 cars, ask whether Toyota's coolant-valve warranty program (24TE04) has been done."
+  },
+  {
+   "make": "Toyota",
+   "model": "Corolla Hatchback",
+   "years": "2020",
+   "ref": [
+    "2020"
+   ],
+   "verdict": "rec",
+   "why": "Same running gear and reliability as the Corolla sedan, with a hatch for dorm moves. Insurance uses the Corolla figure as a stand-in."
+  },
+  {
+   "make": "Toyota",
+   "model": "Camry",
+   "years": "2017",
+   "ref": [
+    "2017"
+   ],
+   "verdict": "rec",
+   "why": "Bigger midsize sedan with a Top Safety Pick+ and a proven 4-cylinder. Insures about like a Corolla. Choose the 4-cylinder; the V6 uses more fuel."
+  },
+  {
+   "make": "Honda",
+   "model": "Civic",
+   "years": "2019–2021",
+   "ref": [
+    "2020"
+   ],
+   "verdict": "rec",
+   "why": "Reliable, efficient and a Top Safety Pick with standard emergency braking. The 1.5 turbo oil-dilution problem was fixed by these years. Figures are from the 2020 model."
+  },
+  {
+   "make": "Honda",
+   "model": "Civic",
+   "years": "2022–2024",
+   "ref": [
+    "2023",
+    "2024"
+   ],
+   "verdict": "rec",
+   "why": "Current generation, rated Acceptable in IIHS's newer, tougher front and side tests. At this budget expect higher miles; check that the steering recalls have been done."
+  },
+  {
+   "make": "Honda",
+   "model": "Accord",
+   "years": "2019–2020",
+   "ref": [
+    "2019",
+    "2020"
+   ],
+   "verdict": "rec",
+   "why": "RepairPal's top-rated midsize car, Top Safety Pick and 5-star NHTSA. Larger and a bit pricier, so most in budget will have higher miles."
+  },
+  {
+   "make": "Mazda",
+   "model": "Mazda3",
+   "years": "2016–2018",
+   "ref": [
+    "2016",
+    "2017",
+    "2018"
+   ],
+   "verdict": "rec",
+   "why": "Uses a traditional 6-speed automatic (no CVT) and a timing chain. Top Safety Pick or Pick+, 5-star NHTSA, and Consumer Reports rates 2017–18 more reliable."
+  },
+  {
+   "make": "Mazda",
+   "model": "Mazda3",
+   "years": "2022–2023",
+   "ref": [
+    "2022",
+    "2023"
+   ],
+   "verdict": "rec",
+   "why": "Consumer Reports rates 2022 much more reliable (2019–21 were less reliable), and it does well in crash tests. Same 6-speed automatic."
+  },
+  {
+   "make": "Hyundai",
+   "model": "Elantra",
+   "years": "2023–2024",
+   "ref": [
+    "2023",
+    "2024"
+   ],
+   "verdict": "rec",
+   "why": "The best Hyundai/Kia choice: Top Safety Pick, 5-star NHTSA, an immobilizer as standard and no engine recall. It is the priciest of the group to insure. Stick to the SE/SEL 2.0, not the N Line turbo."
+  },
+  {
+   "make": "Toyota",
+   "model": "Corolla",
+   "years": "2016",
+   "ref": [
+    "2016"
+   ],
+   "verdict": "ok",
+   "why": "Just as reliable as later Corollas, but it scored only Marginal in the driver-side small-overlap crash test and has no automatic emergency braking. Fine if the price is right; a 2017+ is safer."
+  },
+  {
+   "make": "Honda",
+   "model": "Civic",
+   "years": "2016–2018",
+   "ref": [
+    "2017"
+   ],
+   "verdict": "ok",
+   "why": "The 1.5 turbo (EX-T, EX-L, Touring) could get fuel in the oil; Honda extended the warranty to 6 years. The 2.0 non-turbo avoids it. Base headlights rated Poor. Figures are from the 2017 model."
+  },
+  {
+   "make": "Mazda",
+   "model": "Mazda3",
+   "years": "2019–2021",
+   "ref": [
+    "2019",
+    "2020",
+    "2021"
+   ],
+   "verdict": "ok",
+   "why": "Excellent crash scores, but Consumer Reports rates these early years of the new design less reliable. 2019–20 had a recall for sudden false automatic braking, so confirm it's fixed."
+  },
+  {
+   "make": "Mazda",
+   "model": "CX-3",
+   "years": "2016–2021",
+   "ref": [
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021"
+   ],
+   "verdict": "ok",
+   "why": "Reliable little SUV with a real 6-speed automatic and strong crash ratings. The back seat and cargo space are small, much like the Fit. No insurance estimate."
+  },
+  {
+   "make": "Mazda",
+   "model": "CX-30",
+   "years": "2020–2023",
+   "ref": [
+    "2020",
+    "2021",
+    "2022",
+    "2023"
+   ],
+   "verdict": "ok",
+   "why": "Top Safety Pick(+) every year and a conventional automatic, but Consumer Reports rates 2022 less reliable, and we have no RepairPal or insurance figures yet."
+  },
+  {
+   "make": "Subaru",
+   "model": "Crosstrek",
+   "years": "2018–2023",
+   "ref": [
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023"
+   ],
+   "verdict": "ok",
+   "why": "Standard all-wheel drive, RepairPal's top compact SUV and J.D. Power's top small SUV. But it scored Poor in IIHS's updated side test (and, on 2022–23, the updated rear-passenger front test), so it's OK rather than a top pick. No insurance estimate, so get a quote."
+  },
+  {
+   "make": "Subaru",
+   "model": "Impreza",
+   "years": "2017–2023",
+   "ref": [
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023"
+   ],
+   "verdict": "ok",
+   "why": "Standard all-wheel drive and good crash scores, but RepairPal ranks it 33rd of 36 compacts with the highest repair costs here. 2017–19 had PCV-valve and ignition recalls. 2019–20 have the 10-year/100k CVT warranty extension."
+  },
+  {
+   "make": "Toyota",
+   "model": "Corolla iM",
+   "years": "2017",
+   "ref": [
+    "2017"
+   ],
+   "verdict": "ok",
+   "limited": true,
+   "why": "A Toyota-built hatch with a Corolla drivetrain, but NHTSA never rated it, IIHS tested it only partly, and RepairPal has no reliability score. Insurance uses the Corolla figure as a stand-in."
+  },
+  {
+   "make": "Toyota",
+   "model": "C-HR",
+   "years": "2020",
+   "ref": [
+    "2020"
+   ],
+   "verdict": "ok",
+   "limited": true,
+   "why": "Good crash tests and 5-star NHTSA, but we have no reliability rating, repair cost or insurance estimate for it."
+  },
+  {
+   "make": "Hyundai",
+   "model": "Elantra",
+   "years": "2021–2022",
+   "ref": [
+    "2021",
+    "2022"
+   ],
+   "verdict": "ok",
+   "why": "Reliable per Consumer Reports and a Top Safety Pick, but some key-start cars built before Nov 2021 lack an immobilizer (the “Kia Boys” theft problem). Buy one with push-button start, or have a dealer confirm the anti-theft software by VIN."
+  },
+  {
+   "make": "Kia",
+   "model": "Forte",
+   "years": "2022–2024",
+   "ref": [
+    "2022",
+    "2023",
+    "2024"
+   ],
+   "verdict": "ok",
+   "why": "Matches Corolla and Civic on reliability (J.D. Power's #3 compact; Consumer Reports more or much more reliable), but crash ratings are weaker: NHTSA 4 stars and Poor in IIHS's updated tests. Avoid the GT turbo."
+  },
+  {
+   "make": "Kia",
+   "model": "Soul",
+   "years": "2023–2024",
+   "ref": [
+    "2023",
+    "2024"
+   ],
+   "verdict": "ok",
+   "why": "Roomy and reliable per Consumer Reports, but NHTSA 4 stars and only limited IIHS tests. On a 2023, engine recall 25V099000 (piston rings) must be done."
+  },
+  {
+   "make": "Hyundai",
+   "model": "Venue",
+   "years": "2022–2025",
+   "ref": [
+    "2022",
+    "2023",
+    "2025"
+   ],
+   "verdict": "ok",
+   "why": "Good reliability (tied 3rd small SUV in J.D. Power) and an immobilizer as standard, but NHTSA 4 stars and only 121 hp for highway trips to Fayetteville. No insurance estimate; 2024 not in our data."
+  },
+  {
+   "make": "Hyundai",
+   "model": "Kona",
+   "years": "2022–2023",
+   "ref": [
+    "2022",
+    "2023"
+   ],
+   "verdict": "ok",
+   "why": "Reliable per Consumer Reports and 5-star NHTSA, but no IIHS award. Choose the 2.0 (not the 1.6 turbo with dual-clutch), and on a 2022 key-start car confirm the anti-theft software."
+  },
+  {
+   "make": "Kia",
+   "model": "Seltos",
+   "years": "2021–2023",
+   "ref": [
+    "2021",
+    "2022",
+    "2023"
+   ],
+   "verdict": "avoid",
+   "why": "Engine recalls for piston rings that can scuff the cylinders, leading to oil burning, knocking or seizure (25V099000; 21V259000 on 2021). Consumer Reports rates 2021 less reliable, and some 2021–22 cars lack an immobilizer."
+  },
+  {
+   "make": "Hyundai",
+   "model": "Kona",
+   "years": "2024",
+   "ref": [
+    "2024"
+   ],
+   "verdict": "avoid",
+   "why": "First year of a redesign, and Consumer Reports rates it less reliable. NHTSA 4 stars despite a strong IIHS score. Let someone else find the bugs."
+  },
+  {
+   "make": "Hyundai/Kia",
+   "model": "1.6-turbo dual-clutch trims",
+   "years": "Any year",
+   "verdict": "avoid",
+   "nometrics": true,
+   "metrics_note": "Applies to Elantra N Line, Kona 1.6T (through 2023), Forte GT and Seltos 1.6T.",
+   "why": "The 7-speed dual-clutch has needed service campaigns for shift shock and a snap-ring fix (Hyundai T7E) and shift-logic updates (Kia SA454). The 2.0 with the IVT is the simpler, safer choice for a new driver."
+  },
+  {
+   "make": "Hyundai/Kia",
+   "model": "key-start cars without an immobilizer",
+   "years": "2016–2021",
+   "verdict": "avoid",
+   "nometrics": true,
+   "metrics_note": "Roughly 8.3 million 2011–2022 key-start Hyundai/Kia cars were affected (AP).",
+   "why": "Thieves can start them with a USB cable, and some insurers limited new policies on these cars in 2023. Skip any key-start Hyundai/Kia unless a dealer record shows the anti-theft software is done; push-button start is not affected."
+  },
+  {
+   "make": "Honda",
+   "model": "HR-V",
+   "years": "2016–2022",
+   "ref": [
+    "2019",
+    "2022"
+   ],
+   "verdict": "avoid",
+   "why": "Very reliable and cheap to insure, but it scored Poor in IIHS's updated side test, and the 2022 also scored Poor in the updated front test and lost its award. For a new driver, crash protection comes first."
+  },
+  {
+   "make": "Honda",
+   "model": "Fit",
+   "years": "2016–2020",
+   "verdict": "avoid",
+   "limited": true,
+   "nometrics": true,
+   "why": "Max ruled it out, and it's a small car for highway trips between Tulsa and Fayetteville. We didn't research it further."
+  },
+  {
+   "make": "Nissan",
+   "model": "Sentra, Versa, Altima",
+   "years": "2016–2020",
+   "verdict": "avoid",
+   "limited": true,
+   "nometrics": true,
+   "why": "These years use Nissan's CVT automatic, which has a weak reliability record. We have no detailed data on them; plenty of Toyota, Honda and Mazda cars cost the same."
+  },
+  {
+   "make": "Ford",
+   "model": "Focus, Fiesta",
+   "years": "2016–2019",
+   "verdict": "avoid",
+   "limited": true,
+   "nometrics": true,
+   "metrics_note": "Automatics are the dual-clutch PowerShift (DPS6): 2016–2018 Focus, 2016–2019 Fiesta.",
+   "why": "The PowerShift automatic can shudder, slip or lurch. A class-action settlement covered 2012–16 Focus and 2011–16 Fiesta, and a later suit covers 2017–18 Focus and 2017–19 Fiesta. Not worth the risk."
+  }
+ ]
+}
