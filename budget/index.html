@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#faf6f0">
+<title>Budget list · Car Hunt</title>
+<style>
+@font-face{font-family:"Playfair Display";font-weight:700;font-display:swap;src:url(../assets/fonts/playfair-display-latin-700-normal.woff2) format("woff2")}
+:root{color-scheme:light;--bg:#faf6f0;--card:#fff;--ink:#22201c;--soft:#5d574e;--muted:#8a8378;--line:#ebe4d8;
+--accent:#c2562b;--accent-ink:#fff;--good:#1f7a4d;--good-bg:#e5f4ec;--warn:#8a5a00;--warn-bg:#fff1cc;--bad:#b42318;--bad-bg:#fde8e6;
+--info:#1d4f91;--info-bg:#e8f0fb;--muted-bg:#f1ede6;--radius:18px;
+--sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+--display:"Playfair Display",Georgia,serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:76rem;margin:0 auto;padding:0 max(1rem,env(safe-area-inset-left)) 2rem max(1rem,env(safe-area-inset-right))}
+header.top{padding:1.4rem 0 .6rem}
+header.top h1{font:700 2.4rem/1.05 var(--display);margin:0;letter-spacing:-.01em}
+header.top h1 a{color:var(--ink);text-decoration:none}
+.sub{margin:.35rem 0 .2rem;color:var(--soft);font-size:1.05rem}
+.meta{color:var(--muted);font-size:.88rem;margin:0}
+.tabs{display:flex;gap:.5rem;margin:.9rem 0 0}
+.tabs a{font-weight:600;font-size:.95rem;text-decoration:none;color:var(--ink);padding:.5rem .9rem;border-radius:999px;background:var(--muted-bg)}
+.tabs a[aria-current]{background:var(--ink);color:#fff}
+.controls{background:rgba(250,246,240,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+ margin:0 calc(-1*max(1rem,env(safe-area-inset-left)));padding:.6rem max(1rem,env(safe-area-inset-left));border-bottom:1px solid var(--line)}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;font:600 .95rem/1 var(--sans);padding:.62rem .95rem;border-radius:999px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.row2{display:flex;justify-content:space-between;align-items:center;gap:.6rem;margin-top:.5rem;font-size:.92rem;color:var(--soft)}
+.row2 label{display:flex;align-items:center;gap:.4rem;white-space:nowrap}
+#shown{white-space:nowrap}
+.row2 select{font:600 .95rem var(--sans);padding:.45rem .6rem;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink)}
+.grid{display:grid;grid-template-columns:1fr;gap:1.1rem;margin-top:1rem;list-style:none;padding:0}
+@media (min-width:700px){.grid{grid-template-columns:1fr 1fr}.controls{position:sticky;top:0;z-index:5}}
+@media (min-width:1100px){.grid{grid-template-columns:1fr 1fr 1fr}}
+.card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 2px rgba(60,40,10,.06),0 6px 18px rgba(60,40,10,.06);display:flex;flex-direction:column}
+.card[hidden]{display:none}
+.photo{position:relative;background:#eee7dc}
+.gallery{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;aspect-ratio:4/3}
+.gallery::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;position:relative;overflow:hidden;scroll-snap-align:start}
+.slide img{display:block;width:100%;height:100%;object-fit:cover}
+.slide.tall img.fg{position:relative;object-fit:contain}
+.slide img.bg{position:absolute;inset:0;filter:blur(22px) saturate(1.05);opacity:.75;transform:scale(1.2)}
+.count{position:absolute;right:.6rem;bottom:.6rem;background:rgba(0,0,0,.62);color:#fff;font-size:.78rem;font-weight:600;padding:.25rem .55rem;border-radius:999px}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:2.3rem;height:2.3rem;border-radius:50%;border:0;background:rgba(255,255,255,.9);color:#222;font-size:1.25rem;line-height:1;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.nav.prev{left:.5rem}.nav.next{right:.5rem}
+.noimg{aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;color:var(--muted);background:repeating-linear-gradient(45deg,#f1ebe1,#f1ebe1 12px,#ece5d9 12px,#ece5d9 24px);font-weight:600}
+.noimg svg{width:3.2rem;height:3.2rem;opacity:.55}
+.ribbon{position:absolute;left:0;right:0;top:0;padding:.5rem .8rem;font-weight:700;font-size:.9rem;color:#fff;background:rgba(40,36,30,.86);text-align:center;letter-spacing:.02em}
+.card.removed .gallery,.card.removed .noimg{filter:grayscale(1);opacity:.6}
+.flag{padding:.6rem .9rem;font-size:.9rem;line-height:1.35}
+.flag b{text-transform:uppercase;letter-spacing:.05em;margin-right:.35rem}
+.flag.avoid{background:var(--bad);color:#fff}
+.flag.caution{background:#f5b301;color:#2a1d00}
+.body{padding:.9rem 1rem 1rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
+.card h2{font-size:1.18rem;line-height:1.25;margin:0;font-weight:700}
+.price{font-size:1.75rem;font-weight:800;letter-spacing:-.01em;line-height:1}
+.facts{color:var(--soft);font-size:.95rem;margin:0}
+.facts span+span::before{content:"·";margin:0 .4rem;color:var(--muted)}
+.badges{display:flex;flex-wrap:wrap;gap:.35rem;margin:.1rem 0 0;padding:0;list-style:none}
+.b{font-size:.8rem;font-weight:650;padding:.3rem .55rem;border-radius:8px;white-space:nowrap}
+.b.good{background:var(--good-bg);color:var(--good)}.b.warn{background:var(--warn-bg);color:var(--warn)}
+.b.bad{background:var(--bad-bg);color:var(--bad)}.b.info{background:var(--info-bg);color:var(--info)}
+.b.muted{background:var(--muted-bg);color:var(--soft)}
+.actions{margin-top:auto;padding-top:.3rem;display:flex;flex-direction:column;gap:.55rem}
+.btn{display:block;text-align:center;background:var(--accent);color:#fff;font-weight:700;font-size:1.05rem;padding:.85rem 1rem;border-radius:12px;text-decoration:none}
+.btn.off{background:var(--muted-bg);color:var(--soft)}
+details{border:1.5px solid var(--line);border-radius:12px}
+summary{cursor:pointer;font-weight:650;padding:.75rem .9rem;list-style:none;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.3rem;line-height:1;color:var(--accent)}
+details[open] summary::after{content:"–"}
+dl{margin:0;padding:0 .9rem .8rem;font-size:.92rem}
+dl div{padding:.5rem 0;border-top:1px solid var(--line)}
+dt{font-weight:650;color:var(--soft);font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
+dd{margin:.15rem 0 0}
+.empty{padding:2rem;text-align:center;color:var(--soft)}
+footer.bottom{margin-top:2.2rem;padding-top:1.2rem;border-top:1px solid var(--line);color:var(--soft);font-size:.88rem}
+footer.bottom p{margin:.4rem 0}
+.tips{max-width:44rem}
+.tips h2{font:700 1.5rem/1.2 var(--display);margin:2rem 0 .6rem}
+.tips h3{font-size:1.05rem;margin:1.2rem 0 .3rem}
+.tips p,.tips li{color:var(--ink)}
+.tips ol{padding-left:1.3rem}.tips li{margin:.45rem 0}
+.box{background:var(--card);border-radius:var(--radius);padding:1rem 1.1rem;box-shadow:0 1px 2px rgba(60,40,10,.06),0 6px 18px rgba(60,40,10,.06);margin:1rem 0}
+.box.verdict{border-left:5px solid var(--accent)}
+.small{font-size:.85rem;color:var(--soft)}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin:1rem 0 .2rem}
+.seg a{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:.7rem .5rem;border-radius:14px;border:2px solid var(--accent);color:var(--accent);background:var(--card);text-decoration:none;line-height:1.2}
+.seg a b{font-size:1.15rem}
+.seg a span{font-size:.82rem;font-weight:600;opacity:.85;margin-top:.15rem}
+.seg a[aria-current]{background:var(--accent);color:#fff}
+.criteria{margin:.6rem 0 .5rem;font-size:.88rem;color:var(--soft);line-height:1.4}
+.b.drive{background:#efe7fb;color:#5b2a9e}
+.added{margin:0 0 -.25rem;font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:.45rem}
+.newb{background:#ff3b30;color:#fff;font-weight:800;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:.22rem .5rem;border-radius:6px}
+.newb[hidden]{display:none}
+.chip.new{border-color:#ff3b30;color:#d62a20}
+.chip.new[aria-pressed=true]{background:#ff3b30;border-color:#ff3b30;color:#fff}
+.intro{color:var(--soft);margin:1rem 0 .2rem;max-width:44rem}
+.chips+.chips{margin-top:.45rem}
+.chip.sm{font-size:.85rem;padding:.5rem .75rem}
+.vgroup h2{font:700 1.45rem/1.2 var(--display);margin:1.8rem 0 .2rem;display:flex;align-items:center;gap:.55rem}
+.vgroup h2 .dot{width:.75rem;height:.75rem;border-radius:50%;flex:0 0 auto}
+.vgroup .lede{margin:0 0 .3rem;color:var(--soft);font-size:.92rem}
+.mlist{display:grid;grid-template-columns:1fr;gap:.8rem;list-style:none;padding:0;margin:.7rem 0 0}
+@media (min-width:760px){.mlist{grid-template-columns:1fr 1fr}}
+@media (min-width:1150px){.mlist{grid-template-columns:1fr 1fr 1fr}}
+.m{background:var(--card);border-radius:14px;padding:.85rem .95rem .9rem;box-shadow:0 1px 2px rgba(60,40,10,.06),0 4px 12px rgba(60,40,10,.05);border-left:5px solid var(--line)}
+.m[hidden],.vgroup[hidden]{display:none}
+.m.rec{border-left-color:var(--good)}.m.ok{border-left-color:#e0a100}.m.avoid{border-left-color:var(--bad)}
+.m h3{margin:0;font-size:1.08rem;line-height:1.25}
+.m .yrs{display:block;color:var(--soft);font-weight:600;font-size:.92rem;margin-top:.1rem}
+.m .tags{display:flex;flex-wrap:wrap;gap:.3rem;margin:.45rem 0 .1rem}
+.m p.why{margin:.45rem 0 .55rem;font-size:.95rem;line-height:1.45}
+.m dl.k{padding:0;margin:0;display:grid;grid-template-columns:auto 1fr;gap:0 .7rem;font-size:.86rem}
+.m dl.k dt,.m dl.k dd{border-top:1px solid var(--line);padding:.32rem 0;margin:0}
+.m dl.k dt{font-size:.72rem;padding-top:.42rem;white-space:nowrap}
+.m .note{font-size:.86rem;color:var(--soft);border-top:1px solid var(--line);padding-top:.4rem;margin:0}
+.dot.rec{background:var(--good)}.dot.ok{background:#e0a100}.dot.avoid{background:var(--bad)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<h1><a href="../">Car Hunt</a></h1>
+<p class="sub">A reliable first car for college · Tulsa area</p>
+<p class="meta">Updated Sat, Oct 10, 2026, 12:08 PM CT · 24 cars</p>
+<nav class="tabs" aria-label="Pages"><a href="../" aria-current=page>Cars</a><a href="../tips/" >Buying tips</a><a href="../models/" >Model guide</a></nav>
+</header>
+<nav class="seg" aria-label="Car lists"><a href="../"><b>Main</b><span>$15–19k · 46 cars</span></a><a href="../budget/" aria-current=page><b>Budget</b><span>$10–15k · 24 cars</span></a></nav>
+<p class="criteria"><b>Budget list:</b> $10,000–$15,000 · up to 125k miles (over 100k: Toyota, Honda, Mazda only) · within 2 hours of Tulsa · 2016+ automatic · clean title</p>
+<div class="controls" data-js hidden>
+<div class="chips" role="group" aria-label="Filter cars"><button class="chip new" type="button" data-f="new" id="newchip" aria-pressed="false">New today (16)</button><button class="chip" type="button" data-f="all" aria-pressed="true">All</button><button class="chip" type="button" data-f="toyota" aria-pressed="false">Toyota</button><button class="chip" type="button" data-f="honda" aria-pressed="false">Honda</button><button class="chip" type="button" data-f="mazda" aria-pressed="false">Mazda</button><button class="chip" type="button" data-f="subaru" aria-pressed="false">Subaru</button><button class="chip" type="button" data-f="hyundai-kia" aria-pressed="false">Hyundai/Kia</button><button class="chip" type="button" data-f="under:12500" aria-pressed="false">Under $12.5k</button></div>
+<div class="row2"><span id="shown" aria-live="polite"></span>
+<label>Sort <select id="sort"><option value="price">Price: low to high</option><option value="miles">Miles: low to high</option><option value="newest">Newest first</option><option value="added">Newest added</option></select></label></div>
+</div>
+<main>
+<ul class="grid" id="cars">
+<li class="card" id="2016-mazda-mazda3-11085" data-group="mazda" data-price="11085" data-miles="107459" data-year="2016" data-removed="0" data-added="2026-10-10">
+<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/2016-mazda-mazda3-11085-1.jpg" width="640" height="480" loading="eager" decoding="async" alt="2016 Mazda Mazda3, photo 1 of 3"></div><div class="slide"><img class="fg" src="../photos/2016-mazda-mazda3-11085-2.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2016 Mazda Mazda3, photo 2 of 3"></div><div class="slide"><img class="fg" src="../photos/2016-mazda-mazda3-11085-3.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2016 Mazda Mazda3, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
+
+<div class="body">
+<p class="added"><span class="newb">New</span>Added Oct 10</p>
+<h2>2016 Mazda Mazda3 i Sport</h2>
+<div class="price">$11,085</div>
+<p class="facts"><span>107,459 miles</span><span>Oklahoma City, OK</span><span>Drive Max of OKC (Dealer)</span></p>
+<ul class="badges"><li class="b drive">1 hr 40 min from Tulsa</li><li class="b good">Clean title</li><li class="b bad">Accident reported</li><li class="b info">Reliability 4.0/5</li><li class="b info">Insurance ~$251/mo</li><li class="b muted">33 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick+</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>i Sport</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>107,459</dd></div><div><dt>Asking price</dt><dd>$11,085</dd></div><div><dt>Location</dt><dd>Oklahoma City, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>1 hr 40 min</dd></div><div><dt>Seller</dt><dd>Drive Max of OKC (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>Multiple</dd></div><div><dt>Accidents</dt><dd>Reported</dd></div><div><dt>Service records</dt><dd>None shown (AutoCheck summary only)</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 15V621000, 16V684000, 16V685000 fuel tank/fuel system; 17V393000 parking brake; 19V272000 wipers; 23V487000 rear camera. Powertrain: Skyactiv-G 2.0/2.5, conventional 6-speed automatic (no CVT), timing CHAIN, no scheduled replacement.</dd></div><div><dt>Notes</dt><dd>Accident reported (AutoCheck); Seller&#x27;s notes claim a clean Carfax; AutoCheck shows an accident - get both reports; Lot advertises subprime financing - independent inspection essential; Includes doc fee (vehicle price $10,790); Great Deal; Run VIN for open recalls</dd></div><div><dt>Est. insurance</dt><dd>About $251/month (about $3,012/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$374/year</dd></div><div><dt>Reliability</dt><dd>4.0/5 RepairPal (9th of 36 compact); Consumer Reports about average</dd></div><div><dt>Gas mileage (MPG)</dt><dd>33 (2.0L auto); 31-32 (2.5L)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK+. Crash tests G; optional prevention Advanced</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
+<a class="btn" href="https://www.cars.com/vehicledetail/32ab282f-7df6-4e22-a410-0aa3cd59b547/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2017-mazda-mazda3-11685" data-group="mazda" data-price="11685" data-miles="117205" data-year="2017" data-removed="0" data-added="2026-10-10">
+<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/2017-mazda-mazda3-11685-1.jpg" width="640" height="480" loading="eager" decoding="async" alt="2017 Mazda Mazda3, photo 1 of 3"></div><div class="slide"><img class="fg" src="../photos/2017-mazda-mazda3-11685-2.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2017 Mazda Mazda3, photo 2 of 3"></div><div class="slide"><img class="fg" src="../photos/2017-mazda-mazda3-11685-3.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2017 Mazda Mazda3, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
+
+<div class="body">
+<p class="added"><span class="newb">New</span>Added Oct 10</p>
+<h2>2017 Mazda Mazda3 Sport</h2>
+<div class="price">$11,685</div>
+<p class="facts"><span>117,205 miles</span><span>Oklahoma City, OK</span><span>Drive Max of OKC (Dealer)</span></p>
+<ul class="badges"><li class="b drive">1 hr 40 min from Tulsa</li><li class="b good">Clean title</li><li class="b bad">Accident reported</li><li class="b info">Reliability 4.0/5</li><li class="b info">Insurance ~$251/mo</li><li class="b muted">32 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick+</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>Sport</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>117,205</dd></div><div><dt>Asking price</dt><dd>$11,685</dd></div><div><dt>Location</dt><dd>Oklahoma City, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>1 hr 40 min</dd></div><div><dt>Seller</dt><dd>Drive Max of OKC (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>Multiple</dd></div><div><dt>Accidents</dt><dd>Reported</dd></div><div><dt>Service records</dt><dd>None shown (AutoCheck summary only)</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 19V272000 wipers; 23V487000 rear camera. Powertrain: Skyactiv-G 2.0/2.5, conventional 6-speed automatic (no CVT), timing CHAIN, no scheduled replacement.</dd></div><div><dt>Notes</dt><dd>Accident reported (AutoCheck); Seller&#x27;s notes claim a clean Carfax; AutoCheck shows an accident - get both reports; Lot advertises subprime financing - independent inspection essential; Includes doc fee (vehicle price $11,390); Good Deal; Run VIN for open recalls</dd></div><div><dt>Est. insurance</dt><dd>About $251/month (about $3,012/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$433/year</dd></div><div><dt>Reliability</dt><dd>4.0/5 RepairPal (9th of 36 compact); Consumer Reports more reliable</dd></div><div><dt>Gas mileage (MPG)</dt><dd>32 (2.0L auto); 30-31 (2.5L)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK+. Crash tests G; headlights A/M; optional prevention Superior</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
+<a class="btn" href="https://www.cars.com/vehicledetail/ff2e2822-7a0a-45f3-9811-f29c591b17b1/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2016-mazda-mazda3-12185" data-group="mazda" data-price="12185" data-miles="114550" data-year="2016" data-removed="0" data-added="2026-10-10">
+<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/2016-mazda-mazda3-12185-1.jpg" width="640" height="480" loading="eager" decoding="async" alt="2016 Mazda Mazda3, photo 1 of 3"></div><div class="slide"><img class="fg" src="../photos/2016-mazda-mazda3-12185-2.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2016 Mazda Mazda3, photo 2 of 3"></div><div class="slide"><img class="fg" src="../photos/2016-mazda-mazda3-12185-3.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2016 Mazda Mazda3, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
+
+<div class="body">
+<p class="added"><span class="newb">New</span>Added Oct 10</p>
+<h2>2016 Mazda Mazda3 s Touring</h2>
+<div class="price">$12,185</div>
+<p class="facts"><span>114,550 miles</span><span>Oklahoma City, OK</span><span>Drive Max of OKC (Dealer)</span></p>
+<ul class="badges"><li class="b drive">1 hr 40 min from Tulsa</li><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 4.0/5</li><li class="b info">Insurance ~$251/mo</li><li class="b muted">33 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick+</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>s Touring</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>114,550</dd></div><div><dt>Asking price</dt><dd>$12,185</dd></div><div><dt>Location</dt><dd>Oklahoma City, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>1 hr 40 min</dd></div><div><dt>Seller</dt><dd>Drive Max of OKC (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>Multiple</dd></div><div><dt>Accidents</dt><dd>0</dd></div><div><dt>Service records</dt><dd>None shown (AutoCheck summary only)</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 15V621000, 16V684000, 16V685000 fuel tank/fuel system; 17V393000 parking brake; 19V272000 wipers; 23V487000 rear camera. Powertrain: Skyactiv-G 2.0/2.5, conventional 6-speed automatic (no CVT), timing CHAIN, no scheduled replacement.</dd></div><div><dt>Notes</dt><dd>Seller&#x27;s notes claim a clean Carfax; Lot advertises subprime financing - independent inspection essential; Includes doc fee (vehicle price $11,890); Good Deal; Run VIN for open recalls</dd></div><div><dt>Est. insurance</dt><dd>About $251/month (about $3,012/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$374/year</dd></div><div><dt>Reliability</dt><dd>4.0/5 RepairPal (9th of 36 compact); Consumer Reports about average</dd></div><div><dt>Gas mileage (MPG)</dt><dd>33 (2.0L auto); 31-32 (2.5L)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK+. Crash tests G; optional prevention Advanced</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
+<a class="btn" href="https://www.cars.com/vehicledetail/aa902373-8e94-4cd0-905c-025aba09fe92/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2017-toyota-corolla-im-12450" data-group="toyota" data-price="12450" data-miles="113702" data-year="2017" data-removed="0" data-added="2026-10-10">
+<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/2017-toyota-corolla-im-12450-1.jpg" width="1024" height="768" loading="eager" decoding="async" alt="2017 Toyota Corolla iM, photo 1 of 3"></div><div class="slide"><img class="fg" src="../photos/2017-toyota-corolla-im-12450-2.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2017 Toyota Corolla iM, photo 2 of 3"></div><div class="slide"><img class="fg" src="../photos/2017-toyota-corolla-im-12450-3.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2017 Toyota Corolla iM, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
+<div class="flag caution"><b>Caution</b>CVT over 100k miles with no record of fluid changes - ask for service records</div>
+<div class="body">
+<p class="added"><span class="newb">New</span>Added Oct 10</p>
+<h2>2017 Toyota Corolla iM Base</h2>
+<div class="price">$12,450</div>
+<p class="facts"><span>113,702 miles</span><span>Shawnee, OK</span><span>Kasterke Auto Mart (Dealer)</span></p>
+<ul class="badges"><li class="b drive">1 hr 30 min from Tulsa</li><li class="b good">Clean title</li><li class="b bad">Accident reported</li><li class="b muted">Reliability n/a</li><li class="b info">Insurance ~$258/mo</li><li class="b muted">31 MPG</li><li class="b muted">NHTSA not rated</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>Base</dd></div><div><dt>Body style</dt><dd>Hatchback</dd></div><div><dt>Miles</dt><dd>113,702</dd></div><div><dt>Asking price</dt><dd>$12,450</dd></div><div><dt>Location</dt><dd>Shawnee, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>1 hr 30 min</dd></div><div><dt>Seller</dt><dd>Kasterke Auto Mart (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>Multiple</dd></div><div><dt>Accidents</dt><dd>Reported</dd></div><div><dt>Service records</dt><dd>None shown (AutoCheck summary only)</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recall 17V295000 spare tire (Gulf States-distributed). Last year of Scion-iM-based model.</dd></div><div><dt>Notes</dt><dd>CAUTION: CVT over 100k miles with no record of fluid changes - ask for service records; Accident reported (AutoCheck); Run VIN for open recalls</dd></div><div><dt>Est. insurance</dt><dd>About $258/month (about $3,096/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$423/year</dd></div><div><dt>Reliability</dt><dd>n/a (RepairPal: insufficient data)</dd></div><div><dt>Gas mileage (MPG)</dt><dd>31 (1.8L CVT); 30 manual</dd></div><div><dt>IIHS crash tests</dt><dd>No award. Only moderate overlap G and side G tested; std front crash prevention not rated</dd></div><div><dt>NHTSA overall</dt><dd>Not Rated</dd></div></dl></details>
+<a class="btn" href="https://www.cars.com/vehicledetail/235fa04d-8cf8-4f11-884c-bd14649c59f3/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2019-subaru-impreza-12500" data-group="subaru" data-price="12500" data-miles="90845" data-year="2019" data-removed="0" data-added="2026-10-09">
+<div class="photo"><div class="gallery"><div class="slide tall"><img class="bg" src="../photos/2019-subaru-impreza-12500-1.jpg" alt="" aria-hidden="true" loading="eager"><img class="fg" src="../photos/2019-subaru-impreza-12500-1.jpg" width="601" height="600" loading="eager" decoding="async" alt="2019 Subaru Impreza, photo 1 of 1"></div></div></div>
+
+<div class="body">
+<p class="added"><span class="newb" hidden>New</span>Added Oct 9</p>
+<h2>2019 Subaru Impreza</h2>
+<div class="price">$12,500</div>
+<p class="facts"><span>90,845 miles</span><span>Tulsa, OK</span><span>James (Likely private)</span></p>
+<ul class="badges"><li class="b drive">15 min from Tulsa</li><li class="b good">Clean title</li><li class="b muted">Accidents not stated</li><li class="b info">Reliability 3.5/5</li><li class="b info">Insurance ~$236/mo</li><li class="b muted">32 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick+</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>n/a</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>90,845</dd></div><div><dt>Asking price</dt><dd>$12,500</dd></div><div><dt>Location</dt><dd>Tulsa, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>15 min</dd></div><div><dt>Seller</dt><dd>James (FB) (Likely private)</dd></div><div><dt>Title</dt><dd>Clean (per listing)</dd></div><div><dt>Owners</dt><dd>Not stated</dd></div><div><dt>Accidents</dt><dd>Not stated</dd></div><div><dt>Service records</dt><dd>Not stated</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 19V743000 &amp; 21V264000 ECM ignition coil; 20V218000 &amp; 21V587000 fuel pump; 22V624000 headlights. CVT warranty extended to 10yr/100k (Subaru bulletin 16-155-25R). Powertrain: FB20 2.0L boxer, TR580 CVT, timing chain; AWD standard.</dd></div><div><dt>Notes</dt><dd>High miles; cash only</dd></div><div><dt>Est. insurance</dt><dd>About $236/month (about $2,832/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$653/year</dd></div><div><dt>Reliability</dt><dd>3.5/5 RepairPal (33rd of 36 compact); Consumer Reports about average</dd></div><div><dt>Gas mileage (MPG)</dt><dd>32 (CVT sedan); 31 hatch; 30 Sport</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK+. Original tests G; updated side P; headlights G/M</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
+<a class="btn" href="https://www.facebook.com/marketplace/item/998323769502755/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2017-honda-civic-13185" data-group="honda" data-price="13185" data-miles="121238" data-year="2017" data-removed="0" data-added="2026-10-10">
+<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/2017-honda-civic-13185-1.jpg" width="640" height="480" loading="eager" decoding="async" alt="2017 Honda Civic, photo 1 of 3"></div><div class="slide"><img class="fg" src="../photos/2017-honda-civic-13185-2.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2017 Honda Civic, photo 2 of 3"></div><div class="slide"><img class="fg" src="../photos/2017-honda-civic-13185-3.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2017 Honda Civic, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
+<div class="flag caution"><b>Caution</b>CVT over 100k miles with no record of fluid changes - ask for service records</div>
+<div class="body">
+<p class="added"><span class="newb">New</span>Added Oct 10</p>
+<h2>2017 Honda Civic LX</h2>
+<div class="price">$13,185</div>
+<p class="facts"><span>121,238 miles</span><span>Oklahoma City, OK</span><span>Drive Max of OKC (Dealer)</span></p>
+<ul class="badges"><li class="b drive">1 hr 40 min from Tulsa</li><li class="b good">Clean title</li><li class="b bad">Accident reported</li><li class="b info">Reliability 4.5/5</li><li class="b info">Insurance ~$256/mo</li><li class="b muted">34 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>LX</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>121,238</dd></div><div><dt>Asking price</dt><dd>$13,185</dd></div><div><dt>Location</dt><dd>Oklahoma City, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>1 hr 40 min</dd></div><div><dt>Seller</dt><dd>Drive Max of OKC (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>Multiple</dd></div><div><dt>Accidents</dt><dd>Reported</dd></div><div><dt>Service records</dt><dd>None shown (AutoCheck summary only)</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 18V663000 electric power steering; 17V706000 driveshaft; 23V858000 fuel pump; 26V332000 occupant classification sensor. 1.5T oil dilution (2016-18; Honda extended warranty to 6 yrs).</dd></div><div><dt>Notes</dt><dd>CAUTION: CVT over 100k miles with no record of fluid changes - ask for service records; Accident reported (AutoCheck); Seller&#x27;s notes claim a clean Carfax; AutoCheck shows an accident - get both reports; Lot advertises subprime financing - independent inspection essential; Includes doc fee (vehicle price $12,890); Good Deal; Run VIN for open recalls</dd></div><div><dt>Est. insurance</dt><dd>About $256/month (about $3,072/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$290/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 (RepairPal; 3rd of 36 compact; rating covers 2010-19 MYs)</dd></div><div><dt>Gas mileage (MPG)</dt><dd>34 (2.0L CVT); 36 (1.5T CVT)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK. All crash tests G; headlights P; optional prevention Superior</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
+<a class="btn" href="https://www.cars.com/vehicledetail/3c7f3c2a-02ea-4845-9bed-a6f94ec5dced/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2017-toyota-corolla-im-13185" data-group="toyota" data-price="13185" data-miles="107493" data-year="2017" data-removed="0" data-added="2026-10-10">
+<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/2017-toyota-corolla-im-13185-1.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2017 Toyota Corolla iM, photo 1 of 3"></div><div class="slide"><img class="fg" src="../photos/2017-toyota-corolla-im-13185-2.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2017 Toyota Corolla iM, photo 2 of 3"></div><div class="slide"><img class="fg" src="../photos/2017-toyota-corolla-im-13185-3.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2017 Toyota Corolla iM, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
+<div class="flag caution"><b>Caution</b>CVT over 100k miles with no record of fluid changes - ask for service records</div>
+<div class="body">
+<p class="added"><span class="newb">New</span>Added Oct 10</p>
+<h2>2017 Toyota Corolla iM Base</h2>
+<div class="price">$13,185</div>
+<p class="facts"><span>107,493 miles</span><span>Oklahoma City, OK</span><span>Drive Max of OKC (Dealer)</span></p>
+<ul class="badges"><li class="b drive">1 hr 40 min from Tulsa</li><li class="b good">Clean title</li><li class="b bad">Accident reported</li><li class="b muted">Reliability n/a</li><li class="b info">Insurance ~$258/mo</li><li class="b muted">31 MPG</li><li class="b muted">NHTSA not rated</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>Base</dd></div><div><dt>Body style</dt><dd>Hatchback</dd></div><div><dt>Miles</dt><dd>107,493</dd></div><div><dt>Asking price</dt><dd>$13,185</dd></div><div><dt>Location</dt><dd>Oklahoma City, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>1 hr 40 min</dd></div><div><dt>Seller</dt><dd>Drive Max of OKC (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>Multiple</dd></div><div><dt>Accidents</dt><dd>Reported</dd></div><div><dt>Service records</dt><dd>None shown (AutoCheck summary only)</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recall 17V295000 spare tire (Gulf States-distributed). Last year of Scion-iM-based model.</dd></div><div><dt>Notes</dt><dd>CAUTION: CVT over 100k miles with no record of fluid changes - ask for service records; Accident reported (AutoCheck); Seller&#x27;s notes claim a clean Carfax; AutoCheck shows an accident - get both reports; Lot advertises subprime financing - independent inspection essential; Includes doc fee (vehicle price $12,890); Great Deal; Run VIN for open recalls</dd></div><div><dt>Est. insurance</dt><dd>About $258/month (about $3,096/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$423/year</dd></div><div><dt>Reliability</dt><dd>n/a (RepairPal: insufficient data)</dd></div><div><dt>Gas mileage (MPG)</dt><dd>31 (1.8L CVT); 30 manual</dd></div><div><dt>IIHS crash tests</dt><dd>No award. Only moderate overlap G and side G tested; std front crash prevention not rated</dd></div><div><dt>NHTSA overall</dt><dd>Not Rated</dd></div></dl></details>
+<a class="btn" href="https://www.cars.com/vehicledetail/7ce391f4-e4e9-4b5f-9019-e092f2dd2022/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2018-subaru-impreza-13485" data-group="subaru" data-price="13485" data-miles="74452" data-year="2018" data-removed="0" data-added="2026-10-10">
+<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/2018-subaru-impreza-13485-1.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2018 Subaru Impreza, photo 1 of 3"></div><div class="slide"><img class="fg" src="../photos/2018-subaru-impreza-13485-2.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2018 Subaru Impreza, photo 2 of 3"></div><div class="slide"><img class="fg" src="../photos/2018-subaru-impreza-13485-3.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2018 Subaru Impreza, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
+
+<div class="body">
+<p class="added"><span class="newb">New</span>Added Oct 10</p>
+<h2>2018 Subaru Impreza 2.0i</h2>
+<div class="price">$13,485</div>
+<p class="facts"><span>74,452 miles</span><span>Oklahoma City, OK</span><span>Drive Max of OKC (Dealer)</span></p>
+<ul class="badges"><li class="b drive">1 hr 40 min from Tulsa</li><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 3.5/5</li><li class="b info">Insurance ~$236/mo</li><li class="b muted">32 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick+</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>2.0i</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>74,452</dd></div><div><dt>Asking price</dt><dd>$13,485</dd></div><div><dt>Location</dt><dd>Oklahoma City, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>1 hr 40 min</dd></div><div><dt>Seller</dt><dd>Drive Max of OKC (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>Multiple</dd></div><div><dt>Accidents</dt><dd>0</dd></div><div><dt>Service records</dt><dd>None shown (AutoCheck summary only)</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 19V744000 PCV valve; 19V743000 &amp; 21V264000 ECM ignition coil; 21V587000 fuel pump; 22V624000 headlights. Powertrain: FB20 2.0L boxer, TR580 CVT, timing chain; AWD standard.</dd></div><div><dt>Notes</dt><dd>Seller&#x27;s notes claim a clean Carfax; Lot advertises subprime financing - independent inspection essential; Includes doc fee (vehicle price $13,190); Good Deal; Run VIN for open recalls</dd></div><div><dt>Est. insurance</dt><dd>About $236/month (about $2,832/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$488/year</dd></div><div><dt>Reliability</dt><dd>3.5/5 RepairPal (33rd of 36 compact); Consumer Reports more reliable</dd></div><div><dt>Gas mileage (MPG)</dt><dd>32 (CVT sedan); 31 hatch; 30 Sport</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK+. Original tests G; updated side P; headlights G/A/M</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
+<a class="btn" href="https://www.cars.com/vehicledetail/ab6e8e86-b8ae-4e53-ba92-27455ca0b8fb/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2022-hyundai-elantra-13499" data-group="hyundai-kia" data-price="13499" data-miles="98464" data-year="2022" data-removed="0" data-added="2026-10-09">
+<div class="photo"><div class="gallery"><div class="slide tall"><img class="bg" src="../photos/2022-hyundai-elantra-13499-1.jpg" alt="" aria-hidden="true" loading="lazy"><img class="fg" src="../photos/2022-hyundai-elantra-13499-1.jpg" width="600" height="800" loading="lazy" decoding="async" alt="2022 Hyundai Elantra, photo 1 of 1"></div></div></div>
+
+<div class="body">
+<p class="added"><span class="newb" hidden>New</span>Added Oct 9</p>
+<h2>2022 Hyundai Elantra SEL</h2>
+<div class="price">$13,499</div>
+<p class="facts"><span>98,464 miles</span><span>Tulsa, OK</span><span>360 Auto Remarketing (Dealer)</span></p>
+<ul class="badges"><li class="b drive">15 min from Tulsa</li><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 4.5/5</li><li class="b info">Insurance ~$270/mo</li><li class="b muted">35 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>SEL</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>98,464</dd></div><div><dt>Asking price</dt><dd>$13,499</dd></div><div><dt>Location</dt><dd>Tulsa, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>15 min</dd></div><div><dt>Seller</dt><dd>360 Auto Remarketing (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (per listing; &#x27;1 owner clean CARFAX&#x27;)</dd></div><div><dt>Owners</dt><dd>1</dd></div><div><dt>Accidents</dt><dd>None stated</dd></div><div><dt>Service records</dt><dd>Not stated</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 22V123000, 22V218000, 22V354000 seat belts; 22V632000 airbag emblem; 24V879000 rear camera. THEFT: certain key-start 2022s built before Nov 2021 lack an immobilizer - Campaign 993 software; verify by VIN. Powertrain: 2.0L Smartstream MPI + IVT (CVT-type) on SE/SEL; 1.6T + 7-speed DCT on N Line. Timing chain, no scheduled replacement. Not in the Nu MPI piston-ring recall (21V301000 covers 2019-20 Elantra only).</dd></div><div><dt>Notes</dt><dd>Verify immobilizer or anti-theft software (Campaign 993) by VIN; Same VIN also listed at $12900 by &#x27;Yazeed&#x27; (1851704585795507); miles near cap; transferred powertrain warranty likely expired by miles; Run VIN for open recalls; avoid 1.6T/DCT trims</dd></div><div><dt>Est. insurance</dt><dd>About $270/month (about $3,240/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$452/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 RepairPal (8th of 36 compact); Consumer Reports more reliable</dd></div><div><dt>Gas mileage (MPG)</dt><dd>35 (2.0 IVT); 37 SE w/ stop-start; 31 (1.6T DCT)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK. Small overlap G both sides; original tests G; headlights G/P; std prevention Superior</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
+<a class="btn" href="https://www.facebook.com/marketplace/item/1617020369960995/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2023-hyundai-elantra-13500" data-group="hyundai-kia" data-price="13500" data-miles="66450" data-year="2023" data-removed="0" data-added="2026-10-09">
+<div class="photo"><div class="gallery"><div class="slide tall"><img class="bg" src="../photos/2023-hyundai-elantra-13500-1.jpg" alt="" aria-hidden="true" loading="lazy"><img class="fg" src="../photos/2023-hyundai-elantra-13500-1.jpg" width="600" height="800" loading="lazy" decoding="async" alt="2023 Hyundai Elantra, photo 1 of 1"></div></div></div>
+
+<div class="body">
+<p class="added"><span class="newb" hidden>New</span>Added Oct 9</p>
+<h2>2023 Hyundai Elantra SE</h2>
+<div class="price">$13,500</div>
+<p class="facts"><span>66,450 miles</span><span>Tulsa, OK</span><span>Hayden (Likely private)</span></p>
+<ul class="badges"><li class="b drive">15 min from Tulsa</li><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 4.5/5</li><li class="b info">Insurance ~$270/mo</li><li class="b muted">34 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>SE</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>66,450</dd></div><div><dt>Asking price</dt><dd>$13,500</dd></div><div><dt>Location</dt><dd>Tulsa, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>15 min</dd></div><div><dt>Seller</dt><dd>Hayden (FB) (Likely private)</dd></div><div><dt>Title</dt><dd>Clean (description only)</dd></div><div><dt>Owners</dt><dd>1</dd></div><div><dt>Accidents</dt><dd>None stated</dd></div><div><dt>Service records</dt><dd>Seller says recently serviced; no records shown</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 22V632000 airbag emblem; 23V526000 Idle Stop&amp;Go oil-pump controller can overheat. Immobilizer standard (built after Nov 2021). Powertrain: 2.0L Smartstream MPI + IVT (CVT-type) on SE/SEL; 1.6T + 7-speed DCT on N Line. Timing chain, no scheduled replacement. Not in the Nu MPI piston-ring recall (21V301000 covers 2019-20 Elantra only).</dd></div><div><dt>Notes</dt><dd>Recently serviced; new tires; trim SE vs SEL mismatch; Run VIN for open recalls; avoid 1.6T/DCT trims</dd></div><div><dt>Est. insurance</dt><dd>About $270/month (about $3,240/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$452/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 RepairPal (8th of 36 compact); Consumer Reports about average</dd></div><div><dt>Gas mileage (MPG)</dt><dd>34 (2.0 IVT); 37 SE w/ stop-start; 31 (1.6T DCT)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK. Small overlap G both sides; original tests G; headlights G/P; std prevention Superior</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
+<a class="btn" href="https://www.facebook.com/marketplace/item/1167854119579714/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2019-subaru-impreza-13950" data-group="subaru" data-price="13950" data-miles="81775" data-year="2019" data-removed="0" data-added="2026-10-09">
+<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/2019-subaru-impreza-13950-1.jpg" width="800" height="600" loading="lazy" decoding="async" alt="2019 Subaru Impreza, photo 1 of 1"></div></div></div>
+
+<div class="body">
+<p class="added"><span class="newb" hidden>New</span>Added Oct 9</p>
+<h2>2019 Subaru Impreza 2.0i AWD</h2>
+<div class="price">$13,950</div>
+<p class="facts"><span>81,775 miles</span><span>Broken Arrow, OK</span><span>Zenith Automotive Sales (Dealer)</span></p>
+<ul class="badges"><li class="b drive">20 min from Tulsa</li><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 3.5/5</li><li class="b info">Insurance ~$236/mo</li><li class="b muted">32 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick+</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>2.0i AWD</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>81,775</dd></div><div><dt>Asking price</dt><dd>$13,950</dd></div><div><dt>Location</dt><dd>Broken Arrow, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>20 min</dd></div><div><dt>Seller</dt><dd>Zenith Automotive Sales (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (per listing)</dd></div><div><dt>Owners</dt><dd>Not stated</dd></div><div><dt>Accidents</dt><dd>None stated</dd></div><div><dt>Service records</dt><dd>Not stated</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 19V743000 &amp; 21V264000 ECM ignition coil; 20V218000 &amp; 21V587000 fuel pump; 22V624000 headlights. CVT warranty extended to 10yr/100k (Subaru bulletin 16-155-25R). Powertrain: FB20 2.0L boxer, TR580 CVT, timing chain; AWD standard.</dd></div><div><dt>Notes</dt><dd>By appointment; 57 reviews</dd></div><div><dt>Est. insurance</dt><dd>About $236/month (about $2,832/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$653/year</dd></div><div><dt>Reliability</dt><dd>3.5/5 RepairPal (33rd of 36 compact); Consumer Reports about average</dd></div><div><dt>Gas mileage (MPG)</dt><dd>32 (CVT sedan); 31 hatch; 30 Sport</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK+. Original tests G; updated side P; headlights G/M</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
+<a class="btn" href="https://www.facebook.com/marketplace/item/1659009115601781/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2019-toyota-corolla-13985" data-group="toyota" data-price="13985" data-miles="104335" data-year="2019" data-removed="0" data-added="2026-10-10">
+<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/2019-toyota-corolla-13985-1.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2019 Toyota Corolla, photo 1 of 3"></div><div class="slide"><img class="fg" src="../photos/2019-toyota-corolla-13985-2.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2019 Toyota Corolla, photo 2 of 3"></div><div class="slide"><img class="fg" src="../photos/2019-toyota-corolla-13985-3.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2019 Toyota Corolla, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
+<div class="flag caution"><b>Caution</b>CVT over 100k miles with no record of fluid changes - ask for service records</div>
+<div class="body">
+<p class="added"><span class="newb">New</span>Added Oct 10</p>
+<h2>2019 Toyota Corolla LE</h2>
+<div class="price">$13,985</div>
+<p class="facts"><span>104,335 miles</span><span>Oklahoma City, OK</span><span>Drive Max of OKC (Dealer)</span></p>
+<ul class="badges"><li class="b drive">1 hr 40 min from Tulsa</li><li class="b good">Clean title</li><li class="b bad">Accident reported</li><li class="b info">Reliability 4.5/5</li><li class="b info">Insurance ~$258/mo</li><li class="b muted">32 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick+</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>LE</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>104,335</dd></div><div><dt>Asking price</dt><dd>$13,985</dd></div><div><dt>Location</dt><dd>Oklahoma City, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>1 hr 40 min</dd></div><div><dt>Seller</dt><dd>Drive Max of OKC (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>Multiple</dd></div><div><dt>Accidents</dt><dd>Reported</dd></div><div><dt>Service records</dt><dd>None shown (AutoCheck summary only)</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 20V024000 airbag control module; 17V295000 spare tire (Gulf States-distributed); 19V503000 labels (SE Toyota-distributed).</dd></div><div><dt>Notes</dt><dd>CAUTION: CVT over 100k miles with no record of fluid changes - ask for service records; Accident reported (AutoCheck); Seller&#x27;s notes claim a clean Carfax; AutoCheck shows an accident - get both reports; Lot advertises subprime financing - independent inspection essential; Includes doc fee (vehicle price $13,690); Good Deal; Reference data from 2017 (same generation); Run VIN for open recalls</dd></div><div><dt>Est. insurance</dt><dd>About $258/month (about $3,096/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$421/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 (RepairPal; 1st of 36 compact; rating covers 2010-19 MYs)</dd></div><div><dt>Gas mileage (MPG)</dt><dd>32 (1.8L CVT; 34 LE Eco)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK+. All crash tests G; headlights A; std front crash prevention Superior</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
+<a class="btn" href="https://www.cars.com/vehicledetail/575696fb-a756-421e-ad4a-e276c6d889cf/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2023-kia-soul-13988" data-group="hyundai-kia" data-price="13988" data-miles="82876" data-year="2023" data-removed="0" data-added="2026-10-10">
+<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/2023-kia-soul-13988-1.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2023 Kia Soul, photo 1 of 3"></div><div class="slide"><img class="fg" src="../photos/2023-kia-soul-13988-2.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2023 Kia Soul, photo 2 of 3"></div><div class="slide"><img class="fg" src="../photos/2023-kia-soul-13988-3.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2023 Kia Soul, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
+
+<div class="body">
+<p class="added"><span class="newb">New</span>Added Oct 10</p>
+<h2>2023 Kia Soul LX</h2>
+<div class="price">$13,988</div>
+<p class="facts"><span>82,876 miles</span><span>Oklahoma City, OK</span><span>Southwest Car Sales (Dealer)</span></p>
+<ul class="badges"><li class="b drive">1 hr 40 min from Tulsa</li><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 4.5/5</li><li class="b info">Insurance ~$237/mo</li><li class="b muted">30 MPG</li><li class="b muted">NHTSA 4★</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>LX</dd></div><div><dt>Body style</dt><dd>Wagon</dd></div><div><dt>Miles</dt><dd>82,876</dd></div><div><dt>Asking price</dt><dd>$13,988</dd></div><div><dt>Location</dt><dd>Oklahoma City, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>1 hr 40 min</dd></div><div><dt>Seller</dt><dd>Southwest Car Sales (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>Multiple</dd></div><div><dt>Accidents</dt><dd>0</dd></div><div><dt>Service records</dt><dd>None shown (AutoCheck summary only)</dd></div><div><dt>Known issues &amp; recalls</dt><dd>ENGINE: recall 25V099000 piston oil rings (built to 4/19/2022) - inspect/replace engine + PNSS. Recalls 23V531000 ISG oil-pump controller; 23V298000 cluster; 23V830000 airbags. Immobilizer: 2020-22 Soul key-start built to 12/11/2021 lacked one; 2023 should have it - verify. Powertrain: 2.0L Nu MPI + IVT, timing chain.</dd></div><div><dt>Notes</dt><dd>Confirm engine recall 25V099000 done; Run VIN for open recalls</dd></div><div><dt>Est. insurance</dt><dd>About $237/month (about $2,844/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$437/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 RepairPal (3rd of 7 subcompact SUV); Consumer Reports more reliable</dd></div><div><dt>Gas mileage (MPG)</dt><dd>30 (2.0 IVT); 31 Eco</dd></div><div><dt>IIHS crash tests</dt><dd>No award. Only small overlap G and moderate overlap G rated</dd></div><div><dt>NHTSA overall</dt><dd>4 stars</dd></div></dl></details>
+<a class="btn" href="https://www.cars.com/vehicledetail/449015a3-cedc-4816-bb32-3e5ac9d33ae9/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2022-kia-forte-14200" data-group="hyundai-kia" data-price="14200" data-miles="86677" data-year="2022" data-removed="0" data-added="2026-10-09">
+<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/2022-kia-forte-14200-1.jpg" width="800" height="600" loading="lazy" decoding="async" alt="2022 Kia Forte, photo 1 of 1"></div></div></div>
+<div class="flag caution"><b>Caution</b>Vague &#x27;URGENTE&#x27; listing</div>
+<div class="body">
+<p class="added"><span class="newb" hidden>New</span>Added Oct 9</p>
+<h2>2022 Kia Forte S</h2>
+<div class="price">$14,200</div>
+<p class="facts"><span>86,677 miles</span><span>Broken Arrow, OK</span><span>Emilia (Private)</span></p>
+<ul class="badges"><li class="b drive">20 min from Tulsa</li><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 4.5/5</li><li class="b muted">Insurance n/a</li><li class="b muted">33 MPG</li><li class="b muted">NHTSA 4★</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>S</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>86,677</dd></div><div><dt>Asking price</dt><dd>$14,200</dd></div><div><dt>Location</dt><dd>Broken Arrow, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>20 min</dd></div><div><dt>Seller</dt><dd>Emilia (FB) (Private)</dd></div><div><dt>Title</dt><dd>Clean (per listing)</dd></div><div><dt>Owners</dt><dd>1</dd></div><div><dt>Accidents</dt><dd>None stated</dd></div><div><dt>Service records</dt><dd>Not stated</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recall 22V304000 steering-column bolt may detach (loss of steering). Powertrain: 2.0L Smartstream MPI + IVT; GT 1.6T + 7-speed DCT. Timing chain. 2019-20 Forte IVT slip campaign SC199 does not cover 2022+. Immobilizer: Kia says all 2022 models have one; 2022 Forte not on HLDI theft-software VIN list (Forte through 2021). J.D. Power 2026 VDS: #3 compact car (2023 MY) behind Corolla and Civic.</dd></div><div><dt>Notes</dt><dd>Lien owed; vague &#x27;URGENTE&#x27; listing - caution; Run VIN for open recalls; avoid 1.6T/DCT trims; Insurance n/a: no MoneyGeek figure for this model</dd></div><div><dt>Est. insurance</dt><dd>n/a</dd></div><div><dt>Est. repair cost</dt><dd>$451/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 RepairPal (6th of 36 compact); Consumer Reports more reliable</dd></div><div><dt>Gas mileage (MPG)</dt><dd>33 (2.0 IVT); 35 FE; 30 (1.6T DCT)</dd></div><div><dt>IIHS crash tests</dt><dd>No award. Original tests G; updated moderate overlap P; updated side P; headlights P</dd></div><div><dt>NHTSA overall</dt><dd>4 stars</dd></div></dl></details>
+<a class="btn" href="https://www.facebook.com/marketplace/item/1049837421202722/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2024-kia-soul-14250" data-group="hyundai-kia" data-price="14250" data-miles="83816" data-year="2024" data-removed="0" data-added="2026-10-10">
+<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/2024-kia-soul-14250-1.jpg" width="1023" height="768" loading="lazy" decoding="async" alt="2024 Kia Soul, photo 1 of 3"></div><div class="slide"><img class="fg" src="../photos/2024-kia-soul-14250-2.jpg" width="1023" height="768" loading="lazy" decoding="async" alt="2024 Kia Soul, photo 2 of 3"></div><div class="slide"><img class="fg" src="../photos/2024-kia-soul-14250-3.jpg" width="1023" height="768" loading="lazy" decoding="async" alt="2024 Kia Soul, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
+
+<div class="body">
+<p class="added"><span class="newb">New</span>Added Oct 10</p>
+<h2>2024 Kia Soul LX</h2>
+<div class="price">$14,250</div>
+<p class="facts"><span>83,816 miles</span><span>Edmond, OK</span><span>Kalidy Kia (Dealer)</span></p>
+<ul class="badges"><li class="b drive">1 hr 35 min from Tulsa</li><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 4.5/5</li><li class="b info">Insurance ~$237/mo</li><li class="b muted">30 MPG</li><li class="b muted">NHTSA 4★</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>LX</dd></div><div><dt>Body style</dt><dd>Wagon</dd></div><div><dt>Miles</dt><dd>83,816</dd></div><div><dt>Asking price</dt><dd>$14,250</dd></div><div><dt>Location</dt><dd>Edmond, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>1 hr 35 min</dd></div><div><dt>Seller</dt><dd>Kalidy Kia (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>Multiple</dd></div><div><dt>Accidents</dt><dd>0</dd></div><div><dt>Service records</dt><dd>None shown (AutoCheck summary only)</dd></div><div><dt>Known issues &amp; recalls</dt><dd>n/a recall lookup (not run) - check by VIN. Immobilizer standard. Powertrain: 2.0L Nu MPI + IVT, timing chain.</dd></div><div><dt>Notes</dt><dd>Includes doc fee (vehicle price $13,251); Good Deal; Run VIN for open recalls</dd></div><div><dt>Est. insurance</dt><dd>About $237/month (about $2,844/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$437/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 RepairPal (3rd of 7 subcompact SUV); Consumer Reports about average</dd></div><div><dt>Gas mileage (MPG)</dt><dd>30 (2.0 IVT); 31 Eco</dd></div><div><dt>IIHS crash tests</dt><dd>No award. Only small overlap G and moderate overlap G rated</dd></div><div><dt>NHTSA overall</dt><dd>4 stars</dd></div></dl></details>
+<a class="btn" href="https://www.cars.com/vehicledetail/5e2ff9bc-701e-44e8-92d5-62d30f22ee0d/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2016-honda-civic-14485" data-group="honda" data-price="14485" data-miles="101452" data-year="2016" data-removed="0" data-added="2026-10-10">
+<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/2016-honda-civic-14485-1.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2016 Honda Civic, photo 1 of 3"></div><div class="slide"><img class="fg" src="../photos/2016-honda-civic-14485-2.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2016 Honda Civic, photo 2 of 3"></div><div class="slide"><img class="fg" src="../photos/2016-honda-civic-14485-3.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2016 Honda Civic, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
+<div class="flag caution"><b>Caution</b>CVT over 100k miles with no record of fluid changes - ask for service records</div>
+<div class="body">
+<p class="added"><span class="newb">New</span>Added Oct 10</p>
+<h2>2016 Honda Civic EX-T</h2>
+<div class="price">$14,485</div>
+<p class="facts"><span>101,452 miles</span><span>Oklahoma City, OK</span><span>Drive Max of OKC (Dealer)</span></p>
+<ul class="badges"><li class="b drive">1 hr 40 min from Tulsa</li><li class="b good">Clean title</li><li class="b bad">Accident reported</li><li class="b info">Reliability 4.5/5</li><li class="b info">Insurance ~$256/mo</li><li class="b muted">34 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>EX-T</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>101,452</dd></div><div><dt>Asking price</dt><dd>$14,485</dd></div><div><dt>Location</dt><dd>Oklahoma City, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>1 hr 40 min</dd></div><div><dt>Seller</dt><dd>Drive Max of OKC (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>Multiple</dd></div><div><dt>Accidents</dt><dd>Reported</dd></div><div><dt>Service records</dt><dd>None shown (AutoCheck summary only)</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 18V663000 electric power steering; 17V706000 driveshaft; 23V858000 fuel pump; 26V332000 occupant classification sensor. 1.5T oil dilution (2016-18; Honda extended warranty to 6 yrs).</dd></div><div><dt>Notes</dt><dd>CAUTION: CVT over 100k miles with no record of fluid changes - ask for service records; 1.5T oil-dilution years (EX-T); Accident reported (AutoCheck); Seller&#x27;s notes claim a clean Carfax; AutoCheck shows an accident - get both reports; Lot advertises subprime financing - independent inspection essential; Includes doc fee (vehicle price $14,190); Good Deal; Reference data from 2017 (same generation); Run VIN for open recalls</dd></div><div><dt>Est. insurance</dt><dd>About $256/month (about $3,072/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$290/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 (RepairPal; 3rd of 36 compact; rating covers 2010-19 MYs)</dd></div><div><dt>Gas mileage (MPG)</dt><dd>34 (2.0L CVT); 36 (1.5T CVT)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK. All crash tests G; headlights P; optional prevention Superior</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
+<a class="btn" href="https://www.cars.com/vehicledetail/2f86666f-dc4e-47f3-9c77-af1d223c2c2f/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2017-toyota-corolla-14500" data-group="toyota" data-price="14500" data-miles="69000" data-year="2017" data-removed="0" data-added="2026-10-09">
+<div class="photo"><div class="gallery"><div class="slide tall"><img class="bg" src="../photos/2017-toyota-corolla-14500-1.jpg" alt="" aria-hidden="true" loading="lazy"><img class="fg" src="../photos/2017-toyota-corolla-14500-1.jpg" width="600" height="800" loading="lazy" decoding="async" alt="2017 Toyota Corolla, photo 1 of 1"></div></div></div>
+
+<div class="body">
+<p class="added"><span class="newb" hidden>New</span>Added Oct 9</p>
+<h2>2017 Toyota Corolla LE</h2>
+<div class="price">$14,500</div>
+<p class="facts"><span>69,000 miles</span><span>Tulsa, OK</span><span>Mendoza Auto Sales (Dealer)</span></p>
+<ul class="badges"><li class="b drive">15 min from Tulsa</li><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 4.5/5</li><li class="b info">Insurance ~$258/mo</li><li class="b muted">32 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick+</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>LE</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>69,000</dd></div><div><dt>Asking price</dt><dd>$14,500</dd></div><div><dt>Location</dt><dd>Tulsa, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>15 min</dd></div><div><dt>Seller</dt><dd>Mendoza Auto Sales (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (per listing)</dd></div><div><dt>Owners</dt><dd>Not stated</dd></div><div><dt>Accidents</dt><dd>None stated</dd></div><div><dt>Service records</dt><dd>Not stated</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 20V024000 airbag control module; 17V295000 spare tire (Gulf States-distributed); 19V503000 labels (SE Toyota-distributed).</dd></div><div><dt>Notes</dt><dd>Seller review complains of hidden damage - inspect</dd></div><div><dt>Est. insurance</dt><dd>About $258/month (about $3,096/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$421/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 (RepairPal; 1st of 36 compact; rating covers 2010-19 MYs)</dd></div><div><dt>Gas mileage (MPG)</dt><dd>32 (1.8L CVT; 34 LE Eco)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK+. All crash tests G; headlights A; std front crash prevention Superior</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
+<a class="btn" href="https://www.facebook.com/marketplace/item/835915609566634/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2016-toyota-corolla-14663" data-group="toyota" data-price="14663" data-miles="103492" data-year="2016" data-removed="0" data-added="2026-10-10">
+<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/2016-toyota-corolla-14663-1.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2016 Toyota Corolla, photo 1 of 3"></div><div class="slide"><img class="fg" src="../photos/2016-toyota-corolla-14663-2.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2016 Toyota Corolla, photo 2 of 3"></div><div class="slide"><img class="fg" src="../photos/2016-toyota-corolla-14663-3.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2016 Toyota Corolla, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
+<div class="flag caution"><b>Caution</b>CVT over 100k miles with no record of fluid changes - ask for service records</div>
+<div class="body">
+<p class="added"><span class="newb">New</span>Added Oct 10</p>
+<h2>2016 Toyota Corolla LE</h2>
+<div class="price">$14,663</div>
+<p class="facts"><span>103,492 miles</span><span>Tulsa, OK</span><span>Don Thornton Volkswagen of Tulsa (Dealer)</span></p>
+<ul class="badges"><li class="b drive">15 min from Tulsa</li><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 4.5/5</li><li class="b info">Insurance ~$258/mo</li><li class="b muted">32 MPG</li><li class="b info">NHTSA 5★</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>LE</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>103,492</dd></div><div><dt>Asking price</dt><dd>$14,663</dd></div><div><dt>Location</dt><dd>Tulsa, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>15 min</dd></div><div><dt>Seller</dt><dd>Don Thornton Volkswagen of Tulsa (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>Multiple</dd></div><div><dt>Accidents</dt><dd>0</dd></div><div><dt>Service records</dt><dd>None shown (AutoCheck summary only)</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recall 20V024000 airbag control module (ZF-TRW). 2014-16 CVT software update campaign (check completed).</dd></div><div><dt>Notes</dt><dd>CAUTION: CVT over 100k miles with no record of fluid changes - ask for service records; Includes doc fee (vehicle price $14,364); Good Deal; Run VIN for open recalls</dd></div><div><dt>Est. insurance</dt><dd>About $258/month (about $3,096/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$370/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 (RepairPal; 1st of 36 compact; rating covers 2010-19 MYs)</dd></div><div><dt>Gas mileage (MPG)</dt><dd>32 (1.8L CVT; 34 LE Eco; 30 4-spd auto)</dd></div><div><dt>IIHS crash tests</dt><dd>No award. Small overlap driver M; moderate overlap G; side G; roof G; head restraints G; no front crash prevention</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
+<a class="btn" href="https://www.cars.com/vehicledetail/dcd7be74-c0e9-4556-b892-44c4b9b9d22c/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2017-honda-civic-14685" data-group="honda" data-price="14685" data-miles="90922" data-year="2017" data-removed="0" data-added="2026-10-10">
+<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/2017-honda-civic-14685-1.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2017 Honda Civic, photo 1 of 3"></div><div class="slide"><img class="fg" src="../photos/2017-honda-civic-14685-2.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2017 Honda Civic, photo 2 of 3"></div><div class="slide"><img class="fg" src="../photos/2017-honda-civic-14685-3.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2017 Honda Civic, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
+
+<div class="body">
+<p class="added"><span class="newb">New</span>Added Oct 10</p>
+<h2>2017 Honda Civic LX</h2>
+<div class="price">$14,685</div>
+<p class="facts"><span>90,922 miles</span><span>Oklahoma City, OK</span><span>Drive Max of OKC (Dealer)</span></p>
+<ul class="badges"><li class="b drive">1 hr 40 min from Tulsa</li><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 4.5/5</li><li class="b info">Insurance ~$256/mo</li><li class="b muted">34 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>LX</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>90,922</dd></div><div><dt>Asking price</dt><dd>$14,685</dd></div><div><dt>Location</dt><dd>Oklahoma City, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>1 hr 40 min</dd></div><div><dt>Seller</dt><dd>Drive Max of OKC (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>Multiple</dd></div><div><dt>Accidents</dt><dd>0</dd></div><div><dt>Service records</dt><dd>None shown (AutoCheck summary only)</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 18V663000 electric power steering; 17V706000 driveshaft; 23V858000 fuel pump; 26V332000 occupant classification sensor. 1.5T oil dilution (2016-18; Honda extended warranty to 6 yrs).</dd></div><div><dt>Notes</dt><dd>Seller&#x27;s notes claim a clean Carfax; Lot advertises subprime financing - independent inspection essential; Includes doc fee (vehicle price $14,390); Good Deal; Run VIN for open recalls</dd></div><div><dt>Est. insurance</dt><dd>About $256/month (about $3,072/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$290/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 (RepairPal; 3rd of 36 compact; rating covers 2010-19 MYs)</dd></div><div><dt>Gas mileage (MPG)</dt><dd>34 (2.0L CVT); 36 (1.5T CVT)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK. All crash tests G; headlights P; optional prevention Superior</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
+<a class="btn" href="https://www.cars.com/vehicledetail/1177437d-ecde-4035-a8c1-4008c0ec1462/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2019-subaru-impreza-14685" data-group="subaru" data-price="14685" data-miles="86083" data-year="2019" data-removed="0" data-added="2026-10-10">
+<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/2019-subaru-impreza-14685-1.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2019 Subaru Impreza, photo 1 of 3"></div><div class="slide"><img class="fg" src="../photos/2019-subaru-impreza-14685-2.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2019 Subaru Impreza, photo 2 of 3"></div><div class="slide"><img class="fg" src="../photos/2019-subaru-impreza-14685-3.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2019 Subaru Impreza, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
+
+<div class="body">
+<p class="added"><span class="newb">New</span>Added Oct 10</p>
+<h2>2019 Subaru Impreza 2.0i Premium</h2>
+<div class="price">$14,685</div>
+<p class="facts"><span>86,083 miles</span><span>Oklahoma City, OK</span><span>Drive Max of OKC (Dealer)</span></p>
+<ul class="badges"><li class="b drive">1 hr 40 min from Tulsa</li><li class="b good">Clean title</li><li class="b bad">Accident reported</li><li class="b info">Reliability 3.5/5</li><li class="b info">Insurance ~$236/mo</li><li class="b muted">32 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick+</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>2.0i Premium</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>86,083</dd></div><div><dt>Asking price</dt><dd>$14,685</dd></div><div><dt>Location</dt><dd>Oklahoma City, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>1 hr 40 min</dd></div><div><dt>Seller</dt><dd>Drive Max of OKC (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>Multiple</dd></div><div><dt>Accidents</dt><dd>Reported</dd></div><div><dt>Service records</dt><dd>None shown (AutoCheck summary only)</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 19V743000 &amp; 21V264000 ECM ignition coil; 20V218000 &amp; 21V587000 fuel pump; 22V624000 headlights. CVT warranty extended to 10yr/100k (Subaru bulletin 16-155-25R). Powertrain: FB20 2.0L boxer, TR580 CVT, timing chain; AWD standard.</dd></div><div><dt>Notes</dt><dd>Accident reported (AutoCheck); Seller&#x27;s notes claim a clean Carfax; AutoCheck shows an accident - get both reports; Lot advertises subprime financing - independent inspection essential; Includes doc fee (vehicle price $14,390); Good Deal; Run VIN for open recalls</dd></div><div><dt>Est. insurance</dt><dd>About $236/month (about $2,832/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$653/year</dd></div><div><dt>Reliability</dt><dd>3.5/5 RepairPal (33rd of 36 compact); Consumer Reports about average</dd></div><div><dt>Gas mileage (MPG)</dt><dd>32 (CVT sedan); 31 hatch; 30 Sport</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK+. Original tests G; updated side P; headlights G/M</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
+<a class="btn" href="https://www.cars.com/vehicledetail/12f88aa0-aa7c-4ce1-90e6-2b3808f15c6c/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2017-toyota-camry-14700" data-group="toyota" data-price="14700" data-miles="76554" data-year="2017" data-removed="0" data-added="2026-10-09">
+<div class="photo"><div class="gallery"><div class="slide tall"><img class="bg" src="../photos/2017-toyota-camry-14700-1.jpg" alt="" aria-hidden="true" loading="lazy"><img class="fg" src="../photos/2017-toyota-camry-14700-1.jpg" width="600" height="1299" loading="lazy" decoding="async" alt="2017 Toyota Camry, photo 1 of 1"></div></div></div>
+
+<div class="body">
+<p class="added"><span class="newb" hidden>New</span>Added Oct 9</p>
+<h2>2017 Toyota Camry XLE</h2>
+<div class="price">$14,700</div>
+<p class="facts"><span>76,554 miles</span><span>Tulsa, OK</span><span>Leslo (Likely private)</span></p>
+<ul class="badges"><li class="b drive">15 min from Tulsa</li><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 4.0/5</li><li class="b info">Insurance ~$255/mo</li><li class="b muted">27 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick+</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>XLE</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>76,554</dd></div><div><dt>Asking price</dt><dd>$14,700</dd></div><div><dt>Location</dt><dd>Tulsa, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>15 min</dd></div><div><dt>Seller</dt><dd>Leslo (FB) (Likely private)</dd></div><div><dt>Title</dt><dd>Clean (per listing)</dd></div><div><dt>Owners</dt><dd>Not stated</dd></div><div><dt>Accidents</dt><dd>None stated</dd></div><div><dt>Service records</dt><dd>Not stated</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 16V906000 knee airbag; 17V295000 spare tire; 19V503000 labels. Older (2012-17) generation.</dd></div><div><dt>Notes</dt><dd>Paid off; well-reviewed seller; no red flags seen</dd></div><div><dt>Est. insurance</dt><dd>About $255/month (about $3,060/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$429/year</dd></div><div><dt>Reliability</dt><dd>4.0/5 (RepairPal; 3rd of 24 midsize; rating covers 2010-19 MYs)</dd></div><div><dt>Gas mileage (MPG)</dt><dd>27 (2.5L 4-cyl); 24 V6</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK+. All crash tests G; headlights A/M/P by trim; optional prevention Advanced</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
+<a class="btn" href="https://www.facebook.com/marketplace/item/1314208715111023/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2017-toyota-corolla-14777" data-group="toyota" data-price="14777" data-miles="87160" data-year="2017" data-removed="0" data-added="2026-10-09">
+<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/2017-toyota-corolla-14777-1.jpg" width="800" height="600" loading="lazy" decoding="async" alt="2017 Toyota Corolla, photo 1 of 1"></div></div></div>
+
+<div class="body">
+<p class="added"><span class="newb" hidden>New</span>Added Oct 9</p>
+<h2>2017 Toyota Corolla LE</h2>
+<div class="price">$14,777</div>
+<p class="facts"><span>87,160 miles</span><span>Tulsa, OK</span><span>Big Wheel Motors (Dealer)</span></p>
+<ul class="badges"><li class="b drive">15 min from Tulsa</li><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 4.5/5</li><li class="b info">Insurance ~$258/mo</li><li class="b muted">32 MPG</li><li class="b info">NHTSA 5★</li><li class="b good">IIHS Top Safety Pick+</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>LE</dd></div><div><dt>Body style</dt><dd>Sedan</dd></div><div><dt>Miles</dt><dd>87,160</dd></div><div><dt>Asking price</dt><dd>$14,777</dd></div><div><dt>Location</dt><dd>Tulsa, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>15 min</dd></div><div><dt>Seller</dt><dd>Big Wheel Motors (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (per listing)</dd></div><div><dt>Owners</dt><dd>Not stated</dd></div><div><dt>Accidents</dt><dd>None stated</dd></div><div><dt>Service records</dt><dd>Not stated</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recalls 20V024000 airbag control module; 17V295000 spare tire (Gulf States-distributed); 19V503000 labels (SE Toyota-distributed).</dd></div><div><dt>Notes</dt><dd>Same car reposted by a second seller (item 1121660783645192)</dd></div><div><dt>Est. insurance</dt><dd>About $258/month (about $3,096/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$421/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 (RepairPal; 1st of 36 compact; rating covers 2010-19 MYs)</dd></div><div><dt>Gas mileage (MPG)</dt><dd>32 (1.8L CVT; 34 LE Eco)</dd></div><div><dt>IIHS crash tests</dt><dd>TOP SAFETY PICK+. All crash tests G; headlights A; std front crash prevention Superior</dd></div><div><dt>NHTSA overall</dt><dd>5 stars</dd></div></dl></details>
+<a class="btn" href="https://www.facebook.com/marketplace/item/1148492320833722/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2017-toyota-corolla-im-14985" data-group="toyota" data-price="14985" data-miles="84050" data-year="2017" data-removed="0" data-added="2026-10-10">
+<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/2017-toyota-corolla-im-14985-1.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2017 Toyota Corolla iM, photo 1 of 3"></div><div class="slide"><img class="fg" src="../photos/2017-toyota-corolla-im-14985-2.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2017 Toyota Corolla iM, photo 2 of 3"></div><div class="slide"><img class="fg" src="../photos/2017-toyota-corolla-im-14985-3.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2017 Toyota Corolla iM, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
+
+<div class="body">
+<p class="added"><span class="newb">New</span>Added Oct 10</p>
+<h2>2017 Toyota Corolla iM Base</h2>
+<div class="price">$14,985</div>
+<p class="facts"><span>84,050 miles</span><span>Oklahoma City, OK</span><span>Drive Max of OKC (Dealer)</span></p>
+<ul class="badges"><li class="b drive">1 hr 40 min from Tulsa</li><li class="b good">Clean title</li><li class="b bad">Accident reported</li><li class="b muted">Reliability n/a</li><li class="b info">Insurance ~$258/mo</li><li class="b muted">31 MPG</li><li class="b muted">NHTSA not rated</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>Base</dd></div><div><dt>Body style</dt><dd>Hatchback</dd></div><div><dt>Miles</dt><dd>84,050</dd></div><div><dt>Asking price</dt><dd>$14,985</dd></div><div><dt>Location</dt><dd>Oklahoma City, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>1 hr 40 min</dd></div><div><dt>Seller</dt><dd>Drive Max of OKC (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>Multiple</dd></div><div><dt>Accidents</dt><dd>Reported</dd></div><div><dt>Service records</dt><dd>None shown (AutoCheck summary only)</dd></div><div><dt>Known issues &amp; recalls</dt><dd>Recall 17V295000 spare tire (Gulf States-distributed). Last year of Scion-iM-based model.</dd></div><div><dt>Notes</dt><dd>Accident reported (AutoCheck); Seller&#x27;s notes claim a clean Carfax; AutoCheck shows an accident - get both reports; Lot advertises subprime financing - independent inspection essential; Includes doc fee (vehicle price $14,690); Good Deal; Run VIN for open recalls</dd></div><div><dt>Est. insurance</dt><dd>About $258/month (about $3,096/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$423/year</dd></div><div><dt>Reliability</dt><dd>n/a (RepairPal: insufficient data)</dd></div><div><dt>Gas mileage (MPG)</dt><dd>31 (1.8L CVT); 30 manual</dd></div><div><dt>IIHS crash tests</dt><dd>No award. Only moderate overlap G and side G tested; std front crash prevention not rated</dd></div><div><dt>NHTSA overall</dt><dd>Not Rated</dd></div></dl></details>
+<a class="btn" href="https://www.cars.com/vehicledetail/b7e87cd0-8c78-47a6-8d55-6ca06d3059c8/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+<li class="card" id="2023-kia-soul-14988" data-group="hyundai-kia" data-price="14988" data-miles="74245" data-year="2023" data-removed="0" data-added="2026-10-10">
+<div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/2023-kia-soul-14988-1.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2023 Kia Soul, photo 1 of 3"></div><div class="slide"><img class="fg" src="../photos/2023-kia-soul-14988-2.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2023 Kia Soul, photo 2 of 3"></div><div class="slide"><img class="fg" src="../photos/2023-kia-soul-14988-3.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2023 Kia Soul, photo 3 of 3"></div></div><span class="count" data-count="3">1 / 3</span></div>
+
+<div class="body">
+<p class="added"><span class="newb">New</span>Added Oct 10</p>
+<h2>2023 Kia Soul LX</h2>
+<div class="price">$14,988</div>
+<p class="facts"><span>74,245 miles</span><span>Sapulpa, OK</span><span>Bishop&#x27;s Corner Auto Sales (Dealer)</span></p>
+<ul class="badges"><li class="b drive">20 min from Tulsa</li><li class="b good">Clean title</li><li class="b good">No accidents</li><li class="b info">Reliability 4.5/5</li><li class="b info">Insurance ~$237/mo</li><li class="b muted">30 MPG</li><li class="b muted">NHTSA 4★</li></ul>
+<div class="actions">
+<details><summary>Details</summary><dl><div><dt>Trim</dt><dd>LX</dd></div><div><dt>Body style</dt><dd>Wagon</dd></div><div><dt>Miles</dt><dd>74,245</dd></div><div><dt>Asking price</dt><dd>$14,988</dd></div><div><dt>Location</dt><dd>Sapulpa, OK</dd></div><div><dt>Drive from Tulsa</dt><dd>20 min</dd></div><div><dt>Seller</dt><dd>Bishop&#x27;s Corner Auto Sales (Dealer)</dd></div><div><dt>Title</dt><dd>Clean (AutoCheck)</dd></div><div><dt>Owners</dt><dd>1</dd></div><div><dt>Accidents</dt><dd>0</dd></div><div><dt>Service records</dt><dd>None shown (AutoCheck summary only)</dd></div><div><dt>Known issues &amp; recalls</dt><dd>ENGINE: recall 25V099000 piston oil rings (built to 4/19/2022) - inspect/replace engine + PNSS. Recalls 23V531000 ISG oil-pump controller; 23V298000 cluster; 23V830000 airbags. Immobilizer: 2020-22 Soul key-start built to 12/11/2021 lacked one; 2023 should have it - verify. Powertrain: 2.0L Nu MPI + IVT, timing chain.</dd></div><div><dt>Notes</dt><dd>Confirm engine recall 25V099000 done; Run VIN for open recalls</dd></div><div><dt>Est. insurance</dt><dd>About $237/month (about $2,844/year), estimate</dd></div><div><dt>Est. repair cost</dt><dd>$437/year</dd></div><div><dt>Reliability</dt><dd>4.5/5 RepairPal (3rd of 7 subcompact SUV); Consumer Reports more reliable</dd></div><div><dt>Gas mileage (MPG)</dt><dd>30 (2.0 IVT); 31 Eco</dd></div><div><dt>IIHS crash tests</dt><dd>No award. Only small overlap G and moderate overlap G rated</dd></div><div><dt>NHTSA overall</dt><dd>4 stars</dd></div></dl></details>
+<a class="btn" href="https://www.cars.com/vehicledetail/87533598-979d-411f-8f1f-105672dc36c7/" target="_blank" rel="noopener noreferrer nofollow">See listing ↗</a>
+</div>
+</div>
+</li>
+</ul>
+<p class="empty" id="empty" hidden>No cars match this filter.</p>
+<p class="empty" id="empty-new" hidden>Nothing new today yet. The daily search adds cars most mornings, so check back later.</p>
+</main>
+<footer class="bottom">
+<p><strong>Insurance figures are estimates, not quotes.</strong> They're built from published averages for an 18-year-old added to a parent's full-coverage policy. Get a real quote on the exact VIN before buying, and tell the insurer the car will be kept in Fayetteville.</p>
+<p>Sources: listings from Cars.com, Facebook Marketplace and dealer websites. Reliability and repair costs from RepairPal, Consumer Reports and J.D. Power. Crash ratings from IIHS and NHTSA; recalls from NHTSA. MPG from fueleconomy.gov. Insurance estimates from CarInsurance.com, Insure.com and MoneyGeek.</p>
+</footer>
+</div>
+<script>
+(function(){
+var grid=document.getElementById('cars'),cards=[].slice.call(grid.children),shown=document.getElementById('shown');
+var chips=[].slice.call(document.querySelectorAll('.chip')),sel=document.getElementById('sort');
+document.querySelectorAll('[data-js]').forEach(function(e){e.hidden=false});
+var state={f:'all',s:'price'};
+var today;try{today=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());}catch(e){}
+var nNew=0;cards.forEach(function(c){var b=c.querySelector('.newb');if(today){c.dataset.isnew=c.dataset.added===today?'1':'0';}else{c.dataset.isnew=b&&!b.hidden?'1':'0';}
+ if(b)b.hidden=c.dataset.isnew!=='1';if(c.dataset.isnew==='1')nNew++;});
+var nc=document.getElementById('newchip');if(nc)nc.textContent='New today ('+nNew+')';
+function ok(c){var g=c.dataset.group,p=+c.dataset.price;
+ if(state.f==='all')return true; if(state.f==='new')return c.dataset.isnew==='1'; if(state.f.indexOf('under:')===0)return p<+state.f.slice(6); return g===state.f;}
+function apply(){var list=cards.slice().sort(function(a,b){
+  var r=(+a.dataset.removed)-(+b.dataset.removed); if(r)return r;
+  if(state.s==='miles')return a.dataset.miles-b.dataset.miles;
+  if(state.s==='added')return (b.dataset.added<a.dataset.added?-1:b.dataset.added>a.dataset.added?1:0)||(a.dataset.price-b.dataset.price);
+  if(state.s==='newest')return (b.dataset.year-a.dataset.year)||(a.dataset.price-b.dataset.price);
+  return a.dataset.price-b.dataset.price;});
+ var n=0; list.forEach(function(c){var v=ok(c);c.hidden=!v;if(v)n++;grid.appendChild(c);});
+ shown.textContent=n===cards.length?('Showing all '+n+' cars'):('Showing '+n+' of '+cards.length+' cars');
+ document.getElementById('empty').hidden=n>0||state.f==='new';
+ document.getElementById('empty-new').hidden=n>0||state.f!=='new';}
+chips.forEach(function(ch){ch.addEventListener('click',function(){state.f=ch.dataset.f;
+ chips.forEach(function(x){x.setAttribute('aria-pressed',x===ch?'true':'false')});apply();});});
+sel.addEventListener('change',function(){state.s=sel.value;apply();});
+if(location.hash==='#new'&&nc){nc.click();}else{apply();}
+document.querySelectorAll('.photo').forEach(function(ph){var g=ph.querySelector('.gallery'),cnt=ph.querySelector('.count');
+ if(!g||!cnt)return; var n=+cnt.dataset.count;
+ function idx(){return Math.round(g.scrollLeft/g.clientWidth)}
+ g.addEventListener('scroll',function(){cnt.textContent=(idx()+1)+' / '+n},{passive:true});
+ if(matchMedia('(hover:hover)').matches){['prev','next'].forEach(function(d){var b=document.createElement('button');
+  b.className='nav '+d;b.type='button';b.setAttribute('aria-label',d==='prev'?'Previous photo':'Next photo');b.textContent=d==='prev'?'‹':'›';
+  b.addEventListener('click',function(){var i=Math.min(n-1,Math.max(0,idx()+(d==='prev'?-1:1)));g.scrollTo({left:i*g.clientWidth,behavior:'smooth'})});ph.appendChild(b);});}
+});
+})();
+</script>
+</body>
+</html>

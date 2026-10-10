@@ -321,7 +321,7 @@ def main():
     if not args:
         sys.exit("usage: fetch_photos.py <xlsx> [--recheck] | fetch_photos.py --drop photos/<file>.jpg ...")
     recheck = "--recheck" in sys.argv
-    cars = build.read_cars(args[0])
+    cars = [c for cs in build.read_all(args[0]).values() for c in cs]
     man = load_manifest()
     now = dt.datetime.now().astimezone().isoformat(timespec="seconds")
     todo = []

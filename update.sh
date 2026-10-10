@@ -10,7 +10,7 @@ cd "$(dirname "$0")"
 git pull --ff-only --quiet origin main || true
 python3 fetch_photos.py "$XLSX"
 python3 build.py "$XLSX"
-git add -A index.html tips models guide robots.txt .nojekyll photos assets build.py fetch_photos.py update.sh README.md .gitignore 2>/dev/null || git add -A
+git add -A index.html budget tips models guide robots.txt .nojekyll photos assets build.py fetch_photos.py update.sh README.md .gitignore 2>/dev/null || git add -A
 if git diff --cached --quiet; then
   echo "no changes; nothing to commit"
 else

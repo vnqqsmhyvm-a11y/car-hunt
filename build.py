@@ -27,6 +27,16 @@ COLS = {  # header text in the sheet -> field name
     "Est. Annual Repair Cost": "repair", "Reliability": "reliability",
     "Known Issues (this year)": "issues", "Est. Ins": "ins", "IIHS": "iihs",
     "NHTSA Stars": "nhtsa", "Notes": "notes", "Listing": "listing",
+    "Drive time from Tulsa": "drive", "Service records": "service",  # Budget sheet only
+}
+OPTIONAL = {"drive", "service"}
+LISTS = {  # sheet -> page settings
+    "Cars": dict(id="main", path="", label="Main", range="$15–19k",
+                 criteria="$15,000–$19,000 · under 100k miles · about 40 miles from Tulsa · 2016+ automatic · clean title · Model Guide picks only",
+                 under=(17000, "Under $17k")),
+    "Budget": dict(id="budget", path="budget/", label="Budget", range="$10–15k",
+                   criteria="$10,000–$15,000 · up to 125k miles (over 100k: Toyota, Honda, Mazda only) · within 2 hours of Tulsa · 2016+ automatic · clean title",
+                   under=(12500, "Under $12.5k")),
 }
 
 
@@ -52,12 +62,14 @@ def to_int(v):
     return int(float(m)) if m else None
 
 
-def read_cars(xlsx):
+def read_cars(xlsx, sheet="Cars"):
     wb = openpyxl.load_workbook(xlsx)
-    ws = wb["Cars"]
+    if sheet not in wb.sheetnames:
+        return []
+    ws = wb[sheet]
     hdr = [str(c.value).strip() if c.value is not None else "" for c in ws[1]]
     idx = {COLS[h]: i for i, h in enumerate(hdr) if h in COLS}
-    missing = [f for f in COLS.values() if f not in idx]
+    missing = [f for f in COLS.values() if f not in idx and f not in OPTIONAL]
     if missing:
         print(f"warning: columns not found: {missing}", file=sys.stderr)
     cars, slugs = [], set()
@@ -89,8 +101,23 @@ def read_cars(xlsx):
         slugs.add(slug)
         c["slug"] = slug
         c["row"] = row[0].row
+        c["sheet"] = sheet
         cars.append(c)
     return cars
+
+
+def read_all(xlsx):
+    """Cars from every list sheet, with slugs unique across sheets."""
+    out, seen = {}, set()
+    for sheet in LISTS:
+        cars = read_cars(xlsx, sheet)
+        for c in cars:
+            base, n = c["slug"], 2
+            while c["slug"] in seen:
+                c["slug"], n = f"{base}-{n}", n + 1
+            seen.add(c["slug"])
+        out[sheet] = cars
+    return out
 
 
 def read_pairs(xlsx, sheet):
@@ -296,6 +323,13 @@ footer.bottom p{margin:.4rem 0}
 .box{background:var(--card);border-radius:var(--radius);padding:1rem 1.1rem;box-shadow:0 1px 2px rgba(60,40,10,.06),0 6px 18px rgba(60,40,10,.06);margin:1rem 0}
 .box.verdict{border-left:5px solid var(--accent)}
 .small{font-size:.85rem;color:var(--soft)}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin:1rem 0 .2rem}
+.seg a{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:.7rem .5rem;border-radius:14px;border:2px solid var(--accent);color:var(--accent);background:var(--card);text-decoration:none;line-height:1.2}
+.seg a b{font-size:1.15rem}
+.seg a span{font-size:.82rem;font-weight:600;opacity:.85;margin-top:.15rem}
+.seg a[aria-current]{background:var(--accent);color:#fff}
+.criteria{margin:.6rem 0 .5rem;font-size:.88rem;color:var(--soft);line-height:1.4}
+.b.drive{background:#efe7fb;color:#5b2a9e}
 .added{margin:0 0 -.25rem;font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:.45rem}
 .newb{background:#ff3b30;color:#fff;font-weight:800;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:.22rem .5rem;border-radius:6px}
 .newb[hidden]{display:none}
@@ -371,7 +405,7 @@ def shell(title, base, current, updated, count, main, js="", sources=DEFAULT_SOU
 
 # ---------------- cards ----------------
 
-def photo_block(c, entry, eager):
+def photo_block(c, entry, eager, base=""):
     photos = sorted((p for p in (entry or {}).get("photos", []) if (ROOT / p).exists()),
                     key=lambda p: int(re.search(r"-(\d+)\.jpg$", p).group(1)) if re.search(r"-(\d+)\.jpg$", p) else 0)
     removed = (entry or {}).get("status") == "removed"
@@ -384,10 +418,10 @@ def photo_block(c, entry, eager):
     for i, p in enumerate(photos):
         w, h = img_size(p)
         load = "eager" if (eager and i == 0) else "lazy"
-        img = (f'<img class="fg" src="{esc(p)}" width="{w}" height="{h}" loading="{load}" decoding="async" '
+        img = (f'<img class="fg" src="{esc(base + p)}" width="{w}" height="{h}" loading="{load}" decoding="async" '
                f'alt="{esc(name)}, photo {i + 1} of {len(photos)}">')
         if h > w * 0.9:  # portrait phone photo: show it whole over a soft blurred copy
-            imgs.append(f'<div class="slide tall"><img class="bg" src="{esc(p)}" alt="" aria-hidden="true" loading="{load}">{img}</div>')
+            imgs.append(f'<div class="slide tall"><img class="bg" src="{esc(base + p)}" alt="" aria-hidden="true" loading="{load}">{img}</div>')
         else:
             imgs.append(f'<div class="slide">{img}</div>')
     count = (f'<span class="count" data-count="{len(photos)}">1 / {len(photos)}</span>' if len(photos) > 1 else "")
@@ -416,8 +450,9 @@ def details_rows(c):
         ("Trim", c["trim"]), ("Body style", c["body"]),
         ("Miles", f'{c["miles"]:,}' if c["miles"] else None),
         ("Asking price", money(c["price"]) if c["price"] else None),
-        ("Location", loc), ("Seller", c["seller"]),
+        ("Location", loc), ("Drive from Tulsa", c.get("drive")), ("Seller", c["seller"]),
         ("Title", c["title"]), ("Owners", c["owners"]), ("Accidents", c["accidents"]),
+        ("Service records", c.get("service")),
         ("Known issues & recalls", c["issues"]),
         ("Notes", c["notes"]),
         ("Est. insurance", f"About ${ins:,}/month (about ${ins * 12:,}/year), estimate" if ins else
@@ -452,13 +487,13 @@ def added_label(day):
     return f"{d:%b} {d.day}"
 
 
-def card(c, entry, eager):
+def card(c, entry, eager, base=""):
     removed = (entry or {}).get("status") == "removed"
     f = flag(c)
     name = " ".join(str(x) for x in [c["year"], c["make"], c["model"], c["trim"] if c["trim"] and c["trim"] != "n/a" else ""] if x)
     loc = ", ".join(x for x in [c["city"], c["state"]] if x)
     seller = re.sub(r"\s*\((?:FB)\)\s*", " ", str(c["seller"] or "")).strip()
-    badges = [title_badge(c), accident_badge(c), reliability_badge(c)]
+    badges = ([("drive", f'{c["drive"]} from Tulsa')] if c.get("drive") else []) + [title_badge(c), accident_badge(c), reliability_badge(c)]
     ins = ins_monthly(c)
     badges.append(("info", f"Insurance ~${ins}/mo") if ins else ("muted", "Insurance n/a"))
     if mpg_num(c):
@@ -475,7 +510,7 @@ def card(c, entry, eager):
              f'data-year="{c["year"] or 0}" data-removed="{1 if removed else 0}" data-added="{c["first_seen"]}"')
     is_new = c["first_seen"] == BUILD_DAY
     return f"""<li class="card{' removed' if removed else ''}" id="{c['slug']}" {attrs}>
-{photo_block(c, entry, eager)}
+{photo_block(c, entry, eager, base)}
 {flag_html}
 <div class="body">
 <p class="added"><span class="newb"{'' if is_new else ' hidden'}>New</span>Added {added_label(c["first_seen"])}</p>
@@ -502,7 +537,7 @@ var nNew=0;cards.forEach(function(c){var b=c.querySelector('.newb');if(today){c.
  if(b)b.hidden=c.dataset.isnew!=='1';if(c.dataset.isnew==='1')nNew++;});
 var nc=document.getElementById('newchip');if(nc)nc.textContent='New today ('+nNew+')';
 function ok(c){var g=c.dataset.group,p=+c.dataset.price;
- if(state.f==='all')return true; if(state.f==='new')return c.dataset.isnew==='1'; if(state.f==='under15')return p<15000; return g===state.f;}
+ if(state.f==='all')return true; if(state.f==='new')return c.dataset.isnew==='1'; if(state.f.indexOf('under:')===0)return p<+state.f.slice(6); return g===state.f;}
 function apply(){var list=cards.slice().sort(function(a,b){
   var r=(+a.dataset.removed)-(+b.dataset.removed); if(r)return r;
   if(state.s==='miles')return a.dataset.miles-b.dataset.miles;
@@ -529,18 +564,25 @@ document.querySelectorAll('.photo').forEach(function(ph){var g=ph.querySelector(
 </script>"""
 
 
-def build_index(cars, manifest, updated):
+def build_index(cars, manifest, updated, sheet="Cars", counts=None):
+    L = LISTS[sheet]
+    base = "../" if L["path"] else ""
     def sort_key(c):
         removed = manifest.get(c["key"], {}).get("status") == "removed"
         return (removed, c["price"] or 0)
     ordered = sorted(cars, key=sort_key)
-    cards_html = "\n".join(card(c, manifest.get(c["key"]), i < 6) for i, c in enumerate(ordered))
+    cards_html = "\n".join(card(c, manifest.get(c["key"]), i < 6, base) for i, c in enumerate(ordered))
     n_new = sum(1 for c in cars if c["first_seen"] == BUILD_DAY)
     chips = [("new", f"New today ({n_new})"), ("all", "All"), ("toyota", "Toyota"), ("honda", "Honda"), ("mazda", "Mazda"),
-             ("subaru", "Subaru"), ("hyundai-kia", "Hyundai/Kia"), ("under15", "Under $15k")]
+             ("subaru", "Subaru"), ("hyundai-kia", "Hyundai/Kia"), (f"under:{L['under'][0]}", L["under"][1])]
     chip_html = "".join(f'<button class="chip{' new' if k == 'new' else ''}" type="button" data-f="{k}"{' id="newchip"' if k == "new" else ''} aria-pressed="{"true" if k == "all" else "false"}">{v}</button>'
                         for k, v in chips)
-    main = f"""<div class="controls" data-js hidden>
+    seg = "".join(
+        f'<a href="{base}{o["path"]}"{" aria-current=page" if o is L else ""}><b>{o["label"]}</b><span>{o["range"]} · {(counts or {}).get(sh, 0)} cars</span></a>'
+        for sh, o in LISTS.items())
+    main = f"""<nav class="seg" aria-label="Car lists">{seg}</nav>
+<p class="criteria"><b>{L["label"]} list:</b> {esc(L["criteria"])}</p>
+<div class="controls" data-js hidden>
 <div class="chips" role="group" aria-label="Filter cars">{chip_html}</div>
 <div class="row2"><span id="shown" aria-live="polite"></span>
 <label>Sort <select id="sort"><option value="price">Price: low to high</option><option value="miles">Miles: low to high</option><option value="newest">Newest first</option><option value="added">Newest added</option></select></label></div>
@@ -552,7 +594,8 @@ def build_index(cars, manifest, updated):
 <p class="empty" id="empty" hidden>No cars match this filter.</p>
 <p class="empty" id="empty-new" hidden>Nothing new today yet. The daily search adds cars most mornings, so check back later.</p>
 </main>"""
-    return shell("Car Hunt", "", "cars", updated, len(cars), main, JS)
+    title = "Car Hunt" if sheet == "Cars" else f"{L['label']} list · Car Hunt"
+    return shell(title, base, "cars", updated, len(cars), main, JS)
 
 
 # ---------------- tips ----------------
@@ -791,22 +834,27 @@ def main():
     if len(sys.argv) != 2:
         sys.exit("usage: build.py <xlsx>")
     xlsx = sys.argv[1]
-    cars = read_cars(xlsx)
-    new_keys = stamp_first_seen(cars)
+    lists = read_all(xlsx)
+    allcars = [c for cs in lists.values() for c in cs]
+    new_keys = stamp_first_seen(allcars)
     mpath = ROOT / "photos" / "manifest.json"
     manifest = json.loads(mpath.read_text()) if mpath.exists() else {}
     updated = updated_time(xlsx)
-    (ROOT / "index.html").write_text(build_index(cars, manifest, updated), encoding="utf-8")
+    counts = {sh: len(cs) for sh, cs in lists.items()}
+    for sheet, cars in lists.items():
+        d = ROOT / LISTS[sheet]["path"]
+        d.mkdir(exist_ok=True)
+        (d / "index.html").write_text(build_index(cars, manifest, updated, sheet, counts), encoding="utf-8")
     (ROOT / "tips").mkdir(exist_ok=True)
-    (ROOT / "tips" / "index.html").write_text(build_tips(xlsx, updated, len(cars)), encoding="utf-8")
+    (ROOT / "tips" / "index.html").write_text(build_tips(xlsx, updated, len(allcars)), encoding="utf-8")
     (ROOT / "models").mkdir(exist_ok=True)
-    (ROOT / "models" / "index.html").write_text(build_models(updated, len(cars)), encoding="utf-8")
+    (ROOT / "models" / "index.html").write_text(build_models(updated, len(allcars)), encoding="utf-8")
     (ROOT / "robots.txt").write_text("User-agent: *\nDisallow: /\n")
     (ROOT / ".nojekyll").write_text("")
-    with_photos = sum(1 for c in cars if manifest.get(c["key"], {}).get("photos"))
-    removed = sum(1 for c in cars if manifest.get(c["key"], {}).get("status") == "removed")
+    with_photos = sum(1 for c in allcars if manifest.get(c["key"], {}).get("photos"))
+    removed = sum(1 for c in allcars if manifest.get(c["key"], {}).get("status") == "removed")
     print(f"first seen today: {new_keys} new key(s)")
-    print(f"built {len(cars)} cars; {with_photos} with photos; {removed} removed")
+    print(f"built {' + '.join(f'{n} {sh}' for sh, n in counts.items())} cars; {with_photos} with photos; {removed} removed")
 
 
 if __name__ == "__main__":
