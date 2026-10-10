@@ -899,11 +899,19 @@
   "url": "https://www.cars.com/vehicledetail/fc40d908-8b69-4147-9239-cf7e1504f0c5/"
  },
  "https://www.cars.com/vehicledetail/fcaa521c-bda1-43ba-866f-f36579eab712/": {
-  "checked": "2026-10-10T09:10:36-05:00",
-  "photos": [],
+  "candidates": [
+   "https://platform.cstatic-images.com/xxlarge/in/v2/0bff0ef5-a38a-55dc-855e-11972988b539/c96cbb4b-c4dc-41cc-88f9-994665dba58b/EyjAcbj-lVPHfKYNaxdt5h95pVU.jpg"
+  ],
+  "checked": "2026-10-10T09:12:32-05:00",
+  "photos": [
+   "photos/2023-hyundai-elantra-17349-1.jpg"
+  ],
   "slug": "2023-hyundai-elantra-17349",
-  "source": "cars.com bot check did not clear",
-  "status": "unavailable",
+  "source": "cars.com gallery (Used 2023 Hyundai ELANTRA SEL For Sale $17,349 | Cars.com)",
+  "sources": {
+   "photos/2023-hyundai-elantra-17349-1.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/0bff0ef5-a38a-55dc-855e-11972988b539/c96cbb4b-c4dc-41cc-88f9-994665dba58b/EyjAcbj-lVPHfKYNaxdt5h95pVU.jpg"
+  },
+  "status": "ok",
   "url": "https://www.cars.com/vehicledetail/fcaa521c-bda1-43ba-866f-f36579eab712/"
  },
  "https://www.facebook.com/marketplace/item/1001922329487822/": {
