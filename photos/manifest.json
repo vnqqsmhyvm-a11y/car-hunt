@@ -1,4 +1,20 @@
 {
+ "https://www.cars.com/vehicledetail/067e8b09-0cb3-421b-a537-c67faa9610ce/": {
+  "candidates": [
+   "https://platform.cstatic-images.com/xxlarge/in/v2/0bff0ef5-a38a-55dc-855e-11972988b539/3620c49d-0288-4539-a8b4-043c1485bb4c/60jOTlxMmaNwwDCxBRnZZcK_nGY.jpg"
+  ],
+  "checked": "2026-10-10T09:10:36-05:00",
+  "photos": [
+   "photos/2023-hyundai-elantra-18934-1.jpg"
+  ],
+  "slug": "2023-hyundai-elantra-18934",
+  "source": "cars.com gallery (Used 2023 Hyundai ELANTRA SEL For Sale $18,934 | Cars.com)",
+  "sources": {
+   "photos/2023-hyundai-elantra-18934-1.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/0bff0ef5-a38a-55dc-855e-11972988b539/3620c49d-0288-4539-a8b4-043c1485bb4c/60jOTlxMmaNwwDCxBRnZZcK_nGY.jpg"
+  },
+  "status": "ok",
+  "url": "https://www.cars.com/vehicledetail/067e8b09-0cb3-421b-a537-c67faa9610ce/"
+ },
  "https://www.cars.com/vehicledetail/08583eb7-9380-4c09-a1c5-f28324ab8956/": {
   "candidates": [
    "https://platform.cstatic-images.com/xxlarge/in/v2/cf34a660-58f7-51fb-a317-0f2036e915ae/1e5aeaae-eecc-48c5-bcf9-60681c32558d/Md_ndPpgep3Y5yj99W8qOLTDAtA.jpg",
@@ -58,6 +74,95 @@
   "status": "ok",
   "url": "https://www.cars.com/vehicledetail/08583eb7-9380-4c09-a1c5-f28324ab8956/"
  },
+ "https://www.cars.com/vehicledetail/095828af-a693-48df-97e0-58fa81ce0602/": {
+  "candidates": [
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/d11-7wBglKx7HFTtLbSneQXe-tI.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/q2g0EXE2UEJeqQhMk3ttkH1Husg.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/DAYu9JCoF_aQL_BYPaj9XSsJoik.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/8F7CjF2sgIxbLZko7t3aCB8-v0I.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/xS4U6iwJ3yowETiS7THKLgmduVc.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/qAq_w55H3_1r7DGKyZ4AS1NYlwI.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/tQvljCOpHg7XnKnUJRi1JLdAPgw.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/aoTKuqIalErFktbu7SeTx7oK-UI.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/bAS6gSVHk29B2zLf0Y0gT4evyP4.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/KYwzWIGjtX_-T1mmS9ZUvJINNa8.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/rAk4yxiAZL6qHRRcva17yGgNisU.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/SkFoUO3c6asoNKuuSRA6r_R36g0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/v2pZ8o6Y1sXfELGIqjdwQQ8pAZ8.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/DiCo-YMNQkdNd97dQQ3M7aGc9c4.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/M23xO8bBMNPejPi917Cvf1VUx3k.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/QV-1q_UH8Ha4hZL3SRLY3u6BrvA.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/3ZdqIodPEkTkvdx5TQHLR3bHK7I.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/VSIulmA8ucg3I0D2slqU5a1fyUc.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/NpQUX_-_0SvWRcfM8KNhuVSpR4U.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/WZRKbRnqy1bzZTgATuQ2iStPv3U.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/ApfeMR38rDq0GTr_84MRtXxfg5U.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/b_BbYcuqgCBxgH5QCBvRWGQn1-k.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/dqYK7sPW2jS18QI7e0OLmRcbS5c.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/-GC1I6Z8LPbii0bjcg_PFBlkdiY.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/H61VDLxOJJz1DmFGagcyXc1jsyA.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/miivBmcL7gTbpHi3WnXDeWB9XJ0.jpg"
+  ],
+  "checked": "2026-10-10T09:10:36-05:00",
+  "photos": [
+   "photos/2022-hyundai-venue-15995-1.jpg",
+   "photos/2022-hyundai-venue-15995-2.jpg",
+   "photos/2022-hyundai-venue-15995-3.jpg"
+  ],
+  "slug": "2022-hyundai-venue-15995",
+  "source": "cars.com gallery (Used 2022 Hyundai VENUE SEL For Sale $15,995 | Cars.com)",
+  "sources": {
+   "photos/2022-hyundai-venue-15995-1.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/d11-7wBglKx7HFTtLbSneQXe-tI.jpg",
+   "photos/2022-hyundai-venue-15995-2.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/q2g0EXE2UEJeqQhMk3ttkH1Husg.jpg",
+   "photos/2022-hyundai-venue-15995-3.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/911cf399-983c-5e86-8d46-be4c4d8a2afa/d764ee2c-6d7a-4e19-9d28-857a1e7e0067/DAYu9JCoF_aQL_BYPaj9XSsJoik.jpg"
+  },
+  "status": "ok",
+  "url": "https://www.cars.com/vehicledetail/095828af-a693-48df-97e0-58fa81ce0602/"
+ },
+ "https://www.cars.com/vehicledetail/10c4756f-d6ff-40f5-bed2-00beee13e0ac/": {
+  "candidates": [
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/RF4VZ0aDkmEqSa--IMUW2wjnNoY.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/dqJMzzDPjpCPdAzvdoBpKxJFKAk.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/MHQqVPrjIJEGDT1C36Pskhp4UP0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/cFsrWJL6cFZDLBGcfDN90Fknpac.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/swUt3OaVwx_nmrJkbBJqEQN2jqg.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/McZaxKyojkFX_T9Rs7ZtEK5dLeg.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/KHJzalXOo6trHSAGolVmYmLhrjY.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/HqVtzL-b2wGrt7dyLRzsQdO-RGA.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/3MoTETk91JV3qO503K_UysiKNrM.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/sIHniWTHyk_-ax4Ivdx-7_dAcMM.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/MbucJpxgo1dkScGiedhrowSmqDg.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/GEHU357EIxCprS6m6xKgbAuim4M.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/-HkXBbscGgxKH0rreCHjO82fgO0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/Jeu6kN8s1VqY2NNBWGGPibw0LTc.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/kOvs7zWo8BIDamnpFDmmpZM2Vw0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/TGJcPzWimB0qz9x3Rtora5GZN3Y.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/j6MYllZvMAArjVoXtijLYJzsDxQ.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/VMYmPv-etiOwm7FeoxReK7FVtXA.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/Oy36q1pqfx8e5u7hXAMBdfetrYU.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/AG3Y8gHrQahGayhipJHm3qMBJdY.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/qgm1jWb2y0DIMxaYkhYc7if45YY.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/VbOS0sTMuW8d0-mrDDG-abj7x44.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/NKUK4wrv9Rr-sAbvyz3IoOJ5nLg.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/nU8zhiijQE3-5uDZMZisQgZjQrI.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/wairCuFRV6BxbiijYSZy1cMSypc.jpg"
+  ],
+  "checked": "2026-10-10T09:10:36-05:00",
+  "photos": [
+   "photos/2020-honda-accord-17994-1.jpg",
+   "photos/2020-honda-accord-17994-2.jpg",
+   "photos/2020-honda-accord-17994-3.jpg"
+  ],
+  "slug": "2020-honda-accord-17994",
+  "source": "cars.com gallery (Used 2020 Honda Accord EX-L 1.5T For Sale $17,994 | Cars.com)",
+  "sources": {
+   "photos/2020-honda-accord-17994-1.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/RF4VZ0aDkmEqSa--IMUW2wjnNoY.jpg",
+   "photos/2020-honda-accord-17994-2.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/dqJMzzDPjpCPdAzvdoBpKxJFKAk.jpg",
+   "photos/2020-honda-accord-17994-3.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/a235ef9c-3b19-4a43-8ead-d87c9dda2077/22f5a13c-bff8-486e-b4e2-013e5c6242f8/MHQqVPrjIJEGDT1C36Pskhp4UP0.jpg"
+  },
+  "status": "ok",
+  "url": "https://www.cars.com/vehicledetail/10c4756f-d6ff-40f5-bed2-00beee13e0ac/"
+ },
  "https://www.cars.com/vehicledetail/18e33636-616c-4d86-89b3-db0b31cc47b4/": {
   "candidates": [
    "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/f1cdc14c-b8d1-40ce-95ca-393729e9033a/rDE-nGoNu4vmVkJkT7l9IdCR7AM.jpg",
@@ -111,6 +216,45 @@
   "status": "ok",
   "url": "https://www.cars.com/vehicledetail/18e33636-616c-4d86-89b3-db0b31cc47b4/"
  },
+ "https://www.cars.com/vehicledetail/2d4216ea-4364-45fb-b0d7-bce5696d1959/": {
+  "candidates": [
+   "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/z8Ek_AJH9vJdudThNfXos01PWXw.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/oHjbwfMOo6TLa0ZlvlcgSbXbhYc.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/eA_AhH6M2vNWj6_o2ml96uXIz2M.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/V4fJV6K9yGGqrwYCCDZ-zvICBQQ.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/-nYBSP0s5puUNkroHb6g_xE6uVY.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/pQVtFfwSKcJlpmzZJoPWzZL9PQk.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/TMILsDkXuyxqsSiMsp9ZCLVPUtA.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/AWlNBSbWqfh5t0z38adnPyKcPS0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/FMYvsUJuEW0uJLc4jZOmACi9uI8.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/4SLR-H_LH4qU1KfH8uvvBgNH9ig.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/NZL17f6zKVk-AjGDp5iZTlMwQuA.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/zuKq0_7PIDIkKm-lR0m6gnfcfYY.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/qQ8NOr1kLFQhA4WaaJQbtF2nshM.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/TiTMMPIO7n2JfOUCkmLAIhlymUA.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/5CZ3WzikXTu-aJ0sovjlt5bLemA.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/X45hNINWW3sA3RLnYWPUEZNWOak.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/pAU1kGXodTO-fBtdVFaDuLWdGSU.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/xjzJ_0bf61dT72XtSsPVEbRCSMg.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/dlEClnKBYpW39dGuVOVQsq4GiDg.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/tHDERwJL39DjTY2yEl1-Ansym_A.jpg"
+  ],
+  "checked": "2026-10-10T09:10:36-05:00",
+  "photos": [
+   "photos/2020-toyota-corolla-18819-1.jpg",
+   "photos/2020-toyota-corolla-18819-2.jpg",
+   "photos/2020-toyota-corolla-18819-3.jpg"
+  ],
+  "slug": "2020-toyota-corolla-18819",
+  "source": "cars.com gallery (Used 2020 Toyota Corolla XSE For Sale $18,819 | Cars.com)",
+  "sources": {
+   "photos/2020-toyota-corolla-18819-1.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/z8Ek_AJH9vJdudThNfXos01PWXw.jpg",
+   "photos/2020-toyota-corolla-18819-2.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/oHjbwfMOo6TLa0ZlvlcgSbXbhYc.jpg",
+   "photos/2020-toyota-corolla-18819-3.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/037487a5-603c-49e3-a632-e13d674c591a/03bd1aa5-5269-4980-b491-3fc993615f89/eA_AhH6M2vNWj6_o2ml96uXIz2M.jpg"
+  },
+  "status": "ok",
+  "url": "https://www.cars.com/vehicledetail/2d4216ea-4364-45fb-b0d7-bce5696d1959/"
+ },
  "https://www.cars.com/vehicledetail/3c1975c5-dccd-43f0-abf3-584ac8ed46b6/": {
   "candidates": [
    "https://platform.cstatic-images.com/xxlarge/in/v2/0694821b-582b-56e1-bdb6-8a8af333c558/923c2313-dc6c-46cb-9f28-a4e2c2ed15b4/VXPfMSajj_WKWyQIsxj-50rR1vk.jpg",
@@ -137,6 +281,70 @@
   },
   "status": "ok",
   "url": "https://www.cars.com/vehicledetail/3c1975c5-dccd-43f0-abf3-584ac8ed46b6/"
+ },
+ "https://www.cars.com/vehicledetail/40be45ba-75c2-4e6b-b089-01b2f62880e1/": {
+  "candidates": [
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/XRvbEMIbdjRF0kuFCrZT7TaoC_8.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/KD_08t7rP7dZg4JowS38Q7d260o.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/tDIqjSIpJUargaZLQZ3UJpyzmQ0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/BH-BYsQ163DYFh1UK-wgYYsN-s0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/FuOrK1_9l8HfkIgo21Cz2BcrMrk.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/9dD3JuiXrZqpTt5cwG75UYq9hr8.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/AzcnB5dd0ggAs7I0ea9jKLPCyuY.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/r9bOQUJlFWPlqq-9i9apJXasKKw.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/fqPNMj-0YRnT77U3SFmN7Df89_Q.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/Rz09flSbjkILmivbBPtRw_DkJNs.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/dzl-p0czciqfz-X8UNLake-v0l8.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/AzyRq5BmUQ9o88w4VV34pAhvUTc.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/P5pPCPH6LM6GuD4hOiix0fsxUcg.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/TBjlJuTpHjLW-D0yP1hSCZNGcds.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/IR6ZjLW2kuud57_QJf9wiTF8bBU.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/8LWAO_6PI4QP2vhs3c5QZH0A-us.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/-m__b9IUg59XXAbely4RMFdpWxE.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/RbBb0CuuKxslvZiMEqAGHZdTuME.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/ax4fMnt9Kbxr0_krPBxQS97f9ag.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/YRV-6AeSWLTz0KANQA519xrHsxA.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/BY5QraqNBTNJERwu2_9UQiIHE7s.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/oDN7iGTTh6D-JrdKBu0DaDiXbyc.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/CJV0AovX0YWZF6dnUNPN2uuzogU.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/99CBpyuUYCfIYFlgPlltphO5l5k.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/RZlkJl9lYe64kemkVU59EjphhhU.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/gWqRIxIUExWOrcH4KGfZb--OeCI.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/3cwF0Hv-OO5qrtoepBDfVs4cZQ0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/XOeV_GDWJ1cXDwwo3WmojCnI8f0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/G2cL9NqaArDS6gCvIb-sCG_HYt0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/iACxJRzLqE9JRYeUoyTJJaAa4NY.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/VnV1FXRvIXupouOclXhSntRtlnQ.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/TSButsZLYltJ4k7xiOEk746HEH4.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/1OqoA-AGc5VPO5qcJaFUiTo0ha4.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/eSr8iZ-u89w9EeSBStupxRMuY8s.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/kuTQ_zsJFygpay7nd4SCNFRMIoA.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/WUf6FQxp1k_opEgx6iR8KIbYkWw.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/OqXQsjAaCTC59UB3ILQKYXYaS18.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/w3VOinl86tIUkcz821yXfsSf8vQ.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/181V9b6AaHsSF_3Z8TinoHg4MEA.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/bBWu_BNA4yYxXtgC5jZgiNBJPEY.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/b8wBxp-SBcjr9974pjyCDkRTQGA.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/bWzLQ4DeCuPR_AciLyDZcyWRtCI.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/XXFCPt01FMDIjwYO66Wa7YFq1Hg.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/uyWFHjTUMXo6r6t9IefrZfpaKps.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/mw0IzQe7lbYFIfYd2YpwXkli3uA.jpg"
+  ],
+  "checked": "2026-10-10T09:10:36-05:00",
+  "photos": [
+   "photos/2022-toyota-corolla-17277-4.jpg",
+   "photos/2022-toyota-corolla-17277-5.jpg",
+   "photos/2022-toyota-corolla-17277-6.jpg"
+  ],
+  "slug": "2022-toyota-corolla-17277",
+  "source": "cars.com gallery (Used 2022 Toyota Corolla LE For Sale $16,878 | Cars.com)",
+  "sources": {
+   "photos/2022-toyota-corolla-17277-4.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/XRvbEMIbdjRF0kuFCrZT7TaoC_8.jpg",
+   "photos/2022-toyota-corolla-17277-5.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/KD_08t7rP7dZg4JowS38Q7d260o.jpg",
+   "photos/2022-toyota-corolla-17277-6.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/9ab6c708-d4fb-4738-8299-4b1778b7d863/3fb7f71d-99b9-47cc-9449-03d5ad2317f4/tDIqjSIpJUargaZLQZ3UJpyzmQ0.jpg"
+  },
+  "status": "ok",
+  "url": "https://www.cars.com/vehicledetail/40be45ba-75c2-4e6b-b089-01b2f62880e1/"
  },
  "https://www.cars.com/vehicledetail/414343ec-7085-4800-b16d-ce2cff5bf07c/": {
   "candidates": [
@@ -334,6 +542,55 @@
   "status": "ok",
   "url": "https://www.cars.com/vehicledetail/4c5cc641-1569-495d-815c-d8f57d5f5172/"
  },
+ "https://www.cars.com/vehicledetail/50fe836a-19eb-40dc-aa8e-136aa0e30194/": {
+  "candidates": [
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/FvZhWfE8kneuIL7m5dtkhU5fqmY.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/UF2zzSUfj-gMTvqL0RsiQ2juSKQ.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/zlpPJhTCNiwBWRj5psiynPBAwHI.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/eUrexlW7DuW5BYIG0JDsqwKoxCc.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/LXYLO-Joj25CiKXr6lXrqAYy30I.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/yUOh-Y6nOwNKPVJdjg4Rutq3_Io.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/vIhOeVqrempzqeuQwMnIOWfz80Q.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/rTQT5tw8SvOeS17VX0who4K7n18.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/nrsB8cnBEcLAazeTNfjWhn0m7Xc.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/dptKQ-E9sC-idR_xAJgdgHXaMl0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/jEprVyCPCxTmjMNY0i1ukfIKgIw.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/3o14Ur1fa-FV-6kmYpwuOM9f7w0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/i6RG9ZMTP94nuaHba6-us_Hlzes.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/d8jpzbbAKhcQr4CUxTzXe1a5Ljw.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/IUaz2FG-2_fEiY-Hmhh3Ips3Re0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/DQqeKeclM79jZ2tRODLXrMTMlig.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/qqrPgYlSmKHEgorf3nV3fHD2wlc.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/1QZSmlqw662wG2tLoOYk-fhUU9Y.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/QBdrVWsiuW6taMnKBEWiIAv5qEM.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/byL_nloRcz7vr_FUNTNZVwos9YI.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/FFe-A1aRAK20uZnrtlGnEpzHwHg.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/oe74AMQ3Y5kEoPUo7NJKpaRDQWs.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/6Bhqb_kcp7ZPSJFkliCZbZBqhR4.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/Nk1aT6YdLEsFv7W3CdmptIMZlk4.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/yR3stuDnuqWKRw1e2J2-5dE9jH8.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/23GJFI_dQt7WaHfcXfgUw01YlCw.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/xyNCGQ1tRnsAbcspYJrEIoDGZ-g.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/S_TMBRAfjvzX8TuXHfFlJRWCrOg.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/JZftAu3McjAEiY9e7x6f5VkNNLU.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/LL7asmuAiz-Lcl4WggBm6mFPXvA.jpg"
+  ],
+  "checked": "2026-10-10T09:10:36-05:00",
+  "photos": [
+   "photos/2020-mazda-cx-3-17162-1.jpg",
+   "photos/2020-mazda-cx-3-17162-2.jpg",
+   "photos/2020-mazda-cx-3-17162-3.jpg"
+  ],
+  "slug": "2020-mazda-cx-3-17162",
+  "source": "cars.com gallery (Used 2020 Mazda CX-3 Sport For Sale $17,162 | Cars.com)",
+  "sources": {
+   "photos/2020-mazda-cx-3-17162-1.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/FvZhWfE8kneuIL7m5dtkhU5fqmY.jpg",
+   "photos/2020-mazda-cx-3-17162-2.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/UF2zzSUfj-gMTvqL0RsiQ2juSKQ.jpg",
+   "photos/2020-mazda-cx-3-17162-3.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/49dbde5e-9390-4225-ab7f-9ceaf19a0a0d/zlpPJhTCNiwBWRj5psiynPBAwHI.jpg"
+  },
+  "status": "ok",
+  "url": "https://www.cars.com/vehicledetail/50fe836a-19eb-40dc-aa8e-136aa0e30194/"
+ },
  "https://www.cars.com/vehicledetail/739e47a3-0650-48fa-9948-6805086c6b9c/": {
   "candidates": [
    "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/b14b8b5d-f508-4838-8a3a-b6d0de0a9b4c/U0jBRzA0CN9PlXw6w9FWrpSUmVY.jpg",
@@ -371,6 +628,22 @@
   },
   "status": "ok",
   "url": "https://www.cars.com/vehicledetail/739e47a3-0650-48fa-9948-6805086c6b9c/"
+ },
+ "https://www.cars.com/vehicledetail/73d7fec3-6d56-456f-9ce4-1b942adb31a4/": {
+  "candidates": [
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/f53cc401-15c1-41bd-8b41-57b4fd529868/4fYQfb-xDnBJ2nyeNzK9K2hux9w.jpg"
+  ],
+  "checked": "2026-10-10T09:10:36-05:00",
+  "photos": [
+   "photos/2021-subaru-impreza-17579-1.jpg"
+  ],
+  "slug": "2021-subaru-impreza-17579",
+  "source": "cars.com gallery (Used 2021 Subaru Impreza Base For Sale $17,579 | Cars.com)",
+  "sources": {
+   "photos/2021-subaru-impreza-17579-1.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/f53cc401-15c1-41bd-8b41-57b4fd529868/4fYQfb-xDnBJ2nyeNzK9K2hux9w.jpg"
+  },
+  "status": "ok",
+  "url": "https://www.cars.com/vehicledetail/73d7fec3-6d56-456f-9ce4-1b942adb31a4/"
  },
  "https://www.cars.com/vehicledetail/8b0d0811-d609-4c56-8ef9-6c307389224c/": {
   "candidates": [
@@ -434,6 +707,83 @@
   },
   "status": "ok",
   "url": "https://www.cars.com/vehicledetail/998de3ef-8b87-4813-9cd1-ca9d491485de/"
+ },
+ "https://www.cars.com/vehicledetail/acb08fed-e4f1-40a0-a515-94fd29e4360a/": {
+  "candidates": [
+   "https://platform.cstatic-images.com/xxlarge/in/v2/0694821b-582b-56e1-bdb6-8a8af333c558/71362ae9-f876-446a-beef-7b162e308f46/3HfclW9uIWKAl4i-ZrSA-32mzDg.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/0694821b-582b-56e1-bdb6-8a8af333c558/71362ae9-f876-446a-beef-7b162e308f46/IyDOEXHdIIt-OyS63gzzKlm6VWI.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/0694821b-582b-56e1-bdb6-8a8af333c558/71362ae9-f876-446a-beef-7b162e308f46/hHwyzPdMNuLXE6zjAK54XevHzlo.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/0694821b-582b-56e1-bdb6-8a8af333c558/71362ae9-f876-446a-beef-7b162e308f46/2qIPnEPWmKZ8JPKr-TrKX-s0plQ.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/0694821b-582b-56e1-bdb6-8a8af333c558/71362ae9-f876-446a-beef-7b162e308f46/QXjR_QH9h0T1ph4dqEzvy4yqrPw.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/0694821b-582b-56e1-bdb6-8a8af333c558/71362ae9-f876-446a-beef-7b162e308f46/eyO58lCn6Tj-O6XBSH4TOL961ds.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/0694821b-582b-56e1-bdb6-8a8af333c558/71362ae9-f876-446a-beef-7b162e308f46/loIJmheqHRtkPjsMutyHij2XXOA.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/0694821b-582b-56e1-bdb6-8a8af333c558/71362ae9-f876-446a-beef-7b162e308f46/y2fHm0hRYqSyH1sk0G1wnpfZpt0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/0694821b-582b-56e1-bdb6-8a8af333c558/71362ae9-f876-446a-beef-7b162e308f46/Lfu5s47lx3UoFdDtckLMFrk6Eqc.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/0694821b-582b-56e1-bdb6-8a8af333c558/71362ae9-f876-446a-beef-7b162e308f46/MevK7o4zGTmvhF6mQuqPByvrzmA.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/0694821b-582b-56e1-bdb6-8a8af333c558/71362ae9-f876-446a-beef-7b162e308f46/SdnCsBXgsMds37s847BBztholqI.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/0694821b-582b-56e1-bdb6-8a8af333c558/71362ae9-f876-446a-beef-7b162e308f46/N_HWBFRSdRv2Kgw2OcpuxQsBP94.jpg"
+  ],
+  "checked": "2026-10-10T09:10:36-05:00",
+  "photos": [
+   "photos/2019-honda-accord-18496-1.jpg",
+   "photos/2019-honda-accord-18496-2.jpg",
+   "photos/2019-honda-accord-18496-3.jpg"
+  ],
+  "slug": "2019-honda-accord-18496",
+  "source": "cars.com gallery (Used 2019 Honda Accord LX For Sale $18,496 | Cars.com)",
+  "sources": {
+   "photos/2019-honda-accord-18496-1.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/0694821b-582b-56e1-bdb6-8a8af333c558/71362ae9-f876-446a-beef-7b162e308f46/3HfclW9uIWKAl4i-ZrSA-32mzDg.jpg",
+   "photos/2019-honda-accord-18496-2.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/0694821b-582b-56e1-bdb6-8a8af333c558/71362ae9-f876-446a-beef-7b162e308f46/IyDOEXHdIIt-OyS63gzzKlm6VWI.jpg",
+   "photos/2019-honda-accord-18496-3.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/0694821b-582b-56e1-bdb6-8a8af333c558/71362ae9-f876-446a-beef-7b162e308f46/hHwyzPdMNuLXE6zjAK54XevHzlo.jpg"
+  },
+  "status": "ok",
+  "url": "https://www.cars.com/vehicledetail/acb08fed-e4f1-40a0-a515-94fd29e4360a/"
+ },
+ "https://www.cars.com/vehicledetail/b5aa3a75-6186-452f-845d-a6ad388dbd8f/": {
+  "candidates": [
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/Q8lnd0WFVq3k17eMDcWIk3Tx--I.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/db32rkMEbPsa0hQqTT-tl1OrQbw.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/QX5XXxOi-XqeCH-VmGc-MmOGhyI.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/Fv1S3vYP6b-h0gcwyal21LZR-Q0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/9JmRilMmIcMCyPyaTkSjZ_kibgc.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/vUt2_ZQyVXbZwf-f_G1HmhKrhFY.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/CbbyAS7-WH4EJaH9sZksYMyvQSk.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/LQycWdY-P_6kjJHXJwWoTK5tsa8.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/7Cgk8cKJX9vl-piDp2gJxhj2TM4.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/KQc8pLCHWmUdPiCxpf8-RjUQS6A.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/HyRKlYk3ETZ953Cbkdova3cCb_8.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/2ItR_dxdGiQLB2VKjXX0OfqEJTk.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/yZ6B6iDLtxyumfCFxxhDv2rwCIE.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/W0h85dHzhw2fNEn2VeZgcYQ4p44.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/RibeSyM2Nxo9h69MzEEx85BRqws.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/ttKczgy3Liqia5sgIxNf9R59G1M.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/GCmcoM1EdDAEnv-v7CURsWBEMHg.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/vSpm_cjSpF3ojAQ6iKbtHTjrLx4.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/tcGdOairJWePHHhiRUS-XQTf_rs.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/CQoybKBhE-wF61qQxBzMufoxEX8.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/NFWdV6FKR9gG11wuJ7-dk-bOeGs.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/qQkbbzCPsAQUVEx53YBFqL570p4.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/KSw9O3CMQOConVy1eVrXd4kBbrA.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/_5lUY3aSS6wXg_oo9f6pjveCeD0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/TAbbkwpZaDnXRjTK_RebOE-DLiA.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/koSIwKmT_f8TYu2AOSIBbFfP6lw.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/8RmNZbOLl3XGByV771qp4lMg8WI.jpg"
+  ],
+  "checked": "2026-10-10T09:10:36-05:00",
+  "photos": [
+   "photos/2023-subaru-impreza-17693-1.jpg",
+   "photos/2023-subaru-impreza-17693-2.jpg",
+   "photos/2023-subaru-impreza-17693-3.jpg"
+  ],
+  "slug": "2023-subaru-impreza-17693",
+  "source": "cars.com gallery (Used 2023 Subaru Impreza Base For Sale $17,693 | Cars.com)",
+  "sources": {
+   "photos/2023-subaru-impreza-17693-1.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/Q8lnd0WFVq3k17eMDcWIk3Tx--I.jpg",
+   "photos/2023-subaru-impreza-17693-2.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/db32rkMEbPsa0hQqTT-tl1OrQbw.jpg",
+   "photos/2023-subaru-impreza-17693-3.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/8adf3bbd-af2a-5c52-89f5-3a1ec2b5e6a4/5692d830-7d58-4e5b-9317-4936991a5768/QX5XXxOi-XqeCH-VmGc-MmOGhyI.jpg"
+  },
+  "status": "ok",
+  "url": "https://www.cars.com/vehicledetail/b5aa3a75-6186-452f-845d-a6ad388dbd8f/"
  },
  "https://www.cars.com/vehicledetail/bfed2304-9543-4e80-9c98-772eef3a1dad/": {
   "candidates": [
@@ -547,6 +897,14 @@
   },
   "status": "ok",
   "url": "https://www.cars.com/vehicledetail/fc40d908-8b69-4147-9239-cf7e1504f0c5/"
+ },
+ "https://www.cars.com/vehicledetail/fcaa521c-bda1-43ba-866f-f36579eab712/": {
+  "checked": "2026-10-10T09:10:36-05:00",
+  "photos": [],
+  "slug": "2023-hyundai-elantra-17349",
+  "source": "cars.com bot check did not clear",
+  "status": "unavailable",
+  "url": "https://www.cars.com/vehicledetail/fcaa521c-bda1-43ba-866f-f36579eab712/"
  },
  "https://www.facebook.com/marketplace/item/1001922329487822/": {
   "checked": "2026-10-09T20:00:12-05:00",
