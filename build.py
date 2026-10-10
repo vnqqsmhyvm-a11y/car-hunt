@@ -296,6 +296,11 @@ footer.bottom p{margin:.4rem 0}
 .box{background:var(--card);border-radius:var(--radius);padding:1rem 1.1rem;box-shadow:0 1px 2px rgba(60,40,10,.06),0 6px 18px rgba(60,40,10,.06);margin:1rem 0}
 .box.verdict{border-left:5px solid var(--accent)}
 .small{font-size:.85rem;color:var(--soft)}
+.added{margin:0 0 -.25rem;font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:.45rem}
+.newb{background:#ff3b30;color:#fff;font-weight:800;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:.22rem .5rem;border-radius:6px}
+.newb[hidden]{display:none}
+.chip.new{border-color:#ff3b30;color:#d62a20}
+.chip.new[aria-pressed=true]{background:#ff3b30;border-color:#ff3b30;color:#fff}
 .intro{color:var(--soft);margin:1rem 0 .2rem;max-width:44rem}
 .chips+.chips{margin-top:.45rem}
 .chip.sm{font-size:.85rem;padding:.5rem .75rem}
@@ -424,6 +429,29 @@ def details_rows(c):
     return "".join(f"<div><dt>{esc(k)}</dt><dd>{esc(v)}</dd></div>" for k, v in rows if v not in (None, ""))
 
 
+BUILD_DAY = dt.datetime.now(CT).date().isoformat()
+FIRST_SEEN = ROOT / "guide" / "first_seen.json"
+
+
+def stamp_first_seen(cars):
+    """Map car key -> first CT date it appeared. New keys get today's CT date; existing dates never change."""
+    seen = json.loads(FIRST_SEEN.read_text()) if FIRST_SEEN.exists() else {}
+    added = 0
+    for c in cars:
+        if c["key"] not in seen:
+            seen[c["key"]] = BUILD_DAY
+            added += 1
+        c["first_seen"] = seen[c["key"]]
+    FIRST_SEEN.parent.mkdir(exist_ok=True)
+    FIRST_SEEN.write_text(json.dumps(dict(sorted(seen.items())), indent=1) + "\n")
+    return added
+
+
+def added_label(day):
+    d = dt.date.fromisoformat(day)
+    return f"{d:%b} {d.day}"
+
+
 def card(c, entry, eager):
     removed = (entry or {}).get("status") == "removed"
     f = flag(c)
@@ -444,11 +472,13 @@ def card(c, entry, eager):
     else:
         btn = '<span class="btn off">No listing link</span>'
     attrs = (f'data-group="{group(c["make"])}" data-price="{c["price"] or 0}" data-miles="{c["miles"] or 0}" '
-             f'data-year="{c["year"] or 0}" data-removed="{1 if removed else 0}"')
+             f'data-year="{c["year"] or 0}" data-removed="{1 if removed else 0}" data-added="{c["first_seen"]}"')
+    is_new = c["first_seen"] == BUILD_DAY
     return f"""<li class="card{' removed' if removed else ''}" id="{c['slug']}" {attrs}>
 {photo_block(c, entry, eager)}
 {flag_html}
 <div class="body">
+<p class="added"><span class="newb"{'' if is_new else ' hidden'}>New</span>Added {added_label(c["first_seen"])}</p>
 <h2>{esc(name)}</h2>
 <div class="price">{money(c['price'])}</div>
 <p class="facts"><span>{f'{c["miles"]:,} miles' if c["miles"] else 'Miles n/a'}</span><span>{esc(loc)}</span><span>{esc(seller)}</span></p>
@@ -467,20 +497,26 @@ var grid=document.getElementById('cars'),cards=[].slice.call(grid.children),show
 var chips=[].slice.call(document.querySelectorAll('.chip')),sel=document.getElementById('sort');
 document.querySelectorAll('[data-js]').forEach(function(e){e.hidden=false});
 var state={f:'all',s:'price'};
+var today;try{today=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());}catch(e){}
+var nNew=0;cards.forEach(function(c){var b=c.querySelector('.newb');if(today){c.dataset.isnew=c.dataset.added===today?'1':'0';}else{c.dataset.isnew=b&&!b.hidden?'1':'0';}
+ if(b)b.hidden=c.dataset.isnew!=='1';if(c.dataset.isnew==='1')nNew++;});
+var nc=document.getElementById('newchip');if(nc)nc.textContent='New today ('+nNew+')';
 function ok(c){var g=c.dataset.group,p=+c.dataset.price;
- if(state.f==='all')return true; if(state.f==='under15')return p<15000; return g===state.f;}
+ if(state.f==='all')return true; if(state.f==='new')return c.dataset.isnew==='1'; if(state.f==='under15')return p<15000; return g===state.f;}
 function apply(){var list=cards.slice().sort(function(a,b){
   var r=(+a.dataset.removed)-(+b.dataset.removed); if(r)return r;
   if(state.s==='miles')return a.dataset.miles-b.dataset.miles;
+  if(state.s==='added')return (b.dataset.added<a.dataset.added?-1:b.dataset.added>a.dataset.added?1:0)||(a.dataset.price-b.dataset.price);
   if(state.s==='newest')return (b.dataset.year-a.dataset.year)||(a.dataset.price-b.dataset.price);
   return a.dataset.price-b.dataset.price;});
  var n=0; list.forEach(function(c){var v=ok(c);c.hidden=!v;if(v)n++;grid.appendChild(c);});
  shown.textContent=n===cards.length?('Showing all '+n+' cars'):('Showing '+n+' of '+cards.length+' cars');
- document.getElementById('empty').hidden=n>0;}
+ document.getElementById('empty').hidden=n>0||state.f==='new';
+ document.getElementById('empty-new').hidden=n>0||state.f!=='new';}
 chips.forEach(function(ch){ch.addEventListener('click',function(){state.f=ch.dataset.f;
  chips.forEach(function(x){x.setAttribute('aria-pressed',x===ch?'true':'false')});apply();});});
 sel.addEventListener('change',function(){state.s=sel.value;apply();});
-apply();
+if(location.hash==='#new'&&nc){nc.click();}else{apply();}
 document.querySelectorAll('.photo').forEach(function(ph){var g=ph.querySelector('.gallery'),cnt=ph.querySelector('.count');
  if(!g||!cnt)return; var n=+cnt.dataset.count;
  function idx(){return Math.round(g.scrollLeft/g.clientWidth)}
@@ -499,20 +535,22 @@ def build_index(cars, manifest, updated):
         return (removed, c["price"] or 0)
     ordered = sorted(cars, key=sort_key)
     cards_html = "\n".join(card(c, manifest.get(c["key"]), i < 6) for i, c in enumerate(ordered))
-    chips = [("all", "All"), ("toyota", "Toyota"), ("honda", "Honda"), ("mazda", "Mazda"),
+    n_new = sum(1 for c in cars if c["first_seen"] == BUILD_DAY)
+    chips = [("new", f"New today ({n_new})"), ("all", "All"), ("toyota", "Toyota"), ("honda", "Honda"), ("mazda", "Mazda"),
              ("subaru", "Subaru"), ("hyundai-kia", "Hyundai/Kia"), ("under15", "Under $15k")]
-    chip_html = "".join(f'<button class="chip" type="button" data-f="{k}" aria-pressed="{"true" if k == "all" else "false"}">{v}</button>'
+    chip_html = "".join(f'<button class="chip{' new' if k == 'new' else ''}" type="button" data-f="{k}"{' id="newchip"' if k == "new" else ''} aria-pressed="{"true" if k == "all" else "false"}">{v}</button>'
                         for k, v in chips)
     main = f"""<div class="controls" data-js hidden>
 <div class="chips" role="group" aria-label="Filter cars">{chip_html}</div>
 <div class="row2"><span id="shown" aria-live="polite"></span>
-<label>Sort <select id="sort"><option value="price">Price: low to high</option><option value="miles">Miles: low to high</option><option value="newest">Newest first</option></select></label></div>
+<label>Sort <select id="sort"><option value="price">Price: low to high</option><option value="miles">Miles: low to high</option><option value="newest">Newest first</option><option value="added">Newest added</option></select></label></div>
 </div>
 <main>
 <ul class="grid" id="cars">
 {cards_html}
 </ul>
 <p class="empty" id="empty" hidden>No cars match this filter.</p>
+<p class="empty" id="empty-new" hidden>Nothing new today yet. The daily search adds cars most mornings, so check back later.</p>
 </main>"""
     return shell("Car Hunt", "", "cars", updated, len(cars), main, JS)
 
@@ -704,7 +742,8 @@ var st={v:'all',g:'all'},items=[].slice.call(document.querySelectorAll('.m')),sh
 function apply(){var n=0;items.forEach(function(m){var ok=(st.v==='all'||m.dataset.v===st.v)&&(st.g==='all'||m.dataset.g===st.g);m.hidden=!ok;if(ok)n++;});
  document.querySelectorAll('.vgroup').forEach(function(s){s.hidden=!s.querySelector('.m:not([hidden])')});
  shown.textContent=n===items.length?('Showing all '+n+' entries'):('Showing '+n+' of '+items.length+' entries');
- document.getElementById('empty').hidden=n>0;}
+ document.getElementById('empty').hidden=n>0||state.f==='new';
+ document.getElementById('empty-new').hidden=n>0||state.f!=='new';}
 document.querySelectorAll('.chip').forEach(function(ch){ch.addEventListener('click',function(){var k=ch.dataset.k;st[k]=ch.dataset.f;
  document.querySelectorAll('.chip[data-k="'+k+'"]').forEach(function(x){x.setAttribute('aria-pressed',x===ch?'true':'false')});apply();});});
 apply();
@@ -753,6 +792,7 @@ def main():
         sys.exit("usage: build.py <xlsx>")
     xlsx = sys.argv[1]
     cars = read_cars(xlsx)
+    new_keys = stamp_first_seen(cars)
     mpath = ROOT / "photos" / "manifest.json"
     manifest = json.loads(mpath.read_text()) if mpath.exists() else {}
     updated = updated_time(xlsx)
@@ -765,6 +805,7 @@ def main():
     (ROOT / ".nojekyll").write_text("")
     with_photos = sum(1 for c in cars if manifest.get(c["key"], {}).get("photos"))
     removed = sum(1 for c in cars if manifest.get(c["key"], {}).get("status") == "removed")
+    print(f"first seen today: {new_keys} new key(s)")
     print(f"built {len(cars)} cars; {with_photos} with photos; {removed} removed")
 
 

@@ -8,3 +8,5 @@ Used-car shortlist, built from the master spreadsheet.
 
 Needs: python3 with openpyxl, pillow, requests, websocket-client; google-chrome and xvfb-run.
 Photo state: `photos/manifest.json` (keyed by listing URL, or year|make|model|price without a URL).
+
+`guide/first_seen.json` records the CT date each car (by listing URL, or year/make/model/price) first appeared. `build.py` stamps unseen cars with today and never changes existing dates; for a relisted car with a new link, copy its old date onto the new key by hand.
