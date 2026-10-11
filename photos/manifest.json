@@ -1429,6 +1429,37 @@
   "status": "ok",
   "url": "https://www.cars.com/vehicledetail/998de3ef-8b87-4813-9cd1-ca9d491485de/"
  },
+ "https://www.cars.com/vehicledetail/a29d41f6-97d6-47b0-9204-e91752e071be/": {
+  "candidates": [
+   "https://platform.cstatic-images.com/xxlarge/in/v2/98d6bca1-f32d-594b-942e-1fe44117b741/62c11232-31e9-45f1-92eb-46c93992cfe9/xaKQQtdW6ToAezsXZ4x1265o33c.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/98d6bca1-f32d-594b-942e-1fe44117b741/62c11232-31e9-45f1-92eb-46c93992cfe9/ygW_eZL782W7pWZA71z4v44mwmY.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/98d6bca1-f32d-594b-942e-1fe44117b741/62c11232-31e9-45f1-92eb-46c93992cfe9/8-mXtxi1PZ0FhvfEE4jzPppHOaQ.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/98d6bca1-f32d-594b-942e-1fe44117b741/62c11232-31e9-45f1-92eb-46c93992cfe9/CE_7OCR1xihkyzd7pEf-UXHmdN8.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/98d6bca1-f32d-594b-942e-1fe44117b741/62c11232-31e9-45f1-92eb-46c93992cfe9/cd5houaJQ6i6Uq7RMxkwz2aJWqU.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/98d6bca1-f32d-594b-942e-1fe44117b741/62c11232-31e9-45f1-92eb-46c93992cfe9/77AchgbFNpGiVHD1m9L3qlibjmY.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/98d6bca1-f32d-594b-942e-1fe44117b741/62c11232-31e9-45f1-92eb-46c93992cfe9/LhI6tN3RqYOLLzJ9sO3iY27B8gU.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/98d6bca1-f32d-594b-942e-1fe44117b741/62c11232-31e9-45f1-92eb-46c93992cfe9/EUzyxoX6I0Uyv3AucOwou53MU0o.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/98d6bca1-f32d-594b-942e-1fe44117b741/62c11232-31e9-45f1-92eb-46c93992cfe9/0ETolIAy36a2aOHlG2pz3So-TL8.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/98d6bca1-f32d-594b-942e-1fe44117b741/62c11232-31e9-45f1-92eb-46c93992cfe9/SxkBDQRRFn4GcLt04KB4j9RV9uc.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/98d6bca1-f32d-594b-942e-1fe44117b741/62c11232-31e9-45f1-92eb-46c93992cfe9/8Vrl0-ALzmPNGH_FkBq9GRJrzoo.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/98d6bca1-f32d-594b-942e-1fe44117b741/62c11232-31e9-45f1-92eb-46c93992cfe9/BUrUNju-XJYvDUMGAiAPtSa9-uE.jpg"
+  ],
+  "checked": "2026-10-11T15:56:03-05:00",
+  "photos": [
+   "photos/2016-toyota-rav4-18846-1.jpg",
+   "photos/2016-toyota-rav4-18846-2.jpg",
+   "photos/2016-toyota-rav4-18846-3.jpg"
+  ],
+  "slug": "2016-toyota-rav4-18846",
+  "source": "cars.com gallery (Used 2016 Toyota RAV4 XLE For Sale $18,846 | Cars.com)",
+  "sources": {
+   "photos/2016-toyota-rav4-18846-1.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/98d6bca1-f32d-594b-942e-1fe44117b741/62c11232-31e9-45f1-92eb-46c93992cfe9/xaKQQtdW6ToAezsXZ4x1265o33c.jpg",
+   "photos/2016-toyota-rav4-18846-2.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/98d6bca1-f32d-594b-942e-1fe44117b741/62c11232-31e9-45f1-92eb-46c93992cfe9/ygW_eZL782W7pWZA71z4v44mwmY.jpg",
+   "photos/2016-toyota-rav4-18846-3.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/98d6bca1-f32d-594b-942e-1fe44117b741/62c11232-31e9-45f1-92eb-46c93992cfe9/8-mXtxi1PZ0FhvfEE4jzPppHOaQ.jpg"
+  },
+  "status": "ok",
+  "url": "https://www.cars.com/vehicledetail/a29d41f6-97d6-47b0-9204-e91752e071be/"
+ },
  "https://www.cars.com/vehicledetail/a611de4c-810d-47bf-9604-3b4c466014cd/": {
   "candidates": [
    "https://platform.cstatic-images.com/xxlarge/in/v2/b767bef0-3540-45bd-a759-30c14d75dd50/15312fe3-4971-432a-997e-9f64c85c57b1/X8IjM2ezA08c31XHXvlsmu2zGZk.jpg",
@@ -1845,6 +1876,47 @@
   "status": "ok",
   "url": "https://www.cars.com/vehicledetail/d19af16f-a24b-461d-82ac-467591130a78/"
  },
+ "https://www.cars.com/vehicledetail/d692ae7b-73d4-4bb4-9a61-ca79bb5dd2f2/": {
+  "candidates": [
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/JvGvwgNxsHEvP_VXmZ2nEm8JFmU.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/my8RzRcKHqiLOf3u6mPtWAIymMQ.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/PQaPuUcYY2r6IB2VmBp1sSzgsy0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/JivhjbNhgEEwMZimyN0hIFTaj0k.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/srSq_zeafdQu04FoSKJx89YHoL8.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/Rxt8pEZ-DOZlqYlw_BupggzwzHQ.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/9mjJPFK-A0nU62j0skJXZiuWGvU.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/KXadl3hIUi6m0BcKW4dDe1z2SsE.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/cHGPxRlFte598NlSIcIZP0zj6dU.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/a3i19TFgsmy0Lq2LBitKiD3bHuE.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/B4rn1QSM16rZBLLguoVOiMrYf1A.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/VRw6goOEM3Il6845KLqpbi3LWRQ.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/aXvs7eIV9MUxZNfoDA5XO31eOaw.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/MHXJAEAlAb_btm1hkgEVEzqx0uQ.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/dKngql5b-nW3cebQtlaS3k6Yaoc.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/Sz8nQF5SvVino5kxzfZ5opJXlk4.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/z57A2Nkb-KVDyC5C2ARvBzJDpWU.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/uRy24wiI0MoZq4gS-ZJrl415lT4.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/rwKJfybnV7GGv5celh9Xq_fr2zU.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/b5f-QORBEIipFNTHAKTFYZwRc_I.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/VhkuLe4Rir0X7hjeyuwvA7IGuk0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/jGqxKAGVW1S4Jl_meHA8LFdGQ7s.jpg"
+  ],
+  "checked": "2026-10-11T15:56:03-05:00",
+  "photos": [
+   "photos/2016-toyota-rav4-16981-1.jpg",
+   "photos/2016-toyota-rav4-16981-2.jpg",
+   "photos/2016-toyota-rav4-16981-3.jpg"
+  ],
+  "slug": "2016-toyota-rav4-16981",
+  "source": "cars.com gallery (Used 2016 Toyota RAV4 XLE For Sale $16,981 | Cars.com)",
+  "sources": {
+   "photos/2016-toyota-rav4-16981-1.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/JvGvwgNxsHEvP_VXmZ2nEm8JFmU.jpg",
+   "photos/2016-toyota-rav4-16981-2.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/my8RzRcKHqiLOf3u6mPtWAIymMQ.jpg",
+   "photos/2016-toyota-rav4-16981-3.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/cf17f8a1-c44a-4c8f-b694-eab7b01eb1f6/PQaPuUcYY2r6IB2VmBp1sSzgsy0.jpg"
+  },
+  "status": "ok",
+  "url": "https://www.cars.com/vehicledetail/d692ae7b-73d4-4bb4-9a61-ca79bb5dd2f2/"
+ },
  "https://www.cars.com/vehicledetail/d855cc9b-e88f-46c0-ae56-df5819ae21e6/": {
   "candidates": [
    "https://platform.cstatic-images.com/xxlarge/in/v2/eaa29f5d-665a-5411-9fa1-77eca5862c73/d8ee9954-f95c-441d-b5df-2320cd660d9c/S6UfAKbk4ygWMorywVf1glnXfBQ.jpg",
@@ -1918,6 +1990,14 @@
   },
   "status": "ok",
   "url": "https://www.cars.com/vehicledetail/dcd7be74-c0e9-4556-b892-44c4b9b9d22c/"
+ },
+ "https://www.cars.com/vehicledetail/ddc4589e-40ff-45db-b6f7-153acb0ba371/": {
+  "checked": "2026-10-11T15:56:03-05:00",
+  "photos": [],
+  "slug": "2016-honda-cr-v-19700",
+  "source": "cars.com bot check did not clear",
+  "status": "unavailable",
+  "url": "https://www.cars.com/vehicledetail/ddc4589e-40ff-45db-b6f7-153acb0ba371/"
  },
  "https://www.cars.com/vehicledetail/fc40d908-8b69-4147-9239-cf7e1504f0c5/": {
   "candidates": [
