@@ -699,13 +699,14 @@ def build_tips(xlsx, updated, count):
 # ---------------- model guide ----------------
 
 BASE_74114 = 3419       # Sources sheet: CarInsurance.com OK add-teen cost x Insure.com 74114 factor
-MONEYGEEK_AVG = 5654
+MONEYGEEK_AVG = 5654    # Sources sheet: average of MoneyGeek's 96-model 18-yo full-coverage table
 # Fuel cost (Model Guide): refresh GAS_PRICE/GAS_DATE from AAA state averages (gasprices.aaa.com, AR + OK regular, averaged)
 GAS_PRICE = 3.996       # AAA regular: Arkansas $3.968 + Oklahoma $4.024, averaged ($3.996)
 GAS_DATE = "Oct 11, 2026"
 FILLS_PER_MONTH = 2     # one fill-up every two weeks
 FILL_SHARE = 0.85       # a fill-up adds ~85% of the tank
-TRIP_MILES = 230        # Fayetteville AR <-> Tulsa OK round trip (~115 mi each way)    # Sources sheet: average of MoneyGeek's 96-model 18-yo full-coverage table
+TRIP_MILES = 230        # Fayetteville AR <-> Tulsa OK round trip (~115 mi each way)
+TRIPS_PER_MONTH = 2     # round trips per month
 VERDICTS = [("rec", "Recommended", "good", "Strong picks. Still check the specific car."),
             ("ok", "OK with conditions", "warn", "Fine if the condition in the note is met."),
             ("avoid", "Avoid", "bad", "Skip these, even when the price looks good.")]
@@ -746,7 +747,7 @@ def ins_estimate(rows):
 def fuel_month(tank, mp):
     """Monthly fuel estimate: 2 fill-ups + one Fayetteville-Tulsa round trip, rounded to $5."""
     mid = (min(mp) + max(mp)) / 2
-    c = FILLS_PER_MONTH * tank * FILL_SHARE * GAS_PRICE + TRIP_MILES / mid * GAS_PRICE
+    c = FILLS_PER_MONTH * tank * FILL_SHARE * GAS_PRICE + TRIPS_PER_MONTH * TRIP_MILES / mid * GAS_PRICE
     return int(5 * round(c / 5))
 
 
@@ -873,11 +874,11 @@ def build_models(updated, count):
                 tanks[f'{e["make"]} {e["model"]}'].append(e["tank_gal"])
     tank_txt = "; ".join(f"{k} {' / '.join(f'{t:.1f}' for t in v)}" for k, v in sorted(tanks.items()))
     fuel_note = (f"<p>Fuel cost is an estimate: two fill-ups a month (one every two weeks), each adding about {int(FILL_SHARE * 100)}% of the tank, "
-                 f"plus one {TRIP_MILES}-mile Fayetteville–Tulsa round trip at the EPA combined MPG (midpoint when a range is shown). "
+                 f"plus {TRIPS_PER_MONTH} Fayetteville–Tulsa round trips ({TRIPS_PER_MONTH} × {TRIP_MILES} = {TRIPS_PER_MONTH * TRIP_MILES} miles) at the EPA combined MPG (midpoint when a range is shown). "
                  f"Gas ${GAS_PRICE:.2f}/gal regular, the average of AAA’s Arkansas and Oklahoma state averages on {GAS_DATE}. "
                  f"Tank sizes (gallons, fueleconomy.gov/manufacturer; where a model has two, it changed by generation): {esc(tank_txt)}.</p>")
-    out.insert(1, f'<p class="small fuelnote">Fuel cost per month assumes gas at ${GAS_PRICE:.2f}/gal ({GAS_DATE}), two {int(FILL_SHARE * 100)}%-tank fill-ups and one '
-                  f'Fayetteville–Tulsa round trip; estimate only. Details at the bottom of the page.</p>')
+    out.insert(1, f'<p class="small fuelnote">Fuel cost per month assumes gas at ${GAS_PRICE:.2f}/gal ({GAS_DATE}), two {int(FILL_SHARE * 100)}%-tank fill-ups and {TRIPS_PER_MONTH} '
+                  f'Fayetteville–Tulsa round trips; estimate only. Details at the bottom of the page.</p>')
     sources = (fuel_note + "<p>How to read it: year ranges are model years. Reliability, safety, repair and MPG figures cover the years listed. Where we checked only "
                "one year of a design, the note says which. Insurance is one model-level estimate; older cars usually cost a little less.</p>"
                "<p>Sources: reliability from RepairPal (model-level; its ratings cover 2010–2019 model years), Consumer Reports model-year verdicts and the "
