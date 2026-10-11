@@ -56,6 +56,9 @@ header.top h1 a{color:var(--ink);text-decoration:none}
 .noimg svg{width:3.2rem;height:3.2rem;opacity:.55}
 .ribbon{position:absolute;left:0;right:0;top:0;padding:.5rem .8rem;font-weight:700;font-size:.9rem;color:#fff;background:rgba(40,36,30,.86);text-align:center;letter-spacing:.02em}
 .card.removed .gallery,.card.removed .noimg{filter:grayscale(1);opacity:.6}
+.sold-wrap{margin-top:1.6rem}
+.sold-wrap > summary{font:700 1.05rem/1.3 var(--sans);color:var(--soft)}
+.sold-wrap .grid{opacity:.92}
 .flag{padding:.6rem .9rem;font-size:.9rem;line-height:1.35}
 .flag b{text-transform:uppercase;letter-spacing:.05em;margin-right:.35rem}
 .flag.avoid{background:var(--bad);color:#fff}
@@ -136,7 +139,7 @@ footer.bottom p{margin:.4rem 0}
 <p class="meta">Updated Sun, Oct 11, 2026, 8:53 AM CT · 26 cars</p>
 <nav class="tabs" aria-label="Pages"><a href="../" aria-current=page>Cars</a><a href="../tips/" >Buying tips</a><a href="../models/" >Model guide</a></nav>
 </header>
-<nav class="seg" aria-label="Car lists"><a href="../"><b>Main</b><span>$15–19k · 45 cars</span></a><a href="../budget/" aria-current=page><b>Budget</b><span>$10–15k · 26 cars</span></a></nav>
+<nav class="seg" aria-label="Car lists"><a href="../"><b>Main</b><span>$15–19k · 43 cars</span></a><a href="../budget/" aria-current=page><b>Budget</b><span>$10–15k · 26 cars</span></a></nav>
 <p class="criteria"><b>Budget list:</b> $10,000–$15,000 · up to 125k miles (over 100k: Toyota, Honda, Mazda only) · within 2 hours of Tulsa · 2016+ automatic · clean title</p>
 <div class="controls" data-js hidden>
 <div class="chips" role="group" aria-label="Filter cars"><button class="chip new" type="button" data-f="new" id="newchip" aria-pressed="false">New today (2)</button><button class="chip" type="button" data-f="all" aria-pressed="true">All</button><button class="chip" type="button" data-f="toyota" aria-pressed="false">Toyota</button><button class="chip" type="button" data-f="honda" aria-pressed="false">Honda</button><button class="chip" type="button" data-f="mazda" aria-pressed="false">Mazda</button><button class="chip" type="button" data-f="subaru" aria-pressed="false">Subaru</button><button class="chip" type="button" data-f="hyundai-kia" aria-pressed="false">Hyundai/Kia</button><button class="chip" type="button" data-f="under:12500" aria-pressed="false">Under $12.5k</button></div>
@@ -538,6 +541,7 @@ footer.bottom p{margin:.4rem 0}
 </ul>
 <p class="empty" id="empty" hidden>No cars match this filter.</p>
 <p class="empty" id="empty-new" hidden>Nothing new today yet. The daily search adds cars most mornings, so check back later.</p>
+
 </main>
 <footer class="bottom">
 <p><strong>Insurance figures are estimates, not quotes.</strong> They're built from published averages for an 18-year-old added to a parent's full-coverage policy. Get a real quote on the exact VIN before buying, and tell the insurer the car will be kept in Fayetteville.</p>

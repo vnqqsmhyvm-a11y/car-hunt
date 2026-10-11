@@ -129,6 +129,14 @@ def avoid_match(c, rules):
     return None
 
 
+SOLD_RE = re.compile(r"\b(sold|listing\s+removed|removed)\b", re.I)
+
+
+def is_sold(c):
+    """True when Notes say the car is sold or the listing was removed (not photo recheck)."""
+    return bool(SOLD_RE.search(str(c.get("notes") or "")))
+
+
 def read_all(xlsx):
     """Cars from every list sheet, with slugs unique across sheets."""
     out, seen = {}, set()
@@ -309,6 +317,9 @@ header.top h1 a{color:var(--ink);text-decoration:none}
 .noimg svg{width:3.2rem;height:3.2rem;opacity:.55}
 .ribbon{position:absolute;left:0;right:0;top:0;padding:.5rem .8rem;font-weight:700;font-size:.9rem;color:#fff;background:rgba(40,36,30,.86);text-align:center;letter-spacing:.02em}
 .card.removed .gallery,.card.removed .noimg{filter:grayscale(1);opacity:.6}
+.sold-wrap{margin-top:1.6rem}
+.sold-wrap > summary{font:700 1.05rem/1.3 var(--sans);color:var(--soft)}
+.sold-wrap .grid{opacity:.92}
 .flag{padding:.6rem .9rem;font-size:.9rem;line-height:1.35}
 .flag b{text-transform:uppercase;letter-spacing:.05em;margin-right:.35rem}
 .flag.avoid{background:var(--bad);color:#fff}
@@ -431,8 +442,10 @@ def shell(title, base, current, updated, count, main, js="", sources=DEFAULT_SOU
 def photo_block(c, entry, eager, base=""):
     photos = sorted((p for p in (entry or {}).get("photos", []) if (ROOT / p).exists()),
                     key=lambda p: int(re.search(r"-(\d+)\.jpg$", p).group(1)) if re.search(r"-(\d+)\.jpg$", p) else 0)
-    removed = (entry or {}).get("status") == "removed"
-    ribbon = '<div class="ribbon">Listing removed</div>' if removed else ""
+    sold = is_sold(c)
+    removed = sold or (entry or {}).get("status") == "removed"
+    ribbon = ('<div class="ribbon">SOLD</div>' if sold else
+              '<div class="ribbon">Listing removed</div>' if removed else "")
     name = f'{c["year"]} {c["make"]} {c["model"]}'
     if not photos:
         return (f'<div class="photo">{ribbon}<div class="noimg" role="img" aria-label="Photo unavailable">{ICON_CAR}'
@@ -511,12 +524,13 @@ def added_label(day):
 
 
 def card(c, entry, eager, base=""):
-    removed = (entry or {}).get("status") == "removed"
+    sold = is_sold(c)
+    removed = sold or (entry or {}).get("status") == "removed"
     f = flag(c)
     name = " ".join(str(x) for x in [c["year"], c["make"], c["model"], c["trim"] if c["trim"] and c["trim"] != "n/a" else ""] if x)
     loc = ", ".join(x for x in [c["city"], c["state"]] if x)
     seller = re.sub(r"\s*\((?:FB)\)\s*", " ", str(c["seller"] or "")).strip()
-    badges = ([("drive", f'{c["drive"]} from Tulsa')] if c.get("drive") else []) + [title_badge(c), accident_badge(c), reliability_badge(c)]
+    badges = ([("bad", "SOLD")] if sold else []) + ([("drive", f'{c["drive"]} from Tulsa')] if c.get("drive") else []) + [title_badge(c), accident_badge(c), reliability_badge(c)]
     ins = ins_monthly(c)
     badges.append(("info", f"Insurance ~${ins}/mo") if ins else ("muted", "Insurance n/a"))
     if mpg_num(c):
@@ -587,7 +601,7 @@ document.querySelectorAll('.photo').forEach(function(ph){var g=ph.querySelector(
 </script>"""
 
 
-def build_index(cars, manifest, updated, sheet="Cars", counts=None):
+def build_index(cars, sold_cars, manifest, updated, sheet="Cars", counts=None):
     L = LISTS[sheet]
     base = "../" if L["path"] else ""
     def sort_key(c):
@@ -595,6 +609,12 @@ def build_index(cars, manifest, updated, sheet="Cars", counts=None):
         return (removed, c["price"] or 0)
     ordered = sorted(cars, key=sort_key)
     cards_html = "\n".join(card(c, manifest.get(c["key"]), i < 6, base) for i, c in enumerate(ordered))
+    sold_ordered = sorted(sold_cars, key=lambda c: c["price"] or 0)
+    sold_html = "\n".join(card(c, manifest.get(c["key"]), False, base) for c in sold_ordered)
+    sold_block = ""
+    if sold_ordered:
+        sold_block = (f'<details class="sold-wrap"><summary>Sold / gone ({len(sold_ordered)})</summary>'
+                      f'<ul class="grid">{sold_html}</ul></details>')
     n_new = sum(1 for c in cars if c["first_seen"] == BUILD_DAY)
     chips = [("new", f"New today ({n_new})"), ("all", "All"), ("toyota", "Toyota"), ("honda", "Honda"), ("mazda", "Mazda"),
              ("subaru", "Subaru"), ("hyundai-kia", "Hyundai/Kia"), (f"under:{L['under'][0]}", L["under"][1])]
@@ -616,6 +636,7 @@ def build_index(cars, manifest, updated, sheet="Cars", counts=None):
 </ul>
 <p class="empty" id="empty" hidden>No cars match this filter.</p>
 <p class="empty" id="empty-new" hidden>Nothing new today yet. The daily search adds cars most mornings, so check back later.</p>
+{sold_block}
 </main>"""
     title = "Car Hunt" if sheet == "Cars" else f"{L['label']} list · Car Hunt"
     return shell(title, base, "cars", updated, len(cars), main, JS)
@@ -864,16 +885,24 @@ def main():
     lists = {sh: [c for c in cs if not avoid_match(c, rules)] for sh, cs in lists.items()}
     for sh, c, e in hidden:
         print(f"hidden (Model Guide avoid: {e['make']} {e['model']} {e['years']}): {sh} {c['year']} {c['make']} {c['model']} {c['trim']} ${c['price']}")
+    # Stamp every remaining row (including Notes-sold) so first_seen stays stable if a listing returns.
+    stamped = [c for cs in lists.values() for c in cs]
+    new_keys = stamp_first_seen(stamped)
+    sold = {sh: [c for c in cs if is_sold(c)] for sh, cs in lists.items()}
+    lists = {sh: [c for c in cs if not is_sold(c)] for sh, cs in lists.items()}
+    for sh, cs in sold.items():
+        for c in cs:
+            print(f"sold/gone (Notes): {sh} {c['year']} {c['make']} {c['model']} {c['trim']} ${c['price']}")
     allcars = [c for cs in lists.values() for c in cs]
-    new_keys = stamp_first_seen(allcars)
     mpath = ROOT / "photos" / "manifest.json"
     manifest = json.loads(mpath.read_text()) if mpath.exists() else {}
     updated = updated_time(xlsx)
     counts = {sh: len(cs) for sh, cs in lists.items()}
+    n_sold = sum(len(cs) for cs in sold.values())
     for sheet, cars in lists.items():
         d = ROOT / LISTS[sheet]["path"]
         d.mkdir(exist_ok=True)
-        (d / "index.html").write_text(build_index(cars, manifest, updated, sheet, counts), encoding="utf-8")
+        (d / "index.html").write_text(build_index(cars, sold.get(sheet, []), manifest, updated, sheet, counts), encoding="utf-8")
     (ROOT / "tips").mkdir(exist_ok=True)
     (ROOT / "tips" / "index.html").write_text(build_tips(xlsx, updated, len(allcars)), encoding="utf-8")
     (ROOT / "models").mkdir(exist_ok=True)
@@ -883,7 +912,7 @@ def main():
     with_photos = sum(1 for c in allcars if manifest.get(c["key"], {}).get("photos"))
     removed = sum(1 for c in allcars if manifest.get(c["key"], {}).get("status") == "removed")
     print(f"first seen today: {new_keys} new key(s)")
-    print(f"built {' + '.join(f'{n} {sh}' for sh, n in counts.items())} cars; {with_photos} with photos; {removed} removed")
+    print(f"built {' + '.join(f'{n} {sh}' for sh, n in counts.items())} cars; {with_photos} with photos; {removed} removed; {n_sold} sold/gone")
 
 
 if __name__ == "__main__":
