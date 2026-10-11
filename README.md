@@ -11,4 +11,4 @@ Photo state: `photos/manifest.json` (keyed by listing URL, or year|make|model|pr
 
 `guide/first_seen.json` records the CT date each car (by listing URL, or year/make/model/price) first appeared. `build.py` stamps unseen cars with today and never changes existing dates; for a relisted car with a new link, copy its old date onto the new key by hand.
 
-Two lists: the "Cars" sheet builds the Main page (/), the "Budget" sheet builds /budget/ (extra columns: Drive time from Tulsa, Service records). One command builds both: `./update.sh tulsa-used-cars.xlsx`.
+One list: the "Cars" sheet builds the site. Rows that fail the criteria live on the "Excluded" sheet (with "Why excluded"); Excluded rows marked Sold feed the collapsed Sold section. /budget/ redirects home. Build: `./update.sh tulsa-used-cars.xlsx`.

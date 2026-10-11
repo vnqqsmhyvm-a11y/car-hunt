@@ -27,16 +27,13 @@ COLS = {  # header text in the sheet -> field name
     "Est. Annual Repair Cost": "repair", "Reliability": "reliability",
     "Known Issues (this year)": "issues", "Est. Ins": "ins", "IIHS": "iihs",
     "NHTSA Stars": "nhtsa", "Notes": "notes", "Listing": "listing",
-    "Drive time from Tulsa": "drive", "Service records": "service",  # Budget sheet only
+    "Drive time from Tulsa": "drive", "Service records": "service", "Why excluded": "why",  # optional
 }
-OPTIONAL = {"drive", "service"}
-LISTS = {  # sheet -> page settings
-    "Cars": dict(id="main", path="", label="Main", range="$15–19k",
-                 criteria="$15,000–$19,000 · under 100k miles · about 40 miles from Tulsa · 2016+ automatic · clean title · Model Guide picks only",
-                 under=(17000, "Under $17k")),
-    "Budget": dict(id="budget", path="budget/", label="Budget", range="$10–15k",
-                   criteria="$10,000–$15,000 · up to 125k miles (over 100k: Toyota, Honda, Mazda only) · within 2 hours of Tulsa · 2016+ automatic · clean title",
-                   under=(12500, "Under $12.5k")),
+OPTIONAL = {"drive", "service", "why"}
+LISTS = {  # sheet -> page settings (one list since Oct 11, 2026)
+    "Cars": dict(id="main", path="", label="Cars", range="up to $20k",
+                 criteria="Up to $20,000 · under 100k miles · about 40 miles from Tulsa · 2016+ automatic · clean title · Model Guide picks only",
+                 under=(15000, "Under $15k")),
 }
 
 
@@ -357,11 +354,6 @@ footer.bottom p{margin:.4rem 0}
 .box{background:var(--card);border-radius:var(--radius);padding:1rem 1.1rem;box-shadow:0 1px 2px rgba(60,40,10,.06),0 6px 18px rgba(60,40,10,.06);margin:1rem 0}
 .box.verdict{border-left:5px solid var(--accent)}
 .small{font-size:.85rem;color:var(--soft)}
-.seg{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin:1rem 0 .2rem}
-.seg a{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:.7rem .5rem;border-radius:14px;border:2px solid var(--accent);color:var(--accent);background:var(--card);text-decoration:none;line-height:1.2}
-.seg a b{font-size:1.15rem}
-.seg a span{font-size:.82rem;font-weight:600;opacity:.85;margin-top:.15rem}
-.seg a[aria-current]{background:var(--accent);color:#fff}
 .criteria{margin:.6rem 0 .5rem;font-size:.88rem;color:var(--soft);line-height:1.4}
 .b.drive{background:#efe7fb;color:#5b2a9e}
 .added{margin:0 0 -.25rem;font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:.45rem}
@@ -620,11 +612,7 @@ def build_index(cars, sold_cars, manifest, updated, sheet="Cars", counts=None):
              ("subaru", "Subaru"), ("hyundai-kia", "Hyundai/Kia"), (f"under:{L['under'][0]}", L["under"][1])]
     chip_html = "".join(f'<button class="chip{' new' if k == 'new' else ''}" type="button" data-f="{k}"{' id="newchip"' if k == "new" else ''} aria-pressed="{"true" if k == "all" else "false"}">{v}</button>'
                         for k, v in chips)
-    seg = "".join(
-        f'<a href="{base}{o["path"]}"{" aria-current=page" if o is L else ""}><b>{o["label"]}</b><span>{o["range"]} · {(counts or {}).get(sh, 0)} cars</span></a>'
-        for sh, o in LISTS.items())
-    main = f"""<nav class="seg" aria-label="Car lists">{seg}</nav>
-<p class="criteria"><b>{L["label"]} list:</b> {esc(L["criteria"])}</p>
+    main = f"""<p class="criteria"><b>What we're looking for:</b> {esc(L["criteria"])}</p>
 <div class="controls" data-js hidden>
 <div class="chips" role="group" aria-label="Filter cars">{chip_html}</div>
 <div class="row2"><span id="shown" aria-live="polite"></span>
@@ -874,6 +862,13 @@ def build_models(updated, count):
     return shell("Model guide · Car Hunt", "../", "models", updated, count, "\n".join(out), GUIDE_JS, sources)
 
 
+REDIRECT = """<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<meta http-equiv="refresh" content="0; url=../"><title>Car Hunt</title></head>
+<body><p>The Budget list has been merged into the main list. <a href="../">Go to Car Hunt</a>.</p></body></html>
+"""
+
+
 def main():
     if len(sys.argv) != 2:
         sys.exit("usage: build.py <xlsx>")
@@ -889,6 +884,12 @@ def main():
     stamped = [c for cs in lists.values() for c in cs]
     new_keys = stamp_first_seen(stamped)
     sold = {sh: [c for c in cs if is_sold(c)] for sh, cs in lists.items()}
+    # Sold cars moved to the Excluded sheet ("Why excluded" says Sold) still feed the collapsed Sold section.
+    for c in read_cars(xlsx, "Excluded"):
+        if re.search(r"\bsold\b", str(c.get("why") or ""), re.I) and not avoid_match(c, rules):
+            c["notes"] = ("Sold; " + str(c["notes"] or "")).strip("; ")
+            sold["Cars"].append(c)
+    stamp_first_seen(sold["Cars"])
     lists = {sh: [c for c in cs if not is_sold(c)] for sh, cs in lists.items()}
     for sh, cs in sold.items():
         for c in cs:
@@ -903,6 +904,8 @@ def main():
         d = ROOT / LISTS[sheet]["path"]
         d.mkdir(exist_ok=True)
         (d / "index.html").write_text(build_index(cars, sold.get(sheet, []), manifest, updated, sheet, counts), encoding="utf-8")
+    (ROOT / "budget").mkdir(exist_ok=True)  # old Budget page: send visitors home
+    (ROOT / "budget" / "index.html").write_text(REDIRECT, encoding="utf-8")
     (ROOT / "tips").mkdir(exist_ok=True)
     (ROOT / "tips" / "index.html").write_text(build_tips(xlsx, updated, len(allcars)), encoding="utf-8")
     (ROOT / "models").mkdir(exist_ok=True)
@@ -912,7 +915,7 @@ def main():
     with_photos = sum(1 for c in allcars if manifest.get(c["key"], {}).get("photos"))
     removed = sum(1 for c in allcars if manifest.get(c["key"], {}).get("status") == "removed")
     print(f"first seen today: {new_keys} new key(s)")
-    print(f"built {' + '.join(f'{n} {sh}' for sh, n in counts.items())} cars; {with_photos} with photos; {removed} removed; {n_sold} sold/gone")
+    print(f"built {sum(counts.values())} cars; {with_photos} with photos; {removed} removed; {n_sold} sold/gone")
 
 
 if __name__ == "__main__":
