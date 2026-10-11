@@ -452,6 +452,50 @@
      2019
     ]
    }
+  },
+  {
+   "make": "Toyota",
+   "model": "RAV4",
+   "years": "2016–2018",
+   "ref": [
+    "2016",
+    "2017",
+    "2018"
+   ],
+   "verdict": "rec",
+   "why": "Reliable small SUV with a conventional 6-speed automatic (no CVT) and low repair costs; emergency braking standard from 2017. Weak spot: Poor in IIHS's passenger-side small-overlap test (driver side is Good). SUV trade-off: about 25 mpg vs 32 for a Corolla; insurance is actually slightly lower (about $230/mo vs $258)."
+  },
+  {
+   "make": "Toyota",
+   "model": "RAV4",
+   "years": "2019",
+   "ref": [
+    "2019"
+   ],
+   "verdict": "ok",
+   "why": "New design: 8-speed automatic, 30 mpg, Top Safety Pick+ and Good in both small-overlap tests. But first-year cars had several recalls (fuel pump, steering, control arm), and few are under $20k with under 100k miles. Check every recall is done."
+  },
+  {
+   "make": "Honda",
+   "model": "CR-V",
+   "years": "2016",
+   "ref": [
+    "2016"
+   ],
+   "verdict": "rec",
+   "why": "Simple 2.4 non-turbo engine with a CVT, top-tier RepairPal reliability, cheap repairs and a Top Safety Pick+. About 29 mpg; insurance runs slightly below a Corolla or Civic (about $215/mo). Confirm the airbag inflator recall was done."
+  },
+  {
+   "make": "Honda",
+   "model": "CR-V",
+   "years": "2017–2019",
+   "ref": [
+    "2017",
+    "2018",
+    "2019"
+   ],
+   "verdict": "ok",
+   "why": "Roomier and safer than the 2016 (Good in both small-overlap tests), but the 1.5 turbo on EX and up could get fuel in the oil, the same issue as the Civic; Honda updated the software and extended the warranty on 2017–18. The LX has the 2.4 non-turbo and avoids it. About 28–30 mpg; insurance slightly below a Corolla."
   }
  ]
 }
