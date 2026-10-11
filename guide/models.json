@@ -9,7 +9,8 @@
     "2017"
    ],
    "verdict": "rec",
-   "why": "The benchmark for a first car: top reliability, cheap repairs and a Top Safety Pick+ with automatic emergency braking standard from 2017. Figures are from the 2017 model; 2018–19 are the same design."
+   "why": "The benchmark for a first car: top reliability, cheap repairs and a Top Safety Pick+ with automatic emergency braking standard from 2017. Figures are from the 2017 model; 2018–19 are the same design.",
+   "tank_gal": 13.2
   },
   {
    "make": "Toyota",
@@ -22,7 +23,8 @@
     "2023"
    ],
    "verdict": "rec",
-   "why": "Newer design, still class-leading reliability and 5-star NHTSA. On 2020–21 cars, ask whether Toyota's coolant-valve warranty program (24TE04) has been done."
+   "why": "Newer design, still class-leading reliability and 5-star NHTSA. On 2020–21 cars, ask whether Toyota's coolant-valve warranty program (24TE04) has been done.",
+   "tank_gal": 13.2
   },
   {
    "make": "Toyota",
@@ -32,7 +34,8 @@
     "2020"
    ],
    "verdict": "rec",
-   "why": "Same running gear and reliability as the Corolla sedan, with a hatch for dorm moves. Insurance uses the Corolla figure as a stand-in."
+   "why": "Same running gear and reliability as the Corolla sedan, with a hatch for dorm moves. Insurance uses the Corolla figure as a stand-in.",
+   "tank_gal": 13.2
   },
   {
    "make": "Toyota",
@@ -42,7 +45,8 @@
     "2017"
    ],
    "verdict": "rec",
-   "why": "Bigger midsize sedan with a Top Safety Pick+ and a proven 4-cylinder. Insures about like a Corolla. Choose the 4-cylinder; the V6 uses more fuel."
+   "why": "Bigger midsize sedan with a Top Safety Pick+ and a proven 4-cylinder. Insures about like a Corolla. Choose the 4-cylinder; the V6 uses more fuel.",
+   "tank_gal": 17.0
   },
   {
    "make": "Honda",
@@ -52,7 +56,8 @@
     "2020"
    ],
    "verdict": "rec",
-   "why": "Reliable, efficient and a Top Safety Pick with standard emergency braking. The 1.5 turbo oil-dilution problem was fixed by these years. Figures are from the 2020 model."
+   "why": "Reliable, efficient and a Top Safety Pick with standard emergency braking. The 1.5 turbo oil-dilution problem was fixed by these years. Figures are from the 2020 model.",
+   "tank_gal": 12.4
   },
   {
    "make": "Honda",
@@ -63,7 +68,8 @@
     "2024"
    ],
    "verdict": "rec",
-   "why": "Current generation, rated Acceptable in IIHS's newer, tougher front and side tests. At this budget expect higher miles; check that the steering recalls have been done."
+   "why": "Current generation, rated Acceptable in IIHS's newer, tougher front and side tests. At this budget expect higher miles; check that the steering recalls have been done.",
+   "tank_gal": 12.4
   },
   {
    "make": "Honda",
@@ -74,7 +80,8 @@
     "2020"
    ],
    "verdict": "rec",
-   "why": "RepairPal's top-rated midsize car, Top Safety Pick and 5-star NHTSA. Larger and a bit pricier, so most in budget will have higher miles."
+   "why": "RepairPal's top-rated midsize car, Top Safety Pick and 5-star NHTSA. Larger and a bit pricier, so most in budget will have higher miles.",
+   "tank_gal": 14.8
   },
   {
    "make": "Mazda",
@@ -86,7 +93,8 @@
     "2018"
    ],
    "verdict": "rec",
-   "why": "Uses a traditional 6-speed automatic (no CVT) and a timing chain. Top Safety Pick or Pick+, 5-star NHTSA, and Consumer Reports rates 2017–18 more reliable."
+   "why": "Uses a traditional 6-speed automatic (no CVT) and a timing chain. Top Safety Pick or Pick+, 5-star NHTSA, and Consumer Reports rates 2017–18 more reliable.",
+   "tank_gal": 13.2
   },
   {
    "make": "Mazda",
@@ -97,7 +105,8 @@
     "2023"
    ],
    "verdict": "rec",
-   "why": "Consumer Reports rates 2022 much more reliable (2019–21 were less reliable), and it does well in crash tests. Same 6-speed automatic."
+   "why": "Consumer Reports rates 2022 much more reliable (2019–21 were less reliable), and it does well in crash tests. Same 6-speed automatic.",
+   "tank_gal": 13.2
   },
   {
    "make": "Hyundai",
@@ -108,7 +117,8 @@
     "2024"
    ],
    "verdict": "rec",
-   "why": "The best Hyundai/Kia choice: Top Safety Pick, 5-star NHTSA, an immobilizer as standard and no engine recall. It is the priciest of the group to insure. Stick to the SE/SEL 2.0, not the N Line turbo."
+   "why": "The best Hyundai/Kia choice: Top Safety Pick, 5-star NHTSA, an immobilizer as standard and no engine recall. It is the priciest of the group to insure. Stick to the SE/SEL 2.0, not the N Line turbo.",
+   "tank_gal": 12.4
   },
   {
    "make": "Toyota",
@@ -118,7 +128,8 @@
     "2016"
    ],
    "verdict": "ok",
-   "why": "Just as reliable as later Corollas, but it scored only Marginal in the driver-side small-overlap crash test and has no automatic emergency braking. Fine if the price is right; a 2017+ is safer."
+   "why": "Just as reliable as later Corollas, but it scored only Marginal in the driver-side small-overlap crash test and has no automatic emergency braking. Fine if the price is right; a 2017+ is safer.",
+   "tank_gal": 13.2
   },
   {
    "make": "Honda",
@@ -128,7 +139,8 @@
     "2017"
    ],
    "verdict": "ok",
-   "why": "The 1.5 turbo (EX-T, EX-L, Touring) could get fuel in the oil; Honda extended the warranty to 6 years. The 2.0 non-turbo avoids it. Base headlights rated Poor. Figures are from the 2017 model."
+   "why": "The 1.5 turbo (EX-T, EX-L, Touring) could get fuel in the oil; Honda extended the warranty to 6 years. The 2.0 non-turbo avoids it. Base headlights rated Poor. Figures are from the 2017 model.",
+   "tank_gal": 12.4
   },
   {
    "make": "Mazda",
@@ -140,7 +152,8 @@
     "2021"
    ],
    "verdict": "ok",
-   "why": "Excellent crash scores, but Consumer Reports rates these early years of the new design less reliable. 2019–20 had a recall for sudden false automatic braking, so confirm it's fixed."
+   "why": "Excellent crash scores, but Consumer Reports rates these early years of the new design less reliable. 2019–20 had a recall for sudden false automatic braking, so confirm it's fixed.",
+   "tank_gal": 13.2
   },
   {
    "make": "Mazda",
@@ -155,7 +168,8 @@
     "2021"
    ],
    "verdict": "ok",
-   "why": "Reliable little SUV with a real 6-speed automatic and strong crash ratings. The back seat and cargo space are small, much like the Fit. No insurance estimate."
+   "why": "Reliable little SUV with a real 6-speed automatic and strong crash ratings. The back seat and cargo space are small, much like the Fit. No insurance estimate.",
+   "tank_gal": 12.7
   },
   {
    "make": "Mazda",
@@ -168,7 +182,8 @@
     "2023"
    ],
    "verdict": "ok",
-   "why": "Top Safety Pick(+) every year and a conventional automatic, but Consumer Reports rates 2022 less reliable, and we have no RepairPal or insurance figures yet."
+   "why": "Top Safety Pick(+) every year and a conventional automatic, but Consumer Reports rates 2022 less reliable, and we have no RepairPal or insurance figures yet.",
+   "tank_gal": 13.5
   },
   {
    "make": "Subaru",
@@ -183,7 +198,8 @@
     "2023"
    ],
    "verdict": "ok",
-   "why": "Standard all-wheel drive, RepairPal's top compact SUV and J.D. Power's top small SUV. But it scored Poor in IIHS's updated side test (and, on 2022–23, the updated rear-passenger front test), so it's OK rather than a top pick. No insurance estimate, so get a quote."
+   "why": "Standard all-wheel drive, RepairPal's top compact SUV and J.D. Power's top small SUV. But it scored Poor in IIHS's updated side test (and, on 2022–23, the updated rear-passenger front test), so it's OK rather than a top pick. No insurance estimate, so get a quote.",
+   "tank_gal": 16.6
   },
   {
    "make": "Subaru",
@@ -199,7 +215,8 @@
     "2023"
    ],
    "verdict": "ok",
-   "why": "Standard all-wheel drive and good crash scores, but RepairPal ranks it 33rd of 36 compacts with the highest repair costs here. 2017–19 had PCV-valve and ignition recalls. 2019–20 have the 10-year/100k CVT warranty extension."
+   "why": "Standard all-wheel drive and good crash scores, but RepairPal ranks it 33rd of 36 compacts with the highest repair costs here. 2017–19 had PCV-valve and ignition recalls. 2019–20 have the 10-year/100k CVT warranty extension.",
+   "tank_gal": 13.2
   },
   {
    "make": "Toyota",
@@ -210,7 +227,8 @@
    ],
    "verdict": "ok",
    "limited": true,
-   "why": "A Toyota-built hatch with a Corolla drivetrain, but NHTSA never rated it, IIHS tested it only partly, and RepairPal has no reliability score. Insurance uses the Corolla figure as a stand-in."
+   "why": "A Toyota-built hatch with a Corolla drivetrain, but NHTSA never rated it, IIHS tested it only partly, and RepairPal has no reliability score. Insurance uses the Corolla figure as a stand-in.",
+   "tank_gal": 14.0
   },
   {
    "make": "Toyota",
@@ -221,7 +239,8 @@
    ],
    "verdict": "ok",
    "limited": true,
-   "why": "Good crash tests and 5-star NHTSA, but we have no reliability rating, repair cost or insurance estimate for it."
+   "why": "Good crash tests and 5-star NHTSA, but we have no reliability rating, repair cost or insurance estimate for it.",
+   "tank_gal": 13.2
   },
   {
    "make": "Hyundai",
@@ -232,7 +251,8 @@
     "2022"
    ],
    "verdict": "ok",
-   "why": "Reliable per Consumer Reports and a Top Safety Pick, but some key-start cars built before Nov 2021 lack an immobilizer (the “Kia Boys” theft problem). Buy one with push-button start, or have a dealer confirm the anti-theft software by VIN."
+   "why": "Reliable per Consumer Reports and a Top Safety Pick, but some key-start cars built before Nov 2021 lack an immobilizer (the “Kia Boys” theft problem). Buy one with push-button start, or have a dealer confirm the anti-theft software by VIN.",
+   "tank_gal": 12.4
   },
   {
    "make": "Kia",
@@ -244,7 +264,8 @@
     "2024"
    ],
    "verdict": "ok",
-   "why": "Matches Corolla and Civic on reliability (J.D. Power's #3 compact; Consumer Reports more or much more reliable), but crash ratings are weaker: NHTSA 4 stars and Poor in IIHS's updated tests. Avoid the GT turbo."
+   "why": "Matches Corolla and Civic on reliability (J.D. Power's #3 compact; Consumer Reports more or much more reliable), but crash ratings are weaker: NHTSA 4 stars and Poor in IIHS's updated tests. Avoid the GT turbo.",
+   "tank_gal": 14.0
   },
   {
    "make": "Kia",
@@ -255,7 +276,8 @@
     "2024"
    ],
    "verdict": "ok",
-   "why": "Roomy and reliable per Consumer Reports, but NHTSA 4 stars and only limited IIHS tests. On a 2023, engine recall 25V099000 (piston rings) must be done."
+   "why": "Roomy and reliable per Consumer Reports, but NHTSA 4 stars and only limited IIHS tests. On a 2023, engine recall 25V099000 (piston rings) must be done.",
+   "tank_gal": 14.3
   },
   {
    "make": "Hyundai",
@@ -267,7 +289,8 @@
     "2025"
    ],
    "verdict": "ok",
-   "why": "Good reliability (tied 3rd small SUV in J.D. Power) and an immobilizer as standard, but NHTSA 4 stars and only 121 hp for highway trips to Fayetteville. No insurance estimate; 2024 not in our data."
+   "why": "Good reliability (tied 3rd small SUV in J.D. Power) and an immobilizer as standard, but NHTSA 4 stars and only 121 hp for highway trips to Fayetteville. No insurance estimate; 2024 not in our data.",
+   "tank_gal": 11.9
   },
   {
    "make": "Hyundai",
@@ -278,7 +301,8 @@
     "2023"
    ],
    "verdict": "ok",
-   "why": "Reliable per Consumer Reports and 5-star NHTSA, but no IIHS award. Choose the 2.0 (not the 1.6 turbo with dual-clutch), and on a 2022 key-start car confirm the anti-theft software."
+   "why": "Reliable per Consumer Reports and 5-star NHTSA, but no IIHS award. Choose the 2.0 (not the 1.6 turbo with dual-clutch), and on a 2022 key-start car confirm the anti-theft software.",
+   "tank_gal": 13.2
   },
   {
    "make": "Kia",
@@ -302,7 +326,8 @@
      2021,
      2023
     ]
-   }
+   },
+   "tank_gal": 13.2
   },
   {
    "make": "Hyundai",
@@ -324,7 +349,8 @@
      2024,
      2024
     ]
-   }
+   },
+   "tank_gal": 12.4
   },
   {
    "make": "Hyundai/Kia",
@@ -383,7 +409,8 @@
      2016,
      2022
     ]
-   }
+   },
+   "tank_gal": 13.2
   },
   {
    "make": "Honda",
@@ -463,7 +490,8 @@
     "2018"
    ],
    "verdict": "rec",
-   "why": "Reliable small SUV with a conventional 6-speed automatic (no CVT) and low repair costs; emergency braking standard from 2017. Weak spot: Poor in IIHS's passenger-side small-overlap test (driver side is Good). SUV trade-off: about 25 mpg vs 32 for a Corolla; insurance is actually slightly lower (about $230/mo vs $258)."
+   "why": "Reliable small SUV with a conventional 6-speed automatic (no CVT) and low repair costs; emergency braking standard from 2017. Weak spot: Poor in IIHS's passenger-side small-overlap test (driver side is Good). SUV trade-off: about 25 mpg vs 32 for a Corolla; insurance is actually slightly lower (about $230/mo vs $258).",
+   "tank_gal": 15.9
   },
   {
    "make": "Toyota",
@@ -473,7 +501,8 @@
     "2019"
    ],
    "verdict": "ok",
-   "why": "New design: 8-speed automatic, 30 mpg, Top Safety Pick+ and Good in both small-overlap tests. But first-year cars had several recalls (fuel pump, steering, control arm), and few are under $20k with under 100k miles. Check every recall is done."
+   "why": "New design: 8-speed automatic, 30 mpg, Top Safety Pick+ and Good in both small-overlap tests. But first-year cars had several recalls (fuel pump, steering, control arm), and few are under $20k with under 100k miles. Check every recall is done.",
+   "tank_gal": 14.5
   },
   {
    "make": "Honda",
@@ -483,7 +512,8 @@
     "2016"
    ],
    "verdict": "rec",
-   "why": "Simple 2.4 non-turbo engine with a CVT, top-tier RepairPal reliability, cheap repairs and a Top Safety Pick+. About 29 mpg; insurance runs slightly below a Corolla or Civic (about $215/mo). Confirm the airbag inflator recall was done."
+   "why": "Simple 2.4 non-turbo engine with a CVT, top-tier RepairPal reliability, cheap repairs and a Top Safety Pick+. About 29 mpg; insurance runs slightly below a Corolla or Civic (about $215/mo). Confirm the airbag inflator recall was done.",
+   "tank_gal": 15.3
   },
   {
    "make": "Honda",
@@ -495,7 +525,8 @@
     "2019"
    ],
    "verdict": "ok",
-   "why": "Roomier and safer than the 2016 (Good in both small-overlap tests), but the 1.5 turbo on EX and up could get fuel in the oil, the same issue as the Civic; Honda updated the software and extended the warranty on 2017–18. The LX has the 2.4 non-turbo and avoids it. About 28–30 mpg; insurance slightly below a Corolla."
+   "why": "Roomier and safer than the 2016 (Good in both small-overlap tests), but the 1.5 turbo on EX and up could get fuel in the oil, the same issue as the Civic; Honda updated the software and extended the warranty on 2017–18. The LX has the 2.4 non-turbo and avoids it. About 28–30 mpg; insurance slightly below a Corolla.",
+   "tank_gal": 14.0
   }
  ]
 }
