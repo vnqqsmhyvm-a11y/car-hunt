@@ -15,6 +15,22 @@
   "status": "ok",
   "url": "https://www.cargurus.com/details/449710942/"
  },
+ "https://www.cargurus.com/details/450548107/": {
+  "candidates": [
+   "https://static.cargurus.com/images/forsale/2026/09/16/22/54/2023_hyundai_elantra-pic-6200985212400672754-1024x768.jpeg"
+  ],
+  "checked": "2026-10-13T09:05:42-05:00",
+  "photos": [
+   "photos/2023-hyundai-elantra-19655-1.jpg"
+  ],
+  "slug": "2023-hyundai-elantra-19655",
+  "source": "dealer page (2023 Hyundai Elantra SEL FWD - $19,655 - CarGurus)",
+  "sources": {
+   "photos/2023-hyundai-elantra-19655-1.jpg": "https://static.cargurus.com/images/forsale/2026/09/16/22/54/2023_hyundai_elantra-pic-6200985212400672754-1024x768.jpeg"
+  },
+  "status": "ok",
+  "url": "https://www.cargurus.com/details/450548107/"
+ },
  "https://www.cargurus.com/details/454655727/": {
   "candidates": [
    "https://static.cargurus.com/images/forsale/2026/09/09/01/05/2022_hyundai_elantra-pic-5549257319919336993-1024x768.jpeg"
@@ -62,6 +78,22 @@
   },
   "status": "ok",
   "url": "https://www.cargurus.com/details/458055138/"
+ },
+ "https://www.cargurus.com/details/458886132/": {
+  "candidates": [
+   "https://static.cargurus.com/images/forsale/2026/09/19/12/54/2022_toyota_corolla-pic-8223083355462456945-1024x768.jpeg"
+  ],
+  "checked": "2026-10-13T09:05:42-05:00",
+  "photos": [
+   "photos/2022-toyota-corolla-19329-1.jpg"
+  ],
+  "slug": "2022-toyota-corolla-19329",
+  "source": "dealer page (2022 Toyota Corolla SE Nightshade Edition FWD - $19,329 - Ca)",
+  "sources": {
+   "photos/2022-toyota-corolla-19329-1.jpg": "https://static.cargurus.com/images/forsale/2026/09/19/12/54/2022_toyota_corolla-pic-8223083355462456945-1024x768.jpeg"
+  },
+  "status": "ok",
+  "url": "https://www.cargurus.com/details/458886132/"
  },
  "https://www.cargurus.com/details/459474109/": {
   "candidates": [
@@ -449,6 +481,56 @@
   },
   "status": "ok",
   "url": "https://www.cars.com/vehicledetail/18e33636-616c-4d86-89b3-db0b31cc47b4/"
+ },
+ "https://www.cars.com/vehicledetail/20dd1a41-9d34-49d1-9009-42f4c72c013b/": {
+  "candidates": [
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/7iD2B3bIq0YKeE5fIBSgdEpvrhU.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/LP2S8iB6G6-LTWVutK62JaEZJEg.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/noxvadGwbUZjqoVX_zYlDXT3ZEo.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/0BFYQlVJmQowWTwSPmwCQEFMSpk.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/BvqOavZ-C_TnC9sf8wSKnlljZN4.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/-JxoBL5OsnnJobs3t7nrrvJ2MQI.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/EqyUIlJsurBdqhW0Wsq8f-azlqQ.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/HLknpnkawqAKBNYOrs5IC1r4zXc.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/ehpo3OjxwAaBhufIEnzl0e1n8Is.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/Lt4w0v5QBZHhkH2YZKMckMnBkgk.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/CBN8ldQ4Doye3bJzSZAMGGyYhsw.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/_xnSFwGRx91lDlDm8bLxbE9BU0Y.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/catuMvfJwEjy5LfV2YKIgK7Bldc.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/trHFFE5amoDWWVEIbpiSFq32_Ro.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/ADhjSIvuUy-N2CwCo7fNmLFgUY8.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/jv6ZjSV6a8wzibAeQg4mGMTFbYI.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/pielaupj8PCvfJx7Xvdeh5FKT0A.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/KGVRBe7Q-BIWEjtlKQTrGlg81DI.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/hHgWuQNYyAbvdjFAfesVFGumUWA.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/WYGHyjgb3V6VE1ABJtrAzqk14kg.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/2WvgRHcDhmousJxOhHKMPH5TeKA.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/TzRSamx50H1JWAgdDhtZtnpLa3g.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/AEHa_oGPA8ZmkbguJUVm-IssWds.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/dgUiTW9MFxaftYjVnpi8MD4T7cM.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/xdelVRLTK7CwYjfFhNeexuO9iY8.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/SPgOseQg8PR_ADbRpiuCQDDPOcc.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/tZRsXaywZV9yhp0m1AviAsLn77M.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/MvY0tidmY6MqpKyEUglTysju8-c.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/w4fp9HM64ca3BCkLLPbql0J_aY4.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/oI5zXOONCXSin9Pjhht_Wejj8YA.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/U2g6n5P09C1XmENXzFp2Naq5hU0.jpg"
+  ],
+  "checked": "2026-10-13T09:05:42-05:00",
+  "photos": [
+   "photos/2020-subaru-crosstrek-19079-1.jpg",
+   "photos/2020-subaru-crosstrek-19079-2.jpg",
+   "photos/2020-subaru-crosstrek-19079-3.jpg"
+  ],
+  "slug": "2020-subaru-crosstrek-19079",
+  "source": "cars.com gallery (Used 2020 Subaru Crosstrek Premium For Sale $19,079 | Cars.c)",
+  "sources": {
+   "photos/2020-subaru-crosstrek-19079-1.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/7iD2B3bIq0YKeE5fIBSgdEpvrhU.jpg",
+   "photos/2020-subaru-crosstrek-19079-2.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/LP2S8iB6G6-LTWVutK62JaEZJEg.jpg",
+   "photos/2020-subaru-crosstrek-19079-3.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/49875338-b016-5c0d-aa0a-ada1d1c641b7/ccaa0921-dfc8-4e09-a439-b97832ecba46/noxvadGwbUZjqoVX_zYlDXT3ZEo.jpg"
+  },
+  "status": "ok",
+  "url": "https://www.cars.com/vehicledetail/20dd1a41-9d34-49d1-9009-42f4c72c013b/"
  },
  "https://www.cars.com/vehicledetail/235fa04d-8cf8-4f11-884c-bd14649c59f3/": {
   "candidates": [
@@ -2355,6 +2437,43 @@
   "status": "ok",
   "url": "https://www.cars.com/vehicledetail/ddc4589e-40ff-45db-b6f7-153acb0ba371/"
  },
+ "https://www.cars.com/vehicledetail/e34b31d2-86ea-44ea-a650-16e6ecf29258/": {
+  "candidates": [
+   "https://platform.cstatic-images.com/xxlarge/in/v2/bae7aced-c8e7-474e-8426-7f8235a51991/a7a16f20-68b4-4106-832f-a1f2fe15427a/2xTo0UseCo7x18s4dNxKNCBNnfs.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/bae7aced-c8e7-474e-8426-7f8235a51991/a7a16f20-68b4-4106-832f-a1f2fe15427a/D7uYb0b5YeLZD7zlK1V5CSFMslY.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/bae7aced-c8e7-474e-8426-7f8235a51991/a7a16f20-68b4-4106-832f-a1f2fe15427a/3EraNNv_uu-Va41ii_zg-UdKaWQ.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/bae7aced-c8e7-474e-8426-7f8235a51991/a7a16f20-68b4-4106-832f-a1f2fe15427a/UyONEYeDTx0RlBTsIATToUeJ59k.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/bae7aced-c8e7-474e-8426-7f8235a51991/a7a16f20-68b4-4106-832f-a1f2fe15427a/OZcS2XbAFdMDmH63DcV6p6INB1s.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/bae7aced-c8e7-474e-8426-7f8235a51991/a7a16f20-68b4-4106-832f-a1f2fe15427a/AxBfpmjFry1jag6s-UjJgNS8NY0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/bae7aced-c8e7-474e-8426-7f8235a51991/a7a16f20-68b4-4106-832f-a1f2fe15427a/mZH5t5xvyegI3EcCwnPGeSFjv1w.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/bae7aced-c8e7-474e-8426-7f8235a51991/a7a16f20-68b4-4106-832f-a1f2fe15427a/ntINrTGVf0kIqn1xQbjdRYUb9uw.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/bae7aced-c8e7-474e-8426-7f8235a51991/a7a16f20-68b4-4106-832f-a1f2fe15427a/qs-zckOJ4eY3FTuO8XeBJf5RccU.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/bae7aced-c8e7-474e-8426-7f8235a51991/a7a16f20-68b4-4106-832f-a1f2fe15427a/SnYTPqeLvs12vH6uZ7AF9pM8UfE.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/bae7aced-c8e7-474e-8426-7f8235a51991/a7a16f20-68b4-4106-832f-a1f2fe15427a/eUjih0g9VmCVPZOgKR7WR8anLk0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/bae7aced-c8e7-474e-8426-7f8235a51991/a7a16f20-68b4-4106-832f-a1f2fe15427a/4kBrBfH9SB17Se8cCREFu9_mZ1Y.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/bae7aced-c8e7-474e-8426-7f8235a51991/a7a16f20-68b4-4106-832f-a1f2fe15427a/qgKmcCvT_UQQCsWOdscWeFVFtgY.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/bae7aced-c8e7-474e-8426-7f8235a51991/a7a16f20-68b4-4106-832f-a1f2fe15427a/WcE1uLHgPEm0GIZgSvVzk3iuum0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/bae7aced-c8e7-474e-8426-7f8235a51991/a7a16f20-68b4-4106-832f-a1f2fe15427a/FeDV2Q625V3Z0_yO50w3RMfHXpQ.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/bae7aced-c8e7-474e-8426-7f8235a51991/a7a16f20-68b4-4106-832f-a1f2fe15427a/rcS4KGWT7MhRpVYUWYZK01MqPiM.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/bae7aced-c8e7-474e-8426-7f8235a51991/a7a16f20-68b4-4106-832f-a1f2fe15427a/WNa7irPSx_QwWfTcMq-tILAQuUE.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/bae7aced-c8e7-474e-8426-7f8235a51991/a7a16f20-68b4-4106-832f-a1f2fe15427a/JthvycAG0x3egmOU43dfjO1DSRo.jpg"
+  ],
+  "checked": "2026-10-13T09:05:42-05:00",
+  "photos": [
+   "photos/2018-honda-civic-19187-1.jpg",
+   "photos/2018-honda-civic-19187-2.jpg",
+   "photos/2018-honda-civic-19187-3.jpg"
+  ],
+  "slug": "2018-honda-civic-19187",
+  "source": "cars.com gallery (Used 2018 Honda Civic Touring For Sale $19,187 | Cars.com)",
+  "sources": {
+   "photos/2018-honda-civic-19187-1.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/bae7aced-c8e7-474e-8426-7f8235a51991/a7a16f20-68b4-4106-832f-a1f2fe15427a/2xTo0UseCo7x18s4dNxKNCBNnfs.jpg",
+   "photos/2018-honda-civic-19187-2.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/bae7aced-c8e7-474e-8426-7f8235a51991/a7a16f20-68b4-4106-832f-a1f2fe15427a/D7uYb0b5YeLZD7zlK1V5CSFMslY.jpg",
+   "photos/2018-honda-civic-19187-3.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/bae7aced-c8e7-474e-8426-7f8235a51991/a7a16f20-68b4-4106-832f-a1f2fe15427a/3EraNNv_uu-Va41ii_zg-UdKaWQ.jpg"
+  },
+  "status": "ok",
+  "url": "https://www.cars.com/vehicledetail/e34b31d2-86ea-44ea-a650-16e6ecf29258/"
+ },
  "https://www.cars.com/vehicledetail/fc40d908-8b69-4147-9239-cf7e1504f0c5/": {
   "candidates": [
    "https://platform.cstatic-images.com/xxlarge/in/v2/9369969c-a9f1-530d-8d4c-4872aee47fd9/3b079735-17a2-4725-9008-c6c4532c043e/-EV8YD2QathUiDe-SdjcdNsO37U.jpg",
@@ -2885,6 +3004,30 @@
   "source": "facebook og:image (2019 Subaru Impreza)",
   "status": "ok",
   "url": "https://www.facebook.com/marketplace/item/998323769502755/"
+ },
+ "https://www.purdyhyundai.com/auto/used-2023-hyundai-elantra-sel/124658418/": {
+  "candidates": [
+   "https://cloudflareimages.dealereprocess.com/resrc/images/c_limit,fl_lossy,w_auto/v1/dvp/5157/57546409413/Used-2023-Hyundai-Elantra-SEL-ID57546409413-aHR0cDovL2ltYWdlcy51bml0c2ludmVudG9yeS5jb20vdXBsb2Fkcy9waG90b3MvMC8yMDI2LTEwLTEzLzEtMTA0MzEwNTctNmFjZTE2MjA1N2JjYi5qcGc=",
+   "https://cloudflareimages.dealereprocess.com/resrc/images/c_limit,fl_lossy,w_auto/v1/dvp/5157/53034338937/Used-2025-Hyundai-Elantra-Limited-ID53034338937-aHR0cDovL2ltYWdlcy51bml0c2ludmVudG9yeS5jb20vdXBsb2Fkcy9jdXN0b21faW1hZ2VzL2xrfmlsOTFSQ0VDfnUyd3F+SHBVNEE4a2ozSHgzeEt0LmpwZw==",
+   "https://cloudflareimages.dealereprocess.com/resrc/images/c_limit,fl_lossy,w_auto/v1/dvp/5157/57544062954/Used-2025-Hyundai-Elantra-SELConvenience-ID57544062954-aHR0cDovL2ltYWdlcy51bml0c2ludmVudG9yeS5jb20vdXBsb2Fkcy9waG90b3MvMC8yMDI2LTEwLTEzLzEtMjA0NTQ2MDQtNmFjZTEyN2FiZTgxZS5qcGc=",
+   "https://cloudflareimages.dealereprocess.com/resrc/images/c_limit,fl_lossy,w_auto/v1/dvp/5157/57547338075/Used-2024-Hyundai-Elantra-Limited-ID57547338075-aHR0cDovL2ltYWdlcy51bml0c2ludmVudG9yeS5jb20vdXBsb2Fkcy9waG90b3MvMC8yMDI2LTEwLTEzLzEtMTgyMTYxOTItNmFjZTE4NDIxMGFlMi5qcGc=",
+   "https://cloudflareimages.dealereprocess.com/resrc/images/c_limit,fl_lossy,w_auto/v1/dvp/5157/57546409413-aHR0cDovL2ltYWdlcy51bml0c2ludmVudG9yeS5jb20vdXBsb2Fkcy9waG90b3MvMC8yMDI2LTEwLTEzLzEtMTA0MzEwNTctNmFjZTE2MjA1N2JjYi5qcGc="
+  ],
+  "checked": "2026-10-13T09:05:42-05:00",
+  "photos": [
+   "photos/2023-hyundai-elantra-17498-1.jpg",
+   "photos/2023-hyundai-elantra-17498-2.jpg",
+   "photos/2023-hyundai-elantra-17498-3.jpg"
+  ],
+  "slug": "2023-hyundai-elantra-17498",
+  "source": "dealer page (Used Certified One-Owner 2023 Hyundai Elantra SEL in Broken )",
+  "sources": {
+   "photos/2023-hyundai-elantra-17498-1.jpg": "https://cloudflareimages.dealereprocess.com/resrc/images/c_limit,fl_lossy,w_auto/v1/dvp/5157/57546409413/Used-2023-Hyundai-Elantra-SEL-ID57546409413-aHR0cDovL2ltYWdlcy51bml0c2ludmVudG9yeS5jb20vdXBsb2Fkcy9waG90b3MvMC8yMDI2LTEwLTEzLzEtMTA0MzEwNTctNmFjZTE2MjA1N2JjYi5qcGc=",
+   "photos/2023-hyundai-elantra-17498-2.jpg": "https://cloudflareimages.dealereprocess.com/resrc/images/c_limit,fl_lossy,w_auto/v1/dvp/5157/53034338937/Used-2025-Hyundai-Elantra-Limited-ID53034338937-aHR0cDovL2ltYWdlcy51bml0c2ludmVudG9yeS5jb20vdXBsb2Fkcy9jdXN0b21faW1hZ2VzL2xrfmlsOTFSQ0VDfnUyd3F+SHBVNEE4a2ozSHgzeEt0LmpwZw==",
+   "photos/2023-hyundai-elantra-17498-3.jpg": "https://cloudflareimages.dealereprocess.com/resrc/images/c_limit,fl_lossy,w_auto/v1/dvp/5157/57544062954/Used-2025-Hyundai-Elantra-SELConvenience-ID57544062954-aHR0cDovL2ltYWdlcy51bml0c2ludmVudG9yeS5jb20vdXBsb2Fkcy9waG90b3MvMC8yMDI2LTEwLTEzLzEtMjA0NTQ2MDQtNmFjZTEyN2FiZTgxZS5qcGc="
+  },
+  "status": "ok",
+  "url": "https://www.purdyhyundai.com/auto/used-2023-hyundai-elantra-sel/124658418/"
  },
  "https://www.successmotorsco.com/inventory/toyota/corolla/106726/": {
   "candidates": [
