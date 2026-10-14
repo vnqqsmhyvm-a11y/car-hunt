@@ -1422,6 +1422,33 @@
   "status": "ok",
   "url": "https://www.cars.com/vehicledetail/5e2ff9bc-701e-44e8-92d5-62d30f22ee0d/"
  },
+ "https://www.cars.com/vehicledetail/70d49df6-4730-4abe-a9df-6d22610de12d/": {
+  "candidates": [
+   "https://platform.cstatic-images.com/xxlarge/in/v2/c1f818b2-9f3e-5b30-bf54-95c86f0e1ab0/29808239-bc1b-49c2-b86f-0163330a5f7f/Us1WsPxwVVvWkhQiEsc2hlyWelU.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/c1f818b2-9f3e-5b30-bf54-95c86f0e1ab0/29808239-bc1b-49c2-b86f-0163330a5f7f/F25eUx6TewHGqAMBl9xT5ODYrQQ.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/c1f818b2-9f3e-5b30-bf54-95c86f0e1ab0/29808239-bc1b-49c2-b86f-0163330a5f7f/92OH1RkUbkz3rFx_VrbNzUktjIc.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/c1f818b2-9f3e-5b30-bf54-95c86f0e1ab0/29808239-bc1b-49c2-b86f-0163330a5f7f/quO-VfVvJvqqe64iqlQt4jOFDXU.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/c1f818b2-9f3e-5b30-bf54-95c86f0e1ab0/29808239-bc1b-49c2-b86f-0163330a5f7f/-56bDZvtPylus3GnJbiNZn7kHd8.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/c1f818b2-9f3e-5b30-bf54-95c86f0e1ab0/29808239-bc1b-49c2-b86f-0163330a5f7f/3DhfTu0RAwWiKW2VCHGRJetNUOU.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/c1f818b2-9f3e-5b30-bf54-95c86f0e1ab0/29808239-bc1b-49c2-b86f-0163330a5f7f/MKfiAkHGNf7VND-4YeW5PRLvnQo.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/c1f818b2-9f3e-5b30-bf54-95c86f0e1ab0/29808239-bc1b-49c2-b86f-0163330a5f7f/e6HRbjlNifunP3ZBUxmL7tQBmEw.jpg"
+  ],
+  "checked": "2026-10-14T08:51:40-05:00",
+  "photos": [
+   "photos/2024-hyundai-elantra-20000-1.jpg",
+   "photos/2024-hyundai-elantra-20000-2.jpg",
+   "photos/2024-hyundai-elantra-20000-3.jpg"
+  ],
+  "slug": "2024-hyundai-elantra-20000",
+  "source": "cars.com gallery (Used 2024 Hyundai ELANTRA SEL For Sale $20,000 | Cars.com)",
+  "sources": {
+   "photos/2024-hyundai-elantra-20000-1.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/c1f818b2-9f3e-5b30-bf54-95c86f0e1ab0/29808239-bc1b-49c2-b86f-0163330a5f7f/Us1WsPxwVVvWkhQiEsc2hlyWelU.jpg",
+   "photos/2024-hyundai-elantra-20000-2.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/c1f818b2-9f3e-5b30-bf54-95c86f0e1ab0/29808239-bc1b-49c2-b86f-0163330a5f7f/F25eUx6TewHGqAMBl9xT5ODYrQQ.jpg",
+   "photos/2024-hyundai-elantra-20000-3.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/c1f818b2-9f3e-5b30-bf54-95c86f0e1ab0/29808239-bc1b-49c2-b86f-0163330a5f7f/92OH1RkUbkz3rFx_VrbNzUktjIc.jpg"
+  },
+  "status": "ok",
+  "url": "https://www.cars.com/vehicledetail/70d49df6-4730-4abe-a9df-6d22610de12d/"
+ },
  "https://www.cars.com/vehicledetail/739e47a3-0650-48fa-9948-6805086c6b9c/": {
   "candidates": [
    "https://platform.cstatic-images.com/xxlarge/in/v2/f855c86a-6b5f-5a87-b957-ac22467aff31/b14b8b5d-f508-4838-8a3a-b6d0de0a9b4c/64JpZexblpuP-8dpEHpMKLuLo8g.jpg",
@@ -1527,6 +1554,14 @@
   },
   "status": "ok",
   "url": "https://www.cars.com/vehicledetail/7ce391f4-e4e9-4b5f-9019-e092f2dd2022/"
+ },
+ "https://www.cars.com/vehicledetail/7db93d62-f596-4469-a0ee-7e8360899d91/": {
+  "checked": "2026-10-14T08:51:40-05:00",
+  "photos": [],
+  "slug": "2024-hyundai-elantra-19950",
+  "source": "cars.com bot check did not clear",
+  "status": "unavailable",
+  "url": "https://www.cars.com/vehicledetail/7db93d62-f596-4469-a0ee-7e8360899d91/"
  },
  "https://www.cars.com/vehicledetail/87533598-979d-411f-8f1f-105672dc36c7/": {
   "candidates": [
@@ -2013,6 +2048,40 @@
   "status": "ok",
   "url": "https://www.cars.com/vehicledetail/b5aa3a75-6186-452f-845d-a6ad388dbd8f/"
  },
+ "https://www.cars.com/vehicledetail/b7ccb504-6fad-40f2-ba1b-70857980909c/": {
+  "candidates": [
+   "https://platform.cstatic-images.com/xxlarge/in/v2/53cba617-3563-5a7d-96e3-404b900b6d49/0a365daa-1b83-4381-8d0a-0d8a30282556/0r4OVzbRScHL5yRh9xE5UCgUYrs.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/53cba617-3563-5a7d-96e3-404b900b6d49/0a365daa-1b83-4381-8d0a-0d8a30282556/7bURKjad0PGZDdOkBG-DWBZohJc.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/53cba617-3563-5a7d-96e3-404b900b6d49/0a365daa-1b83-4381-8d0a-0d8a30282556/p2a0JxS_nwIGk8qpjCWaTCihYL8.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/53cba617-3563-5a7d-96e3-404b900b6d49/0a365daa-1b83-4381-8d0a-0d8a30282556/AanM934vIATU2-MbOwm0iCOO2_A.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/53cba617-3563-5a7d-96e3-404b900b6d49/0a365daa-1b83-4381-8d0a-0d8a30282556/-lHl5p06GkdNLa9AEZ2N_cIKgKg.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/53cba617-3563-5a7d-96e3-404b900b6d49/0a365daa-1b83-4381-8d0a-0d8a30282556/T1eHBGfED3ldZr8RHTnLFPhut2s.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/53cba617-3563-5a7d-96e3-404b900b6d49/0a365daa-1b83-4381-8d0a-0d8a30282556/rXBgYDSGFORcD4_1qKLnH_B7Ms4.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/53cba617-3563-5a7d-96e3-404b900b6d49/0a365daa-1b83-4381-8d0a-0d8a30282556/wE0o2EacyO6sBVByhJQCvZtvpjc.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/53cba617-3563-5a7d-96e3-404b900b6d49/0a365daa-1b83-4381-8d0a-0d8a30282556/IXD-vw0niGgDOlmKaFVhbV4TCUA.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/53cba617-3563-5a7d-96e3-404b900b6d49/0a365daa-1b83-4381-8d0a-0d8a30282556/zJvpmWaex6pqp-Z49k4tkMmzZUY.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/53cba617-3563-5a7d-96e3-404b900b6d49/0a365daa-1b83-4381-8d0a-0d8a30282556/rCK9z8mVT5zm46pUAelvmm2I94A.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/53cba617-3563-5a7d-96e3-404b900b6d49/0a365daa-1b83-4381-8d0a-0d8a30282556/8TuhOgWKjSjfXIaIfxUMfRaxUgI.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/53cba617-3563-5a7d-96e3-404b900b6d49/0a365daa-1b83-4381-8d0a-0d8a30282556/5pTKaBjYv3QqssQdZyxb4xl-k4c.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/53cba617-3563-5a7d-96e3-404b900b6d49/0a365daa-1b83-4381-8d0a-0d8a30282556/UT0Cwyv9-FHfSzUtjA8dNzEbO-M.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/53cba617-3563-5a7d-96e3-404b900b6d49/0a365daa-1b83-4381-8d0a-0d8a30282556/gR4CoyykYa1S9FRPwE4Hs_YhkxI.jpg"
+  ],
+  "checked": "2026-10-14T08:51:40-05:00",
+  "photos": [
+   "photos/2025-hyundai-venue-19599-1.jpg",
+   "photos/2025-hyundai-venue-19599-2.jpg",
+   "photos/2025-hyundai-venue-19599-3.jpg"
+  ],
+  "slug": "2025-hyundai-venue-19599",
+  "source": "cars.com gallery (Used 2025 Hyundai VENUE SEL For Sale $19,599 | Cars.com)",
+  "sources": {
+   "photos/2025-hyundai-venue-19599-1.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/53cba617-3563-5a7d-96e3-404b900b6d49/0a365daa-1b83-4381-8d0a-0d8a30282556/0r4OVzbRScHL5yRh9xE5UCgUYrs.jpg",
+   "photos/2025-hyundai-venue-19599-2.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/53cba617-3563-5a7d-96e3-404b900b6d49/0a365daa-1b83-4381-8d0a-0d8a30282556/7bURKjad0PGZDdOkBG-DWBZohJc.jpg",
+   "photos/2025-hyundai-venue-19599-3.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/53cba617-3563-5a7d-96e3-404b900b6d49/0a365daa-1b83-4381-8d0a-0d8a30282556/p2a0JxS_nwIGk8qpjCWaTCihYL8.jpg"
+  },
+  "status": "ok",
+  "url": "https://www.cars.com/vehicledetail/b7ccb504-6fad-40f2-ba1b-70857980909c/"
+ },
  "https://www.cars.com/vehicledetail/b7e87cd0-8c78-47a6-8d55-6ca06d3059c8/": {
   "candidates": [
    "https://platform.cstatic-images.com/xxlarge/in/v2/b767bef0-3540-45bd-a759-30c14d75dd50/23e9324a-9413-4842-9ad7-b314f0020690/-LxK2WznVXP2Byd18D1rEGSrVTg.jpg",
@@ -2183,6 +2252,45 @@
   },
   "status": "ok",
   "url": "https://www.cars.com/vehicledetail/c094c68c-7fa7-4d22-a153-e92689382fd5/"
+ },
+ "https://www.cars.com/vehicledetail/ca636f0f-5283-4a82-a0e9-a40ff501b3d7/": {
+  "candidates": [
+   "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/smUQWohjtD6ZF1MWu9zUoUIHi7U.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/iTw-fBoXfrjhoxpRUGQfGTVBFtY.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/3Lfg61Y5Dm6kxgZtsAqrGGFjzX4.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/8SpngKZtKweXcRi8fH-VHkp6W_c.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/cKIaKJOHA6S5FqipVv6uyybYc4o.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/YmvENFCJjZbwJthodMd7nsWYWZg.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/D3AoVOgkWaScAz2CqC-jBvmG_Zg.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/Tt_XKIO1U0tZl1jxYlF4pIhH4c0.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/34f_h3TpwfaejFRPaJn3qEp5rUU.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/hzSAvWic1V4GGNYe-sqySogBnzI.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/uNo6SRW3JxkDOBO-AAjd86FB22E.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/FRJRzzkTZJRZ70svZYRBxDtLuSk.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/N9Bsv3VUj3s64G3_rb5I4FdT08s.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/FUZULm27v8CfqobX4Uz7EvoI_Cg.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/UR7Ja3u8QpKDxRqZ5aCCERdZQ_A.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/vVvwl1fLkU5wXtj89HvET0TFUjo.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/DehXb5j_47V2vuL3NLgQ2eokRZs.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/US_jKI4xBuXf6xz1OMT0hvordgo.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/oqcBxd0iyLf9ezY2wnOBRghNR90.jpg",
+   "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/YruHU3Eg68-Nz4irAc0tqAaLAzw.jpg"
+  ],
+  "checked": "2026-10-14T08:51:40-05:00",
+  "photos": [
+   "photos/2023-kia-forte-15880-1.jpg",
+   "photos/2023-kia-forte-15880-2.jpg",
+   "photos/2023-kia-forte-15880-3.jpg"
+  ],
+  "slug": "2023-kia-forte-15880",
+  "source": "cars.com gallery (Used 2023 Kia Forte LXS For Sale $15,880 | Cars.com)",
+  "sources": {
+   "photos/2023-kia-forte-15880-1.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/smUQWohjtD6ZF1MWu9zUoUIHi7U.jpg",
+   "photos/2023-kia-forte-15880-2.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/iTw-fBoXfrjhoxpRUGQfGTVBFtY.jpg",
+   "photos/2023-kia-forte-15880-3.jpg": "https://platform.cstatic-images.com/xxlarge/in/v2/15477008-43a1-42d0-8692-47d507c430f3/d6c162dd-ee60-43e8-a2a4-9f1150323d8c/3Lfg61Y5Dm6kxgZtsAqrGGFjzX4.jpg"
+  },
+  "status": "ok",
+  "url": "https://www.cars.com/vehicledetail/ca636f0f-5283-4a82-a0e9-a40ff501b3d7/"
  },
  "https://www.cars.com/vehicledetail/d19af16f-a24b-461d-82ac-467591130a78/": {
   "candidates": [
