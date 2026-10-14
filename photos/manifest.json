@@ -1556,11 +1556,13 @@
   "url": "https://www.cars.com/vehicledetail/7ce391f4-e4e9-4b5f-9019-e092f2dd2022/"
  },
  "https://www.cars.com/vehicledetail/7db93d62-f596-4469-a0ee-7e8360899d91/": {
-  "checked": "2026-10-14T08:51:40-05:00",
-  "photos": [],
+  "checked": "2026-10-14T08:53:15-05:00",
+  "photos": [
+   "photos/2024-hyundai-elantra-19950-1.jpg"
+  ],
   "slug": "2024-hyundai-elantra-19950",
-  "source": "cars.com bot check did not clear",
-  "status": "unavailable",
+  "source": "autotempest listing thumb (cars.com blocked)",
+  "status": "ok",
   "url": "https://www.cars.com/vehicledetail/7db93d62-f596-4469-a0ee-7e8360899d91/"
  },
  "https://www.cars.com/vehicledetail/87533598-979d-411f-8f1f-105672dc36c7/": {
