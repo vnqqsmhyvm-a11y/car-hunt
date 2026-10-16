@@ -1,0 +1,192 @@
+{
+ "_note": "Standalone per-car pages. build.py writes cars/<slug>/index.html for each entry and links it from any route/Cars card whose listing URL is in match_urls.",
+ "pages": [
+  {
+   "slug": "midtown-kia-2020-cx5",
+   "match_urls": [
+    "https://www.cars.com/vehicledetail/a9b79293-7d3f-4a71-b483-9cdeb5ead43b/"
+   ],
+   "link_label": "Dealer visit checklist & Carfax summary",
+   "title": "2020 Mazda CX-5 Grand Touring",
+   "dealer": "Midtown Kia, Tulsa",
+   "photo": "photos/route-2020-cx5-midtownkia.jpg",
+   "price_all_in": 21206,
+   "price_vehicle": 20617,
+   "doc_fee": 589,
+   "miles": 85407,
+   "vin": "JM3KFBDM4L1806106",
+   "dealer_name": "Midtown Kia",
+   "address": "4747 S Yale Ave, Tulsa, OK",
+   "phone": "(918) 359-7658",
+   "tel": "+19183597658",
+   "listing_url": "https://www.cars.com/vehicledetail/a9b79293-7d3f-4a71-b483-9cdeb5ead43b/",
+   "status": "Max messaged them via Cars.com 10/16 asking for availability today, Carfax, and out-the-door price, and to text not call.",
+   "verdict": [
+    "Clean, one-owner, dealer-maintained car; ranks ahead of the Grubbs 2025 CX-5 (likely ex-rental) if the two questions below get good answers.",
+    "Carfax value $20,960; Carfax calls the price a Good Value ($343 below).",
+    "Get a ~$150 pre-purchase inspection at an independent shop before buying."
+   ],
+   "carfax_note": "Carfax report provided free by Midtown Kia, current as of 10/16/2026.",
+   "carfax": [
+    "No accidents or damage reported; no structural damage, airbag deployment, or total loss.",
+    "Clean title: no salvage/junk/rebuilt/fire/flood/hail/lemon brands; no odometer brands or rollback (Carfax-guaranteed).",
+    "1 owner, personal use (not rental/lease/fleet), bought new 07/09/2020 at Nelson Mazda, registered in Sand Springs OK, ~6 years, ~13,950 mi/year.",
+    "Loan/lien reported on registrations (normal; dealer pays it off).",
+    "A service contract was issued at purchase in 2020: ask if it's transferable/still active.",
+    "No open recalls. Original factory warranty estimated expired.",
+    "Carfax 'Great Reliability' badge (top 25% of similar vehicles, ~$330/yr average repair cost). 19 service records."
+   ],
+   "concerns": [
+    "Oil was changed ~every 6,000 mi through 02/2025 (67,272 mi), then no recorded oil change until the dealer's 09/18/2026 service: roughly 18,000 miles / 19 months.",
+    "The dealer replaced an unspecified engine seal/gasket before sale."
+   ],
+   "service": [
+    {
+     "date": "11/23/2020",
+     "miles": "5,490",
+     "where": "Nelson Mazda",
+     "work": "Oil & filter, inspection"
+    },
+    {
+     "date": "12/11/2020",
+     "miles": "6,105",
+     "where": "Cecil & Sons",
+     "work": "Tires balanced/replaced"
+    },
+    {
+     "date": "03/18/2021",
+     "miles": "9,159",
+     "where": "Nelson Mazda",
+     "work": "Inspection, air filter, cabin filter"
+    },
+    {
+     "date": "04/30/2021",
+     "miles": "10,719",
+     "where": "Cecil & Sons",
+     "work": "Tire repaired"
+    },
+    {
+     "date": "05/20/2021",
+     "miles": "11,531",
+     "where": "Nelson Mazda",
+     "work": "Oil change, tires rotated"
+    },
+    {
+     "date": "05/28/2021",
+     "miles": "11,758",
+     "where": "Cecil & Sons",
+     "work": "Tire repaired"
+    },
+    {
+     "date": "10/13/2021",
+     "miles": "17,731",
+     "where": "Nelson Mazda",
+     "work": "Oil change, alignment, rotation"
+    },
+    {
+     "date": "04/13/2022",
+     "miles": "25,856",
+     "where": "Nelson Mazda",
+     "work": "Oil change, brake fluid, cabin filter, differential fluid, rotation"
+    },
+    {
+     "date": "09/21/2022",
+     "miles": "33,613",
+     "where": "Nelson Mazda",
+     "work": "Oil change, air filter, alignment, rotation"
+    },
+    {
+     "date": "02/13/2023",
+     "miles": "39,399",
+     "where": "Nelson Mazda",
+     "work": "Oil change, air & cabin filters, rotation"
+    },
+    {
+     "date": "10/06/2023",
+     "miles": "46,492",
+     "where": "Nelson Mazda",
+     "work": "Oil change, drive belt tensioner/pulley replaced, wipers"
+    },
+    {
+     "date": "04/19/2024",
+     "miles": "54,677",
+     "where": "Nelson Mazda",
+     "work": "Oil change, air & cabin filters, brake fluid, 4 tires mounted/balanced, alignment, fuel system service"
+    },
+    {
+     "date": "09/24/2024",
+     "miles": "61,180",
+     "where": "Nelson Mazda",
+     "work": "Oil change, battery replaced, rotation"
+    },
+    {
+     "date": "02/11/2025",
+     "miles": "67,272",
+     "where": "Nelson Mazda",
+     "work": "Oil change, rotation",
+     "flag": "last"
+    },
+    {
+     "date": "08/30/2025",
+     "miles": "73,331",
+     "where": "Nelson Mazda",
+     "work": "One tire mounted/balanced"
+    },
+    {
+     "date": "12/02/2025",
+     "miles": "76,952",
+     "where": "Nelson Mazda",
+     "work": "Alignment, rear brake pads, rotation, transmission fluid flush"
+    },
+    {
+     "date": "08/29/2026",
+     "miles": "85,400",
+     "where": "Midtown Kia",
+     "work": "Offered for sale"
+    },
+    {
+     "date": "09/18/2026",
+     "miles": "—",
+     "where": "Midtown Kia",
+     "work": "Pre-sale service: oil & filter, air & cabin filters, brakes serviced, engine checked, engine seal(s)/gasket(s) replaced",
+     "flag": "gasket"
+    },
+    {
+     "date": "10/01/2026",
+     "miles": "85,407",
+     "where": "Midtown Kia",
+     "work": "Last reported mileage"
+    }
+   ],
+   "ask": [
+    "Which engine seal or gasket was replaced on 9/18, and why? Can I see the repair order? (Valve cover gasket = minor; rear main seal, head gasket, or timing cover = bigger concern.)",
+    "Was there an oil leak? Any oil burning/consumption noted during the trade-in inspection?",
+    "Do you have any oil-change records between Feb 2025 and Sept 2026 (the Carfax shows ~18k miles with none)?",
+    "What's the out-the-door price with tax, title, tag and the $589 doc fee? Any add-ons (nitrogen, etching, protection packages) already on it? Ask to remove them.",
+    "Is the 2020 service contract from the original purchase still active and transferable?",
+    "Are both keys/fobs included? Owner's manual?",
+    "Were the brakes replaced or just serviced on 9/18? Pad and rotor measurements?",
+    "How old are the tires (DOT date) and how much tread is left?",
+    "Can I take it to an independent shop for a pre-purchase inspection before signing?",
+    "Is it AWD or FWD? (Confirm on the window sticker/VIN.)",
+    "Any warranty or return window from the dealer?"
+   ],
+   "check": [
+    "Cold start: ask them not to start it before you arrive. Listen for rattles or ticking in the first few seconds.",
+    "Under the hood: look for fresh oil wetness or residue around the valve cover and engine edges (signs of the leak that was fixed, or that it's still leaking). Pull the dipstick: oil should be at full, amber-to-light-brown, not sludgy.",
+    "Coolant reservoir at the line, no oily film.",
+    "Under the car after the test drive: look for drips on the ground.",
+    "Dashboard: no warning lights after start (check engine, airbag, ABS, tire pressure).",
+    "Test drive 15+ minutes including highway: smooth shifts with no flare or clunk (6-speed automatic), straight tracking, no vibration at 65–70 mph, firm brakes without pulsing or squeal.",
+    "Low-speed tight turns both ways in a parking lot: no clicking or groaning.",
+    "Electronics: infotainment screen, Apple CarPlay with her phone, backup camera, blind-spot monitoring, heated seats, sunroof, power liftgate, all windows and locks, A/C blowing cold and heat blowing hot.",
+    "Tires: matching brand, even wear (uneven inner wear = alignment), DOT date code.",
+    "Body: panel gaps even, paint color matches panel to panel, no overspray on trim (Carfax shows no accidents, but not every accident gets reported).",
+    "Interior: smell for smoke or mildew, check under the floor mats for dampness.",
+    "Match the VIN on the dash and door jamb to JM3KFBDM4L1806106.",
+    "Fit: let your daughter adjust the seat and mirrors and check visibility and blind spots."
+   ],
+   "footer": "Facts from the Midtown Kia-provided Carfax and the Cars.com listing, 10/16/2026."
+  }
+ ]
+}

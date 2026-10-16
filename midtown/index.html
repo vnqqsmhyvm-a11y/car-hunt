@@ -141,6 +141,38 @@ footer.bottom p{margin:.4rem 0}
 .over{font-size:.8rem;font-weight:700;vertical-align:middle;margin-left:.4rem}
 .also{border-left:5px solid #e0a100}.also h3{margin:0 0 .4rem;font-size:1.05rem}.also p{margin:.5rem 0;font-size:.93rem}
 .dot.rec{background:var(--good)}.dot.ok{background:#e0a100}.dot.avoid{background:var(--bad)}
+.btn.alt{background:var(--card);color:var(--accent);border:2px solid var(--accent)}
+.btn.page{background:var(--ink);color:#fff}
+.cp{max-width:44rem;font-size:1.1rem;line-height:1.5}
+.cp .hero img{display:block;width:100%;height:auto;border-radius:var(--radius)}
+.cp h2.t{font:700 1.85rem/1.15 var(--display);margin:1rem 0 .2rem}
+.cp .dealer-line{margin:0;color:var(--soft);font-weight:600}
+.cp .bigprice{font-size:2.3rem;font-weight:800;line-height:1.05;margin:.6rem 0 0}
+.cp .pricebreak{margin:.15rem 0 0;color:var(--soft);font-size:1rem}
+.cp .kv{display:grid;grid-template-columns:auto 1fr;gap:.35rem .8rem;margin:.8rem 0 0;padding:0;font-size:1.02rem}
+.cp .kv dt{font-size:.8rem;padding-top:.2rem}.cp .kv dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+.cp .taps{display:grid;grid-template-columns:1fr;gap:.6rem;margin:1rem 0}
+.cp .taps .btn{font-size:1.15rem;padding:1rem}
+.cp .status{background:var(--info-bg);color:var(--info);border-radius:12px;padding:.75rem .9rem;font-size:1rem;margin:.6rem 0}
+.cp h3{font:700 1.4rem/1.2 var(--display);margin:1.8rem 0 .5rem}
+.cp .box h3{margin-top:0}
+.cp .box.verdict ul{margin:0;padding-left:1.2rem}.cp .box.verdict li{margin:.4rem 0}
+.cp ul.dots{margin:0;padding-left:1.2rem}.cp ul.dots li{margin:.45rem 0}
+.cp .warnbox{background:var(--warn-bg);border-left:5px solid #e0a100;border-radius:12px;padding:.8rem .95rem;margin:1rem 0}
+.cp .warnbox b{color:var(--warn)}
+.cp .warnbox ol{margin:.4rem 0 0;padding-left:1.3rem}.cp .warnbox li{margin:.4rem 0}
+.cp ul.checks{list-style:none;margin:0;padding:0}
+.cp ul.checks li{border-top:1px solid var(--line)}
+.cp ul.checks label{display:flex;gap:.75rem;align-items:flex-start;padding:.8rem .2rem;cursor:pointer}
+.cp ul.checks input{flex:0 0 auto;width:1.6rem;height:1.6rem;margin:.05rem 0 0;accent-color:var(--good)}
+.cp ul.checks input:checked+span{color:var(--muted);text-decoration:line-through}
+.cp .svc{width:100%;border-collapse:collapse;font-size:.95rem}
+.cp .svc th{text-align:left;font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;color:var(--soft);padding:.4rem .3rem;border-bottom:2px solid var(--line)}
+.cp .svc td{vertical-align:top;padding:.55rem .3rem;border-bottom:1px solid var(--line)}
+.cp .svc td.n{white-space:nowrap;font-variant-numeric:tabular-nums}
+.cp .svc .sm{display:block;color:var(--soft);font-size:.85rem}
+.cp .svc tr.hl td{background:var(--warn-bg)}
+.cp .svc tr.gap td{background:var(--bad-bg);color:var(--bad);font-weight:650;text-align:center;font-size:.9rem}
 </style>
 </head>
 <body>
@@ -169,7 +201,7 @@ footer.bottom p{margin:.4rem 0}
 <li class="card"><div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/route-2025-cx5-grubbs.jpg" width="641" height="428" loading="lazy" decoding="async" alt="2025 Mazda CX-5, listing photo 1"></div></div></div><div class="body"><h2>2025 Mazda CX-5 2.5 S Preferred</h2><div><span class="price">$20,899</span><span class="b warn over">Over $20k</span></div><p class="facts"><span>75,377 mi</span></p><ul class="badges"><li class="b warn">Likely ex-fleet</li></ul><p class="why">The only refreshed-look (2022+) CX-5 under budget.</p><ul class="notes"><li>75k miles on a 2025: almost certainly an ex-rental, so ask before driving</li><li>Clean title</li></ul><p class="live">In this morning&#x27;s Cars.com search results; listing page not opened</p><div class="actions"><a class="btn" href="https://www.cars.com/vehicledetail/7d02d229-9741-4180-af5e-9af42248fa29/" target="_blank" rel="noopener">View listing</a></div></div></li>
 </ul></section>
 <section class="dealer"><h2>Midtown Kia</h2><p class="addr">4747 S Yale Ave, Tulsa, OK 74135 · Mon–Fri 9–8, Sat 9–7</p><div class="dlinks"><a class="call" href="tel:+19186223160">Call 918-622-3160</a><a href="https://www.google.com/maps/search/?api=1&amp;query=4747%20S%20Yale%20Ave%2C%20Tulsa%2C%20OK%2074135" target="_blank" rel="noopener">Google Maps</a><a href="https://maps.apple.com/?q=4747%20S%20Yale%20Ave%2C%20Tulsa%2C%20OK%2074135" target="_blank" rel="noopener">Apple Maps</a></div><ul class="grid">
-<li class="card"><div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/route-2020-cx5-midtownkia.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2020 Mazda CX-5, listing photo 1"></div></div></div><div class="body"><h2>2020 Mazda CX-5 Grand Touring</h2><div><span class="price">$21,206</span><span class="b warn over">Over $20k</span></div><p class="facts"><span>85,407 mi</span></p><p class="why">Top trim, a bit fewer miles than the Ferguson CX-5.</p><ul class="notes"><li>Clean title</li><li>History not confirmed</li><li>Listed since Aug 31: room to negotiate</li></ul><p class="live">In this morning&#x27;s Cars.com search results; listing page not opened</p><div class="actions"><a class="btn" href="https://www.cars.com/vehicledetail/a9b79293-7d3f-4a71-b483-9cdeb5ead43b/" target="_blank" rel="noopener">View listing</a></div></div></li>
+<li class="card"><div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/route-2020-cx5-midtownkia.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2020 Mazda CX-5, listing photo 1"></div></div></div><div class="body"><h2>2020 Mazda CX-5 Grand Touring</h2><div><span class="price">$21,206</span><span class="b warn over">Over $20k</span></div><p class="facts"><span>85,407 mi</span></p><p class="why">Top trim, a bit fewer miles than the Ferguson CX-5.</p><ul class="notes"><li>Clean title</li><li>History not confirmed</li><li>Listed since Aug 31: room to negotiate</li></ul><p class="live">In this morning&#x27;s Cars.com search results; listing page not opened</p><div class="actions"><a class="btn page" href="../cars/midtown-kia-2020-cx5/">Dealer visit checklist &amp; Carfax summary →</a><a class="btn" href="https://www.cars.com/vehicledetail/a9b79293-7d3f-4a71-b483-9cdeb5ead43b/" target="_blank" rel="noopener">View listing</a></div></div></li>
 </ul></section>
 <section class="dealer"><h2>Fowler Toyota of Tulsa</h2><p class="addr">6868 E Broken Arrow Frontage Rd, Tulsa, OK 74145</p><div class="dlinks"><a class="call" href="tel:+19182767035">Call (918) 276-7035</a><a href="https://www.google.com/maps/search/?api=1&amp;query=6868%20E%20Broken%20Arrow%20Frontage%20Rd%2C%20Tulsa%2C%20OK%2074145" target="_blank" rel="noopener">Google Maps</a><a href="https://maps.apple.com/?q=6868%20E%20Broken%20Arrow%20Frontage%20Rd%2C%20Tulsa%2C%20OK%2074145" target="_blank" rel="noopener">Apple Maps</a></div><ul class="grid">
 <li class="card"><div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/2022-toyota-corolla-19297-1.jpg" width="1024" height="768" loading="lazy" decoding="async" alt="2022 Toyota Corolla, listing photo 1"></div></div></div><div class="body"><h2>2022 Toyota Corolla SE</h2><div><span class="price">$19,097</span></div><p class="facts"><span>80,563 mi</span></p><ul class="badges"><li class="b good">1 owner</li></ul><p class="why">Clean-history Corolla at a Toyota dealer.</p><ul class="notes"><li>1 owner, no accidents, not a rental (CarGurus)</li><li>Price includes fees; down $200 since yesterday</li></ul><p class="live">Listing opened this morning: still for sale</p><div class="actions"><a class="btn" href="https://www.cargurus.com/details/459474109" target="_blank" rel="noopener">View listing</a></div></div></li>

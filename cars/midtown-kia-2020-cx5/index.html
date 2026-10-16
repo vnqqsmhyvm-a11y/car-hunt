@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#faf6f0">
+<title>2020 Mazda CX-5 Grand Touring · Midtown Kia, Tulsa · Car Hunt</title>
+<style>
+@font-face{font-family:"Playfair Display";font-weight:700;font-display:swap;src:url(../../assets/fonts/playfair-display-latin-700-normal.woff2) format("woff2")}
+:root{color-scheme:light;--bg:#faf6f0;--card:#fff;--ink:#22201c;--soft:#5d574e;--muted:#8a8378;--line:#ebe4d8;
+--accent:#c2562b;--accent-ink:#fff;--good:#1f7a4d;--good-bg:#e5f4ec;--warn:#8a5a00;--warn-bg:#fff1cc;--bad:#b42318;--bad-bg:#fde8e6;
+--info:#1d4f91;--info-bg:#e8f0fb;--muted-bg:#f1ede6;--radius:18px;
+--sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+--display:"Playfair Display",Georgia,serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:76rem;margin:0 auto;padding:0 max(1rem,env(safe-area-inset-left)) 2rem max(1rem,env(safe-area-inset-right))}
+header.top{padding:1.4rem 0 .6rem}
+header.top h1{font:700 2.4rem/1.05 var(--display);margin:0;letter-spacing:-.01em}
+header.top h1 a{color:var(--ink);text-decoration:none}
+.sub{margin:.35rem 0 .2rem;color:var(--soft);font-size:1.05rem}
+.meta{color:var(--muted);font-size:.88rem;margin:0}
+.tabs{display:flex;flex-wrap:wrap;gap:.45rem;margin:.9rem 0 0}
+.tabs a{font-weight:600;font-size:.95rem;text-decoration:none;color:var(--ink);padding:.5rem .9rem;border-radius:999px;background:var(--muted-bg)}
+.tabs a[aria-current]{background:var(--ink);color:#fff}
+.controls{background:rgba(250,246,240,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+ margin:0 calc(-1*max(1rem,env(safe-area-inset-left)));padding:.6rem max(1rem,env(safe-area-inset-left));border-bottom:1px solid var(--line)}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;font:600 .95rem/1 var(--sans);padding:.62rem .95rem;border-radius:999px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.row2{display:flex;justify-content:space-between;align-items:center;gap:.6rem;margin-top:.5rem;font-size:.92rem;color:var(--soft)}
+.row2 label{display:flex;align-items:center;gap:.4rem;white-space:nowrap}
+#shown{white-space:nowrap}
+.row2 select{font:600 .95rem var(--sans);padding:.45rem .6rem;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink)}
+.grid{display:grid;grid-template-columns:1fr;gap:1.1rem;margin-top:1rem;list-style:none;padding:0}
+@media (min-width:700px){.grid{grid-template-columns:1fr 1fr}.controls{position:sticky;top:0;z-index:5}}
+@media (min-width:1100px){.grid{grid-template-columns:1fr 1fr 1fr}}
+.card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 2px rgba(60,40,10,.06),0 6px 18px rgba(60,40,10,.06);display:flex;flex-direction:column}
+.card[hidden]{display:none}
+.photo{position:relative;background:#eee7dc}
+.gallery{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;aspect-ratio:4/3}
+.gallery::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;position:relative;overflow:hidden;scroll-snap-align:start}
+.slide img{display:block;width:100%;height:100%;object-fit:cover}
+.slide.tall img.fg{position:relative;object-fit:contain}
+.slide img.bg{position:absolute;inset:0;filter:blur(22px) saturate(1.05);opacity:.75;transform:scale(1.2)}
+.count{position:absolute;right:.6rem;bottom:.6rem;background:rgba(0,0,0,.62);color:#fff;font-size:.78rem;font-weight:600;padding:.25rem .55rem;border-radius:999px}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:2.3rem;height:2.3rem;border-radius:50%;border:0;background:rgba(255,255,255,.9);color:#222;font-size:1.25rem;line-height:1;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.nav.prev{left:.5rem}.nav.next{right:.5rem}
+.noimg{aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;color:var(--muted);background:repeating-linear-gradient(45deg,#f1ebe1,#f1ebe1 12px,#ece5d9 12px,#ece5d9 24px);font-weight:600}
+.noimg svg{width:3.2rem;height:3.2rem;opacity:.55}
+.ribbon{position:absolute;left:0;right:0;top:0;padding:.5rem .8rem;font-weight:700;font-size:.9rem;color:#fff;background:rgba(40,36,30,.86);text-align:center;letter-spacing:.02em}
+.card.removed .gallery,.card.removed .noimg{filter:grayscale(1);opacity:.6}
+.sold-wrap{margin-top:1.6rem}
+.sold-wrap > summary{font:700 1.05rem/1.3 var(--sans);color:var(--soft)}
+.sold-wrap .grid{opacity:.92}
+.flag{padding:.6rem .9rem;font-size:.9rem;line-height:1.35}
+.flag b{text-transform:uppercase;letter-spacing:.05em;margin-right:.35rem}
+.flag.avoid{background:var(--bad);color:#fff}
+.flag.caution{background:#f5b301;color:#2a1d00}
+.body{padding:.9rem 1rem 1rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
+.card h2{font-size:1.18rem;line-height:1.25;margin:0;font-weight:700}
+.price{font-size:1.75rem;font-weight:800;letter-spacing:-.01em;line-height:1}
+.facts{color:var(--soft);font-size:.95rem;margin:0}
+.facts span+span::before{content:"·";margin:0 .4rem;color:var(--muted)}
+.badges{display:flex;flex-wrap:wrap;gap:.35rem;margin:.1rem 0 0;padding:0;list-style:none}
+.b{font-size:.8rem;font-weight:650;padding:.3rem .55rem;border-radius:8px;white-space:nowrap}
+.b.good{background:var(--good-bg);color:var(--good)}.b.warn{background:var(--warn-bg);color:var(--warn)}
+.b.bad{background:var(--bad-bg);color:var(--bad)}.b.info{background:var(--info-bg);color:var(--info)}
+.b.muted{background:var(--muted-bg);color:var(--soft)}
+.actions{margin-top:auto;padding-top:.3rem;display:flex;flex-direction:column;gap:.55rem}
+.btn{display:block;text-align:center;background:var(--accent);color:#fff;font-weight:700;font-size:1.05rem;padding:.85rem 1rem;border-radius:12px;text-decoration:none}
+.btn.off{background:var(--muted-bg);color:var(--soft)}
+details{border:1.5px solid var(--line);border-radius:12px}
+summary{cursor:pointer;font-weight:650;padding:.75rem .9rem;list-style:none;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.3rem;line-height:1;color:var(--accent)}
+details[open] summary::after{content:"–"}
+dl{margin:0;padding:0 .9rem .8rem;font-size:.92rem}
+dl div{padding:.5rem 0;border-top:1px solid var(--line)}
+dt{font-weight:650;color:var(--soft);font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
+dd{margin:.15rem 0 0}
+.empty{padding:2rem;text-align:center;color:var(--soft)}
+footer.bottom{margin-top:2.2rem;padding-top:1.2rem;border-top:1px solid var(--line);color:var(--soft);font-size:.88rem}
+footer.bottom p{margin:.4rem 0}
+.tips{max-width:44rem}
+.tips h2{font:700 1.5rem/1.2 var(--display);margin:2rem 0 .6rem}
+.tips h3{font-size:1.05rem;margin:1.2rem 0 .3rem}
+.tips p,.tips li{color:var(--ink)}
+.tips ol{padding-left:1.3rem}.tips li{margin:.45rem 0}
+.box{background:var(--card);border-radius:var(--radius);padding:1rem 1.1rem;box-shadow:0 1px 2px rgba(60,40,10,.06),0 6px 18px rgba(60,40,10,.06);margin:1rem 0}
+.box.verdict{border-left:5px solid var(--accent)}
+.small{font-size:.85rem;color:var(--soft)}
+.criteria{margin:.6rem 0 .5rem;font-size:.88rem;color:var(--soft);line-height:1.4}
+.b.drive{background:#efe7fb;color:#5b2a9e}
+.added{margin:0 0 -.25rem;font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:.45rem}
+.newb{background:#ff3b30;color:#fff;font-weight:800;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:.22rem .5rem;border-radius:6px}
+.newb[hidden]{display:none}
+.chip.new{border-color:#ff3b30;color:#d62a20}
+.chip.new[aria-pressed=true]{background:#ff3b30;border-color:#ff3b30;color:#fff}
+.intro{color:var(--soft);margin:1rem 0 .2rem;max-width:44rem}
+.chips+.chips{margin-top:.45rem}
+.chip.sm{font-size:.85rem;padding:.5rem .75rem}
+.vgroup h2{font:700 1.45rem/1.2 var(--display);margin:1.8rem 0 .2rem;display:flex;align-items:center;gap:.55rem}
+.vgroup h2 .dot{width:.75rem;height:.75rem;border-radius:50%;flex:0 0 auto}
+.vgroup .lede{margin:0 0 .3rem;color:var(--soft);font-size:.92rem}
+.mlist{display:grid;grid-template-columns:1fr;gap:.8rem;list-style:none;padding:0;margin:.7rem 0 0}
+@media (min-width:760px){.mlist{grid-template-columns:1fr 1fr}}
+@media (min-width:1150px){.mlist{grid-template-columns:1fr 1fr 1fr}}
+.m{background:var(--card);border-radius:14px;padding:.85rem .95rem .9rem;box-shadow:0 1px 2px rgba(60,40,10,.06),0 4px 12px rgba(60,40,10,.05);border-left:5px solid var(--line)}
+.m[hidden],.vgroup[hidden]{display:none}
+.m.rec{border-left-color:var(--good)}.m.ok{border-left-color:#e0a100}.m.avoid{border-left-color:var(--bad)}
+.m h3{margin:0;font-size:1.08rem;line-height:1.25}
+.m .yrs{display:block;color:var(--soft);font-weight:600;font-size:.92rem;margin-top:.1rem}
+.m .tags{display:flex;flex-wrap:wrap;gap:.3rem;margin:.45rem 0 .1rem}
+.m p.why{margin:.45rem 0 .55rem;font-size:.95rem;line-height:1.45}
+.m dl.k{padding:0;margin:0;display:grid;grid-template-columns:auto 1fr;gap:0 .7rem;font-size:.86rem}
+.m dl.k dt,.m dl.k dd{border-top:1px solid var(--line);padding:.32rem 0;margin:0}
+.m dl.k dt{font-size:.72rem;padding-top:.42rem;white-space:nowrap}
+.m .note{font-size:.86rem;color:var(--soft);border-top:1px solid var(--line);padding-top:.4rem;margin:0}
+.route-intro{max-width:44rem}
+.route-intro h2{font:700 1.6rem/1.2 var(--display);margin:1.2rem 0 .4rem}
+.route-intro p{margin:.35rem 0}
+.checked{display:inline-block;background:var(--info-bg);color:var(--info);font-weight:650;font-size:.85rem;padding:.3rem .6rem;border-radius:8px}
+.ask{margin:1rem 0}.ask h3{margin:0 0 .4rem;font-size:1.02rem}.ask ul{margin:0;padding-left:1.2rem}.ask li{margin:.25rem 0}
+.dealer{margin-top:1.8rem}
+.dealer h2{font:700 1.4rem/1.2 var(--display);margin:0 0 .25rem}
+.dealer .addr{margin:0;color:var(--soft);font-size:.95rem}
+.dlinks{display:flex;flex-wrap:wrap;gap:.45rem;margin:.55rem 0 .2rem}
+.dlinks a{font-weight:650;font-size:.92rem;text-decoration:none;padding:.55rem .85rem;border-radius:999px;background:var(--card);border:1.5px solid var(--line);color:var(--ink)}
+.dlinks a.call{background:var(--accent);border-color:var(--accent);color:#fff}
+.dealer .dnote{font-size:.88rem;color:var(--soft);margin:.3rem 0 0}
+.card .why{margin:0;font-size:.95rem}
+.card ul.notes{margin:0;padding-left:1.1rem;font-size:.9rem;color:var(--soft)}
+.card .live{font-size:.8rem;color:var(--muted);margin:0}
+.over{font-size:.8rem;font-weight:700;vertical-align:middle;margin-left:.4rem}
+.also{border-left:5px solid #e0a100}.also h3{margin:0 0 .4rem;font-size:1.05rem}.also p{margin:.5rem 0;font-size:.93rem}
+.dot.rec{background:var(--good)}.dot.ok{background:#e0a100}.dot.avoid{background:var(--bad)}
+.btn.alt{background:var(--card);color:var(--accent);border:2px solid var(--accent)}
+.btn.page{background:var(--ink);color:#fff}
+.cp{max-width:44rem;font-size:1.1rem;line-height:1.5}
+.cp .hero img{display:block;width:100%;height:auto;border-radius:var(--radius)}
+.cp h2.t{font:700 1.85rem/1.15 var(--display);margin:1rem 0 .2rem}
+.cp .dealer-line{margin:0;color:var(--soft);font-weight:600}
+.cp .bigprice{font-size:2.3rem;font-weight:800;line-height:1.05;margin:.6rem 0 0}
+.cp .pricebreak{margin:.15rem 0 0;color:var(--soft);font-size:1rem}
+.cp .kv{display:grid;grid-template-columns:auto 1fr;gap:.35rem .8rem;margin:.8rem 0 0;padding:0;font-size:1.02rem}
+.cp .kv dt{font-size:.8rem;padding-top:.2rem}.cp .kv dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+.cp .taps{display:grid;grid-template-columns:1fr;gap:.6rem;margin:1rem 0}
+.cp .taps .btn{font-size:1.15rem;padding:1rem}
+.cp .status{background:var(--info-bg);color:var(--info);border-radius:12px;padding:.75rem .9rem;font-size:1rem;margin:.6rem 0}
+.cp h3{font:700 1.4rem/1.2 var(--display);margin:1.8rem 0 .5rem}
+.cp .box h3{margin-top:0}
+.cp .box.verdict ul{margin:0;padding-left:1.2rem}.cp .box.verdict li{margin:.4rem 0}
+.cp ul.dots{margin:0;padding-left:1.2rem}.cp ul.dots li{margin:.45rem 0}
+.cp .warnbox{background:var(--warn-bg);border-left:5px solid #e0a100;border-radius:12px;padding:.8rem .95rem;margin:1rem 0}
+.cp .warnbox b{color:var(--warn)}
+.cp .warnbox ol{margin:.4rem 0 0;padding-left:1.3rem}.cp .warnbox li{margin:.4rem 0}
+.cp ul.checks{list-style:none;margin:0;padding:0}
+.cp ul.checks li{border-top:1px solid var(--line)}
+.cp ul.checks label{display:flex;gap:.75rem;align-items:flex-start;padding:.8rem .2rem;cursor:pointer}
+.cp ul.checks input{flex:0 0 auto;width:1.6rem;height:1.6rem;margin:.05rem 0 0;accent-color:var(--good)}
+.cp ul.checks input:checked+span{color:var(--muted);text-decoration:line-through}
+.cp .svc{width:100%;border-collapse:collapse;font-size:.95rem}
+.cp .svc th{text-align:left;font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;color:var(--soft);padding:.4rem .3rem;border-bottom:2px solid var(--line)}
+.cp .svc td{vertical-align:top;padding:.55rem .3rem;border-bottom:1px solid var(--line)}
+.cp .svc td.n{white-space:nowrap;font-variant-numeric:tabular-nums}
+.cp .svc .sm{display:block;color:var(--soft);font-size:.85rem}
+.cp .svc tr.hl td{background:var(--warn-bg)}
+.cp .svc tr.gap td{background:var(--bad-bg);color:var(--bad);font-weight:650;text-align:center;font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<h1><a href="../../">Car Hunt</a></h1>
+<p class="sub">A reliable first car for college · Tulsa area</p>
+<p class="meta">Updated Fri, Oct 16, 2026, 8:42 AM CT · 74 cars</p>
+<nav class="tabs" aria-label="Pages"><a href="../../" >Cars</a><a href="../../tips/" >Buying tips</a><a href="../../models/" >Model Guide</a><a href="../../broken-arrow/" >Broken Arrow</a><a href="../../south-tulsa/" >South Tulsa</a><a href="../../midtown/" >Midtown</a></nav>
+</header>
+<main class="cp">
+<div class="hero"><img src="../../photos/route-2020-cx5-midtownkia.jpg" width="640" height="480" decoding="async" alt="2020 Mazda CX-5 Grand Touring at Midtown Kia (listing photo)"></div>
+<h2 class="t">2020 Mazda CX-5 Grand Touring</h2>
+<p class="dealer-line">Midtown Kia, Tulsa</p>
+<p class="bigprice">$21,206 <span style="font-size:1.1rem;font-weight:650">all-in</span></p>
+<p class="pricebreak">$20,617 vehicle + $589 doc fee</p>
+<dl class="kv"><dt>Miles</dt><dd>85,407</dd><dt>VIN</dt><dd>JM3KFBDM4L1806106</dd>
+<dt>Dealer</dt><dd>Midtown Kia, 4747 S Yale Ave, Tulsa, OK · (918) 359-7658</dd></dl>
+<p class="status"><strong>Status:</strong> Max messaged them via Cars.com 10/16 asking for availability today, Carfax, and out-the-door price, and to text not call.</p>
+<div class="taps">
+<a class="btn" href="tel:+19183597658">📞 Call dealer (918) 359-7658</a>
+<a class="btn alt" href="sms:+19183597658">💬 Text dealer</a>
+<a class="btn alt" href="https://maps.apple.com/?q=4747%20S%20Yale%20Ave%2C%20Tulsa%2C%20OK" target="_blank" rel="noopener">📍 Map: 4747 S Yale Ave, Tulsa, OK</a>
+<a class="btn alt" href="https://www.google.com/maps/search/?api=1&amp;query=4747%20S%20Yale%20Ave%2C%20Tulsa%2C%20OK" target="_blank" rel="noopener">Google Maps</a>
+<a class="btn alt" href="https://www.cars.com/vehicledetail/a9b79293-7d3f-4a71-b483-9cdeb5ead43b/" target="_blank" rel="noopener noreferrer">Cars.com listing ↗</a>
+</div>
+<div class="box verdict"><h3>Quick verdict</h3><ul><li>Clean, one-owner, dealer-maintained car; ranks ahead of the Grubbs 2025 CX-5 (likely ex-rental) if the two questions below get good answers.</li><li>Carfax value $20,960; Carfax calls the price a Good Value ($343 below).</li><li>Get a ~$150 pre-purchase inspection at an independent shop before buying.</li></ul></div>
+<h3>Carfax summary</h3>
+<p class="small">Carfax report provided free by Midtown Kia, current as of 10/16/2026.</p>
+<ul class="dots"><li>No accidents or damage reported; no structural damage, airbag deployment, or total loss.</li><li>Clean title: no salvage/junk/rebuilt/fire/flood/hail/lemon brands; no odometer brands or rollback (Carfax-guaranteed).</li><li>1 owner, personal use (not rental/lease/fleet), bought new 07/09/2020 at Nelson Mazda, registered in Sand Springs OK, ~6 years, ~13,950 mi/year.</li><li>Loan/lien reported on registrations (normal; dealer pays it off).</li><li>A service contract was issued at purchase in 2020: ask if it&#x27;s transferable/still active.</li><li>No open recalls. Original factory warranty estimated expired.</li><li>Carfax &#x27;Great Reliability&#x27; badge (top 25% of similar vehicles, ~$330/yr average repair cost). 19 service records.</li></ul>
+<div class="warnbox"><b>Two concerns</b><ol><li>Oil was changed ~every 6,000 mi through 02/2025 (67,272 mi), then no recorded oil change until the dealer&#x27;s 09/18/2026 service: roughly 18,000 miles / 19 months.</li><li>The dealer replaced an unspecified engine seal/gasket before sale.</li></ol></div>
+<details><summary>Service history (19 entries)</summary>
+<table class="svc"><thead><tr><th>Date / miles</th><th>Work / where</th></tr></thead><tbody><tr><td class="n">11/23/2020<span class="sm">5,490 mi</span></td><td>Oil &amp; filter, inspection<span class="sm">Nelson Mazda</span></td></tr><tr><td class="n">12/11/2020<span class="sm">6,105 mi</span></td><td>Tires balanced/replaced<span class="sm">Cecil &amp; Sons</span></td></tr><tr><td class="n">03/18/2021<span class="sm">9,159 mi</span></td><td>Inspection, air filter, cabin filter<span class="sm">Nelson Mazda</span></td></tr><tr><td class="n">04/30/2021<span class="sm">10,719 mi</span></td><td>Tire repaired<span class="sm">Cecil &amp; Sons</span></td></tr><tr><td class="n">05/20/2021<span class="sm">11,531 mi</span></td><td>Oil change, tires rotated<span class="sm">Nelson Mazda</span></td></tr><tr><td class="n">05/28/2021<span class="sm">11,758 mi</span></td><td>Tire repaired<span class="sm">Cecil &amp; Sons</span></td></tr><tr><td class="n">10/13/2021<span class="sm">17,731 mi</span></td><td>Oil change, alignment, rotation<span class="sm">Nelson Mazda</span></td></tr><tr><td class="n">04/13/2022<span class="sm">25,856 mi</span></td><td>Oil change, brake fluid, cabin filter, differential fluid, rotation<span class="sm">Nelson Mazda</span></td></tr><tr><td class="n">09/21/2022<span class="sm">33,613 mi</span></td><td>Oil change, air filter, alignment, rotation<span class="sm">Nelson Mazda</span></td></tr><tr><td class="n">02/13/2023<span class="sm">39,399 mi</span></td><td>Oil change, air &amp; cabin filters, rotation<span class="sm">Nelson Mazda</span></td></tr><tr><td class="n">10/06/2023<span class="sm">46,492 mi</span></td><td>Oil change, drive belt tensioner/pulley replaced, wipers<span class="sm">Nelson Mazda</span></td></tr><tr><td class="n">04/19/2024<span class="sm">54,677 mi</span></td><td>Oil change, air &amp; cabin filters, brake fluid, 4 tires mounted/balanced, alignment, fuel system service<span class="sm">Nelson Mazda</span></td></tr><tr><td class="n">09/24/2024<span class="sm">61,180 mi</span></td><td>Oil change, battery replaced, rotation<span class="sm">Nelson Mazda</span></td></tr><tr class="hl"><td class="n">02/11/2025<span class="sm">67,272 mi</span></td><td>Oil change, rotation<span class="sm">Nelson Mazda</span></td></tr><tr class="gap"><td colspan="2">No recorded oil change for ~18,000 mi / 19 months</td></tr><tr><td class="n">08/30/2025<span class="sm">73,331 mi</span></td><td>One tire mounted/balanced<span class="sm">Nelson Mazda</span></td></tr><tr><td class="n">12/02/2025<span class="sm">76,952 mi</span></td><td>Alignment, rear brake pads, rotation, transmission fluid flush<span class="sm">Nelson Mazda</span></td></tr><tr><td class="n">08/29/2026<span class="sm">85,400 mi</span></td><td>Offered for sale<span class="sm">Midtown Kia</span></td></tr><tr class="hl"><td class="n">09/18/2026<span class="sm">— mi</span></td><td>Pre-sale service: oil &amp; filter, air &amp; cabin filters, brakes serviced, engine checked, engine seal(s)/gasket(s) replaced<span class="sm">Midtown Kia</span></td></tr><tr><td class="n">10/01/2026<span class="sm">85,407 mi</span></td><td>Last reported mileage<span class="sm">Midtown Kia</span></td></tr></tbody></table></details>
+<h3>Questions to ask the dealer</h3>
+<ul class="checks"><li><label><input type="checkbox" id="ask0"><span>Which engine seal or gasket was replaced on 9/18, and why? Can I see the repair order? (Valve cover gasket = minor; rear main seal, head gasket, or timing cover = bigger concern.)</span></label></li><li><label><input type="checkbox" id="ask1"><span>Was there an oil leak? Any oil burning/consumption noted during the trade-in inspection?</span></label></li><li><label><input type="checkbox" id="ask2"><span>Do you have any oil-change records between Feb 2025 and Sept 2026 (the Carfax shows ~18k miles with none)?</span></label></li><li><label><input type="checkbox" id="ask3"><span>What&#x27;s the out-the-door price with tax, title, tag and the $589 doc fee? Any add-ons (nitrogen, etching, protection packages) already on it? Ask to remove them.</span></label></li><li><label><input type="checkbox" id="ask4"><span>Is the 2020 service contract from the original purchase still active and transferable?</span></label></li><li><label><input type="checkbox" id="ask5"><span>Are both keys/fobs included? Owner&#x27;s manual?</span></label></li><li><label><input type="checkbox" id="ask6"><span>Were the brakes replaced or just serviced on 9/18? Pad and rotor measurements?</span></label></li><li><label><input type="checkbox" id="ask7"><span>How old are the tires (DOT date) and how much tread is left?</span></label></li><li><label><input type="checkbox" id="ask8"><span>Can I take it to an independent shop for a pre-purchase inspection before signing?</span></label></li><li><label><input type="checkbox" id="ask9"><span>Is it AWD or FWD? (Confirm on the window sticker/VIN.)</span></label></li><li><label><input type="checkbox" id="ask10"><span>Any warranty or return window from the dealer?</span></label></li></ul>
+<h3>Things you can check yourself</h3>
+<ul class="checks"><li><label><input type="checkbox" id="check0"><span>Cold start: ask them not to start it before you arrive. Listen for rattles or ticking in the first few seconds.</span></label></li><li><label><input type="checkbox" id="check1"><span>Under the hood: look for fresh oil wetness or residue around the valve cover and engine edges (signs of the leak that was fixed, or that it&#x27;s still leaking). Pull the dipstick: oil should be at full, amber-to-light-brown, not sludgy.</span></label></li><li><label><input type="checkbox" id="check2"><span>Coolant reservoir at the line, no oily film.</span></label></li><li><label><input type="checkbox" id="check3"><span>Under the car after the test drive: look for drips on the ground.</span></label></li><li><label><input type="checkbox" id="check4"><span>Dashboard: no warning lights after start (check engine, airbag, ABS, tire pressure).</span></label></li><li><label><input type="checkbox" id="check5"><span>Test drive 15+ minutes including highway: smooth shifts with no flare or clunk (6-speed automatic), straight tracking, no vibration at 65–70 mph, firm brakes without pulsing or squeal.</span></label></li><li><label><input type="checkbox" id="check6"><span>Low-speed tight turns both ways in a parking lot: no clicking or groaning.</span></label></li><li><label><input type="checkbox" id="check7"><span>Electronics: infotainment screen, Apple CarPlay with her phone, backup camera, blind-spot monitoring, heated seats, sunroof, power liftgate, all windows and locks, A/C blowing cold and heat blowing hot.</span></label></li><li><label><input type="checkbox" id="check8"><span>Tires: matching brand, even wear (uneven inner wear = alignment), DOT date code.</span></label></li><li><label><input type="checkbox" id="check9"><span>Body: panel gaps even, paint color matches panel to panel, no overspray on trim (Carfax shows no accidents, but not every accident gets reported).</span></label></li><li><label><input type="checkbox" id="check10"><span>Interior: smell for smoke or mildew, check under the floor mats for dampness.</span></label></li><li><label><input type="checkbox" id="check11"><span>Match the VIN on the dash and door jamb to JM3KFBDM4L1806106.</span></label></li><li><label><input type="checkbox" id="check12"><span>Fit: let your daughter adjust the seat and mirrors and check visibility and blind spots.</span></label></li></ul>
+</main>
+<footer class="bottom">
+<p>Facts from the Midtown Kia-provided Carfax and the Cars.com listing, 10/16/2026.</p><p><a href="../../midtown/">← Midtown route</a> · <a href="../../">All cars</a></p>
+</footer>
+</div>
+<script>
+(function(){try{var k='cp:'+location.pathname;var st=JSON.parse(localStorage.getItem(k)||'{}');
+document.querySelectorAll('ul.checks input').forEach(function(b){if(st[b.id])b.checked=true;
+b.addEventListener('change',function(){st[b.id]=b.checked;localStorage.setItem(k,JSON.stringify(st));});});}catch(e){}})();
+</script>
+</body>
+</html>

@@ -400,6 +400,38 @@ footer.bottom p{margin:.4rem 0}
 .over{font-size:.8rem;font-weight:700;vertical-align:middle;margin-left:.4rem}
 .also{border-left:5px solid #e0a100}.also h3{margin:0 0 .4rem;font-size:1.05rem}.also p{margin:.5rem 0;font-size:.93rem}
 .dot.rec{background:var(--good)}.dot.ok{background:#e0a100}.dot.avoid{background:var(--bad)}
+.btn.alt{background:var(--card);color:var(--accent);border:2px solid var(--accent)}
+.btn.page{background:var(--ink);color:#fff}
+.cp{max-width:44rem;font-size:1.1rem;line-height:1.5}
+.cp .hero img{display:block;width:100%%;height:auto;border-radius:var(--radius)}
+.cp h2.t{font:700 1.85rem/1.15 var(--display);margin:1rem 0 .2rem}
+.cp .dealer-line{margin:0;color:var(--soft);font-weight:600}
+.cp .bigprice{font-size:2.3rem;font-weight:800;line-height:1.05;margin:.6rem 0 0}
+.cp .pricebreak{margin:.15rem 0 0;color:var(--soft);font-size:1rem}
+.cp .kv{display:grid;grid-template-columns:auto 1fr;gap:.35rem .8rem;margin:.8rem 0 0;padding:0;font-size:1.02rem}
+.cp .kv dt{font-size:.8rem;padding-top:.2rem}.cp .kv dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+.cp .taps{display:grid;grid-template-columns:1fr;gap:.6rem;margin:1rem 0}
+.cp .taps .btn{font-size:1.15rem;padding:1rem}
+.cp .status{background:var(--info-bg);color:var(--info);border-radius:12px;padding:.75rem .9rem;font-size:1rem;margin:.6rem 0}
+.cp h3{font:700 1.4rem/1.2 var(--display);margin:1.8rem 0 .5rem}
+.cp .box h3{margin-top:0}
+.cp .box.verdict ul{margin:0;padding-left:1.2rem}.cp .box.verdict li{margin:.4rem 0}
+.cp ul.dots{margin:0;padding-left:1.2rem}.cp ul.dots li{margin:.45rem 0}
+.cp .warnbox{background:var(--warn-bg);border-left:5px solid #e0a100;border-radius:12px;padding:.8rem .95rem;margin:1rem 0}
+.cp .warnbox b{color:var(--warn)}
+.cp .warnbox ol{margin:.4rem 0 0;padding-left:1.3rem}.cp .warnbox li{margin:.4rem 0}
+.cp ul.checks{list-style:none;margin:0;padding:0}
+.cp ul.checks li{border-top:1px solid var(--line)}
+.cp ul.checks label{display:flex;gap:.75rem;align-items:flex-start;padding:.8rem .2rem;cursor:pointer}
+.cp ul.checks input{flex:0 0 auto;width:1.6rem;height:1.6rem;margin:.05rem 0 0;accent-color:var(--good)}
+.cp ul.checks input:checked+span{color:var(--muted);text-decoration:line-through}
+.cp .svc{width:100%%;border-collapse:collapse;font-size:.95rem}
+.cp .svc th{text-align:left;font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;color:var(--soft);padding:.4rem .3rem;border-bottom:2px solid var(--line)}
+.cp .svc td{vertical-align:top;padding:.55rem .3rem;border-bottom:1px solid var(--line)}
+.cp .svc td.n{white-space:nowrap;font-variant-numeric:tabular-nums}
+.cp .svc .sm{display:block;color:var(--soft);font-size:.85rem}
+.cp .svc tr.hl td{background:var(--warn-bg)}
+.cp .svc tr.gap td{background:var(--bad-bg);color:var(--bad);font-weight:650;text-align:center;font-size:.9rem}
 """
 
 ICON_CAR = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">'
@@ -420,7 +452,25 @@ except FileNotFoundError:
     pass
 
 
-def shell(title, base, current, updated, count, main, js="", sources=DEFAULT_SOURCES):
+INS_NOTE = ("<p><strong>Insurance figures are estimates, not quotes.</strong> They're built from published averages for an 18-year-old added to a parent's "
+            "full-coverage policy. Get a real quote on the exact VIN before buying, and tell the insurer the car will be kept in Fayetteville.</p>\n")
+
+# Standalone per-car pages (guide/car_pages.json) -> cars/<slug>/index.html, linked from matching cards.
+try:
+    CAR_PAGES = json.loads((ROOT / "guide" / "car_pages.json").read_text(encoding="utf-8")).get("pages", [])
+except FileNotFoundError:
+    CAR_PAGES = []
+CAR_PAGE_BY_URL = {norm_url(u): cp for cp in CAR_PAGES for u in cp.get("match_urls", [])}
+
+
+def car_page_btn(url, base):
+    cp = CAR_PAGE_BY_URL.get(norm_url(url or ""))
+    if not cp:
+        return ""
+    return f'<a class="btn page" href="{base}cars/{esc(cp["slug"])}/">{esc(cp.get("link_label") or "Car details")} →</a>'
+
+
+def shell(title, base, current, updated, count, main, js="", sources=DEFAULT_SOURCES, footer=None):
     tabs = "".join(f'<a href="{base}{href}" {"aria-current=page" if current == key else ""}>{label}</a>'
                    for key, href, label in NAV_TABS)
     return f"""<!doctype html>
@@ -444,8 +494,7 @@ def shell(title, base, current, updated, count, main, js="", sources=DEFAULT_SOU
 </header>
 {main}
 <footer class="bottom">
-<p><strong>Insurance figures are estimates, not quotes.</strong> They're built from published averages for an 18-year-old added to a parent's full-coverage policy. Get a real quote on the exact VIN before buying, and tell the insurer the car will be kept in Fayetteville.</p>
-{sources}
+{footer if footer is not None else INS_NOTE + sources}
 </footer>
 </div>
 {js}
@@ -574,7 +623,7 @@ def card(c, entry, eager, base=""):
 <ul class="badges">{''.join(badge_html(*b) for b in badges)}</ul>
 <div class="actions">
 <details><summary>Details</summary><dl>{details_rows(c)}</dl></details>
-{btn}
+{car_page_btn(c["url"], base)}{btn}
 </div>
 </div>
 </li>"""
@@ -959,7 +1008,7 @@ def route_card(c, eager):
             + (f'<ul class="badges">{badges}</ul>' if badges else "")
             + f'<p class="why">{esc(c["why"])}</p><ul class="notes">{notes}</ul>'
             f'<p class="live">{esc(c.get("live", ""))}</p>'
-            f'<div class="actions"><a class="btn" href="{esc(c["url"])}" target="_blank" rel="noopener">View listing</a></div>'
+            f'<div class="actions">{car_page_btn(c.get("url"), "../")}<a class="btn" href="{esc(c["url"])}" target="_blank" rel="noopener">View listing</a></div>'
             f'</div></li>')
 
 
@@ -1013,6 +1062,73 @@ def build_routes(updated, count):
         (d / "index.html").write_text(build_route(r, data, updated, count), encoding="utf-8")
 
 
+CAR_JS = r"""<script>
+(function(){try{var k='cp:'+location.pathname;var st=JSON.parse(localStorage.getItem(k)||'{}');
+document.querySelectorAll('ul.checks input').forEach(function(b){if(st[b.id])b.checked=true;
+b.addEventListener('change',function(){st[b.id]=b.checked;localStorage.setItem(k,JSON.stringify(st));});});}catch(e){}})();
+</script>"""
+
+
+def build_car_page(cp, updated, count):
+    base = "../../"
+    q = urllib.parse.quote(cp["address"])
+    photo = ""
+    if cp.get("photo") and (ROOT / cp["photo"]).exists():
+        w, h = img_size(cp["photo"])
+        photo = (f'<div class="hero"><img src="{base}{esc(cp["photo"])}" width="{w}" height="{h}" decoding="async" '
+                 f'alt="{esc(cp["title"])} at {esc(cp["dealer_name"])} (listing photo)"></div>')
+
+    def checks(key):
+        return '<ul class="checks">' + "".join(
+            f'<li><label><input type="checkbox" id="{key}{i}"><span>{esc(x)}</span></label></li>'
+            for i, x in enumerate(cp[key])) + "</ul>"
+
+    rows = []
+    for r in cp["service"]:
+        cls = ' class="hl"' if r.get("flag") else ""
+        rows.append(f'<tr{cls}><td class="n">{esc(r["date"])}<span class="sm">{esc(r["miles"])} mi</span></td>'
+                    f'<td>{esc(r["work"])}<span class="sm">{esc(r["where"])}</span></td></tr>')
+        if r.get("flag") == "last":
+            rows.append('<tr class="gap"><td colspan="2">No recorded oil change for ~18,000 mi / 19 months</td></tr>')
+    main = f"""<main class="cp">
+{photo}
+<h2 class="t">{esc(cp["title"])}</h2>
+<p class="dealer-line">{esc(cp["dealer"])}</p>
+<p class="bigprice">{money(cp["price_all_in"])} <span style="font-size:1.1rem;font-weight:650">all-in</span></p>
+<p class="pricebreak">{money(cp["price_vehicle"])} vehicle + {money(cp["doc_fee"])} doc fee</p>
+<dl class="kv"><dt>Miles</dt><dd>{cp["miles"]:,}</dd><dt>VIN</dt><dd>{esc(cp["vin"])}</dd>
+<dt>Dealer</dt><dd>{esc(cp["dealer_name"])}, {esc(cp["address"])} · {esc(cp["phone"])}</dd></dl>
+<p class="status"><strong>Status:</strong> {esc(cp["status"])}</p>
+<div class="taps">
+<a class="btn" href="tel:{esc(cp["tel"])}">📞 Call dealer {esc(cp["phone"])}</a>
+<a class="btn alt" href="sms:{esc(cp["tel"])}">💬 Text dealer</a>
+<a class="btn alt" href="https://maps.apple.com/?q={q}" target="_blank" rel="noopener">📍 Map: {esc(cp["address"])}</a>
+<a class="btn alt" href="https://www.google.com/maps/search/?api=1&amp;query={q}" target="_blank" rel="noopener">Google Maps</a>
+<a class="btn alt" href="{esc(cp["listing_url"])}" target="_blank" rel="noopener noreferrer">Cars.com listing ↗</a>
+</div>
+<div class="box verdict"><h3>Quick verdict</h3><ul>{"".join(f"<li>{esc(x)}</li>" for x in cp["verdict"])}</ul></div>
+<h3>Carfax summary</h3>
+<p class="small">{esc(cp["carfax_note"])}</p>
+<ul class="dots">{"".join(f"<li>{esc(x)}</li>" for x in cp["carfax"])}</ul>
+<div class="warnbox"><b>Two concerns</b><ol>{"".join(f"<li>{esc(x)}</li>" for x in cp["concerns"])}</ol></div>
+<details><summary>Service history ({len(cp["service"])} entries)</summary>
+<table class="svc"><thead><tr><th>Date / miles</th><th>Work / where</th></tr></thead><tbody>{"".join(rows)}</tbody></table></details>
+<h3>Questions to ask the dealer</h3>
+{checks("ask")}
+<h3>Things you can check yourself</h3>
+{checks("check")}
+</main>"""
+    footer = f'<p>{esc(cp["footer"])}</p><p><a href="{base}midtown/">← Midtown route</a> · <a href="{base}">All cars</a></p>'
+    return shell(f'{cp["title"]} · {cp["dealer"]} · Car Hunt', base, "", updated, count, main, CAR_JS, footer=footer)
+
+
+def build_car_pages(updated, count):
+    for cp in CAR_PAGES:
+        d = ROOT / "cars" / cp["slug"]
+        d.mkdir(parents=True, exist_ok=True)
+        (d / "index.html").write_text(build_car_page(cp, updated, count), encoding="utf-8")
+
+
 REDIRECT = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
 <meta http-equiv="refresh" content="0; url=../"><title>Car Hunt</title></head>
@@ -1062,6 +1178,7 @@ def main():
     (ROOT / "models").mkdir(exist_ok=True)
     (ROOT / "models" / "index.html").write_text(build_models(updated, len(allcars)), encoding="utf-8")
     build_routes(updated, len(allcars))
+    build_car_pages(updated, len(allcars))
     (ROOT / "robots.txt").write_text("User-agent: *\nDisallow: /\n")
     (ROOT / ".nojekyll").write_text("")
     with_photos = sum(1 for c in allcars if manifest.get(c["key"], {}).get("photos"))
