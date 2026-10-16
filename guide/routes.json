@@ -1,0 +1,530 @@
+{
+ "checked": "Fri Oct 16, 2026 (about 9:05\u20139:20 AM CT)",
+ "checklist": [
+  "Carfax (or AutoCheck) for the exact VIN",
+  "Rental or fleet history: skip it if it was a rental",
+  "Out-the-door price including the doc fee",
+  "Open recalls done (run the VIN at nhtsa.gov/recalls)"
+ ],
+ "routes": [
+  {
+   "slug": "broken-arrow",
+   "name": "Broken Arrow",
+   "title": "Broken Arrow dealer row",
+   "area": "Four dealers within about 3 miles of each other on Elm Pl, Aspen Ave and Queens St in Broken Arrow, about 20 minutes from home via the BA Expressway (Hwy 51).",
+   "time": "Allow 2\u20132\u00bd hours.",
+   "order": "Suggested order: Ferguson (CX-5) \u2192 Quality Value (next door on Elm) \u2192 Nelson Nissan (Queens St) \u2192 Chris Nikel (Aspen Ave, CX-30 and Mazda3s). Next stop after this: South Tulsa, about 15\u201320 minutes.",
+   "dealers": [
+    {
+     "name": "Ferguson Superstore",
+     "address": "1601 N Elm Pl, Broken Arrow, OK 74012",
+     "phone": "(918) 258-1800",
+     "hours": "Mon\u2013Sat 8\u20137",
+     "cars": [
+      {
+       "year": 2020,
+       "make": "Mazda",
+       "model": "CX-5",
+       "trim": "Grand Touring",
+       "price": 19079,
+       "miles": 93930,
+       "url": "https://www.cars.com/vehicledetail/16c478ba-294f-4276-9b40-696b41133713/",
+       "notes": [
+        "Clean title",
+        "Accidents and owners not confirmed: get the Carfax",
+        "Price dropped from $20,079",
+        "Miles close to the 100k limit"
+       ],
+       "why": "Top-trim Mazda SUV under $20k; rated Great Deal.",
+       "photos": [
+        "photos/route-2020-cx5-ferguson.jpg"
+       ],
+       "live": "In this morning's Cars.com search results; listing page not opened",
+       "tags": []
+      }
+     ]
+    },
+    {
+     "name": "Quality Value Auto Sales",
+     "address": "1057 N Elm Pl, Broken Arrow, OK 74012",
+     "phone": "(918) 251-8181",
+     "hours": "",
+     "note": "They also have a Tulsa lot (4640 S Memorial Dr, (918) 794-0900). Call to ask which lot each car is on.",
+     "cars": [
+      {
+       "year": 2022,
+       "make": "Toyota",
+       "model": "Corolla",
+       "trim": "LE",
+       "price": 16878,
+       "miles": 95552,
+       "url": "https://www.cars.com/vehicledetail/40be45ba-75c2-4e6b-b089-01b2f62880e1/",
+       "notes": [
+        "1 owner, no accidents (AutoCheck)",
+        "Clean title",
+        "High miles",
+        "Doc fee not included"
+       ],
+       "why": "Cheapest clean one-owner Corolla on the route.",
+       "photos": [
+        "photos/2022-toyota-corolla-17277-4.jpg",
+        "photos/2022-toyota-corolla-17277-5.jpg"
+       ],
+       "live": "In this morning's Cars.com search results; listing page not opened",
+       "tags": [
+        "1-owner"
+       ]
+      },
+      {
+       "year": 2021,
+       "make": "Toyota",
+       "model": "Corolla",
+       "trim": "LE",
+       "price": 17346,
+       "miles": 89839,
+       "url": "https://www.cars.com/vehicledetail/18e33636-616c-4d86-89b3-db0b31cc47b4/",
+       "notes": [
+        "No history summary on the listing: pull the Carfax",
+        "Doc fee not included"
+       ],
+       "why": "Budget Corolla backup.",
+       "photos": [
+        "photos/2021-toyota-corolla-17346-1.jpg",
+        "photos/2021-toyota-corolla-17346-2.jpg"
+       ],
+       "live": "In this morning's Cars.com search results; listing page not opened",
+       "tags": []
+      }
+     ]
+    },
+    {
+     "name": "Nelson Nissan",
+     "address": "800 W Queens St, Broken Arrow, OK 74012",
+     "phone": "(918) 258-9901",
+     "hours": "",
+     "cars": [
+      {
+       "year": 2020,
+       "make": "Toyota",
+       "model": "RAV4",
+       "trim": "XLE",
+       "price": 20999,
+       "miles": 92188,
+       "url": "https://www.cars.com/vehicledetail/3ff64d15-42cd-4957-af43-b898164299a4/",
+       "notes": [
+        "Clean title",
+        "History not confirmed: get the Carfax",
+        "High miles for the price"
+       ],
+       "why": "Current-shape RAV4 in a popular trim.",
+       "photos": [
+        "photos/route-2020-rav4-nelsonnissan.jpg"
+       ],
+       "live": "In this morning's Cars.com search results; listing page not opened",
+       "tags": []
+      },
+      {
+       "year": 2023,
+       "make": "Honda",
+       "model": "Civic",
+       "trim": "EX",
+       "price": 20999,
+       "miles": 76630,
+       "url": "https://www.cars.com/vehicledetail/bc62e9af-051a-4f08-9d8c-b5a90b5e4e99/",
+       "notes": [
+        "Clean title",
+        "Listed since April: room to negotiate"
+       ],
+       "why": "Newest-style Civic.",
+       "photos": [
+        "photos/route-2023-civic-nelsonnissan.jpg"
+       ],
+       "live": "In this morning's Cars.com search results; listing page not opened",
+       "tags": []
+      },
+      {
+       "year": 2021,
+       "make": "Toyota",
+       "model": "Corolla Hybrid",
+       "trim": "LE",
+       "price": 20694,
+       "miles": 62589,
+       "url": "https://www.cars.com/vehicledetail/173d2ab8-4be6-444a-93ee-d6d2988d9085/",
+       "notes": [
+        "Clean title",
+        "History not confirmed"
+       ],
+       "why": "About 50 mpg with moderate miles.",
+       "photos": [
+        "photos/route-2021-corollahybrid-nelsonnissan.jpg"
+       ],
+       "live": "In this morning's Cars.com search results; listing page not opened",
+       "tags": []
+      }
+     ]
+    },
+    {
+     "name": "Chris Nikel CDJR",
+     "address": "2920 N Aspen Ave, Broken Arrow, OK 74012",
+     "phone": "539-766-8990",
+     "hours": "Mon\u2013Fri 9\u20139, Sat 9\u20137",
+     "cars": [
+      {
+       "year": 2024,
+       "make": "Mazda",
+       "model": "CX-30",
+       "trim": "Select",
+       "price": 20787,
+       "miles": 63021,
+       "url": "https://www.cars.com/vehicledetail/47a608b7-889e-4371-8130-c00756b3f270/",
+       "notes": [
+        "Likely ex-fleet: ask for the Carfax first",
+        "Clean title"
+       ],
+       "why": "Newest Mazda small SUV on the list.",
+       "photos": [
+        "photos/route-2024-cx30-nikel.jpg"
+       ],
+       "live": "On the dealer's website this morning",
+       "tags": [
+        "fleet"
+       ]
+      },
+      {
+       "year": 2024,
+       "make": "Mazda",
+       "model": "Mazda3",
+       "trim": "Select",
+       "price": 19787,
+       "miles": 55876,
+       "url": "https://www.cars.com/vehicledetail/cc3248b1-9791-450c-999e-00030de92492/",
+       "notes": [
+        "Likely ex-fleet: ask for the Carfax first",
+        "Clean title"
+       ],
+       "why": "Newest-look Mazda3 under $20k.",
+       "photos": [
+        "photos/route-2024-mazda3-nikel.jpg"
+       ],
+       "live": "On the dealer's website this morning",
+       "tags": [
+        "fleet"
+       ]
+      },
+      {
+       "year": 2025,
+       "make": "Mazda",
+       "model": "Mazda3",
+       "trim": "Select",
+       "price": 20787,
+       "miles": 47112,
+       "url": "https://www.cars.com/vehicledetail/02b43d93-b7f8-4e0a-b671-74f12b410460/",
+       "notes": [
+        "Likely ex-fleet: ask for the Carfax first",
+        "Clean title"
+       ],
+       "why": "Nearly new Mazda3.",
+       "photos": [
+        "photos/route-2025-mazda3-nikel-a.jpg"
+       ],
+       "live": "On the dealer's website this morning",
+       "tags": [
+        "fleet"
+       ]
+      },
+      {
+       "year": 2025,
+       "make": "Mazda",
+       "model": "Mazda3",
+       "trim": "Select",
+       "price": 21287,
+       "miles": 42554,
+       "url": "https://www.cars.com/vehicledetail/02b42736-a669-49e8-b7d7-a96f08b8d667/",
+       "notes": [
+        "Likely ex-fleet: ask for the Carfax first",
+        "Clean title"
+       ],
+       "why": "Lowest-mile Mazda3 here, but the priciest.",
+       "photos": [
+        "photos/route-2025-mazda3-nikel-b.jpg"
+       ],
+       "live": "On the dealer's website this morning",
+       "tags": [
+        "fleet"
+       ]
+      },
+      {
+       "year": 2024,
+       "make": "Toyota",
+       "model": "Corolla",
+       "trim": "LE",
+       "price": 19787,
+       "miles": 67270,
+       "url": "https://www.cars.com/vehicledetail/b8ea496d-1345-4fe5-abff-b8a2829eeebc/",
+       "notes": [
+        "Almost certainly ex-fleet",
+        "About 8 similar 2024 Corolla LEs here, $19,787\u2013$20,587, 53k\u201367k miles"
+       ],
+       "why": "Cheapest of the 2024 Corollas on this lot.",
+       "photos": [
+        "photos/route-2024-corolla-nikel.jpg"
+       ],
+       "live": "On the dealer's website this morning",
+       "tags": [
+        "fleet"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "south-tulsa",
+   "name": "South Tulsa",
+   "title": "South Memorial Dr, 91st\u2013101st",
+   "area": "Two dealers a mile apart on S. Memorial Dr between 91st and 101st Streets, about 15\u201320 minutes from Broken Arrow (Creek Turnpike or 91st St).",
+   "time": "Allow about 1 hour.",
+   "order": "Suggested order: South Pointe (RAV4, 9240 S Memorial) \u2192 Nelson Mazda (9902 S Memorial). Next stop after this: Midtown, about 12 minutes north on Memorial.",
+   "dealers": [
+    {
+     "name": "South Pointe Chrysler Dodge Jeep Ram",
+     "address": "9240 S Memorial Dr, Tulsa, OK 74133",
+     "phone": "918-727-7545",
+     "hours": "",
+     "cars": [
+      {
+       "year": 2021,
+       "make": "Toyota",
+       "model": "RAV4",
+       "trim": "LE",
+       "price": 20499,
+       "miles": 88527,
+       "url": "https://www.cars.com/vehicledetail/0623af82-2044-4987-8c6e-ab7816805ff8/",
+       "notes": [
+        "CARFAX 1-Owner (per listing)",
+        "Clean title"
+       ],
+       "why": "Best-documented RAV4 on the route.",
+       "photos": [
+        "photos/route-2021-rav4-southpointe.jpg"
+       ],
+       "live": "In this morning's Cars.com search results; listing page not opened",
+       "tags": [
+        "1-owner"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Nelson Mazda Tulsa",
+     "address": "9902 S Memorial Dr, Tulsa, OK 74133",
+     "phone": "918-719-2735",
+     "hours": "",
+     "cars": [
+      {
+       "year": 2022,
+       "make": "Mazda",
+       "model": "Mazda3",
+       "trim": "Select (hatchback)",
+       "price": 20946,
+       "miles": 31568,
+       "url": "https://www.cars.com/vehicledetail/8249ab19-6f15-4988-8fb9-e5be6020ebb6/",
+       "notes": [
+        "Clean Carfax mentioned in the listing",
+        "Clean title"
+       ],
+       "why": "Lowest miles of any car on the route.",
+       "photos": [
+        "photos/route-2022-mazda3-nelsonmazda.jpg"
+       ],
+       "live": "In this morning's Cars.com search results; listing page not opened",
+       "tags": []
+      },
+      {
+       "year": 2023,
+       "make": "Mazda",
+       "model": "Mazda3",
+       "trim": "2.5 S Preferred (sedan)",
+       "price": 20573,
+       "miles": 51129,
+       "url": "https://www.cars.com/vehicledetail/fccd345b-d19f-4224-b089-74b656967eae/",
+       "notes": [
+        "Clean title",
+        "History not confirmed"
+       ],
+       "why": "Nicer trim with moderate miles.",
+       "photos": [
+        "photos/route-2023-mazda3-nelsonmazda.jpg"
+       ],
+       "live": "In this morning's Cars.com search results; listing page not opened",
+       "tags": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "midtown",
+   "name": "Midtown",
+   "title": "Memorial / I-44 / Yale, 41st\u201351st",
+   "area": "Five dealers around S. Memorial Dr, I-44 and S. Yale between 41st and 51st Streets, about 10 minutes from home.",
+   "time": "Allow about 1\u00bd hours.",
+   "order": "Suggested order: Bill Knight (4111 S Memorial) \u2192 Jim Norton T-Town (4924 S Memorial) \u2192 Grubbs Nissan (Skelly Dr at I-44) \u2192 Midtown Kia (4747 S Yale) \u2192 Fowler Toyota (BA Expressway frontage road). Home is about 10 minutes away.",
+   "dealers": [
+    {
+     "name": "Bill Knight Lincoln Volvo",
+     "address": "4111 S Memorial Dr, Tulsa, OK 74145",
+     "phone": "(918) 372-2664",
+     "cars": [
+      {
+       "year": 2020,
+       "make": "Mazda",
+       "model": "Mazda3",
+       "trim": "Premium AWD (sedan)",
+       "price": 19299,
+       "miles": 77790,
+       "url": "https://www.cargurus.com/details/459559029",
+       "notes": [
+        "1 owner, no accidents, not a rental (CarGurus)",
+        "Price includes fees",
+        "Confirm the 2019\u201320 auto-braking recall was done"
+       ],
+       "why": "Best-documented Mazda3; AWD with a regular 6-speed automatic.",
+       "photos": [
+        "photos/2020-mazda-mazda3-19299-1.jpg"
+       ],
+       "live": "Listing opened this morning: still for sale",
+       "tags": [
+        "1-owner"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Jim Norton T-Town Chevrolet",
+     "address": "4924 S Memorial Dr, Tulsa, OK 74145",
+     "phone": "(918) 921-2100",
+     "cars": [
+      {
+       "year": 2022,
+       "make": "Toyota",
+       "model": "Corolla Hybrid",
+       "trim": "LE",
+       "price": 20479,
+       "miles": 65825,
+       "url": "https://www.cars.com/vehicledetail/10ce92cf-2455-4154-8c36-e8560f7039d9/",
+       "notes": [
+        "Clean title",
+        "History not confirmed"
+       ],
+       "why": "Hybrid fuel economy for college road trips.",
+       "photos": [
+        "photos/route-2022-corollahybrid-ttown.jpg"
+       ],
+       "live": "In this morning's Cars.com search results; listing page not opened",
+       "tags": []
+      }
+     ]
+    },
+    {
+     "name": "Grubbs Nissan of Tulsa",
+     "address": "8190 E Skelly Dr, Tulsa, OK 74129",
+     "phone": "(539) 250-4208",
+     "cars": [
+      {
+       "year": 2025,
+       "make": "Mazda",
+       "model": "CX-5",
+       "trim": "2.5 S Preferred",
+       "price": 20899,
+       "miles": 75377,
+       "url": "https://www.cars.com/vehicledetail/7d02d229-9741-4180-af5e-9af42248fa29/",
+       "notes": [
+        "75k miles on a 2025: almost certainly an ex-rental, so ask before driving",
+        "Clean title"
+       ],
+       "why": "The only refreshed-look (2022+) CX-5 under budget.",
+       "photos": [
+        "photos/route-2025-cx5-grubbs.jpg"
+       ],
+       "live": "In this morning's Cars.com search results; listing page not opened",
+       "tags": [
+        "fleet"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Midtown Kia",
+     "address": "4747 S Yale Ave, Tulsa, OK 74135",
+     "phone": "918-622-3160",
+     "hours": "Mon\u2013Fri 9\u20138, Sat 9\u20137",
+     "cars": [
+      {
+       "year": 2020,
+       "make": "Mazda",
+       "model": "CX-5",
+       "trim": "Grand Touring",
+       "price": 21206,
+       "miles": 85407,
+       "url": "https://www.cars.com/vehicledetail/a9b79293-7d3f-4a71-b483-9cdeb5ead43b/",
+       "notes": [
+        "Clean title",
+        "History not confirmed",
+        "Listed since Aug 31: room to negotiate"
+       ],
+       "why": "Top trim, a bit fewer miles than the Ferguson CX-5.",
+       "photos": [
+        "photos/route-2020-cx5-midtownkia.jpg"
+       ],
+       "live": "In this morning's Cars.com search results; listing page not opened",
+       "tags": []
+      }
+     ]
+    },
+    {
+     "name": "Fowler Toyota of Tulsa",
+     "address": "6868 E Broken Arrow Frontage Rd, Tulsa, OK 74145",
+     "phone": "(918) 276-7035",
+     "cars": [
+      {
+       "year": 2022,
+       "make": "Toyota",
+       "model": "Corolla",
+       "trim": "SE",
+       "price": 19097,
+       "miles": 80563,
+       "url": "https://www.cargurus.com/details/459474109",
+       "notes": [
+        "1 owner, no accidents, not a rental (CarGurus)",
+        "Price includes fees; down $200 since yesterday"
+       ],
+       "why": "Clean-history Corolla at a Toyota dealer.",
+       "photos": [
+        "photos/2022-toyota-corolla-19297-1.jpg"
+       ],
+       "live": "Listing opened this morning: still for sale",
+       "tags": [
+        "1-owner"
+       ]
+      }
+     ]
+    }
+   ],
+   "also": [
+    {
+     "text": "2020 Mazda CX-5 Touring, $19,507, 73,615 mi, clean title. Patriot CDJR of Pryor, 5425 S Mill St, Pryor (about 35 mi; a Saturday option with Claremore).",
+     "phone": "918-818-3538",
+     "url": "https://www.cars.com/vehicledetail/ca5e2cfe-b415-41e4-bdbd-d926d1162bd4/",
+     "address": "5425 S Mill St, Pryor, OK 74361"
+    },
+    {
+     "text": "2022 Mazda CX-30 2.5 S Select AWD, $17,995, 43,003 mi. Big Wheel Motors, Tulsa (Facebook listing). Not confirmed: Facebook wouldn't load and the same car is posted by a second seller. A great price if it's real.",
+     "phone": "",
+     "url": "https://www.facebook.com/marketplace/item/866004039839884/",
+     "address": ""
+    }
+   ]
+  }
+ ]
+}

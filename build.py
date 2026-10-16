@@ -11,6 +11,7 @@ import html
 import json
 import re
 import sys
+import urllib.parse
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -282,7 +283,7 @@ header.top h1{font:700 2.4rem/1.05 var(--display);margin:0;letter-spacing:-.01em
 header.top h1 a{color:var(--ink);text-decoration:none}
 .sub{margin:.35rem 0 .2rem;color:var(--soft);font-size:1.05rem}
 .meta{color:var(--muted);font-size:.88rem;margin:0}
-.tabs{display:flex;gap:.5rem;margin:.9rem 0 0}
+.tabs{display:flex;flex-wrap:wrap;gap:.45rem;margin:.9rem 0 0}
 .tabs a{font-weight:600;font-size:.95rem;text-decoration:none;color:var(--ink);padding:.5rem .9rem;border-radius:999px;background:var(--muted-bg)}
 .tabs a[aria-current]{background:var(--ink);color:#fff}
 .controls{background:rgba(250,246,240,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
@@ -381,6 +382,23 @@ footer.bottom p{margin:.4rem 0}
 .m dl.k dt,.m dl.k dd{border-top:1px solid var(--line);padding:.32rem 0;margin:0}
 .m dl.k dt{font-size:.72rem;padding-top:.42rem;white-space:nowrap}
 .m .note{font-size:.86rem;color:var(--soft);border-top:1px solid var(--line);padding-top:.4rem;margin:0}
+.route-intro{max-width:44rem}
+.route-intro h2{font:700 1.6rem/1.2 var(--display);margin:1.2rem 0 .4rem}
+.route-intro p{margin:.35rem 0}
+.checked{display:inline-block;background:var(--info-bg);color:var(--info);font-weight:650;font-size:.85rem;padding:.3rem .6rem;border-radius:8px}
+.ask{margin:1rem 0}.ask h3{margin:0 0 .4rem;font-size:1.02rem}.ask ul{margin:0;padding-left:1.2rem}.ask li{margin:.25rem 0}
+.dealer{margin-top:1.8rem}
+.dealer h2{font:700 1.4rem/1.2 var(--display);margin:0 0 .25rem}
+.dealer .addr{margin:0;color:var(--soft);font-size:.95rem}
+.dlinks{display:flex;flex-wrap:wrap;gap:.45rem;margin:.55rem 0 .2rem}
+.dlinks a{font-weight:650;font-size:.92rem;text-decoration:none;padding:.55rem .85rem;border-radius:999px;background:var(--card);border:1.5px solid var(--line);color:var(--ink)}
+.dlinks a.call{background:var(--accent);border-color:var(--accent);color:#fff}
+.dealer .dnote{font-size:.88rem;color:var(--soft);margin:.3rem 0 0}
+.card .why{margin:0;font-size:.95rem}
+.card ul.notes{margin:0;padding-left:1.1rem;font-size:.9rem;color:var(--soft)}
+.card .live{font-size:.8rem;color:var(--muted);margin:0}
+.over{font-size:.8rem;font-weight:700;vertical-align:middle;margin-left:.4rem}
+.also{border-left:5px solid #e0a100}.also h3{margin:0 0 .4rem;font-size:1.05rem}.also p{margin:.5rem 0;font-size:.93rem}
 .dot.rec{background:var(--good)}.dot.ok{background:#e0a100}.dot.avoid{background:var(--bad)}
 """
 
@@ -394,10 +412,17 @@ DEFAULT_SOURCES = ("<p>Sources: listings from Cars.com, Facebook Marketplace and
                    "Insurance estimates from CarInsurance.com, Insure.com and MoneyGeek.</p>")
 
 
+NAV_TABS = [("cars", "", "Cars"), ("tips", "tips/", "Buying tips"), ("models", "models/", "Model Guide")]
+try:  # route pages (guide/routes.json) join the nav after the Model Guide
+    NAV_TABS += [(r["slug"], r["slug"] + "/", r["name"])
+                 for r in json.loads((ROOT / "guide" / "routes.json").read_text(encoding="utf-8")).get("routes", [])]
+except FileNotFoundError:
+    pass
+
+
 def shell(title, base, current, updated, count, main, js="", sources=DEFAULT_SOURCES):
-    tabs = (f'<a href="{base}" {"aria-current=page" if current == "cars" else ""}>Cars</a>'
-            f'<a href="{base}tips/" {"aria-current=page" if current == "tips" else ""}>Buying tips</a>'
-            f'<a href="{base}models/" {"aria-current=page" if current == "models" else ""}>Model guide</a>')
+    tabs = "".join(f'<a href="{base}{href}" {"aria-current=page" if current == key else ""}>{label}</a>'
+                   for key, href, label in NAV_TABS)
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -891,6 +916,103 @@ def build_models(updated, count):
     return shell("Model guide · Car Hunt", "../", "models", updated, count, "\n".join(out), GUIDE_JS, sources)
 
 
+ROUTE_JS = """<script>
+document.querySelectorAll('.photo').forEach(function(ph){var g=ph.querySelector('.gallery'),cnt=ph.querySelector('.count');
+ if(!g||!cnt)return; var n=+cnt.dataset.count;
+ function idx(){return Math.round(g.scrollLeft/g.clientWidth)}
+ g.addEventListener('scroll',function(){cnt.textContent=(idx()+1)+' / '+n},{passive:true});
+});
+</script>"""
+
+
+def tel(phone):
+    return "+1" + re.sub(r"\D", "", phone)[-10:]
+
+
+def maps_links(addr):
+    q = urllib.parse.quote(addr)
+    return (f'<a href="https://www.google.com/maps/search/?api=1&amp;query={q}" target="_blank" rel="noopener">Google Maps</a>'
+            f'<a href="https://maps.apple.com/?q={q}" target="_blank" rel="noopener">Apple Maps</a>')
+
+
+def route_card(c, eager):
+    name = f'{c["year"]} {c["make"]} {c["model"]}'
+    photos = [p for p in c.get("photos", []) if (ROOT / p).exists()]
+    if photos:
+        imgs = []
+        for i, p in enumerate(photos):
+            w, h = img_size(p)
+            imgs.append(f'<div class="slide"><img class="fg" src="../{esc(p)}" width="{w}" height="{h}" '
+                        f'loading="{"eager" if eager and i == 0 else "lazy"}" decoding="async" alt="{esc(name)}, listing photo {i + 1}"></div>')
+        cnt = f'<span class="count" data-count="{len(photos)}">1 / {len(photos)}</span>' if len(photos) > 1 else ""
+        photo = f'<div class="photo"><div class="gallery">{"".join(imgs)}</div>{cnt}</div>'
+    else:
+        photo = ""  # no stock images: show nothing when there's no real listing photo
+    over = '<span class="b warn over">Over $20k</span>' if c["price"] > 20000 else ""
+    tags = {"fleet": ("warn", "Likely ex-fleet"), "1-owner": ("good", "1 owner"), "accident": ("bad", "Accident reported")}
+    badges = "".join(badge_html(*tags[t]) for t in c.get("tags", []) if t in tags)
+    notes = "".join(f"<li>{esc(n)}</li>" for n in c.get("notes", []))
+    return (f'<li class="card">{photo}<div class="body">'
+            f'<h2>{esc(name)} {esc(c["trim"])}</h2>'
+            f'<div><span class="price">{money(c["price"])}</span>{over}</div>'
+            f'<p class="facts"><span>{c["miles"]:,} mi</span></p>'
+            + (f'<ul class="badges">{badges}</ul>' if badges else "")
+            + f'<p class="why">{esc(c["why"])}</p><ul class="notes">{notes}</ul>'
+            f'<p class="live">{esc(c.get("live", ""))}</p>'
+            f'<div class="actions"><a class="btn" href="{esc(c["url"])}" target="_blank" rel="noopener">View listing</a></div>'
+            f'</div></li>')
+
+
+def build_route(r, data, updated, count):
+    out = ['<section class="route-intro">',
+           f'<h2>{esc(r["title"])}</h2>',
+           f'<p><span class="checked">Route checked {esc(data["checked"])}</span></p>',
+           f'<p>{esc(r["area"])} <strong>{esc(r["time"])}</strong></p>',
+           f'<p>{esc(r["order"])}</p>',
+           '<p class="small">Call ahead to make sure the car is still there. Asking prices shown; Cars.com prices usually exclude the dealer doc fee ($300–$700).</p>',
+           '<div class="box ask"><h3>At each stop, ask for:</h3><ul>' + "".join(f"<li>{esc(x)}</li>" for x in data["checklist"]) + '</ul></div>',
+           '</section><main>']
+    first = True
+    for d in r["dealers"]:
+        call = f'<a class="call" href="tel:{tel(d["phone"])}">Call {esc(d["phone"])}</a>' if d.get("phone") else ""
+        hours = f' · {esc(d["hours"])}' if d.get("hours") else ""
+        out.append(f'<section class="dealer"><h2>{esc(d["name"])}</h2><p class="addr">{esc(d["address"])}{hours}</p>'
+                   f'<div class="dlinks">{call}{maps_links(d["address"])}</div>'
+                   + (f'<p class="dnote">{esc(d["note"])}</p>' if d.get("note") else "")
+                   + '<ul class="grid">')
+        for c in d["cars"]:
+            out.append(route_card(c, first))
+            first = False
+        out.append("</ul></section>")
+    if r.get("also"):
+        out.append('<div class="box also"><h3>Also worth a call</h3>')
+        for a in r["also"]:
+            links = []
+            if a.get("phone"):
+                links.append(f'<a class="call" href="tel:{tel(a["phone"])}">Call {esc(a["phone"])}</a>')
+            if a.get("address"):
+                links.append(maps_links(a["address"]))
+            links.append(f'<a href="{esc(a["url"])}" target="_blank" rel="noopener">Listing</a>')
+            out.append(f'<p>{esc(a["text"])}</p><div class="dlinks">{"".join(links)}</div>')
+        out.append("</div>")
+    out.append("</main>")
+    sources = ("<p>Route data: AutoTempest/Cars.com search results, CarGurus listing pages and dealer websites, checked "
+               f"{esc(data['checked'])}. History notes come from the listing or CarGurus/AutoCheck; \u201clikely ex-fleet\u201d is a guess from year vs. miles. "
+               "Get the Carfax before buying.</p>")
+    return shell(f'{r["name"]} route · Car Hunt', "../", r["slug"], updated, count, "\n".join(out), ROUTE_JS, sources)
+
+
+def build_routes(updated, count):
+    path = ROOT / "guide" / "routes.json"
+    if not path.exists():
+        return
+    data = json.loads(path.read_text(encoding="utf-8"))
+    for r in data.get("routes", []):
+        d = ROOT / r["slug"]
+        d.mkdir(exist_ok=True)
+        (d / "index.html").write_text(build_route(r, data, updated, count), encoding="utf-8")
+
+
 REDIRECT = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
 <meta http-equiv="refresh" content="0; url=../"><title>Car Hunt</title></head>
@@ -939,6 +1061,7 @@ def main():
     (ROOT / "tips" / "index.html").write_text(build_tips(xlsx, updated, len(allcars)), encoding="utf-8")
     (ROOT / "models").mkdir(exist_ok=True)
     (ROOT / "models" / "index.html").write_text(build_models(updated, len(allcars)), encoding="utf-8")
+    build_routes(updated, len(allcars))
     (ROOT / "robots.txt").write_text("User-agent: *\nDisallow: /\n")
     (ROOT / ".nojekyll").write_text("")
     with_photos = sum(1 for c in allcars if manifest.get(c["key"], {}).get("photos"))

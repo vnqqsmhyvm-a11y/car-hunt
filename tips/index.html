@@ -24,7 +24,7 @@ header.top h1{font:700 2.4rem/1.05 var(--display);margin:0;letter-spacing:-.01em
 header.top h1 a{color:var(--ink);text-decoration:none}
 .sub{margin:.35rem 0 .2rem;color:var(--soft);font-size:1.05rem}
 .meta{color:var(--muted);font-size:.88rem;margin:0}
-.tabs{display:flex;gap:.5rem;margin:.9rem 0 0}
+.tabs{display:flex;flex-wrap:wrap;gap:.45rem;margin:.9rem 0 0}
 .tabs a{font-weight:600;font-size:.95rem;text-decoration:none;color:var(--ink);padding:.5rem .9rem;border-radius:999px;background:var(--muted-bg)}
 .tabs a[aria-current]{background:var(--ink);color:#fff}
 .controls{background:rgba(250,246,240,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
@@ -123,6 +123,23 @@ footer.bottom p{margin:.4rem 0}
 .m dl.k dt,.m dl.k dd{border-top:1px solid var(--line);padding:.32rem 0;margin:0}
 .m dl.k dt{font-size:.72rem;padding-top:.42rem;white-space:nowrap}
 .m .note{font-size:.86rem;color:var(--soft);border-top:1px solid var(--line);padding-top:.4rem;margin:0}
+.route-intro{max-width:44rem}
+.route-intro h2{font:700 1.6rem/1.2 var(--display);margin:1.2rem 0 .4rem}
+.route-intro p{margin:.35rem 0}
+.checked{display:inline-block;background:var(--info-bg);color:var(--info);font-weight:650;font-size:.85rem;padding:.3rem .6rem;border-radius:8px}
+.ask{margin:1rem 0}.ask h3{margin:0 0 .4rem;font-size:1.02rem}.ask ul{margin:0;padding-left:1.2rem}.ask li{margin:.25rem 0}
+.dealer{margin-top:1.8rem}
+.dealer h2{font:700 1.4rem/1.2 var(--display);margin:0 0 .25rem}
+.dealer .addr{margin:0;color:var(--soft);font-size:.95rem}
+.dlinks{display:flex;flex-wrap:wrap;gap:.45rem;margin:.55rem 0 .2rem}
+.dlinks a{font-weight:650;font-size:.92rem;text-decoration:none;padding:.55rem .85rem;border-radius:999px;background:var(--card);border:1.5px solid var(--line);color:var(--ink)}
+.dlinks a.call{background:var(--accent);border-color:var(--accent);color:#fff}
+.dealer .dnote{font-size:.88rem;color:var(--soft);margin:.3rem 0 0}
+.card .why{margin:0;font-size:.95rem}
+.card ul.notes{margin:0;padding-left:1.1rem;font-size:.9rem;color:var(--soft)}
+.card .live{font-size:.8rem;color:var(--muted);margin:0}
+.over{font-size:.8rem;font-weight:700;vertical-align:middle;margin-left:.4rem}
+.also{border-left:5px solid #e0a100}.also h3{margin:0 0 .4rem;font-size:1.05rem}.also p{margin:.5rem 0;font-size:.93rem}
 .dot.rec{background:var(--good)}.dot.ok{background:#e0a100}.dot.avoid{background:var(--bad)}
 </style>
 </head>
@@ -132,7 +149,7 @@ footer.bottom p{margin:.4rem 0}
 <h1><a href="../">Car Hunt</a></h1>
 <p class="sub">A reliable first car for college · Tulsa area</p>
 <p class="meta">Updated Fri, Oct 16, 2026, 8:42 AM CT · 74 cars</p>
-<nav class="tabs" aria-label="Pages"><a href="../" >Cars</a><a href="../tips/" aria-current=page>Buying tips</a><a href="../models/" >Model guide</a></nav>
+<nav class="tabs" aria-label="Pages"><a href="../" >Cars</a><a href="../tips/" aria-current=page>Buying tips</a><a href="../models/" >Model Guide</a><a href="../broken-arrow/" >Broken Arrow</a><a href="../south-tulsa/" >South Tulsa</a><a href="../midtown/" >Midtown</a></nav>
 </header>
 <main class="tips">
 <h2>Before you buy any car</h2>

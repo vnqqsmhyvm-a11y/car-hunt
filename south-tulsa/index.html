@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#faf6f0">
+<title>South Tulsa route · Car Hunt</title>
+<style>
+@font-face{font-family:"Playfair Display";font-weight:700;font-display:swap;src:url(../assets/fonts/playfair-display-latin-700-normal.woff2) format("woff2")}
+:root{color-scheme:light;--bg:#faf6f0;--card:#fff;--ink:#22201c;--soft:#5d574e;--muted:#8a8378;--line:#ebe4d8;
+--accent:#c2562b;--accent-ink:#fff;--good:#1f7a4d;--good-bg:#e5f4ec;--warn:#8a5a00;--warn-bg:#fff1cc;--bad:#b42318;--bad-bg:#fde8e6;
+--info:#1d4f91;--info-bg:#e8f0fb;--muted-bg:#f1ede6;--radius:18px;
+--sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+--display:"Playfair Display",Georgia,serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:76rem;margin:0 auto;padding:0 max(1rem,env(safe-area-inset-left)) 2rem max(1rem,env(safe-area-inset-right))}
+header.top{padding:1.4rem 0 .6rem}
+header.top h1{font:700 2.4rem/1.05 var(--display);margin:0;letter-spacing:-.01em}
+header.top h1 a{color:var(--ink);text-decoration:none}
+.sub{margin:.35rem 0 .2rem;color:var(--soft);font-size:1.05rem}
+.meta{color:var(--muted);font-size:.88rem;margin:0}
+.tabs{display:flex;flex-wrap:wrap;gap:.45rem;margin:.9rem 0 0}
+.tabs a{font-weight:600;font-size:.95rem;text-decoration:none;color:var(--ink);padding:.5rem .9rem;border-radius:999px;background:var(--muted-bg)}
+.tabs a[aria-current]{background:var(--ink);color:#fff}
+.controls{background:rgba(250,246,240,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+ margin:0 calc(-1*max(1rem,env(safe-area-inset-left)));padding:.6rem max(1rem,env(safe-area-inset-left));border-bottom:1px solid var(--line)}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;font:600 .95rem/1 var(--sans);padding:.62rem .95rem;border-radius:999px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.row2{display:flex;justify-content:space-between;align-items:center;gap:.6rem;margin-top:.5rem;font-size:.92rem;color:var(--soft)}
+.row2 label{display:flex;align-items:center;gap:.4rem;white-space:nowrap}
+#shown{white-space:nowrap}
+.row2 select{font:600 .95rem var(--sans);padding:.45rem .6rem;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink)}
+.grid{display:grid;grid-template-columns:1fr;gap:1.1rem;margin-top:1rem;list-style:none;padding:0}
+@media (min-width:700px){.grid{grid-template-columns:1fr 1fr}.controls{position:sticky;top:0;z-index:5}}
+@media (min-width:1100px){.grid{grid-template-columns:1fr 1fr 1fr}}
+.card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 2px rgba(60,40,10,.06),0 6px 18px rgba(60,40,10,.06);display:flex;flex-direction:column}
+.card[hidden]{display:none}
+.photo{position:relative;background:#eee7dc}
+.gallery{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;aspect-ratio:4/3}
+.gallery::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;position:relative;overflow:hidden;scroll-snap-align:start}
+.slide img{display:block;width:100%;height:100%;object-fit:cover}
+.slide.tall img.fg{position:relative;object-fit:contain}
+.slide img.bg{position:absolute;inset:0;filter:blur(22px) saturate(1.05);opacity:.75;transform:scale(1.2)}
+.count{position:absolute;right:.6rem;bottom:.6rem;background:rgba(0,0,0,.62);color:#fff;font-size:.78rem;font-weight:600;padding:.25rem .55rem;border-radius:999px}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:2.3rem;height:2.3rem;border-radius:50%;border:0;background:rgba(255,255,255,.9);color:#222;font-size:1.25rem;line-height:1;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.nav.prev{left:.5rem}.nav.next{right:.5rem}
+.noimg{aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;color:var(--muted);background:repeating-linear-gradient(45deg,#f1ebe1,#f1ebe1 12px,#ece5d9 12px,#ece5d9 24px);font-weight:600}
+.noimg svg{width:3.2rem;height:3.2rem;opacity:.55}
+.ribbon{position:absolute;left:0;right:0;top:0;padding:.5rem .8rem;font-weight:700;font-size:.9rem;color:#fff;background:rgba(40,36,30,.86);text-align:center;letter-spacing:.02em}
+.card.removed .gallery,.card.removed .noimg{filter:grayscale(1);opacity:.6}
+.sold-wrap{margin-top:1.6rem}
+.sold-wrap > summary{font:700 1.05rem/1.3 var(--sans);color:var(--soft)}
+.sold-wrap .grid{opacity:.92}
+.flag{padding:.6rem .9rem;font-size:.9rem;line-height:1.35}
+.flag b{text-transform:uppercase;letter-spacing:.05em;margin-right:.35rem}
+.flag.avoid{background:var(--bad);color:#fff}
+.flag.caution{background:#f5b301;color:#2a1d00}
+.body{padding:.9rem 1rem 1rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
+.card h2{font-size:1.18rem;line-height:1.25;margin:0;font-weight:700}
+.price{font-size:1.75rem;font-weight:800;letter-spacing:-.01em;line-height:1}
+.facts{color:var(--soft);font-size:.95rem;margin:0}
+.facts span+span::before{content:"·";margin:0 .4rem;color:var(--muted)}
+.badges{display:flex;flex-wrap:wrap;gap:.35rem;margin:.1rem 0 0;padding:0;list-style:none}
+.b{font-size:.8rem;font-weight:650;padding:.3rem .55rem;border-radius:8px;white-space:nowrap}
+.b.good{background:var(--good-bg);color:var(--good)}.b.warn{background:var(--warn-bg);color:var(--warn)}
+.b.bad{background:var(--bad-bg);color:var(--bad)}.b.info{background:var(--info-bg);color:var(--info)}
+.b.muted{background:var(--muted-bg);color:var(--soft)}
+.actions{margin-top:auto;padding-top:.3rem;display:flex;flex-direction:column;gap:.55rem}
+.btn{display:block;text-align:center;background:var(--accent);color:#fff;font-weight:700;font-size:1.05rem;padding:.85rem 1rem;border-radius:12px;text-decoration:none}
+.btn.off{background:var(--muted-bg);color:var(--soft)}
+details{border:1.5px solid var(--line);border-radius:12px}
+summary{cursor:pointer;font-weight:650;padding:.75rem .9rem;list-style:none;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.3rem;line-height:1;color:var(--accent)}
+details[open] summary::after{content:"–"}
+dl{margin:0;padding:0 .9rem .8rem;font-size:.92rem}
+dl div{padding:.5rem 0;border-top:1px solid var(--line)}
+dt{font-weight:650;color:var(--soft);font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
+dd{margin:.15rem 0 0}
+.empty{padding:2rem;text-align:center;color:var(--soft)}
+footer.bottom{margin-top:2.2rem;padding-top:1.2rem;border-top:1px solid var(--line);color:var(--soft);font-size:.88rem}
+footer.bottom p{margin:.4rem 0}
+.tips{max-width:44rem}
+.tips h2{font:700 1.5rem/1.2 var(--display);margin:2rem 0 .6rem}
+.tips h3{font-size:1.05rem;margin:1.2rem 0 .3rem}
+.tips p,.tips li{color:var(--ink)}
+.tips ol{padding-left:1.3rem}.tips li{margin:.45rem 0}
+.box{background:var(--card);border-radius:var(--radius);padding:1rem 1.1rem;box-shadow:0 1px 2px rgba(60,40,10,.06),0 6px 18px rgba(60,40,10,.06);margin:1rem 0}
+.box.verdict{border-left:5px solid var(--accent)}
+.small{font-size:.85rem;color:var(--soft)}
+.criteria{margin:.6rem 0 .5rem;font-size:.88rem;color:var(--soft);line-height:1.4}
+.b.drive{background:#efe7fb;color:#5b2a9e}
+.added{margin:0 0 -.25rem;font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:.45rem}
+.newb{background:#ff3b30;color:#fff;font-weight:800;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:.22rem .5rem;border-radius:6px}
+.newb[hidden]{display:none}
+.chip.new{border-color:#ff3b30;color:#d62a20}
+.chip.new[aria-pressed=true]{background:#ff3b30;border-color:#ff3b30;color:#fff}
+.intro{color:var(--soft);margin:1rem 0 .2rem;max-width:44rem}
+.chips+.chips{margin-top:.45rem}
+.chip.sm{font-size:.85rem;padding:.5rem .75rem}
+.vgroup h2{font:700 1.45rem/1.2 var(--display);margin:1.8rem 0 .2rem;display:flex;align-items:center;gap:.55rem}
+.vgroup h2 .dot{width:.75rem;height:.75rem;border-radius:50%;flex:0 0 auto}
+.vgroup .lede{margin:0 0 .3rem;color:var(--soft);font-size:.92rem}
+.mlist{display:grid;grid-template-columns:1fr;gap:.8rem;list-style:none;padding:0;margin:.7rem 0 0}
+@media (min-width:760px){.mlist{grid-template-columns:1fr 1fr}}
+@media (min-width:1150px){.mlist{grid-template-columns:1fr 1fr 1fr}}
+.m{background:var(--card);border-radius:14px;padding:.85rem .95rem .9rem;box-shadow:0 1px 2px rgba(60,40,10,.06),0 4px 12px rgba(60,40,10,.05);border-left:5px solid var(--line)}
+.m[hidden],.vgroup[hidden]{display:none}
+.m.rec{border-left-color:var(--good)}.m.ok{border-left-color:#e0a100}.m.avoid{border-left-color:var(--bad)}
+.m h3{margin:0;font-size:1.08rem;line-height:1.25}
+.m .yrs{display:block;color:var(--soft);font-weight:600;font-size:.92rem;margin-top:.1rem}
+.m .tags{display:flex;flex-wrap:wrap;gap:.3rem;margin:.45rem 0 .1rem}
+.m p.why{margin:.45rem 0 .55rem;font-size:.95rem;line-height:1.45}
+.m dl.k{padding:0;margin:0;display:grid;grid-template-columns:auto 1fr;gap:0 .7rem;font-size:.86rem}
+.m dl.k dt,.m dl.k dd{border-top:1px solid var(--line);padding:.32rem 0;margin:0}
+.m dl.k dt{font-size:.72rem;padding-top:.42rem;white-space:nowrap}
+.m .note{font-size:.86rem;color:var(--soft);border-top:1px solid var(--line);padding-top:.4rem;margin:0}
+.route-intro{max-width:44rem}
+.route-intro h2{font:700 1.6rem/1.2 var(--display);margin:1.2rem 0 .4rem}
+.route-intro p{margin:.35rem 0}
+.checked{display:inline-block;background:var(--info-bg);color:var(--info);font-weight:650;font-size:.85rem;padding:.3rem .6rem;border-radius:8px}
+.ask{margin:1rem 0}.ask h3{margin:0 0 .4rem;font-size:1.02rem}.ask ul{margin:0;padding-left:1.2rem}.ask li{margin:.25rem 0}
+.dealer{margin-top:1.8rem}
+.dealer h2{font:700 1.4rem/1.2 var(--display);margin:0 0 .25rem}
+.dealer .addr{margin:0;color:var(--soft);font-size:.95rem}
+.dlinks{display:flex;flex-wrap:wrap;gap:.45rem;margin:.55rem 0 .2rem}
+.dlinks a{font-weight:650;font-size:.92rem;text-decoration:none;padding:.55rem .85rem;border-radius:999px;background:var(--card);border:1.5px solid var(--line);color:var(--ink)}
+.dlinks a.call{background:var(--accent);border-color:var(--accent);color:#fff}
+.dealer .dnote{font-size:.88rem;color:var(--soft);margin:.3rem 0 0}
+.card .why{margin:0;font-size:.95rem}
+.card ul.notes{margin:0;padding-left:1.1rem;font-size:.9rem;color:var(--soft)}
+.card .live{font-size:.8rem;color:var(--muted);margin:0}
+.over{font-size:.8rem;font-weight:700;vertical-align:middle;margin-left:.4rem}
+.also{border-left:5px solid #e0a100}.also h3{margin:0 0 .4rem;font-size:1.05rem}.also p{margin:.5rem 0;font-size:.93rem}
+.dot.rec{background:var(--good)}.dot.ok{background:#e0a100}.dot.avoid{background:var(--bad)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<h1><a href="../">Car Hunt</a></h1>
+<p class="sub">A reliable first car for college · Tulsa area</p>
+<p class="meta">Updated Fri, Oct 16, 2026, 8:42 AM CT · 74 cars</p>
+<nav class="tabs" aria-label="Pages"><a href="../" >Cars</a><a href="../tips/" >Buying tips</a><a href="../models/" >Model Guide</a><a href="../broken-arrow/" >Broken Arrow</a><a href="../south-tulsa/" aria-current=page>South Tulsa</a><a href="../midtown/" >Midtown</a></nav>
+</header>
+<section class="route-intro">
+<h2>South Memorial Dr, 91st–101st</h2>
+<p><span class="checked">Route checked Fri Oct 16, 2026 (about 9:05–9:20 AM CT)</span></p>
+<p>Two dealers a mile apart on S. Memorial Dr between 91st and 101st Streets, about 15–20 minutes from Broken Arrow (Creek Turnpike or 91st St). <strong>Allow about 1 hour.</strong></p>
+<p>Suggested order: South Pointe (RAV4, 9240 S Memorial) → Nelson Mazda (9902 S Memorial). Next stop after this: Midtown, about 12 minutes north on Memorial.</p>
+<p class="small">Call ahead to make sure the car is still there. Asking prices shown; Cars.com prices usually exclude the dealer doc fee ($300–$700).</p>
+<div class="box ask"><h3>At each stop, ask for:</h3><ul><li>Carfax (or AutoCheck) for the exact VIN</li><li>Rental or fleet history: skip it if it was a rental</li><li>Out-the-door price including the doc fee</li><li>Open recalls done (run the VIN at nhtsa.gov/recalls)</li></ul></div>
+</section><main>
+<section class="dealer"><h2>South Pointe Chrysler Dodge Jeep Ram</h2><p class="addr">9240 S Memorial Dr, Tulsa, OK 74133</p><div class="dlinks"><a class="call" href="tel:+19187277545">Call 918-727-7545</a><a href="https://www.google.com/maps/search/?api=1&amp;query=9240%20S%20Memorial%20Dr%2C%20Tulsa%2C%20OK%2074133" target="_blank" rel="noopener">Google Maps</a><a href="https://maps.apple.com/?q=9240%20S%20Memorial%20Dr%2C%20Tulsa%2C%20OK%2074133" target="_blank" rel="noopener">Apple Maps</a></div><ul class="grid">
+<li class="card"><div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/route-2021-rav4-southpointe.jpg" width="641" height="427" loading="eager" decoding="async" alt="2021 Toyota RAV4, listing photo 1"></div></div></div><div class="body"><h2>2021 Toyota RAV4 LE</h2><div><span class="price">$20,499</span><span class="b warn over">Over $20k</span></div><p class="facts"><span>88,527 mi</span></p><ul class="badges"><li class="b good">1 owner</li></ul><p class="why">Best-documented RAV4 on the route.</p><ul class="notes"><li>CARFAX 1-Owner (per listing)</li><li>Clean title</li></ul><p class="live">In this morning&#x27;s Cars.com search results; listing page not opened</p><div class="actions"><a class="btn" href="https://www.cars.com/vehicledetail/0623af82-2044-4987-8c6e-ab7816805ff8/" target="_blank" rel="noopener">View listing</a></div></div></li>
+</ul></section>
+<section class="dealer"><h2>Nelson Mazda Tulsa</h2><p class="addr">9902 S Memorial Dr, Tulsa, OK 74133</p><div class="dlinks"><a class="call" href="tel:+19187192735">Call 918-719-2735</a><a href="https://www.google.com/maps/search/?api=1&amp;query=9902%20S%20Memorial%20Dr%2C%20Tulsa%2C%20OK%2074133" target="_blank" rel="noopener">Google Maps</a><a href="https://maps.apple.com/?q=9902%20S%20Memorial%20Dr%2C%20Tulsa%2C%20OK%2074133" target="_blank" rel="noopener">Apple Maps</a></div><ul class="grid">
+<li class="card"><div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/route-2022-mazda3-nelsonmazda.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2022 Mazda Mazda3, listing photo 1"></div></div></div><div class="body"><h2>2022 Mazda Mazda3 Select (hatchback)</h2><div><span class="price">$20,946</span><span class="b warn over">Over $20k</span></div><p class="facts"><span>31,568 mi</span></p><p class="why">Lowest miles of any car on the route.</p><ul class="notes"><li>Clean Carfax mentioned in the listing</li><li>Clean title</li></ul><p class="live">In this morning&#x27;s Cars.com search results; listing page not opened</p><div class="actions"><a class="btn" href="https://www.cars.com/vehicledetail/8249ab19-6f15-4988-8fb9-e5be6020ebb6/" target="_blank" rel="noopener">View listing</a></div></div></li>
+<li class="card"><div class="photo"><div class="gallery"><div class="slide"><img class="fg" src="../photos/route-2023-mazda3-nelsonmazda.jpg" width="640" height="480" loading="lazy" decoding="async" alt="2023 Mazda Mazda3, listing photo 1"></div></div></div><div class="body"><h2>2023 Mazda Mazda3 2.5 S Preferred (sedan)</h2><div><span class="price">$20,573</span><span class="b warn over">Over $20k</span></div><p class="facts"><span>51,129 mi</span></p><p class="why">Nicer trim with moderate miles.</p><ul class="notes"><li>Clean title</li><li>History not confirmed</li></ul><p class="live">In this morning&#x27;s Cars.com search results; listing page not opened</p><div class="actions"><a class="btn" href="https://www.cars.com/vehicledetail/fccd345b-d19f-4224-b089-74b656967eae/" target="_blank" rel="noopener">View listing</a></div></div></li>
+</ul></section>
+</main>
+<footer class="bottom">
+<p><strong>Insurance figures are estimates, not quotes.</strong> They're built from published averages for an 18-year-old added to a parent's full-coverage policy. Get a real quote on the exact VIN before buying, and tell the insurer the car will be kept in Fayetteville.</p>
+<p>Route data: AutoTempest/Cars.com search results, CarGurus listing pages and dealer websites, checked Fri Oct 16, 2026 (about 9:05–9:20 AM CT). History notes come from the listing or CarGurus/AutoCheck; “likely ex-fleet” is a guess from year vs. miles. Get the Carfax before buying.</p>
+</footer>
+</div>
+<script>
+document.querySelectorAll('.photo').forEach(function(ph){var g=ph.querySelector('.gallery'),cnt=ph.querySelector('.count');
+ if(!g||!cnt)return; var n=+cnt.dataset.count;
+ function idx(){return Math.round(g.scrollLeft/g.clientWidth)}
+ g.addEventListener('scroll',function(){cnt.textContent=(idx()+1)+' / '+n},{passive:true});
+});
+</script>
+</body>
+</html>
