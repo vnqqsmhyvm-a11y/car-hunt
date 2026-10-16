@@ -280,6 +280,18 @@
    "tank_gal": 14.3
   },
   {
+   "make": "Kia",
+   "model": "Sportage",
+   "years": "2023+",
+   "ref": [
+    "2023",
+    "2024"
+   ],
+   "verdict": "ok",
+   "why": "Current generation (2023 redesign) with the 2.5L non-turbo four, a conventional 8-speed automatic (not a CVT) and a timing chain. Every 2022+ Kia has an immobilizer, so it isn't in the “Kia Boys” theft group or theft-surcharged. Conditions: a second owner gets only the 5-year/60,000-mile powertrain warranty from the original in-service date (a Kia Certified Pre-Owned car restores 10 years/100,000 miles); the engine is too new to have a long high-mileage track record; and check it isn't an ex-rental (many 2023–24s were). Hybrid and plug-in hybrid use a 1.6 turbo with a 6-speed automatic; fine if in budget, but they cost more. Figures cover 2023–24; 2023 LX/EX/X-Line headlights rated Poor, 2024 improved them and passed the updated side test.",
+   "tank_gal": 14.3
+  },
+  {
    "make": "Hyundai",
    "model": "Venue",
    "years": "2022–2025",
@@ -328,6 +340,28 @@
     ]
    },
    "tank_gal": 13.2
+  },
+  {
+   "make": "Kia",
+   "model": "Sportage",
+   "years": "2017–2022",
+   "verdict": "avoid",
+   "limited": true,
+   "nometrics": true,
+   "metrics_note": "Previous generation, kept on Avoid; the 2023+ entry above is separate.",
+   "why": "Older design with direct-injection engines from Kia's engine-failure era: 2017–19 2.4L and 2.0 turbo cars are in the Theta II class settlement (connecting-rod bearing wear; needs the knock-sensor software for the lifetime engine warranty), and key-start cars without an immobilizer are theft targets. The 2023+ redesign is the one to shop.",
+   "match": {
+    "makes": [
+     "Kia"
+    ],
+    "models": [
+     "Sportage"
+    ],
+    "years": [
+     2017,
+     2022
+    ]
+   }
   },
   {
    "make": "Hyundai",

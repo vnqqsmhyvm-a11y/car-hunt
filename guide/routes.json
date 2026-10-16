@@ -1,5 +1,5 @@
 {
- "checked": "Fri Oct 16, 2026 (about 9:05\u20139:20 AM CT)",
+ "checked": "Fri Oct 16, 2026 (about 9:05\u20139:20 AM CT; Kia Sportages added about 2:15 PM CT)",
  "checklist": [
   "Carfax (or AutoCheck) for the exact VIN",
   "Rental or fleet history: skip it if it was a rental",
@@ -11,9 +11,9 @@
    "slug": "broken-arrow",
    "name": "Broken Arrow",
    "title": "Broken Arrow dealer row",
-   "area": "Four dealers within about 3 miles of each other on Elm Pl, Aspen Ave and Queens St in Broken Arrow, about 20 minutes from home via the BA Expressway (Hwy 51).",
-   "time": "Allow 2\u20132\u00bd hours.",
-   "order": "Suggested order: Ferguson (CX-5) \u2192 Quality Value (next door on Elm) \u2192 Nelson Nissan (Queens St) \u2192 Chris Nikel (Aspen Ave, CX-30 and Mazda3s). Next stop after this: South Tulsa, about 15\u201320 minutes.",
+   "area": "Five dealers within about 3 miles of each other on Elm Pl, Aspen Ave and Queens St in Broken Arrow, about 20 minutes from home via the BA Expressway (Hwy 51).",
+   "time": "Allow 2\u00bd\u20133 hours.",
+   "order": "Suggested order: Ferguson (CX-5 and four Kia Sportages) \u2192 DrivePoint Autos (Sportage, 1522 N Elm, across from Ferguson) \u2192 Quality Value (south on Elm) \u2192 Nelson Nissan (Queens St) \u2192 Chris Nikel (Aspen Ave, CX-30 and Mazda3s). Next stop after this: South Tulsa, about 15\u201320 minutes.",
    "dealers": [
     {
      "name": "Ferguson Superstore",
@@ -41,6 +41,132 @@
        ],
        "live": "In this morning's Cars.com search results; listing page not opened",
        "tags": []
+      },
+      {
+       "year": 2023,
+       "make": "Kia",
+       "model": "Sportage",
+       "trim": "LX AWD",
+       "price": 19079,
+       "miles": 66605,
+       "url": "https://www.cars.com/vehicledetail/bc1a2219-5c6e-41fa-9530-c989dc912cd4/",
+       "notes": [
+        "Kia Certified Pre-Owned: powertrain covered to 10 yrs/100k from the original in-service date (confirm the date)",
+        "1 owner, no accidents (AutoCheck); no rental shown, confirm on the Carfax",
+        "Clean title; price excludes the $579 doc fee"
+       ],
+       "why": "Best-value Sportage found: cheapest, certified, one owner.",
+       "photos": [
+        "photos/2023-kia-sportage-19079-1.jpg",
+        "photos/2023-kia-sportage-19079-2.jpg",
+        "photos/2023-kia-sportage-19079-3.jpg"
+       ],
+       "live": "Listing opened Fri Oct 16, about 2:15 PM CT: still for sale",
+       "tags": [
+        "1-owner"
+       ]
+      },
+      {
+       "year": 2023,
+       "make": "Kia",
+       "model": "Sportage",
+       "trim": "EX",
+       "price": 21079,
+       "miles": 51887,
+       "url": "https://www.cars.com/vehicledetail/1376e889-e771-4179-8a5d-ec83f7cec0e6/",
+       "notes": [
+        "Kia Certified Pre-Owned, under 60k miles: powertrain covered to 10 yrs/100k",
+        "No accidents; multiple owners (AutoCheck), so ask about rental history",
+        "An earlier version of the listing showed 60,102 miles; confirm the odometer",
+        "Over $21k before the $579 doc fee"
+       ],
+       "why": "Lowest miles of the Sportages in budget.",
+       "photos": [
+        "photos/2023-kia-sportage-21079-1.jpg",
+        "photos/2023-kia-sportage-21079-2.jpg",
+        "photos/2023-kia-sportage-21079-3.jpg"
+       ],
+       "live": "Listing opened Fri Oct 16, about 2:15 PM CT: still for sale",
+       "tags": []
+      },
+      {
+       "year": 2023,
+       "make": "Kia",
+       "model": "Sportage",
+       "trim": "X-Line AWD",
+       "price": 20579,
+       "miles": 88654,
+       "url": "https://www.cars.com/vehicledetail/282e6b1e-06f3-4115-84ad-b5db0a0639f7/",
+       "notes": [
+        "Accident reported (AutoCheck): get the report and an inspection",
+        "1 owner but high miles for a 2023; ask whether it was a fleet car",
+        "No factory powertrain warranty left (over 60k)"
+       ],
+       "why": "Same lot; compare with the certified cars before deciding.",
+       "photos": [
+        "photos/2023-kia-sportage-20579-1.jpg",
+        "photos/2023-kia-sportage-20579-2.jpg",
+        "photos/2023-kia-sportage-20579-3.jpg"
+       ],
+       "live": "Listing opened Fri Oct 16, about 2:15 PM CT: still for sale",
+       "tags": [
+        "accident"
+       ]
+      },
+      {
+       "year": 2023,
+       "make": "Kia",
+       "model": "Sportage",
+       "trim": "X-Line AWD",
+       "price": 19579,
+       "miles": 99453,
+       "url": "https://www.cars.com/vehicledetail/20f178b9-c8ec-4b3f-a086-da3a5f736762/",
+       "notes": [
+        "Likely ex-rental (unconfirmed): a dealer listed it for $32,000 in Aug 2023 when nearly new; multiple owners",
+        "Accident reported (AutoCheck); miles right at the 100k limit",
+        "Listing text says 1.6 turbo, but the X-Line is the 2.5 non-turbo; confirm"
+       ],
+       "why": "Cheapest X-Line, but the weakest history: look only if the others fall through.",
+       "photos": [
+        "photos/2023-kia-sportage-19579-1.jpg",
+        "photos/2023-kia-sportage-19579-2.jpg",
+        "photos/2023-kia-sportage-19579-3.jpg"
+       ],
+       "live": "Listing opened Fri Oct 16, about 2:15 PM CT: still for sale",
+       "tags": [
+        "fleet",
+        "accident"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "DrivePoint Autos",
+     "address": "1522 N Elm Pl, Broken Arrow, OK 74012",
+     "phone": "(918) 262-5178",
+     "cars": [
+      {
+       "year": 2023,
+       "make": "Kia",
+       "model": "Sportage",
+       "trim": "LX AWD",
+       "price": 20481,
+       "miles": 65392,
+       "url": "https://www.cargurus.com/details/459973972",
+       "notes": [
+        "Ex-fleet: AutoCheck says corporate leased vehicle (not a rental)",
+        "1 owner, no accidents (AutoCheck via CarGurus)",
+        "Price includes $299 fees; just past 60k, so no factory powertrain warranty left"
+       ],
+       "why": "Clean one-owner LX AWD across the street from Ferguson.",
+       "photos": [
+        "photos/2023-kia-sportage-20481-1.jpg"
+       ],
+       "live": "Listing opened Fri Oct 16, about 2:15 PM CT: still for sale",
+       "tags": [
+        "fleet",
+        "1-owner"
+       ]
       }
      ]
     },
@@ -282,9 +408,9 @@
    "slug": "south-tulsa",
    "name": "South Tulsa",
    "title": "South Memorial Dr, 91st\u2013101st",
-   "area": "Two dealers a mile apart on S. Memorial Dr between 91st and 101st Streets, about 15\u201320 minutes from Broken Arrow (Creek Turnpike or 91st St).",
-   "time": "Allow about 1 hour.",
-   "order": "Suggested order: South Pointe (RAV4, 9240 S Memorial) \u2192 Nelson Mazda (9902 S Memorial). Next stop after this: Midtown, about 12 minutes north on Memorial.",
+   "area": "Three dealers within about a mile on S. Memorial Dr between 91st and 101st Streets, about 15\u201320 minutes from Broken Arrow (Creek Turnpike or 91st St).",
+   "time": "Allow about 1\u00bd hours.",
+   "order": "Suggested order: South Pointe (RAV4, 9240 S Memorial) \u2192 Tulsa Hyundai (Kia Sportage SX-Prestige, 9777 S Memorial) \u2192 Nelson Mazda (9902 S Memorial). Next stop after this: Midtown, about 12 minutes north on Memorial.",
    "dealers": [
     {
      "name": "South Pointe Chrysler Dodge Jeep Ram",
@@ -312,6 +438,34 @@
        "tags": [
         "1-owner"
        ]
+      }
+     ]
+    },
+    {
+     "name": "Tulsa Hyundai",
+     "address": "9777 S Memorial Dr, Tulsa, OK 74133",
+     "phone": "(918) 921-7104",
+     "cars": [
+      {
+       "year": 2023,
+       "make": "Kia",
+       "model": "Sportage",
+       "trim": "SX-Prestige FWD",
+       "price": 20928,
+       "miles": 71235,
+       "url": "https://www.cargurus.com/details/454434169",
+       "notes": [
+        "No accidents, no rental shown; AutoCheck says 2 owners but the dealer says Carfax one-owner, so ask",
+        "Top trim with the better (IIHS Acceptable) headlights",
+        "Price includes $599 fees; 82 days on the lot, so there's room to negotiate",
+        "No factory powertrain warranty left (over 60k); ask what the dealer's \u201cEngines for Life\u201d covers"
+       ],
+       "why": "Loaded top trim for the price of an EX; CarGurus Great Deal.",
+       "photos": [
+        "photos/2023-kia-sportage-20928-1.jpg"
+       ],
+       "live": "Listing opened Fri Oct 16, about 2:15 PM CT: still for sale",
+       "tags": []
       }
      ]
     },
@@ -369,7 +523,7 @@
    "title": "Memorial / I-44 / Yale, 41st\u201351st",
    "area": "Five dealers around S. Memorial Dr, I-44 and S. Yale between 41st and 51st Streets, about 10 minutes from home.",
    "time": "Allow about 1\u00bd hours.",
-   "order": "Suggested order: Bill Knight (4111 S Memorial) \u2192 Jim Norton T-Town (4924 S Memorial) \u2192 Grubbs Nissan (Skelly Dr at I-44) \u2192 Midtown Kia (4747 S Yale) \u2192 Fowler Toyota (BA Expressway frontage road). Home is about 10 minutes away.",
+   "order": "Suggested order: Bill Knight (4111 S Memorial; Mazda3 and Kia Sportage X-Line) \u2192 Jim Norton T-Town (4924 S Memorial) \u2192 Grubbs Nissan (Skelly Dr at I-44; CX-5 and 2024 Sportage) \u2192 Midtown Kia (4747 S Yale) \u2192 Fowler Toyota (BA Expressway frontage road). Home is about 10 minutes away.",
    "dealers": [
     {
      "name": "Bill Knight Lincoln Volvo",
@@ -394,6 +548,29 @@
         "photos/2020-mazda-mazda3-19299-1.jpg"
        ],
        "live": "Listing opened this morning: still for sale",
+       "tags": [
+        "1-owner"
+       ]
+      },
+      {
+       "year": 2023,
+       "make": "Kia",
+       "model": "Sportage",
+       "trim": "X-Line AWD",
+       "price": 21407,
+       "miles": 80764,
+       "url": "https://www.cargurus.com/details/456402394",
+       "notes": [
+        "1 owner, no accidents, no rental or fleet use (AutoCheck via CarGurus)",
+        "CarGurus price includes fees, but the dealer adds a $499 doc fee",
+        "59 days on the lot with no price cut yet: make an offer near $20k",
+        "No factory powertrain warranty left (over 60k)"
+       ],
+       "why": "Best-documented Sportage: the X-Line found earlier, still listed at $21,407.",
+       "photos": [
+        "photos/2023-kia-sportage-21407-1.jpg"
+       ],
+       "live": "Listing opened Fri Oct 16, about 2:15 PM CT: still for sale",
        "tags": [
         "1-owner"
        ]
@@ -448,6 +625,31 @@
         "photos/route-2025-cx5-grubbs.jpg"
        ],
        "live": "In this morning's Cars.com search results; listing page not opened",
+       "tags": [
+        "fleet"
+       ]
+      },
+      {
+       "year": 2024,
+       "make": "Kia",
+       "model": "Sportage",
+       "trim": "EX FWD",
+       "price": 20899,
+       "miles": 80231,
+       "url": "https://www.cars.com/vehicledetail/496d8aca-8385-4de4-882a-6733cbf78d1d/",
+       "notes": [
+        "Ex-fleet: AutoCheck says corporate leased vehicle (not a rental); 2 owners, no accidents",
+        "80k miles on a 2024; no factory powertrain warranty left",
+        "2024 has the better headlights and passed IIHS's updated side test",
+        "CarGurus all-in price with fees is $21,808"
+       ],
+       "why": "Newest Sportage in budget.",
+       "photos": [
+        "photos/2024-kia-sportage-20899-1.jpg",
+        "photos/2024-kia-sportage-20899-2.jpg",
+        "photos/2024-kia-sportage-20899-3.jpg"
+       ],
+       "live": "Listing opened Fri Oct 16, about 2:15 PM CT: still for sale",
        "tags": [
         "fleet"
        ]
